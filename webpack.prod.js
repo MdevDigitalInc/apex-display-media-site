@@ -48,25 +48,25 @@ const setPath = function(folderName) {
 }
 
 // SEO & Sitemap Configuration
-const hostDomainUrl = "https://EXAMPLE"
+const hostDomainUrl = "https://apexdisplaymedia.com"
 const sitemapFile = hostDomainUrl + "/sitemap.xml"
 // [ Robots.TXT Configuration ]
 // Fully automated robots.txt generation based on policy listed
 // below. Remember to disalow bots during staging and enable for
 // prod environment.
-// TODO - Update robots.txt for Staging & Production
 // While dev is being done switch to NO CRAWL
 const robotOptions = {
   policy: [
-    {
-      userAgent: "Googlebot",
-      allow: "/",
-      crawlDelay: 2
-    },
+    // [ Commented out for Staging ]- TODO Enable crawling pre launch.
+    //{
+    //  userAgent: "Googlebot",
+    //  allow: "/",
+    //  crawlDelay: 2
+    //},
     {
       userAgent: "*",
-      allow: "/",
-      //disallow: "/",
+      //allow: "/",
+      disallow: "/",
       //disallow: "/search",
       crawlDelay: 10,
     }
@@ -115,9 +115,9 @@ module.exports = merge(common, {
       persistentCache: true,
       inject: true, // Inject Calls on index.html automatically
       // CHANGE COLOR OF THEME - TODO
-      background: '#0a1315',
+      background: '#000000',
       // CHANGE PROJECT TITLE - TODO
-      title: 'MDEV | The Start Of Something New',
+      title: 'Apex Display Media | TODO-Add Tail to title',
       // Icons to export
       icons: {
         android: true,
@@ -176,7 +176,7 @@ module.exports = merge(common, {
       // Process page before output..
       postProcess(renderedRoute) {
         // Remove active classes from prerendered routes
-        //renderedRoute.html = renderedRoute.html
+        renderedRoute.html = renderedRoute.html
           //.replace('--mask-active', '')
           //.replace('--nav-active', '')
           //.replace('--active', '')

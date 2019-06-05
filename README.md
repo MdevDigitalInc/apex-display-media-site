@@ -1,19 +1,8 @@
 ![MDEV Digital](https://mdevcdn.digital/images/githublogo.svg)
+# Apex Display Media
 
-# [ IMPORTANT ] :rotating_light:
-
-## First rodeo? READ THE DOCS!
-Please make sure you are familiar with the MDEV branching strategy and pull
-request rules. You can find details under `docs/branching.md`.
-
-There are also several other documents covering most of the functions and setup
-of this Vue boilerplate.
-
-## Don't forget placeholders and TODO's!!
-Don't forget to populate all of the project placeholders with proper data based
-on the project at hand. You can easily find these by doing a search for `TODO`
-in the project either with `git grep` or your IDE of choice.
-
+This repository contains all of the source files for the Apex Display Media
+marketing & sales website. For further instructions see documentation folder.
 ---
 
 # [ HOW TO USE THIS BOILERPLATE ]

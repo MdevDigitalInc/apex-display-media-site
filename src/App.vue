@@ -84,7 +84,7 @@ export default {
     // client side environment.
     if (!window.__PRERENDER_INJECTED) {
       // Load Google Maps
-      this.asyncScript( 'https://maps.googleapis.com/maps/api/js?key=APIKEYHERE-TODO', true, true);
+      this.asyncScript( 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDt6FiuHFsdn-bsR0lgsZx_QgauCyrPN24', true, true);
       // Load Google Tag Manager
       this.asyncScript( 'https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXX-1', true, true);
       this.asyncScript( '/js/googletag.js', false, false);
@@ -126,6 +126,10 @@ export default {
         ]);
         window.console.log.apply(console, [
         ]);
+      }
+      // Output standard message for other browsers
+      else {
+        console.log('Made by MDEV Digital 😜 | https://mdev.digital');
       }
     });
   },
