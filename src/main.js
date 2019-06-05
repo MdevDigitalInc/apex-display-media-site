@@ -37,12 +37,9 @@ Vue.use(checkView);
 // [ i18n - Internationalization ] ----------------------
 
 // Configure I18n Internationalization Locales
-// TODO - Update locale files accordingly
 import en from './locales/en.js';
-import pt from './locales/pt.js';
 const locales = {
-  en,
-  pt
+  en
 };
 
 Vue.use(VueI18n);
@@ -50,7 +47,6 @@ Vue.use(VueI18n);
 Vue.use(VueRouter);
 // Meta Info injector
 Vue.use(Meta)
-// TODO - Disable auth if not used
 
 // Set Language Default [ ENGLISH ]
 Vue.config.lang = 'en';
