@@ -9,36 +9,20 @@
 
 /* Base Button */
 // TODO - Replace MDEV-BTN
-.mdev-btn {
+.apex-base-btn {
   width: auto;
   padding: 10px;
   display: inline-block;
-  text-transform: uppercase;
-  font-weight: 500;
   cursor: pointer;
   transition: all .4s;
   position: relative;
   vertical-align: middle;
-
-  &:before,
-  &:after {
-    @include pseudo();
-    width: 100%;
-    height: 100%;
-  }
-
-  &:before {
-    top: 0;
-    left: 0;
-  }
-
-  &:after {
-    bottom: 0;
-    right: 0;
-  }
+  border-radius: $standard-radius;
+  font-weight: 700;
+  border: 0;
 
   @media #{$portrait} {
-    padding: 15px 20px;
+    padding: 13px 20px;
   }
 
   @media #{$tablet-lnd-only} {
@@ -48,5 +32,33 @@
   @media #{$phone-only} {
     padding: 8px 10px;
     letter-spacing: 1px;
+  }
+}
+
+.apex-red-btn {
+  background-color: $apex-red;
+  color: $white;
+  text-transform: uppercase;
+  font-size: 18px;
+
+  &:hover,
+  &:active {
+    background-color: darken($apex-red, 10%);
+    color: $white;
+  }
+
+  @media #{$laptop-up} {
+    padding: 25px 35px;
+  }
+}
+.apex-plain-btn {
+  background-color: transparent;
+  color: $black;
+  font-size: 26px;
+  font-weight: 700;
+
+  &:hover,
+  &:active {
+    text-decoration: underline;
   }
 }

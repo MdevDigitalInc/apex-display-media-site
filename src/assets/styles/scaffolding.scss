@@ -2,6 +2,29 @@
  *	SCAFFOLDING & LAYOUT UTILITIES
 /-------------------------------------*/
 
+
+//Space Classes
+
+.--space-extra-large {
+  margin-bottom: $h-space-xl
+}
+
+.--space-large {
+  margin-bottom: $h-space-l
+}
+
+.--space-medium {
+  margin-bottom: $h-space-m
+}
+
+.--space-small {
+  margin-bottom: $h-space-s
+}
+
+.--p-space-end {
+  margin-bottom: $p-space-end;
+}
+
 // Wrapper Classes
 
 .mdev-main-wrapper {

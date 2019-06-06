@@ -84,7 +84,10 @@ textarea {
   }
 }
 
-
+input[type='button'],
+button {
+  font-family: $main-font;
+}
 /* stylelint-enable */
 
 /* Form Scaffolding */

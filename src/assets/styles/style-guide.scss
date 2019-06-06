@@ -1,0 +1,32 @@
+// Color Palette
+
+.guide-container {
+  width: 95%;
+  margin: 0 auto;
+  position: relative;
+  padding: 0;
+}
+
+.pallette-box {
+  border: 2px solid $black;
+  height: 200px;
+  width: 200px;
+  display: inline-block;
+  margin-right: 20px;
+
+  &-white {
+    background-color: $white;
+  }
+
+  &-black {
+    background-color: $black;
+  }
+
+  &-blue {
+    background-color: $apex-blue;
+  }
+
+  &-red {
+    background-color: $apex-red;
+  }
+}

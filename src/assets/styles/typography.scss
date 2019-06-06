@@ -2,6 +2,11 @@
  *	TYPOGRAPHY
 /-------------------------------------*/
 
+/* Load Font */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,700&display=swap');
+
+
+
 /* Main */
 body {
   font-family: $main-font;
@@ -22,9 +27,35 @@ h4,.h4,
 h5,.h5,
 h6,.h6, {
   font-family: $main-font;
-  font-weight: 700;
+  font-weight: 400;
   color: inherit;
   margin-bottom: 25px;
+}
+
+
+//Heading Size Classes
+.--size-extra-large {
+  font-size: $h-size-xl;
+}
+
+.--size-large {
+  font-size: $h-size-l;
+}
+
+.--size-medium-large {
+  font-size: $h-size-ml;
+}
+
+.--size-medium {
+  font-size: $h-size-m;
+}
+
+.--size-small {
+  font-size: $h-size-s;
+}
+
+.--size-extra-small {
+  font-size: $h-size-xs;
 }
 
 // Responsive Font Size Maps
@@ -90,6 +121,7 @@ $link-font-sizes: (
 p {
   line-height: 1.8;
   font-weight: 400;
+  margin-bottom: 20px;
   @include font-size($p-font-sizes);
 }
 
