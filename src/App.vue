@@ -51,9 +51,8 @@ export default {
       titleTemplate: this.seo.template,
       link: [
         // Alertiry
-        { rel: 'stylesheet', href: 'https://mdevcdn.digital/alerts/alertify.css',
-        rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,700&display=swap'
-        }
+        { rel: 'stylesheet', href: 'https://mdevcdn.digital/alerts/alertify.css' },
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,700&display=swap' }
       ],
       script: [
         // Alertify
@@ -114,9 +113,10 @@ export default {
       }
 
       // Check Cookies
-      setTimeout(() => {
-        this.checkCookie();
-      }, 5000);
+      // TODO - Enable cookies later
+      //setTimeout(() => {
+      //  this.checkCookie();
+      //}, 5000);
 
       // [ FANCY CONSOLE OUTPUT ] --------------------------
       // each %c allows you to create a styling block
