@@ -4,23 +4,48 @@
 
 // TODO - Update with project style guide
 // Main colors
-$color-brand-primary: #16b1a9;
-$color-brand-accent: #c4ee1e;
-$color-brand-bkg: #0f1618;
+$apex-blue: #6aaae4;
+$apex-red: #ed2c38;
+$color-brand-primary: $apex-blue;
+$color-brand-accent: $apex-red;
+$color-brand-bkg: #000;
 $bkg-light-grey: #fafafa;
 $black: #000;
 $white: #fff;
-
+$grey: #ccc;
 
 // Main Font
-$main-font: 'Roboto', 'Helvetica', sans-serif;
+$main-font: 'Montserrat', 'Helvetica', sans-serif;
 $heading-weight: 700;
-$subheading-weight: 500;
-$body-weight: 300;
+$subheading-weight: 700;
+$body-weight: 400;
 
 // Sizing Variables
 
+// Heading Sizing
+$h-size-xl: 60px;
+$h-size-l: 50px;
+$h-size-ml: 47px;
+$h-size-m: 40px;
+$h-size-s: 30px;
+$h-size-xs: 24px;
+
+$p-size: 20px;
+
+$a-size: 20px;
+
 // Spacing Variables
+
+// Heading  Spacing
+$h-space-xl: 60px;
+$h-space-l: 40px;
+$h-space-m: 30px;
+$h-space-s: 10px;
+
+$p-space: 20px;
+//Spacing For Last Paragraph
+$p-space-last: 60px;
+
 
 // Button Variables
 

@@ -51,7 +51,8 @@ export default {
       titleTemplate: this.seo.template,
       link: [
         // Alertiry
-        { rel: 'stylesheet', href: 'https://mdevcdn.digital/alerts/alertify.css' }
+        { rel: 'stylesheet', href: 'https://mdevcdn.digital/alerts/alertify.css' },
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,700&display=swap' }
       ],
       script: [
         // Alertify
@@ -112,9 +113,10 @@ export default {
       }
 
       // Check Cookies
-      setTimeout(() => {
-        this.checkCookie();
-      }, 5000);
+      // TODO - Enable cookies later
+      //setTimeout(() => {
+      //  this.checkCookie();
+      //}, 5000);
 
       // [ FANCY CONSOLE OUTPUT ] --------------------------
       // each %c allows you to create a styling block
@@ -265,14 +267,14 @@ body::-webkit-scrollbar {
 
 // Background of Scrollbar
 body::-webkit-scrollbar-track {
-  background: lighten($color-brand-bkg, 10%);
-  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background: lighten($color-brand-bkg, 20%);
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.6);
 }
 
 // Scroll Thumb ( Part that moves )
 body::-webkit-scrollbar-thumb {
-  background-color: lighten($color-brand-primary, 10%);
-  outline: 4px solid darken($color-brand-bkg, 10%);
+  background-color: $color-brand-primary;
+  box-shadow: inset 0 0 6px rgba(0,0,0,.3);
 }
 
 
@@ -282,19 +284,5 @@ body::-webkit-scrollbar-thumb {
 ::-moz-selection {
   background: $color-brand-accent;
 }
-
-h1.u-c-primary::selection,
-h2.u-c-primary::selection,
-h3.u-c-primary::selection,
-h4.u-c-primary::selection {
-  background: $color-brand-bkg;
-}
-h1.u-c-primary::-moz-selection,
-h2.u-c-primary::-moz-selection,
-h3.u-c-primary::-moz-selection,
-h4.u-c-primary::-moz-selection {
-  background: $color-brand-bkg;
-}
-
 /* stylelint-enable */
 </style>

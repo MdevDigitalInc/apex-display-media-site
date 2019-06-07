@@ -1,2 +1,17 @@
 // Decorations
+.d-heading-flair {
+  &:before {
+    border-top: 15px solid $grey;
+    content: '';
+    height: 40px;
+    display: block;
+    max-width: 156px;
+  }
+
+  &-blue {
+    &:before {
+      border-color: $apex-blue;
+    }
+  }
+}
 

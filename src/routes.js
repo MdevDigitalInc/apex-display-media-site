@@ -1,4 +1,5 @@
 // Import Parent Compontents
+import StyleGuide           from './components/style-guide/style-guide.vue';
 import About                from './components/about/about.vue';
 import ErrorPage            from './components/parent-templates/error_404.vue';
 import Home                 from './components/home/home.vue';
@@ -22,6 +23,10 @@ export const routes = [
   {
     path: '/about',
     component: About
+  },
+  {
+    path: '/style-guide',
+    component: StyleGuide
   },
   {
     path:'/auth',
