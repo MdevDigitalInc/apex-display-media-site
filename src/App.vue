@@ -267,14 +267,14 @@ body::-webkit-scrollbar {
 
 // Background of Scrollbar
 body::-webkit-scrollbar-track {
-  background: lighten($color-brand-bkg, 10%);
-  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background: lighten($color-brand-bkg, 20%);
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.6);
 }
 
 // Scroll Thumb ( Part that moves )
 body::-webkit-scrollbar-thumb {
-  background-color: lighten($color-brand-primary, 10%);
-  outline: 4px solid darken($color-brand-bkg, 10%);
+  background-color: $color-brand-primary;
+  box-shadow: inset 0 0 6px rgba(0,0,0,.3);
 }
 
 
@@ -284,19 +284,5 @@ body::-webkit-scrollbar-thumb {
 ::-moz-selection {
   background: $color-brand-accent;
 }
-
-h1.u-c-primary::selection,
-h2.u-c-primary::selection,
-h3.u-c-primary::selection,
-h4.u-c-primary::selection {
-  background: $color-brand-bkg;
-}
-h1.u-c-primary::-moz-selection,
-h2.u-c-primary::-moz-selection,
-h3.u-c-primary::-moz-selection,
-h4.u-c-primary::-moz-selection {
-  background: $color-brand-bkg;
-}
-
 /* stylelint-enable */
 </style>
