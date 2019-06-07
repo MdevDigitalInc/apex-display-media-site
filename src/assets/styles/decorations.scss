@@ -3,8 +3,9 @@
   &:before {
     border-top: 15px solid $grey;
     content: '';
-    height: 30px;
+    height: 40px;
     display: block;
+    max-width: 156px;
   }
 
   &-blue {

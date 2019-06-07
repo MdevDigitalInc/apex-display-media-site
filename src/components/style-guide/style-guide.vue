@@ -6,19 +6,19 @@
     div.guide-container
       h1.--space-large
         |Apex Desktop Styles
-      h1.--size-extra-large.--space-large.u-bold
+      h1.--font-size-extra-large.--margin-space-large.u-bold
         | h1 - Montserrat, 60 BOLD
-      h2.--size-large.--space-large.u-bold.d-heading-flair.d-heading-flair-blue
+      h2.--font-size-large.--margin-space-large.u-bold.d-heading-flair.d-heading-flair-blue
         | h2 - Montserrat, 50 BOLD
-      h3.--size-medium.--space-extra-large.u-medium
+      h3.--font-size-medium.--margin-space-extra-large.u-medium
         | h3 - Montserrat, 40 Medium
-      h4.--size-small.--space-small
+      h4.--font-size-small.--margin-space-small
         | h4 - Montserrat, 30 Regular
-      h5.--size-extra-small.--space-small.u-bold
+      h5.--font-size-extra-small.--margin-space-small.u-bold
         | h5 - Montserrat, 24 Bold
-      h6.--size-medium-large.--space-extra-large.u-bold
+      h6.--font-size-medium-large.--margin-space-extra-large.u-bold
         | h6 - Montserrat, 47 BOLD
-      p.--p-space-end
+      p
         | There is also a 
         span.u-bold 
         | bold style,

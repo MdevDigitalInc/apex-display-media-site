@@ -51,7 +51,9 @@ export default {
       titleTemplate: this.seo.template,
       link: [
         // Alertiry
-        { rel: 'stylesheet', href: 'https://mdevcdn.digital/alerts/alertify.css' }
+        { rel: 'stylesheet', href: 'https://mdevcdn.digital/alerts/alertify.css',
+        rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,700&display=swap'
+        }
       ],
       script: [
         // Alertify
