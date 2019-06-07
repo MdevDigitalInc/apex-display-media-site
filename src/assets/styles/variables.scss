@@ -23,13 +23,16 @@ $body-weight: 400;
 // Sizing Variables
 
 // Heading Sizing
-
 $h-size-xl: 60px;
 $h-size-l: 50px;
 $h-size-ml: 47px;
 $h-size-m: 40px;
 $h-size-s: 30px;
 $h-size-xs: 24px;
+
+$p-size: 20px;
+
+$a-size: 20px;
 
 // Spacing Variables
 
@@ -39,7 +42,9 @@ $h-space-l: 40px;
 $h-space-m: 30px;
 $h-space-s: 10px;
 
-$p-space-end: 60px;
+$p-space: 20px;
+//Spacing For Last Paragraph
+$p-space-last: 60px;
 
 
 // Button Variables
