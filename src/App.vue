@@ -19,11 +19,17 @@
       :active="showCookies"
       v-if="cookies"
       v-on:dismiss="cookies = false")
+    button(:class="{open: navOpen }" @click="navOpen = !navOpen") toggle menu
+    apex-navigation(:class="{open: navOpen }" :navOpen="navOpen" v-on:toggle_nav="toggleNav")
+    .apex-nav-overlay(:class="{open: navOpen }")
 </template>
 
 <script>
 //Local Component registration
 import MainNavigation from './components/shared/navigation.vue';
+
+import ApexNavigation from './components/shared/apex-navigation.vue';
+
 import CookiePopup    from './components/shared/cookies.vue';
 // Import SEO From File
 import SEOData       from './seo-meta.js';
@@ -36,6 +42,7 @@ export default {
       seo: SEOData.siteSeo,
       cookies: false,
       showCookies: false,
+      navOpen: false,
       // Staging Social URL
       // These variables allow for the creation of OG tags
       // for staging and prod. Change vars in site-seo.js!
@@ -155,7 +162,8 @@ export default {
 
   components: {
     'main-navigation' : MainNavigation,
-    'cookie-popup'    : CookiePopup
+    'cookie-popup'    : CookiePopup,
+    'apex-navigation' : ApexNavigation
   },
 
   methods: {
@@ -188,6 +196,9 @@ export default {
       else if ( Date.now() > parseInt(expiration) ) {
         destroyTokens();
       }
+    },
+    toggleNav() {
+      this.navOpen = false;
     }
   }
 };
