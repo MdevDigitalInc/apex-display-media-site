@@ -7,7 +7,6 @@
       v-on:click.stop.prevent="skipNav"
       class="mdev-skipnav" tabindex="0")
         |Skip To Main Content
-
     //- Main Navigation
     main-navigation
     //- Transition Wrapper
@@ -21,7 +20,7 @@
       v-on:dismiss="cookies = false")
     button(:class="{open: navOpen }" @click="navOpen = !navOpen") toggle menu
     apex-navigation(:class="{open: navOpen }" :navOpen="navOpen" v-on:toggle_nav="toggleNav")
-    .apex-nav-overlay(:class="{open: navOpen }")
+    .apex-nav-overlay(:class="{open: navOpen }" @click="navOpen = !navOpen")
 </template>
 
 <script>

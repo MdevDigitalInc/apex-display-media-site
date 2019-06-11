@@ -2,7 +2,8 @@
   nav(class="apex-nav-sidebar" :aria-hidden="!navOpen")
     apex-sidebar-container.flex.flex-row.flex-wrap
       .brand
-        img(src="" alt="Apex logo")
+        a(href="/" title="Home" class="apex-nav-sidebar-branding")
+          img(:src="loadImage(homeBrand)" alt="Apex logo")
       button(v-on:click="toggleNav" class="apex-toggle-nav" data-target)
         span
         span
@@ -19,11 +20,10 @@
           span
           |{{ link.linkName  }}
       .apex-contact-nav-links.u-capitalize
-        p Get in touch:
+        p.u-none Get in touch:
         a(href="tel:1-800-000-0000" title="phone number") 1-800-000-0000
-        a(href="mailto:contact@apexdisplaymedia.com" title="email address") contact@apexdisplaymedia.com
+        a(href="mailto:contact@apexdisplaymedia.com" title="email address" class="u-lowercase") contact@apexdisplaymedia.com
       a.apex-quote-btn.u-capitalize Free Quote
-      //.apex-nav-overlay(:class="{open: navOpen }")
 </template>
 
 
@@ -39,8 +39,7 @@
 
       return {
 
-        title: 'ApexNav',
-        content: 'I am a navigation component',
+        homeBrand: 'apex-logo.svg',
         links: [
           {
             linkName: 'Home',
@@ -74,10 +73,11 @@
     methods: {
       toggleNav() {
         this.$emit('toggle_nav', true);
+      },
+      loadImage(path){
+      return require('../../assets/images/' + path);
       }
-  }
-
-
+    }
   };
 </script>
 
