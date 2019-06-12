@@ -7,8 +7,6 @@
       v-on:click.stop.prevent="skipNav"
       class="mdev-skipnav" tabindex="0")
         |Skip To Main Content
-    //- Main Navigation
-    //main-navigation
     //- Transition Wrapper
     transition(name="fade")
       //- Router View
@@ -24,7 +22,6 @@
 
 <script>
 //Local Component registration
-//import MainNavigation from './components/shared/navigation.vue';
 
 import ApexNavigation from './components/shared/apex-navigation.vue';
 
@@ -158,7 +155,6 @@ export default {
   },
 
   components: {
-    //'main-navigation' : MainNavigation,
     'cookie-popup'    : CookiePopup,
     'apex-navigation' : ApexNavigation
   },

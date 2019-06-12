@@ -1,5 +1,5 @@
 <template lang="pug">
-    div
+    .apex-main-nav
       // - Sidebar Navigation Overlay
       .apex-nav-overlay(:class="{open: navOpen }" @click="navOpen = !navOpen")
       // - Trigger Navigation
@@ -40,7 +40,7 @@
     data (){
 
       return {
-        navOpen: true,
+        navOpen: false,
         homeBrand: 'apex-logo.svg',
         links: [
           {
