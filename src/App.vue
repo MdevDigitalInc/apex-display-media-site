@@ -8,7 +8,7 @@
       class="mdev-skipnav" tabindex="0")
         |Skip To Main Content
     //- Main Navigation
-    main-navigation
+    //main-navigation
     //- Transition Wrapper
     transition(name="fade")
       //- Router View
@@ -18,14 +18,13 @@
       :active="showCookies"
       v-if="cookies"
       v-on:dismiss="cookies = false")
-    button(:class="{open: navOpen }" @click="navOpen = !navOpen") toggle menu
-    apex-navigation(:class="{open: navOpen }" :navOpen="navOpen" v-on:toggle_nav="toggleNav")
-    .apex-nav-overlay(:class="{open: navOpen }" @click="navOpen = !navOpen")
+    //- Sidebar Navigation
+    apex-navigation
 </template>
 
 <script>
 //Local Component registration
-import MainNavigation from './components/shared/navigation.vue';
+//import MainNavigation from './components/shared/navigation.vue';
 
 import ApexNavigation from './components/shared/apex-navigation.vue';
 
@@ -41,7 +40,6 @@ export default {
       seo: SEOData.siteSeo,
       cookies: false,
       showCookies: false,
-      navOpen: false,
       // Staging Social URL
       // These variables allow for the creation of OG tags
       // for staging and prod. Change vars in site-seo.js!
@@ -160,7 +158,7 @@ export default {
   },
 
   components: {
-    'main-navigation' : MainNavigation,
+    //'main-navigation' : MainNavigation,
     'cookie-popup'    : CookiePopup,
     'apex-navigation' : ApexNavigation
   },
