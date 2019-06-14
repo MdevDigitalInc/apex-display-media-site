@@ -19,11 +19,13 @@
       :active="showCookies"
       v-if="cookies"
       v-on:dismiss="cookies = false")
+    apex-footer
 </template>
 
 <script>
 //Local Component registration
 import MainNavigation from './components/shared/navigation.vue';
+import ApexFooter from './components/shared/apex-footer.vue';
 import CookiePopup    from './components/shared/cookies.vue';
 // Import SEO From File
 import SEOData       from './seo-meta.js';
@@ -155,7 +157,8 @@ export default {
 
   components: {
     'main-navigation' : MainNavigation,
-    'cookie-popup'    : CookiePopup
+    'apex-footer' : ApexFooter,
+    'cookie-popup' : CookiePopup
   },
 
   methods: {
