@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Get distributions by checking AWS first...
-S3_LIVE_BUCKET="s3://TODO-CREATE-INF"
-CF_MAIN_DISTRIBUTION="TODO-Create-CF"
-CF_REDIRECT_DISTRIBUTION="TODO-Create-CF"
+S3_LIVE_BUCKET="s3://apexdisplaymedia.com"
+CF_MAIN_DISTRIBUTION="E2JD9LGQP1S097"
+CF_REDIRECT_DISTRIBUTION="E152HIMPI1V2I3"
 
 # Error Handling Function
 error_handle() {
