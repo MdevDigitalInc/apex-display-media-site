@@ -1,0 +1,126 @@
+.apex-footer {
+  position: relative;
+  background-color: $black;
+  min-height: 495px;
+  color: $white;
+}
+
+.brand {
+  width: 35%;
+}
+
+.apex-contact-info {
+  width: 25%;
+  margin-top: 135px;
+
+  p,
+  p:last-of-type {
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+
+  a {
+    display: block;
+    color: $apex-blue;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+
+    &:hover {
+      color: $apex-blue;
+    }
+  }
+}
+
+.apex-copy {
+  width: 35%;
+  font-size: 14px;
+  padding-top: 25px;
+}
+
+.apex-social {
+  width: 40%;
+}
+
+.apex-quote {
+  width: 25%;
+}
+
+.apex-footer-bottom-bar {
+  position: absolute;
+  bottom: 0;
+  background-color: $apex-grey;
+  color: #cdcdcd;
+  min-height: 69px;
+  width: 100%;
+}
+
+.apex-social-icon {
+  position: relative;
+  font-size: 30px;
+  color: $white;
+  padding: 0 10px;
+  width: 50px;
+  cursor: pointer;
+
+  &:first-child {
+    margin-left: -10px;
+  }
+
+  &:hover {
+    background-color: $apex-blue;
+    color: $black;
+  }
+
+  i {
+    @include center('both');
+  }
+}
+
+.apex-footer-branding img {
+  width: 278px;
+  margin-top: 131px;
+}
+
+.apex-footer-nav-links {
+  position: absolute;
+  right: 0;
+  top: 63px;
+
+  a {
+    display: block;
+    color: #6aaae4;
+    font-weight: 700;
+
+    @media #{$laptop-up} {
+      font-size: 18px;
+      margin-bottom: 31px;
+      text-align: right;
+      text-indent: 241px;
+      direction: rtl;
+    }
+  }
+
+  a.--active {
+    color: $white;
+    text-indent: 0;
+
+    span:before {
+      content: '';
+      display: inline-block;
+      background-color: $white;
+      height: 4px;
+      width: 100px;
+      margin: 6px 22px 6px 0;
+      @media #{$tablet-up} {
+        width: 213px;
+        margin: 6px 0 6px 28px;
+      }
+    }
+
+    @media #{$laptop-up} {
+      font-size: 21px;
+    }
+  }
+}

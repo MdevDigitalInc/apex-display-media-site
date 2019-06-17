@@ -29,6 +29,16 @@
               i.fab.fa-twitter
           .apex-quote
             a.apex-base-btn.apex-red-btn.u-capitalize Free quote
+    .apex-footer-nav-links.u-capitalize
+              router-link(
+              v-for="link in links"
+              :to="link.route"
+              active-class="--active"
+              :title="link.linkTitle"
+              aria-role="menuitem"
+              exact)
+                span
+                  |{{ link.linkName }}
 </template>
 <script>
 
@@ -36,7 +46,44 @@
 	    name: 'ApexFooter',
 	    data (){
 	      return {
-	        footerBrand: 'apex-logo-footer.svg'
+	        footerBrand: 'apex-logo-footer.svg',
+          links: [
+            {
+              linkName: 'Home',
+              linkTitle: 'Home',
+              route: '/'
+            },
+            {
+              linkName: 'Outdoor LEDs',
+              linkTitle: 'Outdoor LEDs',
+              route: '/outdoor-leds'
+            },
+            {
+              linkName: 'Indoor Digital Signage',
+              linkTitle: 'Indoor Digital Signage',
+              route: '/indoor-digital-signage'
+            },
+            {
+              linkName: 'Media Management',
+              linkTitle: 'Media Management',
+              route: '/media-management'
+            },
+            {
+              linkName: 'Support',
+              linkTitle: 'Support',
+              route: '/support'
+            },
+            {
+              linkName: 'About',
+              linkTitle: 'About',
+              route: '/about'
+            },
+            {
+              linkName: 'Contact Us',
+              linkTitle: 'Contact Us',
+              route: '/contact'
+            }
+          ]
 	      };
 	    },
 	    methods: {
@@ -78,7 +125,7 @@
     font-size: 18px;
     margin-bottom: 10px;
     line-height: 1.5;
-    
+
     &:hover {
       color: $apex-blue;
     }
@@ -92,7 +139,7 @@
 }
 
 .apex-social {
-  width: 25%;
+  width: 40%;
 }
 
 .apex-quote {
@@ -126,13 +173,55 @@
   }
 
   i {
-     @include center('both');
+    @include center('both');
   }
 }
 
 .apex-footer-branding img {
   width: 278px;
   margin-top: 131px;
+}
+
+.apex-footer-nav-links {
+  position: absolute;
+  right: 0;
+  top: 63px;
+
+  a {
+    display: block;
+    color: #6aaae4;
+    font-weight: 700;
+
+    @media #{$laptop-up} {
+      font-size: 18px;
+      margin-bottom: 31px;
+      text-align: right;
+      text-indent: 241px;
+      direction: rtl;
+    }
+  }
+
+  a.--active {
+    color: $white;
+    text-indent: 0;
+
+    span:before {
+      content: '';
+      display: inline-block;
+      background-color: $white;
+      height: 4px;
+      width: 100px;
+      margin: 6px 22px 6px 0;
+      @media #{$tablet-up} {
+        width: 213px;
+        margin: 6px 0 6px 28px;
+      }
+    }
+
+    @media #{$laptop-up} {
+      font-size: 21px;
+    }
+  }
 }
 
 </style>
