@@ -19,12 +19,12 @@
       h6.--margin-space-extra-large.u-bold
         | h6 - Montserrat, 47 BOLD
       p
-        | There is also a
+        | There is also a 
         span.u-bold
         | bold style,
         | an
-        span.u-italic italic style and a
-        a(href="#" class="u-under-line") link style
+        span.u-italic italic style and a 
+        a(href="#" class="u-under-line" title="Link") link style
         |.
       p
         | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lobortis vitae justo eu iaculis. Donec iaculis, enim in sollicitudin
@@ -34,11 +34,22 @@
         | accumsan augue. Vestibulum id mi in sapien aliquam interdum. Maecenas eget lectus vehicula lacus blandit venenatis. Nunc vel hendrerit | mauris, sed pellentesque nisi. Nullam massa nisl, viverra vel elit id, sodales facilisis orci. Nullam eu est nulla. Duis dignissim quam | ornare elit tristique ultricies. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras quis
         | lectus interdum, iaculis neque et, tincidunt justo.
 
-      a(href='#' class='apex-base-btn apex-red-btn') Contact Me
+      a(href='#' class='apex-base-btn apex-red-btn' title='button') Contact Me
       input(type='button' value='contact me' class="apex-base-btn apex-red-btn")
       button(class='apex-base-btn apex-red-btn') Contact me
       br
-      a(href='#' class='apex-base-btn apex-plain-btn') Learn more
+      br
+      a(href='#' class='apex-base-btn apex-black-btn' title='button') Contact Me
+      input(type='button' value='contact me' class="apex-base-btn apex-black-btn")
+      button(class='apex-base-btn apex-black-btn') Contact me
+      br
+      br
+      a(href='#' class='apex-base-btn apex-blue-btn' title='button') Contact Me
+      input(type='button' value='contact me' class="apex-base-btn apex-blue-btn")
+      button(class='apex-base-btn apex-blue-btn') Contact me
+      br
+      br
+      a(href='#' class='apex-base-btn apex-plain-btn' title='button') Learn more
       input(type='button' value='Learn more' class="apex-base-btn apex-plain-btn")
       button(class='apex-base-btn apex-plain-btn') Learn more
       br
