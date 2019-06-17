@@ -9,6 +9,11 @@
           p.u-none Get in touch:
           a(href="tel:1-800-000-0000" title="phone number").u-under-line 1-800-000-0000
           a(href="mailto:contact@apexdisplaymedia.com" title="email address" class="u-lowercase") contact@apexdisplaymedia.com
+          p.u-none Our Location:
+          a(href="#" title="address") 
+            | 499 McGregor Avenue 
+            br 
+            | London, ON, N6J 2s8
     .apex-footer-bottom-bar
       .apex-main-wrapper
         .apex-row.flex.flex-row.flex-wrap
@@ -53,15 +58,16 @@
 }
 
 .brand {
-  width: 25%;
+  width: 35%;
 }
 
 .apex-contact-info {
   width: 25%;
+  margin-top: 135px;
 
   p,
   p:last-of-type {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-size: 18px;
   }
 
@@ -71,6 +77,7 @@
     font-weight: 700;
     font-size: 18px;
     margin-bottom: 10px;
+    line-height: 1.5;
     
     &:hover {
       color: $apex-blue;
@@ -79,7 +86,7 @@
 }
 
 .apex-copy {
-  width: 25%;
+  width: 35%;
   font-size: 14px;
   padding-top: 25px;
 }
@@ -109,6 +116,10 @@
   width: 50px;
   cursor: pointer;
 
+  &:first-child {
+    margin-left: -10px;
+  }
+
   &:hover {
     background-color: $apex-blue;
     color: $black;
@@ -121,6 +132,7 @@
 
 .apex-footer-branding img {
   width: 278px;
+  margin-top: 131px;
 }
 
 </style>
