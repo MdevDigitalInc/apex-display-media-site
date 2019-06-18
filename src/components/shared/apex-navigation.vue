@@ -41,6 +41,7 @@
 
 
 <script>
+  import apexData from '../../apex-data.js';
 
   export default {
 
@@ -49,40 +50,9 @@
 
       return {
         navOpen: false,
-        headerBrand: 'apex-logo-black.svg',
-        homeBrand: 'apex-logo-white.svg',
-        links: [
-          {
-            linkName: 'Home',
-            linkTitle: 'Home',
-            route: '/'
-          },
-          {
-            linkName: 'Indoor Digital Signage',
-            linkTitle: 'Indoor Digital Signage',
-            route: '/indoor-digital-signage'
-          },
-          {
-            linkName: 'Digital Media Management',
-            linkTitle: 'Digital Media Management',
-            route: '/digital-media-management'
-          },
-          {
-            linkName: 'Outdoor LEDs',
-            linkTitle: 'Outdoor LEDs',
-            route: '/outdoor-leds'
-          },
-          {
-            linkName: 'About',
-            linkTitle: 'About',
-            route: '/about'
-          },
-          {
-            linkName: 'Contact Us',
-            linkTitle: 'Contact Us',
-            route: '/contact'
-          }
-        ]
+        headerBrand: apexData.appData.blackBrand,
+        homeBrand: apexData.appData.whiteBrand,
+        links: apexData.mainNavigation.links
       };
     },
     methods: {
