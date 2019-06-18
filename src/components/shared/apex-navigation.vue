@@ -41,6 +41,7 @@
 
 
 <script>
+  import apexData from '../../apex-data.js';
 
   export default {
 
@@ -49,35 +50,9 @@
 
       return {
         navOpen: false,
-        headerBrand: 'apex-logo-black.svg',
-        homeBrand: 'apex-logo-white.svg',
-        links: [
-          {
-            linkName: 'Home',
-            linkTitle: 'Home',
-            route: '/'
-          },
-          {
-            linkName: 'Indoor Digital Signage',
-            linkTitle: 'Indoor Digital Signage',
-            route: '/indoor-digital-signage'
-          },
-          {
-            linkName: 'Outdoor LEDs',
-            linkTitle: 'Outdoor LEDs',
-            route: '/outdoor-leds'
-          },
-          {
-            linkName: 'About',
-            linkTitle: 'About',
-            route: '/about'
-          },
-          {
-            linkName: 'Contact Us',
-            linkTitle: 'Contact Us',
-            route: '/contact'
-          }
-        ]
+        headerBrand: apexData.appData.blackBrand,
+        homeBrand: apexData.appData.whiteBrand,
+        links: apexData.mainNavigation.links
       };
     },
     methods: {
@@ -115,7 +90,7 @@
     }
   }
 
-  @media #{$tablet-up} { 
+  @media #{$tablet-up} {
     height: 100px;
 
     .brand {
@@ -164,7 +139,7 @@
     }
   }
 
-  @media #{$tablet-up} { 
+  @media #{$tablet-up} {
     width: 100px;
     height: 100px;
 
@@ -217,7 +192,7 @@
   }
 
   @media #{$tablet-up} {
-    .apex-nav-sidebar-branding {  
+    .apex-nav-sidebar-branding {
       margin-left: 80px;
     }
 
