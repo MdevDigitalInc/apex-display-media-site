@@ -63,6 +63,11 @@
             route: '/indoor-digital-signage'
           },
           {
+            linkName: 'Digital Media Management',
+            linkTitle: 'Digital Media Management',
+            route: '/digital-media-management'
+          },
+          {
             linkName: 'Outdoor LEDs',
             linkTitle: 'Outdoor LEDs',
             route: '/outdoor-leds'
@@ -115,7 +120,7 @@
     }
   }
 
-  @media #{$tablet-up} { 
+  @media #{$tablet-up} {
     height: 100px;
 
     .brand {
@@ -164,7 +169,7 @@
     }
   }
 
-  @media #{$tablet-up} { 
+  @media #{$tablet-up} {
     width: 100px;
     height: 100px;
 
@@ -217,7 +222,7 @@
   }
 
   @media #{$tablet-up} {
-    .apex-nav-sidebar-branding {  
+    .apex-nav-sidebar-branding {
       margin-left: 80px;
     }
 
@@ -286,6 +291,14 @@
       margin-top: 140px;
     }
 
+    @media #{$tablet-lnd-only} {
+      margin-top: 60px;
+    }
+
+    @media #{$laptop-only} {
+      margin-top: 60px;
+    }
+
     p {
       margin-bottom: 30px;
       text-indent: 50px;
@@ -307,6 +320,18 @@
       @media #{$tablet-up} {
         font-size: 18px;
         text-indent: 80px;
+      }
+    }
+  }
+
+  .apex-contact-nav-links {
+
+    a,
+    p {
+      margin-bottom: 15px;
+
+      @media #{$tablet-up} {
+        margin-bottom: 30px;
       }
     }
   }
