@@ -261,6 +261,14 @@
       margin-top: 140px;
     }
 
+    @media #{$tablet-lnd-only} {
+      margin-top: 60px;
+    }
+
+    @media #{$laptop-only} {
+      margin-top: 60px;
+    }
+
     p {
       margin-bottom: 30px;
       text-indent: 50px;
@@ -282,6 +290,18 @@
       @media #{$tablet-up} {
         font-size: 18px;
         text-indent: 80px;
+      }
+    }
+  }
+
+  .apex-contact-nav-links {
+
+    a,
+    p {
+      margin-bottom: 15px;
+
+      @media #{$tablet-up} {
+        margin-bottom: 30px;
       }
     }
   }
