@@ -23,22 +23,27 @@ input {
   &[type="search"],
   &[type="url"] {
     width: 100%;
-    border-radius: 0;
     font-family: $main-font;
-    padding: 8px 0;
+    font-size: 18px;
+    padding: 24px 23px 10px;
     margin-top: 15px;
-    background: transparent;
+    color: $white;
+    min-height: 61px;
+    //background: transparent;
+    background-color:  rgba($black, .15);
+    border-radius: 5px;
     outline: 0;
     transition: border .5s, background .5s;
     border: none;
-    border-bottom: 4px solid $border-color-passive;
-    border-top: 4px solid $border-color-active;
+    //border-bottom: 4px solid $border-color-passive;
+    //border-top: 4px solid $border-color-active;
 
     &:hover, &:focus, &:active {
-      border-top: 4px solid $border-color-passive;
-      border-bottom: 4px solid $border-color-active;
-      background: $white;
-      padding: 8px;
+      //border-top: 4px solid $border-color-passive;
+      //border-bottom: 4px solid $border-color-active;
+      color: $white;
+      background-color:  rgba($black, .15);
+      padding: 24px 23px 10px;
     }
 
     &.--filled {
@@ -56,21 +61,25 @@ input {
 textarea {
   width: 100%;
   font-family: $main-font;
-  border-radius: 0;
-  padding: 8px 0;
+  border-radius: 5px;
+  padding: 24px 20px 10px;
   margin-top: 15px;
-  background: transparent;
+  margin-bottom: 20px;
+  color: $white;
+  min-height: 113px;
+  //background: transparent;
+  background-color:  rgba($black, .15);
   outline: 0;
   transition: border .5s, background .5s;
   border: none;
-  border-bottom: 4px solid $border-color-passive;
-  border-top: 4px solid $border-color-active;
+  // border-bottom: 4px solid $border-color-passive;
+  // border-top: 4px solid $border-color-active;
 
   &:hover, &:focus, &:active {
-    border-top: 4px solid $border-color-passive;
-    border-bottom: 4px solid $border-color-active;
-    background: $white;
-    padding: 8px;
+    // border-top: 4px solid $border-color-passive;
+    // border-bottom: 4px solid $border-color-active;
+    background-color:  rgba($black, .15);
+    padding: 24px 20px 10px;
   }
 
   &::placeholder {
@@ -93,13 +102,13 @@ button {
 
 /* Form Scaffolding */
 
-.mdev-form-group {
+.apex-form-group {
   width: 100%;
   position: relative;
   text-align: left;
 }
 
-.mdev-action-group {
+.apex-action-group {
   width: 100%;
   position: relative;
 }
