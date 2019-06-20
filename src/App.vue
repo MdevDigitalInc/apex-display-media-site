@@ -7,13 +7,10 @@
       v-on:click.stop.prevent="skipNav"
       class="mdev-skipnav" tabindex="0")
         |Skip To Main Content
-<<<<<<< HEAD
-=======
 
     //- Main Navigation
     //main-navigation
     apex-contact
->>>>>>> create contact components
     //- Transition Wrapper
     transition(name="fade")
       //- Router View
@@ -29,14 +26,8 @@
 
 <script>
 //Local Component registration
-<<<<<<< HEAD
-
-import ApexNavigation from './components/shared/apex-navigation.vue';
-
-=======
 import ApexContact from './components/contact/apex-contact.vue';
 import MainNavigation from './components/shared/navigation.vue';
->>>>>>> create contact components
 import CookiePopup    from './components/shared/cookies.vue';
 // Import SEO From File
 import SEOData       from './seo-meta.js';
@@ -167,14 +158,9 @@ export default {
   },
 
   components: {
-<<<<<<< HEAD
-    'cookie-popup'    : CookiePopup,
-    'apex-navigation' : ApexNavigation
-=======
     'main-navigation' : MainNavigation,
     'cookie-popup'    : CookiePopup,
     'apex-contact'    : ApexContact
->>>>>>> create contact components
   },
 
   methods: {

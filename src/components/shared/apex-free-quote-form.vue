@@ -14,17 +14,17 @@
           input(type='text' name="name" id='name' v-model="name")
           label(for='name' :class='{active: name }') Name*
         .apex-form-group
-          input(type='text' name='company_name' id='company_name')
-          label(for='company_name') Company*
+          input(type='text' name='company_name' id='company_name' v-model='companyName')
+          label(for='company_name' :class='{active: companyName }') Company*
         .apex-form-group
-          input(type='tel' name='phone' id='phone')
-          label(for='phone') Phone Number
+          input(type='tel' name='phone' id='phone' v-model='phone')
+          label(for='phone' :class='{active: phone }') Phone Number
         .apex-form-group
-          input(type='email' name='company_name' id='company_name')
-          label(for='email') Email*
+          input(type='email' name='email' id='email' v-model='email')
+          label(for='email' :class='{active: email }') Email*
         .apex-form-group
-          textarea(name='message' id='message')
-          label(for='message') Message
+          textarea(name='message' id='message' v-model='message')
+          label(for='message' :class='{active: message }') Message*
         .apex-form-group.flex.flex-row-rev.flex-wrap
           input(type='submit' class='apex-base-btn apex-black-btn' value='Contact Me')
 </template>
@@ -36,7 +36,11 @@
     name: 'ApexFreeQuoteForm',
     data (){
       return {
-        name: null
+        name: null,
+        companyName: null,
+        phone: null,
+        email: null,
+        message: null
       };
     }
   };
@@ -46,9 +50,7 @@
 
 h2,
 p {
-
-color: $white;
-
+  color: $white;
 }
 
 .apex-column {
@@ -69,6 +71,10 @@ color: $white;
 
 .apex-free-quote-heading {
   padding-top: 92px;
+}
+
+p:last-of-type {
+  margin-bottom: 20px;
 }
 
 

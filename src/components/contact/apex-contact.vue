@@ -1,6 +1,6 @@
 <template lang="pug">
 .apex-contact-modal
-  button.apex-close-modal
+  button.apex-close-modal(@click="closeModal")
     span
     span
     span
@@ -28,6 +28,12 @@
     components: {
     'apex-free-quote-form' : ApexFreeQuoteForm,
     'apex-contact-info' : ApexContactInfo,
+    },
+    methods: {
+      closeModal() {
+        //alert('hello');
+        this.$emit('close', true);
+      }
     }
   };
 </script>
@@ -42,7 +48,7 @@
   right: 0;
   bottom: 0;
   background-color: $white;
-  //overflow: scroll;
+  overflow: scroll;
 }
 
 
@@ -69,7 +75,7 @@
     background: $white;
     border-radius: 9px;
     opacity: 1;
-    left: 0px;
+    left: 0;
     top: 50%;
     transform: rotate(0deg);
     &:nth-child( 1 ) {

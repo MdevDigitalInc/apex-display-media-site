@@ -9,15 +9,11 @@
             |with digital signage
       .apex-contact-info-body.flex.flex-row-rev.flex-wrap
         .apex-column
-          .apex-social.flex.flex-row.flex-wrap
-            .apex-social-icon
-              i.fab.fa-instagram
-            .apex-social-icon
-              i.fab.fa-linkedin-in
-            .apex-social-icon
-              i.fab.fa-facebook-f
-            .apex-social-icon
-              i.fab.fa-twitter
+          //.apex-social.flex.flex-row.flex-wrap
+            //.apex-social-icon(v-for='(link, index) in socialMediaLinks')
+              //a(:href='link.url' :title='link.linkTitle' :aria-label='link.linkTitle' :target='link.target')
+                //i(class='fab' :class="link.iconClass")
+          social-media-links(:socialMediaLinks='socialMediaLinks')
           h1.u-bold.u-capitalize contact us
           p
             |Get in touch to find out how you can boost your business
@@ -35,12 +31,47 @@
 
 <script>
 
+  import SocialMediaLinks from '../shared/social-media-links.vue';
+
   export default {
     name: 'ApexContactInfo',
     data (){
       return {
+        socialMediaLinks: [
+          {
+            linkName: 'Instagram',
+            linkTitle: 'Follow us on Instagram',
+            target: '_blank',
+            iconClass: 'fa-instagram',
+            url: '#'
+          },
+          {
+            linkName: 'LinkedIn',
+            linkTitle: 'Follow us on LinkedIn',
+            target: '_blank',
+            iconClass: 'fa-linkedin-in',
+            url: '#'
+          },
+          {
+            linkName: 'Facebook',
+            linkTitle: 'Follow us on Facebook',
+            target: '_blank',
+            iconClass: 'fa-facebook-f',
+            url: '#'
+          },
+          {
+            linkName: 'Twitter',
+            linkTitle: 'Follow us on Twitter',
+            target: '_blank',
+            iconClass: 'fa-twitter',
+            url: '#'
+          }
+        ]
 
       };
+    },
+    components: {
+      'social-media-links' : SocialMediaLinks
     }
   };
 
@@ -82,11 +113,11 @@ h2 {
 }
 
 a {
-    display: block;
-    color: $apex-blue;
-    font-weight: 700;
-    line-height: 1.5;
-    font-size: 18px;
+  display: block;
+  color: $apex-blue;
+  font-weight: 700;
+  line-height: 1.5;
+  font-size: 18px;
 }
 
 .apex-social-icon {
@@ -103,6 +134,11 @@ a {
 
   &:hover {
     color: $black;
+  }
+
+  a {
+    font-size: 30px;
+    font-weight: 400;
   }
 
   i {

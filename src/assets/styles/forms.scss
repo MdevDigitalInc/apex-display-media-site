@@ -7,7 +7,7 @@ form {
 
 /* stylelint-disable */
 /* Disabled because it is valid and I need this level of control*/
-.mdev-error {
+.apex-error {
   border-top: 4px solid red !important;
   border-bottom: 4px solid red !important;
   color: red!important;
@@ -29,19 +29,14 @@ input {
     margin-top: 15px;
     color: $white;
     min-height: 61px;
-    //background: transparent;
     background-color:  rgba($black, .15);
     border-radius: 5px;
     outline: 0;
     transition: border .5s, background .5s;
     border: none;
     position: relative;
-    //border-bottom: 4px solid $border-color-passive;
-    //border-top: 4px solid $border-color-active;
 
     &:hover, &:focus, &:active {
-      //border-top: 4px solid $border-color-passive;
-      //border-bottom: 4px solid $border-color-active;
       color: $white;
       background-color:  rgba($black, .15);
       padding: 24px 23px 10px;
@@ -73,17 +68,12 @@ textarea {
   margin-bottom: 20px;
   color: $white;
   min-height: 113px;
-  //background: transparent;
   background-color:  rgba($black, .15);
   outline: 0;
   transition: border .5s, background .5s;
   border: none;
-  // border-bottom: 4px solid $border-color-passive;
-  // border-top: 4px solid $border-color-active;
 
   &:hover, &:focus, &:active {
-    // border-top: 4px solid $border-color-passive;
-    // border-bottom: 4px solid $border-color-active;
     background-color:  rgba($black, .15);
     padding: 24px 20px 10px;
   }
@@ -99,7 +89,7 @@ textarea {
 
   &.--filled {
     border-top: 4px solid $border-color-passive;
-    text-transform: none!important;
+    text-transform: none !important;
     border-bottom: 4px solid $border-color-active;
   }
 }
@@ -123,14 +113,13 @@ button {
     position: absolute;
     color: $white;
     padding: 7px 6px;
-    //top: 40%;
     transform: translateY( 100% );
     left: 16px;
-    &.active {
-       transform: translateY( 50% );
-       font-style: italic;
-    }
 
+    &.active {
+      transform: translateY( 50% );
+      font-style: italic;
+    }
   }
 }
 
