@@ -7,7 +7,6 @@
       v-on:click.stop.prevent="skipNav"
       class="mdev-skipnav" tabindex="0")
         |Skip To Main Content
-
     //- Main Navigation
     //main-navigation
     apex-contact
@@ -89,7 +88,7 @@ export default {
     // client side environment.
     if (!window.__PRERENDER_INJECTED) {
       // Load Google Maps
-      this.asyncScript( 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDt6FiuHFsdn-bsR0lgsZx_QgauCyrPN24', true, true);
+      this.asyncScript( 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCq3EL6X2jEeM1VKsbCTbpNjEH8ai4vcA8', true, true);
       // Load Google Tag Manager
       this.asyncScript( 'https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXX-1', true, true);
       this.asyncScript( '/js/googletag.js', false, false);

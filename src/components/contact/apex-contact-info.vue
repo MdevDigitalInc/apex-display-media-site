@@ -1,6 +1,6 @@
 <template lang="pug">
   .apex-contact-info-component
-    .apex-contact-info-container
+    .apex-contact-info-container.flex.flex-row.flex-wrap
       .apex-contact-info-heading.flex.flex-row-rev.flex-wrap
         .apex-column
           h2.u-bold
@@ -9,10 +9,6 @@
             |with digital signage
       .apex-contact-info-body.flex.flex-row-rev.flex-wrap
         .apex-column
-          //.apex-social.flex.flex-row.flex-wrap
-            //.apex-social-icon(v-for='(link, index) in socialMediaLinks')
-              //a(:href='link.url' :title='link.linkTitle' :aria-label='link.linkTitle' :target='link.target')
-                //i(class='fab' :class="link.iconClass")
           social-media-links(:socialMediaLinks='socialMediaLinks')
           h1.u-bold.u-capitalize contact us
           p
@@ -27,11 +23,13 @@
                 br
                 |London, ON, N6J 2S8
       .apex-contact-info-map
+        apex-contact-map
 </template>
 
 <script>
 
   import SocialMediaLinks from '../shared/social-media-links.vue';
+  import ApexContactMap from './apex-contact-map.vue';
 
   export default {
     name: 'ApexContactInfo',
@@ -71,7 +69,8 @@
       };
     },
     components: {
-      'social-media-links' : SocialMediaLinks
+      'social-media-links' : SocialMediaLinks,
+      'apex-contact-map' : ApexContactMap,
     }
   };
 
@@ -95,11 +94,25 @@ h2 {
   background-color: $apex-blue;
   padding-top: 92px;
   min-height: 265px;
-  padding-right: 200px;
+  width: 100%;
+  order: 2;
+
+  @media #{$laptop-up} {
+    order: 1;
+  }
 }
 
 .apex-contact-info-body {
-  padding-right: 200px;
+  width: 100%;
+  order: 1;
+
+  .apex-column {
+    padding-right: 20%;
+  }
+
+  @media #{$laptop-up} {
+    order: 2;
+  }
 }
 
 .apex-address {
@@ -118,6 +131,11 @@ a {
   font-weight: 700;
   line-height: 1.5;
   font-size: 18px;
+
+  &:hover,
+  &:visited {
+    color: $apex-blue;
+  }
 }
 
 .apex-social-icon {
@@ -150,6 +168,7 @@ a {
   width: 100%;
   background-color: #2d2d2d;
   min-height: 265px;
+  order: 3;
 }
 
 </style>

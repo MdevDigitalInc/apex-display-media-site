@@ -10,11 +10,12 @@ form {
 .apex-error {
   border-top: 4px solid red !important;
   border-bottom: 4px solid red !important;
-  color: red!important;
+  color: red !important;
 }
 
 $border-color-active: rgba(15, 22, 24, 1);
 $border-color-passive: rgba(15, 22, 24, 0);
+
 input {
   &[type="text"],
   &[type="email"],

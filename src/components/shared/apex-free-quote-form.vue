@@ -54,7 +54,7 @@ p {
 }
 
 .apex-column {
-  width: 95%;
+  width: 85%;
 }
 
 .apex-free-quote-form {
@@ -66,7 +66,10 @@ p {
 .apex-free-quote-heading {
   width: 90%;
   margin: 0 auto;
-  padding-left: 50px;
+
+  .apex-column { 
+    padding-left: 10%;
+  }
 }
 
 .apex-free-quote-heading {
@@ -76,8 +79,5 @@ p {
 p:last-of-type {
   margin-bottom: 20px;
 }
-
-
-
 
 </style>

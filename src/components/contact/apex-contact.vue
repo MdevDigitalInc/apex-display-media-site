@@ -51,11 +51,13 @@
   overflow: scroll;
 }
 
-
 .apex-column {
-  width: 50%;
-}
+  width: 100%;
 
+  @media #{$laptop-up} {
+    width: 50%;
+  }
+}
 
 .apex-close-modal {
   width: 30px;
@@ -78,6 +80,7 @@
     left: 0;
     top: 50%;
     transform: rotate(0deg);
+
     &:nth-child( 1 ) {
       top: 15px;
       width: 0%;
