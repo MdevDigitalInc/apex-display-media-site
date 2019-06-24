@@ -78,8 +78,21 @@
 
 <style lang="scss" scoped>
 
+h1 {
+  @media #{$phone-only} {
+    font-size: 45px;
+  }
+}
 h2 {
   color: $white;
+}
+
+p {
+  font-size: 16px;
+
+  @media #{$tablet-up} {
+    font-size: 20px;
+  }
 }
 
 .apex-contact-info-component {
@@ -87,7 +100,11 @@ h2 {
 }
 
 .apex-column {
-  width: 85%;
+  width: 90%;
+
+  @media #{$laptop-up} {
+    width: 85%;
+  }
 }
 
 .apex-contact-info-heading {

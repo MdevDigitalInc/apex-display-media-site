@@ -24,13 +24,15 @@
           label(for='email' :class='{active: email }') Email*
         .apex-form-group
           textarea(name='message' id='message' v-model='message')
-          label(for='message' :class='{active: message }') Message*
+          label(for='message' :class='{active: message }') Tell us about your project*
+        input(type='text' name='mdev-catchall' style='display: none' v-model="honeypot")
         .apex-form-group.flex.flex-row-rev.flex-wrap
-          input(type='submit' class='apex-base-btn apex-black-btn' value='Contact Me')
+          input(type='submit' class='apex-base-btn apex-black-btn' value='Contact Me' @click='onSubmit')
+
 </template>
 
 <script>
-
+  import axios from 'axios';
 
   export default {
     name: 'ApexFreeQuoteForm',
@@ -40,8 +42,42 @@
         companyName: null,
         phone: null,
         email: null,
-        message: null
+        message: null,
+        honeypot: null
       };
+    },
+    methods: {
+      onSubmit(){
+
+        const fd = new FormData();
+
+        // fd.append('name', this.name);
+        // fd.append('companyName', this.companyName);
+        // fd.append('phone', this.phone);
+        // fd.append('email', this.email);
+        // fd.append('message', this.message);
+
+        const payload = {
+          name: this.name,
+          companyName: this.companyName,
+          phone: this.phone,
+          email: this.email,
+          message: this.message,
+          honeypot: this.honeypot
+        };
+
+        axios.post('https://formbucket.com/f/buk_0ikMPvwdy6daPwiNoK02I22n', payload)
+        .then(res => {
+          console.log(res);
+        })
+        .catch(error => console.log(error));
+
+
+        for (let value of fd.values()) {
+          console.log(value); 
+        }
+
+      }
     }
   };
 </script>
@@ -53,8 +89,28 @@ p {
   color: $white;
 }
 
+h2 {
+  font-size: 35px;
+
+    @media #{$tablet-up} {
+      font-size: 50px;
+    }
+}
+
+p {
+  font-size: 16px;
+
+  @media #{$tablet-up} {
+      font-size: 20px;
+  }
+}
+
 .apex-column {
-  width: 85%;
+  width: 90%;
+
+  @media #{$laptop-up} {
+    width: 85%;
+  }
 }
 
 .apex-free-quote-form {

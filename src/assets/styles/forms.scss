@@ -36,10 +36,15 @@ input {
     transition: border .5s, background .5s;
     border: none;
     position: relative;
+    font-size: 16px;
+
+    @media #{$tablet-up} {
+      font-size: 18px;
+    }
 
     &:hover, &:focus, &:active {
       color: $white;
-      background-color:  rgba($black, .15);
+      background-color:  rgba($black, .25);
       padding: 24px 23px 10px;
     }
 
@@ -52,6 +57,7 @@ input {
     &:focus + label {
       transform: translateY( 50% );
       font-style: italic;
+      font-size: 15px;
     }
 
     &::placeholder {
@@ -73,9 +79,14 @@ textarea {
   outline: 0;
   transition: border .5s, background .5s;
   border: none;
+  font-size: 16px;
+
+  @media #{$tablet-up} {
+    font-size: 18px;
+  }
 
   &:hover, &:focus, &:active {
-    background-color:  rgba($black, .15);
+    background-color:  rgba($black, .25);
     padding: 24px 20px 10px;
   }
 
@@ -86,6 +97,7 @@ textarea {
   &:focus + label {
     transform: translateY( 50% );
     font-style: italic;
+    font-size: 15px;
   }
 
   &.--filled {
@@ -116,10 +128,16 @@ button {
     padding: 7px 6px;
     transform: translateY( 100% );
     left: 16px;
+    font-size: 16px;
+
+    @media #{$tablet-up} {
+      font-size: 18px;
+    }
 
     &.active {
       transform: translateY( 50% );
       font-style: italic;
+      font-size: 15px;
     }
   }
 }

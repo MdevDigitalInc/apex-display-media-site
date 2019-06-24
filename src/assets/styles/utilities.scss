@@ -132,8 +132,8 @@
 }
 
 .u-freeze-scroll {
-  height: 100vh;
-  overflow: hidden;
+  height: 100vh !important;
+  overflow: hidden !important;
 }
 
 .u-truncate {
