@@ -22,7 +22,7 @@
               input(type='tel' name='phone' id='phone' v-model='phone')
               label(for='phone' :class='{active: phone }') Phone Number
             .apex-form-group
-              input(type='email' data-required name='email' id='email' v-model='email' :placeholder="$t('contact.fields.email.placeholder')")
+              input(type='email' data-required name='email' id='email' v-model='email')
               label(for='email' :class='{active: email }') Email*
             .apex-form-group
               textarea(name='message' data-required id='message' v-model='message') {{$t("contact.fields.message.label")}}
@@ -55,14 +55,14 @@
     methods: {
       onSubmit(){
 
-        //const fd = new FormData();
+        // const fd = new FormData();
 
         // fd.append('name', this.name);
         // fd.append('companyName', this.companyName);
         // fd.append('phone', this.phone);
         // fd.append('email', this.email);
         // fd.append('message', this.message);
-
+        // fd.append('mdevCatchall', this.honeypot);
         // for (let value of fd.values()) {
         //   console.log(value);
         // }
@@ -75,6 +75,7 @@
         let emailValid  = this.$validate.validateEmail(email, this.$t("validation.errors.email"));
         let requiredValid = this.$validate.validateFields(requiredFields, this.$t("validation.errors.form"));
 
+        //this.honeypot = "I am a spammer";
 
         const payload = {
           name: this.name,
