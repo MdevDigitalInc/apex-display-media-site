@@ -161,7 +161,14 @@ export default {
     'cookie-popup'    : CookiePopup,
     'apex-contact'    : ApexContact
   },
-
+  watch: {
+    $route (to,from) {
+      // If Nav was open when route changes.. close it
+     if ( this.contactModalOpen ) {
+       this.contactModalOpen = false;
+     }
+    }
+  },
   methods: {
     skipNav() {
       var anchor = $("#mainContent").offset().top;

@@ -10,24 +10,29 @@
 
     .apex-free-quote-form-container.flex.flex-row.flex-wrap
       .apex-column
-        .apex-form-group
-          input(type='text' name="name" id='name' v-model="name")
-          label(for='name' :class='{active: name }') Name*
-        .apex-form-group
-          input(type='text' name='company_name' id='company_name' v-model='companyName')
-          label(for='company_name' :class='{active: companyName }') Company*
-        .apex-form-group
-          input(type='tel' name='phone' id='phone' v-model='phone')
-          label(for='phone' :class='{active: phone }') Phone Number
-        .apex-form-group
-          input(type='email' name='email' id='email' v-model='email')
-          label(for='email' :class='{active: email }') Email*
-        .apex-form-group
-          textarea(name='message' id='message' v-model='message')
-          label(for='message' :class='{active: message }') Tell us about your project*
-        input(type='text' name='mdev-catchall' style='display: none' v-model="honeypot")
-        .apex-form-group.flex.flex-row-rev.flex-wrap
-          input(type='submit' class='apex-base-btn apex-black-btn' value='Contact Me' @click='onSubmit')
+        template(v-if='!formSent')
+          form(id='contact_form' v-on:submit.prevent="onSubmit")
+            .apex-form-group
+              input(type='text' data-required name="name" id='name' v-model="name")
+              label(for='name' :class='{active: name }') Name*
+            .apex-form-group
+              input(type='text' data-required name='company_name' id='company_name' v-model='companyName')
+              label(for='company_name' :class='{active: companyName }') Company*
+            .apex-form-group
+              input(type='tel' name='phone' id='phone' v-model='phone')
+              label(for='phone' :class='{active: phone }') Phone Number
+            .apex-form-group
+              input(type='email' data-required name='email' id='email' v-model='email' :placeholder="$t('contact.fields.email.placeholder')")
+              label(for='email' :class='{active: email }') Email*
+            .apex-form-group
+              textarea(name='message' data-required id='message' v-model='message') {{$t("contact.fields.message.label")}}
+              label(for='message' :class='{active: message }') Tell us about your project*
+            input(type='text' name='mdev-catchall' style='display: none' v-model="honeypot")
+            .apex-form-group.flex.flex-row-rev.flex-wrap
+              input(type='submit' class='apex-base-btn apex-black-btn' value='Contact Me' @click='onSubmit')
+        template(v-else)
+          p
+            |Thank you
 
 </template>
 
@@ -43,7 +48,8 @@
         phone: null,
         email: null,
         message: null,
-        honeypot: null
+        honeypot: null,
+        formSent: false
       };
     },
     methods: {
@@ -58,8 +64,17 @@
         // fd.append('message', this.message);
 
         // for (let value of fd.values()) {
-        //   console.log(value); 
+        //   console.log(value);
         // }
+
+        this.$validate.clearErrors();
+
+        let requiredFields = document.querySelectorAll('[data-required]');
+        let email = document.querySelectorAll('input[type="email"]');
+
+        let emailValid  = this.$validate.validateEmail(email, this.$t("validation.errors.email"));
+        let requiredValid = this.$validate.validateFields(requiredFields, this.$t("validation.errors.form"));
+
 
         const payload = {
           name: this.name,
@@ -67,14 +82,31 @@
           phone: this.phone,
           email: this.email,
           message: this.message,
-          honeypot: this.honeypot
+          mdevCatchall: this.honeypot
         };
 
-        axios.post('https://formbucket.com/f/buk_0ikMPvwdy6daPwiNoK02I22n', payload)
-        .then(res => {
-          console.log(res);
-        })
-        .catch(error => console.log(error));
+        if ( requiredValid && emailValid ) {
+
+          axios.post('https://formbucket.com/f/buk_0ikMPvwdy6daPwiNoK02I22n', payload)
+          .then(res => {
+            console.log(res);
+            this.formSent = true;
+          })
+          .catch(error => console.log(error));
+        } else {
+          console.log('validation errors');
+        }
+      },
+      validateEmail(event) {
+        // Clear errors
+        this.$validate.clearErrors();
+        // Load error message..
+        let error = this.$t("validation.errors.email");
+        // Email Regex with up to 7 trailing chars for .digital TLD
+        if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,7})+$/.test(event.target.value)){
+          alertify.warning(error);
+          event.target.classList.add('apex-error');
+        }
       }
     }
   };
