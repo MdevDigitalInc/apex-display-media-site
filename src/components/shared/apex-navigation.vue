@@ -141,8 +141,11 @@
   background-color: $black;
   border: 0;
   display: block;
-  position: relative;
+  position: absolute;
   cursor: pointer;
+  right: 0;
+  top: 0;
+  z-index: 15;
 
   span {
     display: block;
