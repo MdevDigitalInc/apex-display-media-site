@@ -49,13 +49,17 @@
     methods: {
       onSubmit(){
 
-        const fd = new FormData();
+        //const fd = new FormData();
 
         // fd.append('name', this.name);
         // fd.append('companyName', this.companyName);
         // fd.append('phone', this.phone);
         // fd.append('email', this.email);
         // fd.append('message', this.message);
+
+        // for (let value of fd.values()) {
+        //   console.log(value); 
+        // }
 
         const payload = {
           name: this.name,
@@ -71,12 +75,6 @@
           console.log(res);
         })
         .catch(error => console.log(error));
-
-
-        for (let value of fd.values()) {
-          console.log(value); 
-        }
-
       }
     }
   };
