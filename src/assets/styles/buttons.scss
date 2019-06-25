@@ -112,3 +112,40 @@
     text-decoration: underline;
   }
 }
+
+.apex-quote-btn {
+  background-color: $apex-red;
+  color: $white;
+  text-transform: uppercase;
+  font-size: 22px;
+  text-align: center;
+  width: 100%;
+  padding: 30px 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  font-weight: 700;
+
+  &:hover,
+  &:active {
+    background-color: darken($apex-red, 10%);
+    color: $white;
+  }
+
+  @media #{$laptop-up} {
+    font-size: 30px;
+  }
+}
+
+.apex-quote-btn.header-bar {
+  position: relative;
+  font-size: 15px;
+  max-width: 107px;
+  padding: 15px 25px;
+
+  @media #{$tablet-up} {
+    font-size: 24px;
+    max-width: 262px;
+    padding-top: 35px;
+  }
+}

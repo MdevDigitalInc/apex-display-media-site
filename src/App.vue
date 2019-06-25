@@ -7,9 +7,6 @@
       v-on:click.stop.prevent="skipNav"
       class="mdev-skipnav" tabindex="0")
         |Skip To Main Content
-
-    //- Main Navigation
-    main-navigation
     //- Transition Wrapper
     transition(name="fade")
       //- Router View
@@ -19,11 +16,15 @@
       :active="showCookies"
       v-if="cookies"
       v-on:dismiss="cookies = false")
+    //- Sidebar Navigation
+    apex-navigation
 </template>
 
 <script>
 //Local Component registration
-import MainNavigation from './components/shared/navigation.vue';
+
+import ApexNavigation from './components/shared/apex-navigation.vue';
+
 import CookiePopup    from './components/shared/cookies.vue';
 // Import SEO From File
 import SEOData       from './seo-meta.js';
@@ -154,8 +155,8 @@ export default {
   },
 
   components: {
-    'main-navigation' : MainNavigation,
-    'cookie-popup'    : CookiePopup
+    'cookie-popup'    : CookiePopup,
+    'apex-navigation' : ApexNavigation
   },
 
   methods: {
@@ -188,6 +189,9 @@ export default {
       else if ( Date.now() > parseInt(expiration) ) {
         destroyTokens();
       }
+    },
+    toggleNav() {
+      this.navOpen = false;
     }
   }
 };
