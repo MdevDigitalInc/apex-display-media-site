@@ -56,6 +56,7 @@
   bottom: 0;
   background-color: $white;
   overflow-y: scroll;
+  z-index: 12;
 }
 
 .apex-column {

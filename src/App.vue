@@ -9,7 +9,16 @@
         |Skip To Main Content
     //- Main Navigation
     //main-navigation
-    apex-contact
+    apex-contact(v-if='contactModalOpen' v-on:close='toggleContactModal')
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    button( @click="contactModalOpen = !contactModalOpen") open
     //- Transition Wrapper
     transition(name="fade")
       //- Router View
@@ -20,11 +29,12 @@
       v-if="cookies"
       v-on:dismiss="cookies = false")
     //- Sidebar Navigation
-    apex-navigation
+    apex-navigation(v-on:toggle='toggleContactModal')
 </template>
 
 <script>
 //Local Component registration
+import ApexNavigation from './components/shared/apex-navigation.vue';
 import ApexContact from './components/contact/apex-contact.vue';
 import MainNavigation from './components/shared/navigation.vue';
 import CookiePopup    from './components/shared/cookies.vue';
@@ -36,6 +46,7 @@ export default {
 
   data: function(){
     return {
+      contactModalOpen: false,
       seo: SEOData.siteSeo,
       cookies: false,
       showCookies: false,
@@ -159,7 +170,8 @@ export default {
   components: {
     'main-navigation' : MainNavigation,
     'cookie-popup'    : CookiePopup,
-    'apex-contact'    : ApexContact
+    'apex-contact'    : ApexContact,
+    'apex-navigation' : ApexNavigation
   },
   watch: {
     $route (to,from) {
@@ -200,8 +212,8 @@ export default {
         destroyTokens();
       }
     },
-    toggleNav() {
-      this.navOpen = false;
+    toggleContactModal() {
+      this.contactModalOpen = !this.contactModalOpen;
     }
   }
 };

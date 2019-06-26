@@ -1,17 +1,18 @@
 <template lang="pug">
     .apex-main-nav
+      // - Trigger Navigation
+      button( class="nav-trigger" :class="{open: navOpen }" @click="navOpen = !navOpen")
+        span
+        span
+        span
       // - Sidebar Navigation Overlay
       .apex-nav-overlay(:class="{open: navOpen }" @click="navOpen = !navOpen")
-      // - Trigger Navigation
       .apex-header-bar.flex.flex-row.flex-wrap
         .brand
           a(href="/" title="Home" class="apex-header-bar-branding")
             img(:src="loadImage(headerBrand)" alt="Apex logo")
-        a.apex-quote-btn.header-bar.u-capitalize Free Quote
-        button( class="nav-trigger" :class="{open: navOpen }" @click="navOpen = !navOpen")
-          span
-          span
-          span
+        //a.apex-quote-btn.header-bar.u-capitalize Free Quote
+        apex-large-quote-btn(styleType='header-style' v-on:toggle='toggleForm')
       nav(class="apex-nav-sidebar" :class="{open: navOpen }" :aria-hidden="!navOpen")
         .apex-sidebar-container.flex.flex-row.flex-wrap
           .brand
@@ -36,12 +37,16 @@
             p.u-none Get in touch:
             a(href="tel:1-800-000-0000" title="phone number") 1-800-000-0000
             a(href="mailto:contact@apexdisplaymedia.com" title="email address" class="u-lowercase") contact@apexdisplaymedia.com
-          a.apex-quote-btn.u-capitalize Free Quote
+          //a.apex-quote-btn.u-capitalize Free Quote
+          .apex-large-quote-btn
+            apex-large-quote-btn(styleType='nav-style' v-on:toggle='toggleForm')
 </template>
 
 
 <script>
   import apexData from '../../apex-data.js';
+
+  import ApexLargeQuoteBtn from './apex-large-quote-btn.vue';
 
   export default {
 
@@ -55,9 +60,24 @@
         links: apexData.mainNavigation.links
       };
     },
+    components: {
+    'apex-large-quote-btn' : ApexLargeQuoteBtn
+    },
+    watch: {
+      $route (to,from) {
+        // If Nav was open when route changes.. close it
+       if ( this.navOpen ) {
+         this.navOpen = false;
+       }
+      }
+    },
     methods: {
       loadImage(path){
       return require('../../assets/images/' + path);
+      },
+      toggleForm() {
+        this.$emit('toggle', true);
+        this.navOpen = false;
       }
     }
   };
@@ -115,7 +135,7 @@
   cursor: pointer;
   right: 0;
   top: 0;
-  z-index: 15;
+  z-index: 22;
 
   span {
     display: block;
@@ -171,7 +191,7 @@
 .apex-nav-sidebar {
   position: fixed;
   height: 100%;
-  z-index: 12;
+  z-index: 21;
   top: 0;
   right: 0;
   transition: .3s;
@@ -364,12 +384,20 @@
   right: 0;
   bottom: 0;
   background-color: rgba(0,0,0,.5);
-  z-index: 11;
+  z-index: 20;
   cursor: pointer;
 
   &.open {
     display: block;
   }
+}
+
+.apex-large-quote-btn {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  font-weight: 700;
+  width: 100%;
 }
 
 </style>
