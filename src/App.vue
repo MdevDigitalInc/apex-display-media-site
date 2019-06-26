@@ -10,15 +10,6 @@
     //- Main Navigation
     //main-navigation
     apex-contact(v-if='contactModalOpen' v-on:close='toggleContactModal')
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    button( @click="contactModalOpen = !contactModalOpen") open
     //- Transition Wrapper
     transition(name="fade")
       //- Router View

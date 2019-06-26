@@ -22,7 +22,6 @@
                 |499 McGregor Avenue
                 br
                 |London, ON, N6J 2S8
-              router-link( class='nav-link' active-class='active' to='/about') Home
       .apex-contact-info-map
         apex-contact-map
 </template>
@@ -97,7 +96,7 @@ p {
 }
 
 .apex-contact-info-component {
-  height: 100%;
+  height: 100vh;
 }
 
 .apex-column {

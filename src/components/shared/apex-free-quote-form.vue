@@ -1,5 +1,7 @@
 <template lang="pug">
   .apex-free-quote-form
+    .apex-close-form
+      apex-close-btn(styleType='red' v-on:toggle='closeForm')
     .apex-free-quote-heading.flex.flex-row.flex-wrap
       .apex-column
         h2.u-bold Free Quote
@@ -39,6 +41,8 @@
 <script>
   import axios from 'axios';
 
+  import ApexCloseBtn from './apex-close-btn.vue';
+
   export default {
     name: 'ApexFreeQuoteForm',
     data (){
@@ -51,6 +55,9 @@
         honeypot: null,
         formSent: false
       };
+    },
+     components: {
+    'apex-close-btn' : ApexCloseBtn
     },
     methods: {
       onSubmit(){
@@ -108,6 +115,9 @@
           alertify.warning(error);
           event.target.classList.add('apex-error');
         }
+      },
+      closeForm() {
+        this.$emit('toggle', true);
       }
     }
   };
@@ -123,16 +133,16 @@ p {
 h2 {
   font-size: 35px;
 
-    @media #{$tablet-up} {
-      font-size: 50px;
-    }
+  @media #{$tablet-up} {
+    font-size: 50px;
+  }
 }
 
 p {
   font-size: 16px;
 
   @media #{$tablet-up} {
-      font-size: 20px;
+    font-size: 20px;
   }
 }
 
@@ -146,7 +156,11 @@ p {
 
 .apex-free-quote-form {
   background-color: $apex-red;
-  height: 100%;
+  position: relative;
+  
+  @media #{$laptop-up} {
+    height: 100vh;
+  }
 }
 
 .apex-free-quote-form-container,
@@ -165,6 +179,16 @@ p {
 
 p:last-of-type {
   margin-bottom: 20px;
+}
+
+.apex-close-form {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  @media #{$laptop-up} {
+    display: none;
+  }
 }
 
 </style>

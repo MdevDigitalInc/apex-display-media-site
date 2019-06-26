@@ -1,19 +1,18 @@
 <template lang="pug">
 .apex-contact-modal(:class="{'u-freeze-scroll' : formOpen }")
-  button.apex-close-modal(@click="closeModal" :class="{'open': formOpen }")
-    span
-    span
-    span
-    span
+  .apex-close-modal
+     apex-close-btn(styleType='red' v-on:toggle='closeModal')
   .apex-contact-modal-container
     .apex-row.flex.flex-row.flex-wrap.flex-hor-center
       .apex-column.apex-open-form
-        .apex-large-quote
-          apex-large-quote-btn(v-on:toggle='toggleForm')
+        .flex.flex-row.flex-wrap
+          .apex-large-quote
+            apex-large-quote-btn(v-on:toggle='toggleForm')
+          apex-close-btn(styleType='black' v-on:toggle='closeModal')
       .apex-column
         apex-contact-info
       .apex-column.apex-column-free-quote-form(:class="{'open': formOpen }")
-        apex-free-quote-form(class='apex-form')
+        apex-free-quote-form(class='apex-form' v-on:toggle='formOpen = !formOpen')
 </template>
 
 <script>
@@ -21,6 +20,7 @@
   import ApexFreeQuoteForm from '../shared/apex-free-quote-form.vue';
   import ApexContactInfo from './apex-contact-info.vue';
   import ApexLargeQuoteBtn from '../shared/apex-large-quote-btn.vue';
+  import ApexCloseBtn from '../shared/apex-close-btn.vue';
 
   export default {
     name: 'ApexContact',
@@ -32,7 +32,8 @@
     components: {
     'apex-free-quote-form' : ApexFreeQuoteForm,
     'apex-contact-info' : ApexContactInfo,
-    'apex-large-quote-btn' : ApexLargeQuoteBtn
+    'apex-large-quote-btn' : ApexLargeQuoteBtn,
+    'apex-close-btn' : ApexCloseBtn,
     },
     methods: {
       closeModal() {
@@ -46,10 +47,11 @@
 </script>
 
 <style lang="scss" scoped>
+
 .apex-contact-modal {
   position: fixed;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   top: 0;
   left: 0;
   right: 0;
@@ -57,6 +59,10 @@
   background-color: $white;
   overflow-y: scroll;
   z-index: 12;
+
+  @media #{$laptop-up} {
+    overflow: hidden;
+  }
 }
 
 .apex-column {
@@ -109,57 +115,21 @@
 
 .apex-open-form {
   display: block;
+
   @media #{$laptop-up} {
     display: none;
   }
 }
 
 .apex-close-modal {
-  width: 30px;
-  height: 30px;
   background-color: $apex-red;
   border: 0;
-  position: fixed;
-  right: 30px;
-  top: 30px;
+  position: absolute;
+  right: 0;
+  top: 0;
   cursor: pointer;
-  z-index: 20;
+  z-index: 22;
   display: none;
-
-  span {
-    display: block;
-    position: absolute;
-    height: 3px;
-    width: 100%;
-    background: $white;
-    border-radius: 9px;
-    opacity: 1;
-    left: 0;
-    top: 50%;
-    transform: rotate(0deg);
-
-    &:nth-child( 1 ) {
-      top: 15px;
-      width: 0%;
-    }
-
-    &:nth-child( 2 ) {
-      transform: rotate(45deg);
-    }
-
-    &:nth-child( 3 ) {
-      transform: rotate(-45deg);
-    }
-
-    &:nth-child( 4 ) {
-      top: 10px;
-      width: 0%;
-    }
-  }
-
-  &.open {
-    display: block;
-  }
 
   @media #{$laptop-up} {
     display: block;

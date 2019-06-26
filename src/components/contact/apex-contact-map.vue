@@ -1,8 +1,8 @@
 <template lang="pug">
 .apex-contact-map
   .apex-map-container
-    google-map( :initMap="animLoaded" :mapData="mapData" v-on:mapIsLoaded='initPresentation')
-
+    a(href='https://www.google.com/maps/place/499+McGregor+Ave,+London,+ON+N6J+2S8/@42.9577445,-81.2649497,17z/data=!3m1!4b1!4m5!3m4!1s0x882ef182b28f4767:0xe41108b24696d313!8m2!3d42.9577445!4d-81.2627557' title='map' target='_blank')
+      google-map( :initMap="animLoaded" :mapData="mapData" v-on:mapIsLoaded='initPresentation')
 </template>
 
 <script>
@@ -26,7 +26,8 @@
           kbShortcuts: false,
           scroll: false,
           drag: false,
-          zoomLevel: 17.2
+          zoomLevel: 17.2,
+          cursor: 'pointer'
         }
       };
     },

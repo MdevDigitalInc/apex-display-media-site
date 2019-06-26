@@ -30,17 +30,26 @@ export default{
   border-radius: 0;
   font-size: 24px;
   padding: 20px 0;
+  min-height: 61px;
+
+  @media #{$tablet-up} {
+    min-height: 100px;
+  }
 
   &.nav-style {
     min-height: 85px;
 
     @media #{$tablet-up} {
       min-height: 118px;
+
+      &:hover,
+      &:active {
+        box-shadow: inset 0 -150px rgba($black, .15);
+      }
     }
   }
 
   &.header-style {
-
     position: relative;
     font-size: 15px;
     max-width: 107px;
@@ -50,7 +59,7 @@ export default{
     @media #{$tablet-up} {
       font-size: 24px;
       max-width: 262px;
-      padding-top: 35px;
+      padding-top: 15px;
     }
   }
 

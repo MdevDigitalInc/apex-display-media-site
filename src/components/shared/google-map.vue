@@ -84,6 +84,7 @@ export default {
         panControl: this.mapData.drag,
         streetViewControl: this.mapData.controls,
         keyboardShortcuts: this.mapData.kbShortcuts,
+        draggableCursor: this.mapData.cursor,
         // Imported Externally
         styles: this.GStyles.styles
       });

@@ -9,20 +9,21 @@
       .apex-nav-overlay(:class="{open: navOpen }" @click="navOpen = !navOpen")
       .apex-header-bar.flex.flex-row.flex-wrap
         .brand
-          a(href="/" title="Home" class="apex-header-bar-branding")
+          router-link(class='apex-header-bar-branding' title='Home' to='/')
             img(:src="loadImage(headerBrand)" alt="Apex logo")
         //a.apex-quote-btn.header-bar.u-capitalize Free Quote
         apex-large-quote-btn(styleType='header-style' v-on:toggle='toggleForm')
       nav(class="apex-nav-sidebar" :class="{open: navOpen }" :aria-hidden="!navOpen")
         .apex-sidebar-container.flex.flex-row.flex-wrap
           .brand
-            a(href="/" title="Home" class="apex-nav-sidebar-branding")
+            router-link( class='apex-nav-sidebar-branding'  to='/')
               img(:src="loadImage(homeBrand)" alt="Apex logo")
-          button( @click="navOpen = !navOpen" class="apex-toggle-nav" data-target)
-            span
-            span
-            span
-            span
+          //button( @click="navOpen = !navOpen" class="apex-toggle-nav" data-target)
+            //span
+            //span
+           //span
+            //span
+          apex-close-btn( styleType='blue' v-on:toggle='navOpen = !navOpen')
           .apex-main-nav-links.u-capitalize
             router-link(
             v-for="link in links"
@@ -47,6 +48,7 @@
   import apexData from '../../apex-data.js';
 
   import ApexLargeQuoteBtn from './apex-large-quote-btn.vue';
+  import ApexCloseBtn from './apex-close-btn.vue';
 
   export default {
 
@@ -61,7 +63,8 @@
       };
     },
     components: {
-    'apex-large-quote-btn' : ApexLargeQuoteBtn
+    'apex-large-quote-btn' : ApexLargeQuoteBtn,
+    'apex-close-btn' : ApexCloseBtn
     },
     watch: {
       $route (to,from) {
@@ -135,7 +138,11 @@
   cursor: pointer;
   right: 0;
   top: 0;
-  z-index: 22;
+  z-index: 11;
+
+  @media #{$laptop-up} {
+    z-index: 11;
+  }
 
   span {
     display: block;
@@ -191,7 +198,7 @@
 .apex-nav-sidebar {
   position: fixed;
   height: 100%;
-  z-index: 21;
+  z-index: 22;
   top: 0;
   right: 0;
   transition: .3s;
