@@ -10,15 +10,15 @@
           a(href="tel:1-800-000-0000" title="phone number").u-under-line 1-800-000-0000
           a(href="mailto:contact@apexdisplaymedia.com" title="email address" class="u-lowercase") contact@apexdisplaymedia.com
           p.u-none Our Location:
-          a(href="#" title="address") 
-            | 499 McGregor Avenue 
-            br 
+          a(href="#" title="address")
+            | 499 McGregor Avenue
+            br
             | London, ON, N6J 2s8
     .apex-footer-bottom-bar
       .apex-main-wrapper
         .apex-row.flex.flex-row.flex-wrap
           .apex-copy &copy;2019 - Copyright Apex Display Media
-          .apex-social.flex.flex-row.flex-wrap
+          .flex.flex-row.flex-wrap.apex-social
             .apex-social-icon
               i.fab.fa-instagram
             .apex-social-icon
@@ -106,17 +106,24 @@
 .apex-footer {
   position: relative;
   background-color: $black;
-  min-height: 495px;
+  min-height: 642px;
   color: $white;
 }
 
 .brand {
-  width: 35%;
+    width: 100%;
+  @media #{$laptop-up} {
+    width: 35%;
+  }
 }
 
 .apex-contact-info {
-  width: 25%;
-  margin-top: 135px;
+  width: 100%;
+  margin-top: 75px;
+
+  @media #{$laptop-up} {
+    margin-top: 135px;
+  }
 
   p,
   p:last-of-type {
@@ -136,26 +143,63 @@
       color: $apex-blue;
     }
   }
+
+  @media #{$laptop-up} {
+    width: 25%;
+  }
 }
 
 .apex-copy {
-  width: 35%;
+  width: 100%;
   font-size: 14px;
   padding-top: 25px;
+  order: 3;
+  text-align: center;
+
+  @media #{$tablet-only} {
+    width: 40%;
+    min-height: 75px;
+
+    order: 2;
+  }
+
+   @media #{$laptop-up} {
+    text-align: right;
+    width: 35%;
+    order: 1;
+  }
 }
 
 .apex-social {
-  width: 40%;
+  width: 100%;
+  min-height: 50px;
+  order: 2;
+  background: $black;
+  justify-content: center;
+
+  @media #{$tablet-up} {
+    //justify-content: flex-start;
+    background-color: transparent;
+  }
+
+  @media #{$tablet-only} {
+    width: 40%;
+    min-height: 75px;
+  }
+
+  @media #{$laptop-up} {
+    width: 40%;
+  }
 }
 
 .apex-quote {
-  width: 25%;
+  width: 100%;
+  order: 1;
+  background: $black;
 
   @media #{$laptop-up} {
-
-  position: absolute;
-  right: 0;
-  bottom: 0;
+    width: 25%;
+    order: 3;
   }
 }
 
@@ -166,6 +210,14 @@
   color: #cdcdcd;
   min-height: 69px;
   width: 100%;
+
+  .apex-main-wrapper {
+    width: 100%;
+
+    @media #{$laptop-up} {
+      width: 95%;
+    }
+  }
 }
 
 .apex-social-icon {
@@ -192,13 +244,18 @@
 
 .apex-footer-branding img {
   width: 278px;
-  margin-top: 131px;
+  margin-top: 50px;
+
+  @media #{$laptop-up} {
+    margin-top: 131px;
+  }
 }
 
 .apex-footer-nav-links {
   position: absolute;
   right: 0;
   top: 63px;
+  display: none;
 
   a {
     display: block;
@@ -234,6 +291,10 @@
     @media #{$laptop-up} {
       font-size: 21px;
     }
+  }
+
+  @media #{$laptop-up} {
+    display: block;
   }
 }
 
