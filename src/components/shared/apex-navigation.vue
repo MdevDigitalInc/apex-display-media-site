@@ -11,18 +11,12 @@
         .brand
           router-link(class='apex-header-bar-branding' title='Home' to='/')
             img(:src="loadImage(headerBrand)" alt="Apex logo")
-        //a.apex-quote-btn.header-bar.u-capitalize Free Quote
         apex-large-quote-btn(styleType='header-style' v-on:toggle='toggleForm')
       nav(class="apex-nav-sidebar" :class="{open: navOpen }" :aria-hidden="!navOpen")
         .apex-sidebar-container.flex.flex-row.flex-wrap
           .brand
             router-link( class='apex-nav-sidebar-branding'  to='/')
               img(:src="loadImage(homeBrand)" alt="Apex logo")
-          //button( @click="navOpen = !navOpen" class="apex-toggle-nav" data-target)
-            //span
-            //span
-           //span
-            //span
           apex-close-btn( styleType='blue' v-on:toggle='navOpen = !navOpen')
           .apex-main-nav-links.u-capitalize
             router-link(
@@ -38,7 +32,6 @@
             p.u-none Get in touch:
             a(href="tel:1-800-000-0000" title="phone number") 1-800-000-0000
             a(href="mailto:contact@apexdisplaymedia.com" title="email address" class="u-lowercase") contact@apexdisplaymedia.com
-          //a.apex-quote-btn.u-capitalize Free Quote
           .apex-large-quote-btn
             apex-large-quote-btn(styleType='nav-style' v-on:toggle='toggleForm')
 </template>
@@ -310,7 +303,7 @@
 
     a {
       display: block;
-      color: #6aaae4;
+      color: $apex-blue;
       list-style-type: none;
       font-weight: 700;
       margin-bottom: 30px;
@@ -325,7 +318,6 @@
   }
 
   .apex-contact-nav-links {
-
     a,
     p {
       margin-bottom: 15px;

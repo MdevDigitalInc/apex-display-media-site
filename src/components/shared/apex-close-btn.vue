@@ -82,7 +82,6 @@ export default{
   }
 
   @media #{$tablet-up} {
-
     width: 100px;
     height: 100px;
 

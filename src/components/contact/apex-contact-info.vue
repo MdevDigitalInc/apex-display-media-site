@@ -83,6 +83,7 @@ h1 {
     font-size: 45px;
   }
 }
+
 h2 {
   color: $white;
 }
@@ -183,7 +184,6 @@ a {
 
 .apex-contact-info-map {
   width: 100%;
-  background-color: #2d2d2d;
   min-height: 265px;
   order: 3;
 }

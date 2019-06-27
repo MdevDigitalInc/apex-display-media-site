@@ -62,18 +62,6 @@
     methods: {
       onSubmit(){
 
-        // const fd = new FormData();
-
-        // fd.append('name', this.name);
-        // fd.append('companyName', this.companyName);
-        // fd.append('phone', this.phone);
-        // fd.append('email', this.email);
-        // fd.append('message', this.message);
-        // fd.append('mdevCatchall', this.honeypot);
-        // for (let value of fd.values()) {
-        //   console.log(value);
-        // }
-
         this.$validate.clearErrors();
 
         let requiredFields = document.querySelectorAll('[data-required]');
@@ -81,8 +69,6 @@
 
         let emailValid  = this.$validate.validateEmail(email, this.$t("validation.errors.email"));
         let requiredValid = this.$validate.validateFields(requiredFields, this.$t("validation.errors.form"));
-
-        //this.honeypot = "I am a spammer";
 
         const payload = {
           name: this.name,
@@ -97,7 +83,6 @@
 
           axios.post('https://formbucket.com/f/buk_0ikMPvwdy6daPwiNoK02I22n', payload)
           .then(res => {
-            console.log(res);
             this.formSent = true;
           })
           .catch(error => console.log(error));
@@ -157,7 +142,7 @@ p {
 .apex-free-quote-form {
   background-color: $apex-red;
   position: relative;
-  
+
   @media #{$laptop-up} {
     height: 100vh;
   }
@@ -186,6 +171,7 @@ p:last-of-type {
   right: 0;
   top: 0;
   display: block;
+
   @media #{$laptop-up} {
     display: none;
   }

@@ -17,8 +17,6 @@
         mapData: {
           pinLocation:  {lat: 42.957921, lng: -81.262766},
           mapCenter: {lat: 42.957921, lng: -81.262766},
-          //pinLocation:  {lat: 42.991934, lng: -81.213673},
-          //mapCenter: {lat: 42.992844, lng: -81.211459},
           mapIcon: require('../../assets/images/map/location-ICON.png'),
           mapStyle: 'terrain',
           zoom: false,
@@ -36,7 +34,7 @@
     },
     methods: {
       initPresentation() {
-        //alert('map is loaded..');
+
       }
     }
   };

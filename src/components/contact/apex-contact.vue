@@ -93,7 +93,7 @@
     .apex-form {
       height: 900px;
       @media #{$tablet-only} {
-        height: 100%;
+        height: 100vh;
       }
 
       @media #{$tablet-lnd-only} {
@@ -105,7 +105,6 @@
 
 
 .apex-large-quote {
-
   width: calc(100% - 61px);
 
   @media #{$tablet-up} {
