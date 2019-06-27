@@ -28,7 +28,8 @@
             .apex-social-icon
               i.fab.fa-twitter
           .apex-quote
-            a.apex-base-btn.apex-red-btn.u-capitalize Free quote
+            //a.apex-base-btn.apex-red-btn.u-capitalize Free quote
+            apex-large-quote-btn
     .apex-footer-nav-links.u-capitalize
               router-link(
               v-for="link in links"
@@ -41,6 +42,8 @@
                   |{{ link.linkName }}
 </template>
 <script>
+
+  import ApexLargeQuoteBtn from './apex-large-quote-btn.vue';
 
 	export default {
 	    name: 'ApexFooter',
@@ -86,6 +89,9 @@
           ]
 	      };
 	    },
+      components: {
+        'apex-large-quote-btn' : ApexLargeQuoteBtn
+      },
 	    methods: {
 	      loadImage(path){
 	      return require('../../assets/images/' + path);
@@ -144,6 +150,13 @@
 
 .apex-quote {
   width: 25%;
+
+  @media #{$laptop-up} {
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  }
 }
 
 .apex-footer-bottom-bar {
