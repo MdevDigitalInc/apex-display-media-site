@@ -259,6 +259,12 @@ Vue.mixin({
 })
 
 
+// Global Component Registration
+// Centralizes components to ease on loading
+import UniversalImage     from '../src/components/modules/universal-img.vue';
+
+// Global Component Assign
+Vue.component('universal-image', UniversalImage);
 
 // [ Main Vue Instance ] ----------------------------
 const _vue = new Vue({
