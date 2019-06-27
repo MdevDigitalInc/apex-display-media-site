@@ -9,7 +9,7 @@
           p.u-none Get in touch:
           a(href="tel:1-800-000-0000" title="phone number").u-under-line 1-800-000-0000
           a(href="mailto:contact@apexdisplaymedia.com" title="email address" class="u-lowercase") contact@apexdisplaymedia.com
-          p.u-none Our Location:
+          p.u-none.apex-location Our Location:
           a(href="#" title="address")
             | 499 McGregor Avenue
             br
@@ -106,7 +106,7 @@
 .apex-footer {
   position: relative;
   background-color: $black;
-  min-height: 642px;
+  min-height: 500px;
   color: $white;
 }
 
@@ -122,7 +122,7 @@
   margin-top: 75px;
 
   @media #{$laptop-up} {
-    margin-top: 135px;
+    margin-top: 142px;
   }
 
   p,
@@ -149,6 +149,10 @@
   }
 }
 
+.apex-location {
+  margin-top: 40px;
+}
+
 .apex-copy {
   width: 100%;
   font-size: 14px;
@@ -164,7 +168,7 @@
   }
 
    @media #{$laptop-up} {
-    text-align: right;
+    text-align: left;
     width: 35%;
     order: 1;
   }
@@ -179,16 +183,17 @@
 
   @media #{$tablet-up} {
     //justify-content: flex-start;
+    min-height: 75px;
     background-color: transparent;
   }
 
   @media #{$tablet-only} {
     width: 40%;
-    min-height: 75px;
   }
 
   @media #{$laptop-up} {
     width: 40%;
+    justify-content: flex-start;
   }
 }
 
@@ -200,6 +205,9 @@
   @media #{$laptop-up} {
     width: 25%;
     order: 3;
+    position: absolute;
+    right: 0;
+    bottom: 0;
   }
 }
 
