@@ -1,40 +1,20 @@
 <template lang="pug">
-  //- Wrapper Container
-  section.mdev-main-content.u-text-center
-    //- Hero section -----------
-    main-hero
-    //- About Section ----------
-    about-section
-    //- Featured Services Section [ Lucas ] ----
-    featured-services
-    //- Alternate Service Section [ Lucas ] ----
-    alternate-services
-    //- Support Services Section ----------
-    support-services
-    //- Pre-footer Section ----------
-    pre-footer
-    //- Main Footer
-    main-footer
+  section.mdev-main-content
+    //- Use comments witn `-`
+    //- This omits them from output.
+    h1
+      |SUPPORT SERVICES
 </template>
 
 
 
 
 <script>
-
-//Local Component registration
-import MainHero from '../shared/main-hero.vue';
-import AboutSection from './home--about-section.vue';
-import FeaturedServices from './home--featured-service.vue';
-import AlternateServices from '../shared/alternate-services.vue';
-import SupportServices from '../shared/support-services.vue';
-
 // Import SEO From File
 import SEOData       from '../../seo-meta.js';
 
-export default{
-  name: 'HomePage',
-  // TODO - Edit meta Title
+export default {
+  name: 'SupportServices',
 
   data: function(){
     return {
@@ -58,12 +38,8 @@ export default{
     };
   },
 
-  components: {
-    'main-hero'         : MainHero,
-    'about-section'     : AboutSection,
-    'featured-services' : FeaturedServices,
-    'alternate-services' : AlternateServices,
-    'support-services'   : SupportServices
+  mounted: function(){
+    console.log('COMPONENT NAME Mounted');
   }
 };
 </script>
@@ -73,7 +49,7 @@ export default{
 <style lang="scss">
 
 /*-------------------------------------*/
-/* HOME Component Styles
+/* BASE TEMPLATE Component Styles
 /--------------------------------------*/
 
 

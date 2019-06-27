@@ -41,18 +41,19 @@
 
 
 <script>
-  import apexData from '../../apex-data.js';
+  import { appData, mainNavigation } from '../../apex-data.js';
 
   export default {
 
     name: 'ApexNavigation',
+
     data (){
 
       return {
         navOpen: false,
-        headerBrand: apexData.appData.blackBrand,
-        homeBrand: apexData.appData.whiteBrand,
-        links: apexData.mainNavigation.links
+        headerBrand: appData.blackBrand,
+        homeBrand: appData.whiteBrand,
+        links: mainNavigation.links
       };
     },
     methods: {
