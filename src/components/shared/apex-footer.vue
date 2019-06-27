@@ -38,9 +38,7 @@
             .apex-social-icon
               i.fab.fa-twitter
           .apex-quote
-            //a.apex-base-btn.apex-red-btn.u-capitalize Free quote
             apex-large-quote-btn(styleType='footer-style')
-    
 </template>
 <script>
 
@@ -95,7 +93,7 @@
       },
 	    methods: {
 	      loadImage(path){
-	      return require('../../assets/images/' + path);
+	       return require('../../assets/images/' + path);
 	      }
 	    }
 	  };
@@ -136,6 +134,7 @@
   @media #{$laptop-up} {
     margin-top: 142px;
     margin-bottom: 0;
+    width: 30%;
   }
 
   p,
@@ -155,10 +154,6 @@
     &:hover {
       color: $apex-blue;
     }
-  }
-
-  @media #{$laptop-up} {
-    width: 30%;
   }
 }
 
