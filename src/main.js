@@ -267,6 +267,7 @@ import PreFooter         from '../src/components/shared/pre-footer.vue';
 
 // Global Component Assign
 Vue.component('universal-image', UniversalImage);
+Vue.component('main-footer', MainFooter);
 Vue.component('pre-footer', PreFooter);
 
 // [ Main Vue Instance ] ----------------------------
