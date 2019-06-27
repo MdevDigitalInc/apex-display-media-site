@@ -1,7 +1,7 @@
 <template lang="pug">
   footer.apex-footer
-    .apex-footer-container.apex-main-wrapper
-      .apex-row.flex.flex-row.flex-wrap
+    .apex-main-wrapper.apex-footer-container
+      .flex.flex-row.flex-wrap.apex-row
         .brand
            a(href="/" title="Home" class="apex-footer-branding")
             img(:src="loadImage(footerBrand)" alt="Apex logo")
@@ -14,9 +14,19 @@
             | 499 McGregor Avenue
             br
             | London, ON, N6J 2s8
+        .apex-footer-nav-links.u-capitalize
+              router-link(
+              v-for="link in links"
+              :to="link.route"
+              active-class="--active"
+              :title="link.linkTitle"
+              aria-role="menuitem"
+              exact)
+                span
+                  |{{ link.linkName }}
     .apex-footer-bottom-bar
       .apex-main-wrapper
-        .apex-row.flex.flex-row.flex-wrap
+        .flex.flex-row.flex-wrap.apex-row
           .apex-copy &copy;2019 - Copyright Apex Display Media
           .flex.flex-row.flex-wrap.apex-social
             .apex-social-icon
@@ -29,17 +39,8 @@
               i.fab.fa-twitter
           .apex-quote
             //a.apex-base-btn.apex-red-btn.u-capitalize Free quote
-            apex-large-quote-btn
-    .apex-footer-nav-links.u-capitalize
-              router-link(
-              v-for="link in links"
-              :to="link.route"
-              active-class="--active"
-              :title="link.linkTitle"
-              aria-role="menuitem"
-              exact)
-                span
-                  |{{ link.linkName }}
+            apex-large-quote-btn(styleType='footer-style')
+    
 </template>
 <script>
 
@@ -103,15 +104,25 @@
 
 <style lang="scss">
 
+.apex-row {
+  overflow: visible;
+}
+
 .apex-footer {
   position: relative;
   background-color: $black;
   min-height: 500px;
   color: $white;
+  overflow: hidden;
+}
+
+.apex-footer-container {
+  overflow: visible;
 }
 
 .brand {
-    width: 100%;
+  width: 100%;
+
   @media #{$laptop-up} {
     width: 35%;
   }
@@ -120,9 +131,11 @@
 .apex-contact-info {
   width: 100%;
   margin-top: 75px;
+  margin-bottom: 50px;
 
   @media #{$laptop-up} {
     margin-top: 142px;
+    margin-bottom: 0;
   }
 
   p,
@@ -145,7 +158,7 @@
   }
 
   @media #{$laptop-up} {
-    width: 25%;
+    width: 30%;
   }
 }
 
@@ -156,18 +169,20 @@
 .apex-copy {
   width: 100%;
   font-size: 14px;
-  padding-top: 25px;
+  padding: 15px 0;
   order: 3;
   text-align: center;
+  background-color: $apex-grey;
 
   @media #{$tablet-only} {
     width: 40%;
     min-height: 75px;
-
+    padding-top: 25px;
     order: 2;
   }
 
-   @media #{$laptop-up} {
+  @media #{$laptop-up} {
+    padding-top: 25px;
     text-align: left;
     width: 35%;
     order: 1;
@@ -180,11 +195,12 @@
   order: 2;
   background: $black;
   justify-content: center;
+  margin: 20px 0;
 
   @media #{$tablet-up} {
-    //justify-content: flex-start;
-    min-height: 75px;
     background-color: transparent;
+    min-height: 50px;
+    margin: 0;
   }
 
   @media #{$tablet-only} {
@@ -205,22 +221,38 @@
   @media #{$laptop-up} {
     width: 25%;
     order: 3;
-    position: absolute;
-    right: 0;
-    bottom: 0;
   }
 }
 
 .apex-footer-bottom-bar {
-  position: absolute;
-  bottom: 0;
-  background-color: $apex-grey;
+
+  @media #{$tablet-up} {
+    background-color: $apex-grey;
+  }
+
+  @media #{$laptop-up} {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .apex-row {
+
+    @media #{$tablet-only} {
+      justify-content: center;
+    }
+  }
+
+  background-color: $black;
   color: #cdcdcd;
   min-height: 69px;
   width: 100%;
 
   .apex-main-wrapper {
     width: 100%;
+
+    @media #{$tablet-lnd-only} {
+      max-width: 100%;
+    }
 
     @media #{$laptop-up} {
       width: 95%;
@@ -260,39 +292,47 @@
 }
 
 .apex-footer-nav-links {
-  position: absolute;
-  right: 0;
+  position: relative;
   top: 63px;
   display: none;
 
   a {
     display: block;
-    color: #6aaae4;
+    color: $apex-blue;
     font-weight: 700;
 
     @media #{$laptop-up} {
       font-size: 18px;
       margin-bottom: 31px;
       text-align: right;
-      text-indent: 241px;
       direction: rtl;
+      transform: translateX( 15% );
+    }
+
+    @media #{$laptop-only} {
+      transform: translateX( 20% );
     }
   }
 
   a.--active {
     color: $white;
     text-indent: 0;
+    transform: translateX( 98% );
 
     span:before {
       content: '';
       display: inline-block;
       background-color: $white;
       height: 4px;
-      width: 100px;
-      margin: 6px 22px 6px 0;
-      @media #{$tablet-up} {
-        width: 213px;
+      width: 300px;
+      transform: translateY( 50% );
+
+      @media #{$laptop-up} {
         margin: 6px 0 6px 28px;
+      }
+
+      @media #{$laptop-only} {
+        width: 200px;
       }
     }
 

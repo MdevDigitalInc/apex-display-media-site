@@ -66,6 +66,13 @@ export default{
   @media #{$tablet-up} {
     padding: 40px 0;
   }
+
+  &.footer-style {
+    padding: 30px 50px;
+    font-size: 18px;
+    min-height: 75px;
+    max-height: 75px;
+  }
 }
 
 </style>
