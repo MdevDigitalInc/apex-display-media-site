@@ -26,7 +26,7 @@ export default{
 
 
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 .apex-close-btn {
   width: 61px;

@@ -17,6 +17,7 @@
           .brand
             router-link( class='apex-nav-sidebar-branding'  to='/')
               img(:src="loadImage(homeBrand)" alt="Apex logo")
+          // - Sidebar Close button component
           apex-close-btn( styleType='blue' v-on:toggle='navOpen = !navOpen')
           .apex-main-nav-links.u-capitalize
             router-link(
@@ -32,7 +33,7 @@
             p.u-none Get in touch:
             a(href="tel:1-800-000-0000" title="phone number") 1-800-000-0000
             a(href="mailto:contact@apexdisplaymedia.com" title="email address" class="u-lowercase") contact@apexdisplaymedia.com
-          .apex-large-quote-btn
+          .apex-large-quote
             apex-large-quote-btn(styleType='nav-style' v-on:toggle='toggleForm')
 </template>
 
@@ -391,7 +392,7 @@
   }
 }
 
-.apex-large-quote-btn {
+.apex-large-quote {
   position: fixed;
   bottom: 0;
   left: 0;

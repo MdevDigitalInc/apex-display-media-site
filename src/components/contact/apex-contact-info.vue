@@ -9,6 +9,7 @@
             |with digital signage
       .apex-contact-info-body.flex.flex-row-rev.flex-wrap
         .apex-column
+          //- Social Media Component
           social-media-links(:socialMediaLinks='socialMediaLinks')
           h1.u-bold.u-capitalize contact us
           p
@@ -76,28 +77,44 @@
 
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
-h1 {
-  @media #{$phone-only} {
-    font-size: 45px;
-  }
-}
 
-h2 {
-  color: $white;
-}
-
-p {
-  font-size: 16px;
-
-  @media #{$tablet-up} {
-    font-size: 20px;
-  }
-}
 
 .apex-contact-info-component {
   height: 100vh;
+
+  h1 {
+    @media #{$phone-only} {
+      font-size: 45px;
+    }
+  }
+
+  h2 {
+    color: $white;
+    line-height: 1.5;
+  }
+
+  p {
+    font-size: 16px;
+
+    @media #{$tablet-up} {
+      font-size: 20px;
+    }
+  }
+
+  a {
+    display: block;
+    color: $apex-blue;
+    font-weight: 700;
+    line-height: 1.5;
+    font-size: 18px;
+
+    &:hover,
+    &:visited {
+      color: $apex-blue;
+    }
+  }
 }
 
 .apex-column {
@@ -141,19 +158,6 @@ p {
   height: 50px;
   margin-top: 63px;
   margin-bottom: 30px;
-}
-
-a {
-  display: block;
-  color: $apex-blue;
-  font-weight: 700;
-  line-height: 1.5;
-  font-size: 18px;
-
-  &:hover,
-  &:visited {
-    color: $apex-blue;
-  }
 }
 
 .apex-social-icon {

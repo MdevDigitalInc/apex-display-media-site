@@ -20,39 +20,3 @@
   };
 
 </script>
-
-<style lang="scss" scoped>
-
-.apex-social {
-  height: 50px;
-  margin-top: 63px;
-  margin-bottom: 30px;
-}
-
-.apex-social-icon {
-  position: relative;
-  font-size: 30px;
-  color: $apex-blue;
-  padding: 0 10px;
-  width: 50px;
-  cursor: pointer;
-
-  &:first-child {
-    margin-left: -10px;
-  }
-
-  &:hover {
-    color: $black;
-  }
-
-  a {
-    font-size: 30px;
-    font-weight: 400;
-  }
-
-  i {
-    @include center('both');
-  }
-}
-
-</style>

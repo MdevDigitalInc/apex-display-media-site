@@ -1,17 +1,21 @@
 <template lang="pug">
 .apex-contact-modal(:class="{'u-freeze-scroll' : formOpen }")
   .apex-close-modal
+     //-Close button component
      apex-close-btn(styleType='red' v-on:toggle='closeModal')
   .apex-contact-modal-container
     .apex-row.flex.flex-row.flex-wrap.flex-hor-center
       .apex-column.apex-open-form
         .flex.flex-row.flex-wrap
-          .apex-large-quote
+          .apex-large-quote-contact
             apex-large-quote-btn(v-on:toggle='toggleForm')
-          apex-close-btn(styleType='black' v-on:toggle='closeModal')
+          .apex-close-contact
+            //-Close button component
+            apex-close-btn(styleType='black' v-on:toggle='closeModal')
       .apex-column
         apex-contact-info
       .apex-column.apex-column-free-quote-form(:class="{'open': formOpen }")
+        //-Form component
         apex-free-quote-form(class='apex-form' v-on:toggle='formOpen = !formOpen')
 </template>
 
@@ -91,7 +95,7 @@
     height: 100%;
 
     .apex-form {
-      height: 900px;
+      height: 1100px;
       @media #{$tablet-only} {
         height: 100vh;
       }
@@ -104,7 +108,7 @@
 }
 
 
-.apex-large-quote {
+.apex-large-quote-contact {
   width: calc(100% - 61px);
 
   @media #{$tablet-up} {

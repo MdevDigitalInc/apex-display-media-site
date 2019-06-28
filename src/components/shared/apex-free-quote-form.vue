@@ -108,28 +108,7 @@
   };
 </script>
 
-<style lang="scss" scoped >
-
-h2,
-p {
-  color: $white;
-}
-
-h2 {
-  font-size: 35px;
-
-  @media #{$tablet-up} {
-    font-size: 50px;
-  }
-}
-
-p {
-  font-size: 16px;
-
-  @media #{$tablet-up} {
-    font-size: 20px;
-  }
-}
+<style lang="scss">
 
 .apex-column {
   width: 90%;
@@ -142,6 +121,28 @@ p {
 .apex-free-quote-form {
   background-color: $apex-red;
   position: relative;
+
+  h2,
+  p {
+    color: $white;
+  }
+
+  h2 {
+    font-size: 35px;
+    line-height: 1.5;
+
+    @media #{$tablet-up} {
+      font-size: 50px;
+    }
+  }
+
+  p {
+    font-size: 16px;
+
+    @media #{$tablet-up} {
+      font-size: 20px;
+    }
+  }
 
   @media #{$laptop-up} {
     height: 100vh;

@@ -164,14 +164,6 @@ export default {
     'apex-contact'    : ApexContact,
     'apex-navigation' : ApexNavigation
   },
-  watch: {
-    $route (to,from) {
-      // If Nav was open when route changes.. close it
-     if ( this.contactModalOpen ) {
-       this.contactModalOpen = false;
-     }
-    }
-  },
   methods: {
     skipNav() {
       var anchor = $("#mainContent").offset().top;
