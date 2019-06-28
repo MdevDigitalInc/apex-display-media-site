@@ -2,11 +2,12 @@
   footer.apex-footer
     .apex-main-wrapper.apex-footer-container
       .flex.flex-row.flex-wrap.apex-row
-        .brand
-           a(href="/" title="Home" class="apex-footer-branding")
+        .apex-brand
+          router-link(to="/" title="Home" class="apex-footer-branding")
             img(:src="loadImage(footerBrand)" alt="Apex logo")
         .apex-contact-info
-          p.u-none Get in touch:
+          p.u-none
+            |Get in touch:
           a(href="tel:1-800-000-0000" title="phone number").u-under-line 1-800-000-0000
           a(href="mailto:contact@apexdisplaymedia.com" title="email address" class="u-lowercase") contact@apexdisplaymedia.com
           p.u-none.apex-location Our Location:
@@ -27,7 +28,7 @@
     .apex-footer-bottom-bar
       .apex-main-wrapper
         .flex.flex-row.flex-wrap.apex-row
-          .apex-copy &copy;2019 - Copyright Apex Display Media
+          .apex-copy &copy; {{ year }} - Copyright Apex Display Media
           .flex.flex-row.flex-wrap.apex-social
             .apex-social-icon
               i.fab.fa-instagram
@@ -38,6 +39,7 @@
             .apex-social-icon
               i.fab.fa-twitter
           .apex-quote
+            //- Apex quote button component
             apex-large-quote-btn(styleType='footer-style')
 </template>
 <script>
@@ -45,58 +47,62 @@
   import ApexLargeQuoteBtn from './apex-large-quote-btn.vue';
 
 	export default {
-	    name: 'ApexFooter',
-	    data (){
-	      return {
-	        footerBrand: 'apex-logo-footer.svg',
-          links: [
-            {
-              linkName: 'Home',
-              linkTitle: 'Home',
-              route: '/'
-            },
-            {
-              linkName: 'Outdoor LEDs',
-              linkTitle: 'Outdoor LEDs',
-              route: '/outdoor-leds'
-            },
-            {
-              linkName: 'Indoor Digital Signage',
-              linkTitle: 'Indoor Digital Signage',
-              route: '/indoor-digital-signage'
-            },
-            {
-              linkName: 'Media Management',
-              linkTitle: 'Media Management',
-              route: '/media-management'
-            },
-            {
-              linkName: 'Support',
-              linkTitle: 'Support',
-              route: '/support'
-            },
-            {
-              linkName: 'About',
-              linkTitle: 'About',
-              route: '/about'
-            },
-            {
-              linkName: 'Contact Us',
-              linkTitle: 'Contact Us',
-              route: '/contact'
-            }
-          ]
-	      };
-	    },
-      components: {
-        'apex-large-quote-btn' : ApexLargeQuoteBtn
-      },
-	    methods: {
-	      loadImage(path){
-	       return require('../../assets/images/' + path);
-	      }
-	    }
-	  };
+    name: 'ApexFooter',
+    data (){
+      return { 
+        year: null,
+        footerBrand: 'apex-logo-footer.svg',
+        links: [
+          {
+            linkName: 'Home',
+            linkTitle: 'Home',
+            route: '/'
+          },
+          {
+            linkName: 'Outdoor LEDs',
+            linkTitle: 'Outdoor LEDs',
+            route: '/outdoor-leds'
+          },
+          {
+            linkName: 'Indoor Digital Signage',
+            linkTitle: 'Indoor Digital Signage',
+            route: '/indoor-digital-signage'
+          },
+          {
+            linkName: 'Media Management',
+            linkTitle: 'Media Management',
+            route: '/media-management'
+          },
+          {
+            linkName: 'Support',
+            linkTitle: 'Support',
+            route: '/support'
+          },
+          {
+            linkName: 'About',
+            linkTitle: 'About',
+            route: '/about'
+          },
+          {
+            linkName: 'Contact Us',
+            linkTitle: 'Contact Us',
+            route: '/contact'
+          }
+        ]
+      };
+    },
+    components: {
+      'apex-large-quote-btn' : ApexLargeQuoteBtn
+    },
+    methods: {
+      loadImage(path){
+       return require('../../assets/images/' + path);
+      }
+    },
+    created: function() {
+      this.year = (new Date()).getFullYear();
+    }
+  };
 
 </script>
 
@@ -118,7 +124,7 @@
   overflow: visible;
 }
 
-.brand {
+.apex-brand {
   width: 100%;
 
   @media #{$laptop-up} {
