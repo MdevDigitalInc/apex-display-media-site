@@ -264,11 +264,13 @@ Vue.mixin({
 import UniversalImage     from '../src/components/modules/universal-img.vue';
 import MainFooter         from '../src/components/shared/main-footer.vue';
 import PreFooter         from '../src/components/shared/pre-footer.vue';
+import BaseBtn         from '../src/components/shared/base-btn.vue';
 
 // Global Component Assign
 Vue.component('universal-image', UniversalImage);
 Vue.component('main-footer', MainFooter);
 Vue.component('pre-footer', PreFooter);
+Vue.component('base-btn', BaseBtn);
 
 // [ Main Vue Instance ] ----------------------------
 const _vue = new Vue({
