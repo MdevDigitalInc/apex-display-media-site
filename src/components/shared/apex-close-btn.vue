@@ -48,6 +48,10 @@ export default{
     background-color: $apex-blue;
   }
 
+  &.transparent {
+    background-color: transparent;
+  }
+
   span {
     display: block;
     position: absolute;

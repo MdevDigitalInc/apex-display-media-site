@@ -3,15 +3,16 @@
     .apex-close-form
       apex-close-btn(styleType='red' v-on:toggle='closeForm')
     .apex-free-quote-heading.flex.flex-row.flex-wrap
-      .apex-column
-        h2.u-bold Free Quote
+      .apex-column-form.heading
+        h2.u-bold 
+          |Free Quote
         p
           |Tell us what you are looking to accomplish. Not sure where to start?
           |Let our team assess your location and business goals to provide
           |expert advice on signage installations and content strategies.
 
     .apex-free-quote-form-container.flex.flex-row.flex-wrap
-      .apex-column
+      .apex-column-form
         template(v-if='!formSent')
           form(id='contact_form' v-on:submit.prevent="onSubmit")
             .apex-form-group
@@ -110,11 +111,18 @@
 
 <style lang="scss">
 
-.apex-column {
+.apex-column-form {
   width: 90%;
+  margin: 0 auto;
 
   @media #{$laptop-up} {
     width: 85%;
+    //padding-left: 9%;
+  }
+
+  @media #{$tablet-only} {
+    width: 85%;
+    margin: 0 auto;
   }
 }
 
@@ -130,17 +138,27 @@
   h2 {
     font-size: 35px;
     line-height: 1.5;
+    margin-bottom: 10px;
 
     @media #{$tablet-up} {
       font-size: 50px;
     }
   }
 
-  p {
+  p,
+  p:last-of-type {
     font-size: 16px;
 
     @media #{$tablet-up} {
       font-size: 20px;
+    }
+
+    @media #{$laptop-up} {
+      margin-bottom: 10px;
+    }
+
+    @media #{$laptop-only} {
+      font-size: 16px;
     }
   }
 
@@ -160,7 +178,26 @@
 }
 
 .apex-free-quote-heading {
-  padding-top: 92px;
+  padding-top: 60px;
+
+  @media #{$tablet-only} {
+    padding-top: 92px;
+  }
+
+  @media #{$laptop-up} {
+    background-position: 0 center; 
+    padding-top: 73px;
+    width: 85%;
+    order: 1;
+  }
+
+  @media #{$laptop-only} {
+    padding-top: 24px;
+
+    h2 {
+      font-size: 30px;
+    }
+  }
 }
 
 p:last-of-type {

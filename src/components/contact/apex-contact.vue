@@ -2,7 +2,7 @@
 .apex-contact-modal(:class="{'u-freeze-scroll' : formOpen }")
   .apex-close-modal
      //-Close button component
-     apex-close-btn(styleType='red' v-on:toggle='closeModal')
+     apex-close-btn(styleType='transparent' v-on:toggle='closeModal')
   .apex-contact-modal-container
     .apex-row.flex.flex-row.flex-wrap.flex-hor-center
       .apex-column.apex-open-form
@@ -96,6 +96,7 @@
 
     .apex-form {
       height: 1100px;
+
       @media #{$tablet-only} {
         height: 100vh;
       }
@@ -125,7 +126,6 @@
 }
 
 .apex-close-modal {
-  background-color: $apex-red;
   border: 0;
   position: absolute;
   right: 0;

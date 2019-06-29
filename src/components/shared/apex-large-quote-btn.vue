@@ -38,6 +38,7 @@ export default{
   box-shadow: inset 0 0 rgba($black, .15);
   transition: all .4s;
   text-transform: uppercase;
+  cursor: pointer;
 
   &:hover,
   &:active {

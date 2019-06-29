@@ -45,6 +45,10 @@
 .mdev-g-map {
   width: 100%;
   height: 300px;
+
+  @media #{$laptop-only} {
+    height: 300px;
+  }
 }
 
 </style>
