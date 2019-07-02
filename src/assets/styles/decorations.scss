@@ -6,11 +6,23 @@
     height: 40px;
     display: block;
     max-width: 156px;
+
+    @media #{$phone-only} {
+      border-top: 10px solid $grey;
+      height: 20px;
+      max-width: 110px;
+    }
   }
 
   &-blue {
     &:before {
       border-color: $apex-blue;
+    }
+  }
+
+  &-white {
+    &:before {
+      border-color: $white;
     }
   }
 }
