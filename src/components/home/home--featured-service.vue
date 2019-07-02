@@ -99,6 +99,14 @@ export default {
     background-size: cover;
     background-position: center;
 
+    @media #{$laptop-only} {
+      padding-top: 75%;
+    }
+
+    @media #{$tablet-lnd-only} {
+      padding-top: 80%;
+    }
+
     @media #{ $portrait } {
       width: 100%;
       padding-top: 110%;
