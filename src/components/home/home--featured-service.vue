@@ -3,9 +3,9 @@
     .apex-main-wrapper
       //- Featured Service Loop
       .apex-featured-service.flex.flex-vert-center.flex-hor-between(
+        v-for="(service, index) in featuredServices"
         :class="{'--flip-order' : ((index + 1) % 2) == 0}"
-        :style="{ zIndex: index + 3 }"
-        v-for="(service, index) in featuredServices")
+        :style="{ zIndex: index + 3 }")
         //- Content
         .apex-service-content
           h2.--margin-space-large.u-bold.d-heading-flair.d-heading-flair-blue(v-html="service.heading")
@@ -14,7 +14,7 @@
           //- Base Button Component
           base-btn( v-if="service.btnData" :btn-data="service.btnData" )
         //- Media
-        .apex-service-media(:style="loadBackground(service.media.source, webpSupport)")
+        .apex-service-media( :style="loadBackground(service.media.source, webpSupport)" )
           .apex-service-fact( v-html="service.factInfo" )
 
 </template>
@@ -27,6 +27,7 @@ export default {
 
   data: function () {
     return {
+      // Webp support flag
       webpSupport: false
     };
   },
@@ -42,7 +43,6 @@ export default {
 
 
 <style lang="scss">
-
 /*-------------------------------------*/
 /* Featured Services Component Styles
 /--------------------------------------*/
@@ -53,7 +53,7 @@ export default {
   overflow: visible;
 
   .apex-main-wrapper {
-    @media #{$portrait} {
+    @media #{ $portrait } {
       width: 100%;
       max-width: auto;
     }
@@ -67,7 +67,7 @@ export default {
   margin-bottom: -3%;
   flex-wrap: wrap;
 
-  @media #{$landscape} {
+  @media #{ $landscape } {
     flex-wrap: no-wrap;
   }
 
@@ -80,9 +80,13 @@ export default {
     order: 1;
     padding-right: 110px;
 
-    @media #{$portrait} {
+    @media #{ $portrait } {
       width: 100%;
       padding: 100px;
+    }
+
+    @media #{ $phone-only } {
+      padding: 60px 40px;
     }
   }
 
@@ -92,10 +96,12 @@ export default {
     position: relative;
     background: pink;
     padding-top: 55%;
+    background-size: cover;
+    background-position: center;
 
-    @media #{$portrait} {
+    @media #{ $portrait } {
       width: 100%;
-      padding-top: 100%;
+      padding-top: 110%;
     }
   }
 
@@ -110,29 +116,10 @@ export default {
     right: -20px;
     top: 20%;
 
-    @media #{$portrait} {
+    @media #{ $portrait } {
       display: none;
     }
   }
-
-  .apex-image-crop {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    overflow: hidden;
-
-    picture {
-      object-fit: cover;
-      width: 100%;
-      @include center(both);
-    }
-    img {
-      object-fit: cover;
-    }
-  }
-
 
   // Flip Order Modifier
   &.--flip-order {
@@ -142,15 +129,19 @@ export default {
       padding-right: 0;
       padding-left: 110px;
 
-      @media #{$portrait} {
+      @media #{ $portrait } {
         order: 1;
+      }
+
+      @media #{ $phone-only } {
+        padding: 60px 40px;
       }
     }
 
     .apex-service-media {
       order: 1;
 
-      @media #{$portrait} {
+      @media #{ $portrait } {
         order: 2;
       }
     }
@@ -162,7 +153,5 @@ export default {
   }
 }
 
-
 /*--------------------------------------*/
-
 </style>
