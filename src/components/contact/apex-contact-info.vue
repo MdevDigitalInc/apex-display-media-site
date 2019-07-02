@@ -83,6 +83,7 @@
 
 .apex-contact-info-component {
   height: 100vh;
+  position: relative;
 
   h1 {
     @media #{$phone-only} {

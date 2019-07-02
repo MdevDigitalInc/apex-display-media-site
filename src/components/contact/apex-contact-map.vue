@@ -16,14 +16,14 @@
         animLoaded: true,
         mapData: {
           pinLocation:  {lat: 42.957921, lng: -81.262766},
-          mapCenter: {lat: 42.957921, lng: -81.262766},
+          mapCenter: {lat: 42.957642, lng: -81.263072},
           mapIcon: require('../../assets/images/map/location-ICON.png'),
           mapStyle: 'terrain',
           zoom: false,
           controls: false,
           kbShortcuts: false,
           scroll: false,
-          drag: false,
+          drag: true,
           zoomLevel: 17.2,
           cursor: 'pointer'
         }

@@ -63,6 +63,11 @@
   background-color: $white;
   overflow-y: scroll;
   z-index: 12;
+  opacity: 1;
+  animation-name: fadeIn;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+  animation-duration: .5s;
 
   @media #{$laptop-up} {
     overflow: hidden;
@@ -136,6 +141,16 @@
 
   @media #{$laptop-up} {
     display: block;
+  }
+}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
