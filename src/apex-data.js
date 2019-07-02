@@ -51,7 +51,7 @@ let homePage = {
   // ARRAY - For looping through featured services.
   featuredServices: [
     {
-      heading: 'Outdoor LED Signage',
+      heading: 'Outdoor</br>LED</br>Signage',
       copy: 'Give your business the most effective platform to advertise, build brand awareness and deliver results. The high visibility of outdoor LEDs will give your business an edge over the competition.',
       factInfo: 'A majority of consumers (<span class="u-bold">85</span>%) state that digital signage could influence future purchase decisions.',
       // Button DATA
@@ -69,7 +69,7 @@ let homePage = {
       },
     },
     {
-      heading: 'Indoor Digital Signage',
+      heading: 'Indoor</br>Digital</br> Signage',
       copy: 'Help customers understand your business better. Express your brand messaging, promotions and expertly tell your story on our HD commerical indoor displays.',
       factInfo: 'Digital signage will become your most valuable on-site marketing tool.',
       // Button DATA
@@ -87,7 +87,7 @@ let homePage = {
       },
     },
     {
-      heading: 'Digital Media Management',
+      heading: 'Digital</br>Media</br>Management',
       copy: 'Quality design and motion graphics help convey eye-catching messaging.  With several membership packages available, there’s sure to be an option to fit your business needs.',
       factInfo: 'Expertly designed content maximizes your ROI in hardware.',
       // Button DATA

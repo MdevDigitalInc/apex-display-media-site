@@ -1,19 +1,21 @@
 <template lang="pug">
-  .apex-featured-services.apex-main-wrapper
-    //- Featured Service Loop
-    .apex-featured-service.flex.flex-vert-center.flex-hor-between(
-      v-for="(service, index) in featuredServices")
-      //- Content
-      .apex-service-content
-        h2.--margin-space-large.u-bold.d-heading-flair.d-heading-flair-blue
-          | {{ service.heading }}
-        p.apex-service-copy
-          | {{ service.copy }}
-        //- Base Button Component
-        base-btn( v-if="service.btnData" :btn-data="service.btnData" )
-      //- Media
-      .apex-service-media
-        universal-image( :source="service.media.source" :gif="service.media.gif" :a11y="service.media.a11y")
+  .apex-featured-services
+    .apex-main-wrapper
+      //- Featured Service Loop
+      .apex-featured-service.flex.flex-vert-center.flex-hor-between(
+        :class="{'--flip-order' : ((index + 1) % 2) == 0}"
+        :style="{ zIndex: index + 3 }"
+        v-for="(service, index) in featuredServices")
+        //- Content
+        .apex-service-content
+          h2.--margin-space-large.u-bold.d-heading-flair.d-heading-flair-blue(v-html="service.heading")
+          p.apex-service-copy
+            | {{ service.copy }}
+          //- Base Button Component
+          base-btn( v-if="service.btnData" :btn-data="service.btnData" )
+        //- Media
+        .apex-service-media(:style="loadBackground(service.media.source, webpSupport)")
+          .apex-service-fact( v-html="service.factInfo" )
 
 </template>
 
@@ -22,6 +24,18 @@ export default {
   name: 'FeaturedServices',
 
   props: [ 'featuredServices' ],
+
+  data: function () {
+    return {
+      webpSupport: false
+    };
+  },
+
+  // Check for browser support on creation
+  created: function () {
+    // Calls function on main.js to check for Webp support
+    this.webpSupport = this.supportsWebp();
+  }
 };
 </script>
 
@@ -30,8 +44,123 @@ export default {
 <style lang="scss">
 
 /*-------------------------------------*/
-/* BASE TEMPLATE Component Styles
+/* Featured Services Component Styles
 /--------------------------------------*/
+// Featured Services Section
+.apex-featured-services {
+  width: 100%;
+  position: relative;
+  overflow: visible;
+
+  .apex-main-wrapper {
+    @media #{$portrait} {
+      width: 100%;
+      max-width: auto;
+    }
+  }
+}
+
+// Featured Service Unit Module
+.apex-featured-service {
+  width: 100%;
+  position: relative;
+  margin-bottom: -3%;
+  flex-wrap: wrap;
+
+  @media #{$landscape} {
+    flex-wrap: no-wrap;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .apex-service-content {
+    width: 40%;
+    order: 1;
+    padding-right: 110px;
+
+    @media #{$portrait} {
+      width: 100%;
+      padding: 100px;
+    }
+  }
+
+  .apex-service-media {
+    width: 60%;
+    order: 2;
+    position: relative;
+    background: pink;
+    padding-top: 55%;
+
+    @media #{$portrait} {
+      width: 100%;
+      padding-top: 100%;
+    }
+  }
+
+  .apex-service-fact {
+    min-width: 300px;
+    width: 35%;
+    height: auto;
+    padding: 28px;
+    background: $color-brand-primary;
+    color: $white;
+    position: absolute;
+    right: -20px;
+    top: 20%;
+
+    @media #{$portrait} {
+      display: none;
+    }
+  }
+
+  .apex-image-crop {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+
+    picture {
+      object-fit: cover;
+      width: 100%;
+      @include center(both);
+    }
+    img {
+      object-fit: cover;
+    }
+  }
+
+
+  // Flip Order Modifier
+  &.--flip-order {
+
+    .apex-service-content {
+      order: 2;
+      padding-right: 0;
+      padding-left: 110px;
+
+      @media #{$portrait} {
+        order: 1;
+      }
+    }
+
+    .apex-service-media {
+      order: 1;
+
+      @media #{$portrait} {
+        order: 2;
+      }
+    }
+
+    .apex-service-fact {
+      right: auto;
+      left: -20px;
+    }
+  }
+}
 
 
 /*--------------------------------------*/

@@ -33,7 +33,7 @@ export default{
   // Before mount check environment
   beforeMount () {
     // If environment is dev, disable webp.
-    if ( process.env.NODE_ENV === 'development' ) {
+    if ( this.isDevelopment() ) {
       this.webpEnabled = false;
     }
   },

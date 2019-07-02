@@ -6,7 +6,9 @@
     //- About Section ----------
     about-section
     //- Featured Services Section [ Lucas ] ----
-    featured-services( :featuredServices="homeData.featuredServices" )
+    featured-services(
+      :featuredServices="homeData.featuredServices"
+      class="--section-space-xl")
     //- Alternate Service Section [ Lucas ] ----
     alternate-services
     //- Support Services Section ----------

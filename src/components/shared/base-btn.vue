@@ -1,6 +1,7 @@
 <template lang="pug">
   router-link( :class="btnData.class" :to="btnData.route" title="btnData.a11y")
-    |{{ btnData.text }}
+    .apex-btn-text
+      |{{ btnData.text }}
 </template>
 
 <script>

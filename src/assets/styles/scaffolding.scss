@@ -21,9 +21,29 @@
   margin-bottom: $h-space-s;
 }
 
+.--section-space-xl {
+  margin-bottom: $s-space-xl;
+  margin-top: $s-space-xl;
+}
+
+.--section-space-l {
+  margin-bottom: $s-space-l;
+  margin-top: $s-space-l;
+}
+
+.--section-space-m {
+  margin-bottom: $s-space-m;
+  margin-top: $s-space-m;
+}
+
+.--section-space-s {
+  margin-bottom: $s-space-s;
+  margin-top: $s-space-s;
+}
+
 // Wrapper Classes
 
-.mdev-main-wrapper {
+.apex-main-wrapper {
   width: 95%;
   margin: 0 auto;
   position: relative;
