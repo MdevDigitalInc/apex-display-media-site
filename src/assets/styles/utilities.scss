@@ -15,6 +15,10 @@
   text-transform: capitalize;
 }
 
+.u-none {
+  text-transform: none;
+}
+
 .u-text-left {
   text-align: left;
 }
@@ -121,16 +125,19 @@
 .u-transparent {
   opacity: 0 !important;
 }
+
+.u-freeze-scroll {
+  height: 100vh !important;
+  overflow: hidden !important;
+}
+
 /* stylelint-enable */
 
 .u-hidden {
   display: none;
 }
 
-.u-freeze-scroll {
-  height: 100vh;
-  overflow: hidden;
-}
+
 
 .u-truncate {
   @include truncate('100%');

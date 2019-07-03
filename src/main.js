@@ -31,8 +31,8 @@ Vue.use(checkView);
 
 // [ Validator Plugin ] ----------- Uncomment to use
 // Form Validation Plugin
-//import Validate from './plugins/validate.js';
-//Vue.use(Validate);
+import Validate from './plugins/validate.js';
+Vue.use(Validate);
 
 // [ i18n - Internationalization ] ----------------------
 
@@ -104,6 +104,41 @@ Vue.mixin({
     // Returns path and tags image for webpack.
     loadImage(path){
       return require('./assets/images/' + path);
+    },
+    // Support WebP - Checks for Webp support from browser
+    supportsWebp() {
+      // If cannot create image bitmap fauil.
+      if (!self.createImageBitmap) return false;
+      // Webp Data URI
+      const webpData = 'data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=';
+      // Create blob to test against browser
+      const blob = fetch(webpData).then(r => r.blob());
+
+      // Create "image" in memory with just URI
+      return createImageBitmap(blob).then(() => true, () => false);
+    },
+    // Check if current environment is DEVELOPMENT
+    isDevelopment() {
+      if ( process.env.NODE_ENV === 'development' ) {
+        return true;
+      }
+      else {
+        return false;
+      }
+    },
+    // Load Image as Background
+    // Returns image call for backgrounds
+    loadBackground(source, webpSupport) {
+      // Load image path
+      let imagePath = this.loadImage(source);
+      // If this is DEV or browser does not support webP - send regular image
+      if ( this.isDevelopment() || !webpSupport ) {
+        return "background-image:url('" + imagePath + "')";
+      }
+      // IF this is production and browser supports webp
+      else {
+        return "background-image:url('" + imagePath + ".webp')";
+      }
     },
     // Change Application Language - Toggle
     change() {
@@ -259,6 +294,18 @@ Vue.mixin({
 })
 
 
+// Global Component Registration
+// Centralizes components to ease on loading
+import UniversalImage     from '../src/components/modules/universal-img.vue';
+import MainFooter         from '../src/components/shared/main-footer.vue';
+import PreFooter         from '../src/components/shared/pre-footer.vue';
+import BaseBtn         from '../src/components/shared/base-btn.vue';
+
+// Global Component Assign
+Vue.component('universal-image', UniversalImage);
+Vue.component('main-footer', MainFooter);
+Vue.component('pre-footer', PreFooter);
+Vue.component('base-btn', BaseBtn);
 
 // [ Main Vue Instance ] ----------------------------
 const _vue = new Vue({

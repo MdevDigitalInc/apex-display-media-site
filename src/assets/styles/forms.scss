@@ -7,14 +7,22 @@ form {
 
 /* stylelint-disable */
 /* Disabled because it is valid and I need this level of control*/
-.mdev-error {
+.apex-error {
   border-top: 4px solid red !important;
   border-bottom: 4px solid red !important;
-  color: red!important;
+  color: red !important;
+}
+
+.mdev-error {
+  border: 4px solid #ff9933 !important;
+  //border-top: 4px solid red !important;
+  //border-bottom: 4px solid red !important;
+  color: #ff9933 !important;
 }
 
 $border-color-active: rgba(15, 22, 24, 1);
 $border-color-passive: rgba(15, 22, 24, 0);
+
 input {
   &[type="text"],
   &[type="email"],
@@ -23,28 +31,42 @@ input {
   &[type="search"],
   &[type="url"] {
     width: 100%;
-    border-radius: 0;
     font-family: $main-font;
-    padding: 8px 0;
+    font-size: 18px;
+    padding: 24px 23px 10px;
     margin-top: 15px;
-    background: transparent;
+    color: $white;
+    min-height: 61px;
+    background-color:  rgba($black, .15);
+    border-radius: 5px;
     outline: 0;
     transition: border .5s, background .5s;
     border: none;
-    border-bottom: 4px solid $border-color-passive;
-    border-top: 4px solid $border-color-active;
+    position: relative;
+    font-size: 16px;
 
-    &:hover, &:focus, &:active {
-      border-top: 4px solid $border-color-passive;
-      border-bottom: 4px solid $border-color-active;
-      background: $white;
-      padding: 8px;
+    @media #{$tablet-up} {
+      font-size: 18px;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $white;
+      background-color:  rgba($black, .25);
+      padding: 24px 23px 10px;
     }
 
     &.--filled {
       border-top: 4px solid $border-color-passive;
       border-bottom: 4px solid $border-color-active;
       text-transform: none;
+    }
+
+    &:focus + label {
+      transform: translateY( 50% );
+      font-style: italic;
+      font-size: 15px;
     }
 
     &::placeholder {
@@ -56,30 +78,40 @@ input {
 textarea {
   width: 100%;
   font-family: $main-font;
-  border-radius: 0;
-  padding: 8px 0;
+  border-radius: 5px;
+  padding: 24px 20px 10px;
   margin-top: 15px;
-  background: transparent;
+  margin-bottom: 20px;
+  color: $white;
+  min-height: 200px;
+  background-color:  rgba($black, .15);
   outline: 0;
   transition: border .5s, background .5s;
   border: none;
-  border-bottom: 4px solid $border-color-passive;
-  border-top: 4px solid $border-color-active;
+  font-size: 16px;
+
+  @media #{$tablet-up} {
+    font-size: 18px;
+  }
 
   &:hover, &:focus, &:active {
-    border-top: 4px solid $border-color-passive;
-    border-bottom: 4px solid $border-color-active;
-    background: $white;
-    padding: 8px;
+    background-color:  rgba($black, .25);
+    padding: 24px 20px 10px;
   }
 
   &::placeholder {
     color: $color-brand-bkg;
   }
 
+  &:focus + label {
+    transform: translateY( 50% );
+    font-style: italic;
+    font-size: 15px;
+  }
+
   &.--filled {
     border-top: 4px solid $border-color-passive;
-    text-transform: none!important;
+    text-transform: none !important;
     border-bottom: 4px solid $border-color-active;
   }
 }
@@ -93,15 +125,37 @@ button {
 
 /* Form Scaffolding */
 
-.mdev-form-group {
+.apex-form-group {
   width: 100%;
   position: relative;
   text-align: left;
+
+  label {
+    transition: all .2s;
+    position: absolute;
+    color: $white;
+    padding: 7px 6px;
+    transform: translateY( 100% );
+    left: 16px;
+    font-size: 16px;
+
+    @media #{$tablet-up} {
+      font-size: 18px;
+    }
+
+    &.active {
+      transform: translateY( 50% );
+      font-style: italic;
+      font-size: 15px;
+    }
+  }
 }
 
-.mdev-action-group {
+.apex-action-group {
   width: 100%;
   position: relative;
 }
+
+
 
 

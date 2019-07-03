@@ -7,97 +7,67 @@
  *
 /-------------------------------------*/
 
-/* Base Button */
+// Master Button ( Controls shape and padding )
 .apex-base-btn {
   width: auto;
-  padding: 10px 0;
   display: inline-block;
+  padding: 25px 35px;
   cursor: pointer;
   transition: all .4s;
   position: relative;
   vertical-align: middle;
+  text-transform: uppercase;
   border-radius: $standard-radius;
+  font-size: 18px;
   font-weight: 700;
   border: 0;
 
-  @media #{$portrait} {
-    padding: 13px 20px;
+  .apex-btn-text {
+    transform: scale(1);
+    transition: all .4s;
   }
 
-  @media #{$tablet-lnd-only} {
-    padding: 10px 15px;
-  }
-
-  @media #{$phone-only} {
-    padding: 8px 10px;
-    letter-spacing: 1px;
+  &:hover,
+  &:active,
+  &:focus {
+    .apex-btn-text {
+      transform: scale(1.1);
+    }
   }
 }
 
+// Button Color Classes
 .apex-red-btn {
   background-color: $apex-red;
   color: $white;
-  text-transform: uppercase;
-  font-size: 18px;
   box-shadow: inset 0 0 rgba($black, .15);
 
   &:hover,
   &:active {
     color: $white;
-    font-size: 20px;
     box-shadow: inset 0 -100px rgba($black, .15);
-
-    @media #{$laptop-up} {
-      padding: 25px 28px;
-    }
-  }
-
-  @media #{$laptop-up} {
-    padding: 25px 35px;
   }
 }
 
 .apex-black-btn {
   background-color: $black;
   color: $white;
-  text-transform: uppercase;
-  font-size: 18px;
 
   &:hover,
   &:active {
     background-color: lighten($black, 30%);
     color: $white;
-    font-size: 20px;
-
-    @media #{$laptop-up} {
-      padding: 25px 28px;
-    }
-  }
-
-  @media #{$laptop-up} {
-    padding: 25px 35px;
   }
 }
 
 .apex-blue-btn {
   background-color: $apex-blue;
   color: $white;
-  text-transform: uppercase;
-  font-size: 18px;
 
   &:hover,
   &:active {
     background-color: darken($apex-blue, 10%);
     color: $white;
-    font-size: 20px;
-
-    @media #{$laptop-up} {
-      padding: 25px 28px;
-    }
-  }
-
-  @media #{$laptop-up} {
-    padding: 25px 35px;
   }
 }
 
@@ -110,5 +80,42 @@
   &:hover,
   &:active {
     text-decoration: underline;
+  }
+}
+
+.apex-quote-btn {
+  background-color: $apex-red;
+  color: $white;
+  text-transform: uppercase;
+  font-size: 22px;
+  text-align: center;
+  width: 100%;
+  padding: 30px 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  font-weight: 700;
+
+  &:hover,
+  &:active {
+    background-color: darken($apex-red, 10%);
+    color: $white;
+  }
+
+  @media #{$laptop-up} {
+    font-size: 30px;
+  }
+}
+
+.apex-quote-btn.header-bar {
+  position: relative;
+  font-size: 15px;
+  max-width: 107px;
+  padding: 15px 25px;
+
+  @media #{$tablet-up} {
+    font-size: 24px;
+    max-width: 262px;
+    padding-top: 35px;
   }
 }

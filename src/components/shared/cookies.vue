@@ -28,8 +28,6 @@
 </template>
 
 <script>
-// Import Data From Flat File
-import SEOData       from '../../seo-meta.js';
 
 export default{
   name: 'CookiePopup',
