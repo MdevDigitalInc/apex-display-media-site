@@ -29,18 +29,18 @@
       .apex-main-wrapper
         .flex.flex-row.flex-wrap.apex-row
           .apex-copy &copy; {{ year }} - Copyright Apex Display Media
-          .flex.flex-row.flex-wrap.apex-social
-            .apex-social-icon
+          .flex.flex-row.flex-wrap.apex-footer-social
+            .apex-footer-social-icon
               i.fab.fa-instagram
-            .apex-social-icon
+            .apex-footer-social-icon
               i.fab.fa-linkedin-in
-            .apex-social-icon
+            .apex-footer-social-icon
               i.fab.fa-facebook-f
-            .apex-social-icon
+            .apex-footer-social-icon
               i.fab.fa-twitter
           .apex-quote
             //- Apex quote button component
-            apex-large-quote-btn(styleType='footer-style')
+            apex-large-quote-btn(styleType='footer-style' v-on:toggle='toggleForm')
 </template>
 <script>
 
@@ -49,7 +49,7 @@
 	export default {
     name: 'ApexFooter',
     data (){
-      return { 
+      return {
         year: null,
         footerBrand: 'apex-logo-footer.svg',
         links: [
@@ -93,6 +93,11 @@
     },
     components: {
       'apex-large-quote-btn' : ApexLargeQuoteBtn
+    },
+    methods: {
+      toggleForm() {
+        this.$emit('toggle', true);
+      }
     },
     created: function() {
       this.year = (new Date()).getFullYear();
@@ -185,7 +190,7 @@
   }
 }
 
-.apex-social {
+.apex-footer-social {
   width: 100%;
   min-height: 50px;
   order: 2;
@@ -256,7 +261,7 @@
   }
 }
 
-.apex-social-icon {
+.apex-footer-social-icon {
   position: relative;
   font-size: 30px;
   color: $white;

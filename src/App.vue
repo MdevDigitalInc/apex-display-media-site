@@ -21,7 +21,7 @@
       v-if="cookies"
       v-on:dismiss="cookies = false")
     //- Main Footer
-    apex-footer
+    apex-footer(v-on:toggle='toggleContactModal')
 </template>
 
 <script>
