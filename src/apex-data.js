@@ -104,7 +104,24 @@ let homePage = {
         a11y: 'Placeholder - TODO update'
       },
     }
-  ]
+  ],
+  // Image Showcase (Prefooter)
+  // OBJECT - Image Showcase configuration
+  imageShowcase: {
+    heading: 'Ready to enhance your business with digital signage?',
+    // Button Data
+    btnData: {
+      class: 'apex-base-btn apex-red-btn',
+      route: '#TODO',
+      a11y: 'How we keep your sign shining.',
+      text: 'Learn More'
+    },
+    mediaTopLeft: 'home/image-showcase-placeholder-reg.jpeg',
+    mediaBotSquare: 'home/image-showcase-placeholder-sq.jpeg',
+    mediaBotLeft: 'home/image-showcase-placeholder-reg.jpeg',
+    mediaBotRight: 'home/image-showcase-placeholder-reg.jpeg',
+    mediaVertical: 'home/image-showcase-placeholder-vert.jpeg'
+  }
 }
 
 // Export named variables
