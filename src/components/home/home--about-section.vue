@@ -1,35 +1,29 @@
 <template lang="pug">
-  section.mdev-main-content
-    .apex-about-section
-      .apex-about-section-row.flex.flex-row.flex-wrap
-        .apex-about-section-intro.u-text-left(:class="[introLeft ? 'apex-intro-left' : 'apex-intro-right']")
-          .apex-about-section-intro-inner
-            h2.--margin-space-large.d-heading-flair.d-heading-flair-white.u-bold
-              | About
-            p
-              | We are an end-to-end digital signage and content solution for your business. We provide custom design, manufacture, installation and content
-              | management – all backed by pur full hardware warranty.
+.apex-about-section
+  .apex-about-section-row.flex.flex-row.flex-wrap
+    .apex-about-section-intro.u-text-left(:class="[introLeft ? 'apex-intro-left' : 'apex-intro-right']")
+      .apex-about-section-intro-inner
+        h2.--margin-space-large.d-heading-flair.d-heading-flair-white.u-bold
+          | About
+        p
+          | We are an end-to-end digital signage and content solution for your business. We provide custom design, manufacture, installation and content
+          | management – all backed by pur full hardware warranty.
 
-            template(v-if="introLeft === 'false'")
-              router-link( class='apex-base-btn apex-plain-btn' to='/')
-                | Learn more
+        template(v-if="introLeft === 'false'")
+          router-link( class='apex-base-btn apex-plain-btn' to='/')
+            | Learn more
 
-        .apex-about-section-content.u-text-left
-          .apex-about-section-content-inner
-            h2.--margin-space-large.d-heading-flair.d-heading-flair-blue.u-bold
-              | We offer
-            p
-              | We offer the most technologically advanced digital signage available. Built for life in Canada, our energy efficient, weatherproof signage is
-              | manufactured to withstand the harshest environmental conditions, all year round.
-            p
-              | We can create a brand new installation or retrofit existing signage – depending on what your business needs.
-            p
-              | After your signage has been installed, our managed content services are here to keep your signage up-to-date with your latest sales, promotions and events.
-
-    //- Use comments witn `-`
-    //- This omits them from output.
-    h1
-      |ABOUT SECTION
+    .apex-about-section-content.u-text-left
+      .apex-about-section-content-inner
+        h2.--margin-space-large.d-heading-flair.d-heading-flair-blue.u-bold
+          | We offer
+        p
+          | We offer the most technologically advanced digital signage available. Built for life in Canada, our energy efficient, weatherproof signage is
+          | manufactured to withstand the harshest environmental conditions, all year round.
+        p
+          | We can create a brand new installation or retrofit existing signage – depending on what your business needs.
+        p
+          | After your signage has been installed, our managed content services are here to keep your signage up-to-date with your latest sales, promotions and events.
 </template>
 
 <script>
@@ -61,7 +55,7 @@ export default {
 
   h2 {
     @media #{$phone-only} {
-     font-size: 35px;
+      font-size: 35px;
     }
   }
 
@@ -84,7 +78,7 @@ export default {
         background-position: 95% -2%, 5% 80%;
       }
     }
-    
+
     &.apex-intro-left {
       order: 0;
       background-position: 100% 100%, 0% 100%;
@@ -92,15 +86,15 @@ export default {
       @media #{$laptop-up} {
         background-position: 35% 119%, -1000% 80%;
       }
-    }
 
-    .apex-about-section-intro-inner {
+      .apex-about-section-intro-inner {
         //transform: translateX( 24% );
         width: 43%;
+      }
     }
 
     @media #{$laptop-up} {
-     width: 34%;
+      width: 34%;
     }
   }
 
@@ -108,14 +102,13 @@ export default {
     background-color: $white;
     width: 100%;
 
-     @media #{$laptop-up} {
+    @media #{$laptop-up} {
       width: 66%;
     }
   }
 }
 
 .apex-about-section-intro-inner {
-  width: 65%;
   margin: 0 auto;
   min-height: 350px;
   max-height: 719px;
