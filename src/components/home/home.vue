@@ -1,12 +1,14 @@
 <template lang="pug">
   //- Wrapper Container
-  section.mdev-main-content.u-text-center
+  section.mdev-main-content
     //- Hero section -----------
     main-hero
     //- About Section ----------
     about-section
     //- Featured Services Section [ Lucas ] ----
-    featured-services
+    featured-services(
+      :featuredServices="homeData.featuredServices"
+      class="--section-space-xl")
     //- Alternate Service Section [ Lucas ] ----
     alternate-services
     //- Support Services Section ----------
@@ -32,12 +34,16 @@ import SupportServices from '../shared/support-services.vue';
 // Import SEO From File
 import { stagingBuild, template, social, general }       from '../../seo-meta.js';
 
+// Data Import
+import { homePage } from '../../apex-data.js';
+
 export default{
   name: 'HomePage',
   // TODO - Edit meta Title
 
   data: function(){
     return {
+      homeData: homePage
     };
   },
   // Meta SEO Function

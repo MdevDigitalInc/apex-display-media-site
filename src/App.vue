@@ -152,7 +152,6 @@ export default {
   },
 
   components: {
-    'main-navigation' : MainNavigation,
     'cookie-popup'    : CookiePopup,
     'apex-contact'    : ApexContact,
     'apex-navigation' : ApexNavigation
