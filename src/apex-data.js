@@ -111,16 +111,18 @@ let homePage = {
     heading: 'Ready to enhance your business with digital signage?',
     // Button Data
     btnData: {
-      class: 'apex-base-btn apex-red-btn',
+      class: 'apex-base-btn apex-black-btn',
       route: '#TODO',
-      a11y: 'How we keep your sign shining.',
-      text: 'Learn More'
+      a11y: 'Get your free quote today!',
+      text: 'Get Started'
     },
-    mediaTopLeft: 'home/image-showcase-placeholder-reg.jpeg',
-    mediaBotSquare: 'home/image-showcase-placeholder-sq.jpeg',
-    mediaBotLeft: 'home/image-showcase-placeholder-reg.jpeg',
-    mediaBotRight: 'home/image-showcase-placeholder-reg.jpeg',
-    mediaVertical: 'home/image-showcase-placeholder-vert.jpeg'
+    media: {
+      TopLeft: 'home/image-showcase-placeholder-reg.jpeg',
+      BotSquare: 'home/image-showcase-placeholder-reg.jpeg',
+      BotLeft: 'home/image-showcase-placeholder-reg.jpeg',
+      BotRight: 'home/image-showcase-placeholder-reg.jpeg',
+      Vertical: 'home/image-showcase-placeholder-reg.jpeg'
+    }
   }
 }
 
