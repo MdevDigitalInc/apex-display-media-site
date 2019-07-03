@@ -7,9 +7,9 @@
         //- Top Left Media Box
         .apex-media-horz(:style="loadBackground(media.TopLeft, webpSupport)")
         //- Showcase Text
-        .apex-showcase-content.flex.flex-vert-center
+        .apex-showcase-content.flex.flex-vert-center.flex-hor-between
           //- Heading
-          h3
+          h3.u-bold.apex-showcase-heading
             |{{ heading }}
           //- Base Button
           base-btn( :btn-data="action" )
@@ -56,12 +56,87 @@ export default {
 
 
 <style lang="scss">
-
 /*-------------------------------------*/
-/* BASE TEMPLATE Component Styles
+/* Image Showcase Component Styles
 /--------------------------------------*/
+.apex-image-showcase {
+  width: 100%;
+  margin: 0;
+  position: relative;
 
 
+  .apex-showcase-left {
+    width: 85%;
+  }
+
+  .apex-showcase-vert {
+    width: 15%;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .apex-showcase-top,
+  .apex-showcase-bot {
+    width: 100%;
+  }
+
+  .apex-showcase-content {
+    width: 60%;
+    padding: 80px;
+    background: $color-brand-primary;
+    color: $white;
+    overflow: hidden;
+  }
+
+  .apex-showcase-heading {
+    width: 66%;
+  }
+
+  // Media
+  .apex-media-horz {
+    width: 40%;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .apex-media-sq {
+    width: 20%;
+    background-size: cover;
+    background-position: center;
+  }
+
+  // Overrides
+  .apex-showcase-bot .apex-media-horz {
+    padding-top: 20%;
+  }
+
+  .apex-base-btn {
+    position: relative;
+    margin: 0;
+  }
+
+  .apex-base-btn:before,
+  .apex-base-btn:after {
+    @include pseudo();
+    background-image: url('../../assets/images/dots-white.svg');
+    background-repeat: repeat-y;
+    width: 100%;
+    padding-top: 40%;
+    left: 50%;
+  }
+
+  .apex-base-btn:before {
+    top: 0;
+    transform: translate3d( -50%, -120%, 0);
+    background-position: center top;
+  }
+
+  .apex-base-btn:after {
+    bottom: 0;
+    transform: translate3d( -50%, 120%, 0);
+    background-position: center top;
+  }
+}
 /*--------------------------------------*/
 
 </style>
