@@ -94,11 +94,6 @@
     components: {
       'apex-large-quote-btn' : ApexLargeQuoteBtn
     },
-    methods: {
-      loadImage(path){
-       return require('../../assets/images/' + path);
-      }
-    },
     created: function() {
       this.year = (new Date()).getFullYear();
     }
