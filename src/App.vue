@@ -7,25 +7,27 @@
       v-on:click.stop.prevent="skipNav"
       class="mdev-skipnav" tabindex="0")
         |Skip To Main Content
-    //- Main Navigation
+    //- Sidebar Navigation
+    apex-navigation(v-on:toggle='toggleContactModal')
     //main-navigation
     apex-contact(v-if='contactModalOpen' v-on:close='toggleContactModal')
     //- Transition Wrapper
     transition(name="fade")
       //- Router View
       router-view
-    // Cookies
+    //- Cookies
     cookie-popup(
       :active="showCookies"
       v-if="cookies"
       v-on:dismiss="cookies = false")
-    //- Sidebar Navigation
-    apex-navigation(v-on:toggle='toggleContactModal')
+    //- Main Footer
+    apex-footer(v-on:toggle='toggleContactModal')
 </template>
 
 <script>
 //Local Component registration
 import ApexNavigation from './components/shared/apex-navigation.vue';
+import ApexFooter from './components/shared/apex-footer.vue';
 import ApexContact from './components/contact/apex-contact.vue';
 import CookiePopup    from './components/shared/cookies.vue';
 // Import SEO From File
@@ -152,9 +154,10 @@ export default {
   },
 
   components: {
+    'apex-navigation' : ApexNavigation,
+    'apex-footer' : ApexFooter,
     'cookie-popup'    : CookiePopup,
     'apex-contact'    : ApexContact,
-    'apex-navigation' : ApexNavigation
   },
   methods: {
     skipNav() {

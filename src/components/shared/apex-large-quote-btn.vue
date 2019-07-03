@@ -1,5 +1,5 @@
 <template lang="pug">
-   button(@click="toggleForm" class="apex-large-quote-btn" :class="styleType") Free Quote
+   button(@click="toggleForm" class="apex-base-btn apex-red-btn apex-large-quote-btn" :class="styleType") Free Quote
 </template>
 
 
@@ -21,12 +21,10 @@ export default{
 };
 </script>
 
-
-
-<style lang="scss">
+<style lang="scss" scoped>
 
 .apex-large-quote-btn {
-  width: 100%; 
+  width: 100%;
   border-radius: 0;
   font-size: 24px;
   padding: 20px 0;
@@ -63,7 +61,7 @@ export default{
       }
     }
 
-    @media #{$tablet-up} { 
+    @media #{$tablet-up} {
       font-size: 30px;
     }
   }
@@ -84,6 +82,13 @@ export default{
 
   @media #{$tablet-up} {
     padding: 40px 0;
+  }
+
+  &.footer-style {
+    padding: 30px 50px;
+    font-size: 18px;
+    min-height: 75px;
+    max-height: 75px;
   }
 }
 
