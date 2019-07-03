@@ -1,27 +1,24 @@
 <template lang="pug">
     .apex-main-nav
+      // - Trigger Navigation
+      button( class="nav-trigger" :class="{open: navOpen }" @click="navOpen = !navOpen")
+        span
+        span
+        span
       // - Sidebar Navigation Overlay
       .apex-nav-overlay(:class="{open: navOpen }" @click="navOpen = !navOpen")
-      // - Trigger Navigation
       .apex-header-bar.flex.flex-row.flex-wrap
         .brand
-          a(href="/" title="Home" class="apex-header-bar-branding")
+          router-link(class='apex-header-bar-branding' title='Home' to='/')
             img(:src="loadImage(headerBrand)" alt="Apex logo")
-        a.apex-quote-btn.header-bar.u-capitalize Free Quote
-        button( class="nav-trigger" :class="{open: navOpen }" @click="navOpen = !navOpen")
-          span
-          span
-          span
+        apex-large-quote-btn(styleType='header-style' v-on:toggle='toggleForm')
       nav(class="apex-nav-sidebar" :class="{open: navOpen }" :aria-hidden="!navOpen")
         .apex-sidebar-container.flex.flex-row.flex-wrap
           .brand
-            a(href="/" title="Home" class="apex-nav-sidebar-branding")
+            router-link( class='apex-nav-sidebar-branding'  to='/')
               img(:src="loadImage(homeBrand)" alt="Apex logo")
-          button( @click="navOpen = !navOpen" class="apex-toggle-nav" data-target)
-            span
-            span
-            span
-            span
+          // - Sidebar Close button component
+          apex-close-btn( styleType='blue' v-on:toggle='navOpen = !navOpen')
           .apex-main-nav-links.u-capitalize
             router-link(
             v-for="link in links"
@@ -36,12 +33,16 @@
             p.u-none Get in touch:
             a(href="tel:1-800-000-0000" title="phone number") 1-800-000-0000
             a(href="mailto:contact@apexdisplaymedia.com" title="email address" class="u-lowercase") contact@apexdisplaymedia.com
-          a.apex-quote-btn.u-capitalize Free Quote
+          .apex-large-quote
+            apex-large-quote-btn(styleType='nav-style' v-on:toggle='toggleForm')
 </template>
 
 
 <script>
   import { appData, mainNavigation } from '../../apex-data.js';
+
+  import ApexLargeQuoteBtn from './apex-large-quote-btn.vue';
+  import ApexCloseBtn from './apex-close-btn.vue';
 
   export default {
 
@@ -56,9 +57,25 @@
         links: mainNavigation.links
       };
     },
+    components: {
+    'apex-large-quote-btn' : ApexLargeQuoteBtn,
+    'apex-close-btn' : ApexCloseBtn
+    },
+    watch: {
+      $route (to,from) {
+        // If Nav was open when route changes.. close it
+       if ( this.navOpen ) {
+         this.navOpen = false;
+       }
+      }
+    },
     methods: {
       loadImage(path){
       return require('../../assets/images/' + path);
+      },
+      toggleForm() {
+        this.$emit('toggle', true);
+        this.navOpen = false;
       }
     }
   };
@@ -116,7 +133,11 @@
   cursor: pointer;
   right: 0;
   top: 0;
-  z-index: 15;
+  z-index: 11;
+
+  @media #{$laptop-up} {
+    z-index: 11;
+  }
 
   span {
     display: block;
@@ -172,7 +193,7 @@
 .apex-nav-sidebar {
   position: fixed;
   height: 100%;
-  z-index: 12;
+  z-index: 22;
   top: 0;
   right: 0;
   transition: .3s;
@@ -284,7 +305,7 @@
 
     a {
       display: block;
-      color: #6aaae4;
+      color: $apex-blue;
       list-style-type: none;
       font-weight: 700;
       margin-bottom: 30px;
@@ -299,7 +320,6 @@
   }
 
   .apex-contact-nav-links {
-
     a,
     p {
       margin-bottom: 15px;
@@ -365,12 +385,20 @@
   right: 0;
   bottom: 0;
   background-color: rgba(0,0,0,.5);
-  z-index: 11;
+  z-index: 20;
   cursor: pointer;
 
   &.open {
     display: block;
   }
+}
+
+.apex-large-quote {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  font-weight: 700;
+  width: 100%;
 }
 
 </style>

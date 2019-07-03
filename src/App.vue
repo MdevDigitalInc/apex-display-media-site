@@ -7,6 +7,9 @@
       v-on:click.stop.prevent="skipNav"
       class="mdev-skipnav" tabindex="0")
         |Skip To Main Content
+    //- Main Navigation
+    //main-navigation
+    apex-contact(v-if='contactModalOpen' v-on:close='toggleContactModal')
     //- Transition Wrapper
     transition(name="fade")
       //- Router View
@@ -17,13 +20,13 @@
       v-if="cookies"
       v-on:dismiss="cookies = false")
     //- Sidebar Navigation
-    apex-navigation
+    apex-navigation(v-on:toggle='toggleContactModal')
 </template>
 
 <script>
 //Local Component registration
-
 import ApexNavigation from './components/shared/apex-navigation.vue';
+import ApexContact from './components/contact/apex-contact.vue';
 import CookiePopup    from './components/shared/cookies.vue';
 // Import SEO From File
 import { stagingBuild, template, social, general }       from './seo-meta.js';
@@ -33,6 +36,7 @@ export default {
 
   data: function(){
     return {
+      contactModalOpen: false,
       cookies: false,
       showCookies: false,
    };
@@ -149,9 +153,9 @@ export default {
 
   components: {
     'cookie-popup'    : CookiePopup,
+    'apex-contact'    : ApexContact,
     'apex-navigation' : ApexNavigation
   },
-
   methods: {
     skipNav() {
       var anchor = $("#mainContent").offset().top;
@@ -183,8 +187,8 @@ export default {
         destroyTokens();
       }
     },
-    toggleNav() {
-      this.navOpen = false;
+    toggleContactModal() {
+      this.contactModalOpen = !this.contactModalOpen;
     }
   }
 };
