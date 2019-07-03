@@ -19,6 +19,8 @@
           p
             | We are an end-to-end digital signage and content solution for your business. We provide custom design, manufacture, installation and content
             | management – all backed by pur full hardware warranty.
+          router-link(class='apex-base-btn apex-plain-btn' to='/')
+            |Learn more
 </template>
 
 <script>
@@ -47,26 +49,37 @@
   }
 
   &:first-child {
-    width: 66%;
+    width: 100%;
     order: 1;
 
     .apex-split-content-block-inner {
       width: 72%;
     }
+
+    @media #{$laptop-up} {
+      width: 66%;
+    }
   }
 
   &:nth-child( 2 ) {
-    width: 34%;
+    width: 100%;
     background-color: $apex-red;
     background-image: url('../../assets/images/dots-white.svg'), url('../../assets/images/arrows-white.svg');
     background-repeat: no-repeat, no-repeat;
 
     &.apex-split-about-home {
-      background-position: 95% -2%, 5% 80%;
       order: 2;
-      transform: scaleY(-1);
-      filter: FlipV;
+
+      @media #{$tablet-only} {
+        background-position: 97% -10%, -1000% 80%;
+      }
+
+      @media #{$laptop-up} {
+        background-position: 95% -2%, 5% 80%;
+      }
     }
+
+    
 
     &.apex-split-about-service {
       background-position: 40% 119%, -1000% 80%;
@@ -79,13 +92,25 @@
     }
 
     &.apex-split-services {
-      background-position: 95% 103%, 5% 10%;
+      background-position: 96% -3%, 5% 90%;
       order: 0;
+      transform: scaleY(-1);
+      filter: FlipV;
+
+      .apex-split-content-block-inner {
+        width: 43%;
+        transform: translateX( 10% ) translateY( -17% ) scaleY(-1);
+        filter: FlipV;
+      }
     }
 
     .apex-split-content-block-inner {
       color: $white;
       width: 72%;
+    }
+
+    @media #{$laptop-up} {
+      width: 34%;
     }
   }
 }
