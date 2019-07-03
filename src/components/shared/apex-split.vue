@@ -64,6 +64,8 @@
     &.apex-split-about-home {
       background-position: 95% -2%, 5% 80%;
       order: 2;
+      transform: scaleY(-1);
+      filter: FlipV;
     }
 
     &.apex-split-about-service {
