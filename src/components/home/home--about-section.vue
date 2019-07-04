@@ -1,6 +1,6 @@
 <template lang="pug">
 .apex-about-section
-  apex-split
+  apex-split(:content='aboutContent')
 </template>
 
 <script>
@@ -9,9 +9,7 @@ import ApexSplit from '../shared/apex-split.vue';
 
 export default {
   name: 'HomeAbout',
-  props: {
-    introLeft: Boolean
-  },
+  props: [ 'aboutContent' ],
   data: function(){
     return {
     };

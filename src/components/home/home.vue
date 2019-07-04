@@ -4,7 +4,7 @@
     //- Hero section -----------
     main-hero
     //- About Section ----------
-    about-section(:introLeft="false")
+    about-section(:aboutContent="homeData.aboutContent")
     //- Featured Services Section [ Lucas ] ----
     featured-services(
       :featuredServices="homeData.featuredServices"

@@ -104,7 +104,23 @@ let homePage = {
         a11y: 'Placeholder - TODO update'
       },
     }
-  ]
+  ],
+  aboutContent:
+  {
+    contentBlockOne: {
+      heading: 'We offer',
+      copy: 'We offer the most technologically advanced digital signage available. Built for life in Canada, our energy efficient, weatherproof signage is manufactured to withstand the harshest environmental conditions, all year round. We can create a brand new installation or retrofit existing signage – depending on what your business needs. After your signage has been installed, our managed content services are here to keep your signage up-to-date with your latest sales, promotions and events.',
+      route: '/',
+      btnClass: ''
+    },
+    contentBlockTwo:{
+      heading: 'About',
+      copy: 'We are an end-to-end digital signage and content solution for your business. We provide custom design, manufacture, installation and content management – all backed by a full hardware warranty.',
+      route: '/',
+      btnClass: 'apex-base-btn apex-plain-btn'
+    },
+    class: 'apex-split-about-home',
+  }
 }
 
 // Export named variables
