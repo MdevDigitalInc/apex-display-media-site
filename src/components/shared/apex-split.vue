@@ -1,21 +1,36 @@
 <template lang="pug">
   .apex-split.u-text-left
     .apex-split-row.flex.flex-row.flex-wrap
-      .apex-split-content-block
-        apex-split-block-one(:className='content.class')
-          h2(slot="heading").--margin-space-large.d-heading-flair.d-heading-flair-blue.u-bold
-            | {{content.contentBlockOne.heading}}
-          p(slot="copy")
-            | {{content.contentBlockOne.copy}}
+      .apex-split-content-block(:class="{'apex-service-list-container': (content.contentBlockOne.serviceList != null)}")
+          apex-split-block-one(:className='content.class')
+            template(slot="service-list" v-if = 'content.contentBlockOne.serviceList')
+              .apex-split-support-services.flex.flex-row.flex-wrap
+                .apex-split-service-item( v-for="(service, index) in content.contentBlockOne.serviceList")
+                  .apex-split-service-heading(v-html="service.heading")
+                  .apex-split-service-copy
+                    p
+                      | {{service.copy}}
+            template(v-else)
+              h2(slot="heading").--margin-space-large.d-heading-flair.d-heading-flair-blue.u-bold
+                | {{content.contentBlockOne.heading}}
+              p(slot="copy")
+                | {{content.contentBlockOne.copy}}
+            router-link(
+             v-if = 'content.contentBlockOne.route !=""'
+             slot='route' :class='content.contentBlockOne.btnClass'
+             :to='content.contentBlockOne.route')
+              |Learn more
       .apex-split-content-block(:class='content.class')
         apex-split-block-one
           h2(slot="heading").--margin-space-large.d-heading-flair.d-heading-flair-white.u-bold
             | {{content.contentBlockTwo.heading}}
           p(slot="copy")
             | {{content.contentBlockTwo.copy}}
-          template(v-if = 'content.contentBlockTwo.route !=""')
-            router-link( slot='route' :class='content.contentBlockTwo.btnClass' :to='content.contentBlockTwo.route')
-              |Learn more
+          router-link(
+           v-if = 'content.contentBlockTwo.route !=""'
+           slot='route' :class='content.contentBlockTwo.btnClass' 
+           :to='content.contentBlockTwo.route')
+            |Learn more
 </template>
 
 <script>
@@ -41,8 +56,11 @@
 
 <style lang="scss">
 
-.apex-split-content-block {
+.apex-split {
   margin-top: 100px;
+}
+
+.apex-split-content-block {
 
   .apex-split-content-block-inner {
     margin: 0 auto;
@@ -86,7 +104,6 @@
 
       .apex-split-content-block-inner {
         width: 74%;
-        //transform: translateX( 7% );
       }
 
       .apex-split-about-home {
@@ -170,9 +187,50 @@
     @media #{$laptop-up} {
       width: 40%;
       .apex-split-content-block-inner {
-         width: 60%;
+        width: 60%;
       }
     }
+  }
+}
+
+
+.apex-split-content-block:first-child.apex-service-list-container {
+
+  @media #{$laptop-up} {
+    background-color: $white;
+  }
+
+  .apex-split-content-block-inner {
+    background-color: #f2f2f2;
+    padding: 40px;
+    margin-top: 20px;
+    width: 95%;
+
+    @media #{$laptop-up} {
+      padding: 0;
+      margin-top: 0;
+      width: 80%;
+    }
+  }
+}
+
+.apex-split-service-item {
+  width: 100%;
+
+  @media #{$laptop-up} {
+    width: calc(100% / 3);
+  }
+
+  .apex-split-service-heading {
+    color: $apex-blue;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+
+  .apex-split-service-copy {
+    font-size: 20px;
   }
 }
 

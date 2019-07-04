@@ -110,8 +110,8 @@ let homePage = {
     contentBlockOne: {
       heading: 'We offer',
       copy: 'We offer the most technologically advanced digital signage available. Built for life in Canada, our energy efficient, weatherproof signage is manufactured to withstand the harshest environmental conditions, all year round. We can create a brand new installation or retrofit existing signage – depending on what your business needs. After your signage has been installed, our managed content services are here to keep your signage up-to-date with your latest sales, promotions and events.',
-      route: '/',
-      btnClass: ''
+      route: '',
+      btnClass: 'apex-base-btn apex-blue-btn'
     },
     contentBlockTwo:{
       heading: 'About',
@@ -120,6 +120,44 @@ let homePage = {
       btnClass: 'apex-base-btn apex-plain-btn'
     },
     class: 'apex-split-about-home',
+  },
+  supportServices: {
+    contentBlockOne: {
+      serviceList: [
+        {
+          heading: 'Conceptual Design',
+          copy: 'Our team helps right from the start – providing site plans, renderings and launch-ready content.',
+        },
+        {
+          heading: 'Custom Installation',
+          copy: 'We have the equipment and expertise needed to retrofit your existing sign, or install a new one.',
+        },
+        {
+          heading: 'City Permitting',
+          copy: 'Let our team negotiate permitting requirements while you worry about running your business.',
+        },
+        {
+          heading: 'Removal &amp; Disposal',
+          copy: 'Wondering what happens to your old sign? We’ll take it away and dispose of it safely, at no extra cost.',
+        },
+        {
+          heading: 'Financing Options',
+          copy: 'Need flexibility with your digital signage purchase?  No problem. Ask us about available options.',
+        },
+        {
+          heading: 'Warranty Coverage',
+          copy: 'Enjoy peace of mind knowing that your digital sign is locally serviced and warrantied.',
+        },
+      ],
+      heading: '',
+      copy: '',
+      route: '/',
+      btnClass: 'apex-base-btn apex-red-btn',
+    },
+    contentBlockTwo: {
+      heading: 'Support Services'
+    },
+    class: 'apex-split-services',
   }
 }
 

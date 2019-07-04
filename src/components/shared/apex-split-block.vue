@@ -1,5 +1,6 @@
 <template lang="pug">
 .apex-split-content-block-inner(:class='className')
+  slot(name='service-list')
   slot(name='heading')
   slot(name='copy')
   slot(name='route')
