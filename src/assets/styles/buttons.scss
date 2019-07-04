@@ -22,6 +22,15 @@
   font-weight: 700;
   border: 0;
 
+  @media #{$phone-only} {
+    font-size: 15px;
+    padding: 20px 15px;
+  }
+
+  @media #{$xl-up} {
+    font-size: 22px;
+  }
+
   .apex-btn-text {
     transform: scale(1);
     transition: all .4s;
