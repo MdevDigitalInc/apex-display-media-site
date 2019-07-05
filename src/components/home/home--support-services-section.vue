@@ -1,5 +1,6 @@
 <template lang="pug">
 .apex-support-service-section
+  //- Apex Split Component
   apex-split(:content='supportContent')
 </template>
 

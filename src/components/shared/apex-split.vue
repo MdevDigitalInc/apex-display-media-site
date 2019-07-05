@@ -1,7 +1,7 @@
 <template lang="pug">
   .apex-split.u-text-left
     .apex-split-row.flex.flex-row.flex-wrap
-      .apex-split-content-block(:class="content.bgClass")
+      .apex-split-content-block(:class="content.contentBlockOne.bgClass")
           //- Content Block Component
           apex-split-block(:className='content.class')
             template(slot="service-list" v-if = 'content.contentBlockOne.serviceList')
@@ -21,7 +21,7 @@
              slot='route' :class='content.contentBlockOne.btnClass'
              :to='content.contentBlockOne.route')
               |Learn more
-      .apex-split-content-block(:class='content.class')
+      .apex-split-content-block(:class='[content.class , content.contentBlockTwo.bgClass]')
         //- Content Block Component
         apex-split-block
           h2(slot="heading").--margin-space-large(:class='content.contentBlockTwo.headingClass')
@@ -124,7 +124,6 @@
 
   &:nth-child( 2 ) {
     width: 100%;
-    background-color: $apex-red;
     background-image: url('../../assets/images/dots-white.svg'), url('../../assets/images/arrows-white.svg');
     background-repeat: no-repeat, no-repeat;
 
@@ -265,6 +264,14 @@
   .apex-split-service-copy {
     font-size: 20px;
   }
+}
+
+.apex-split-block-blue {
+  background-color: $apex-blue;
+}
+
+.apex-split-block-red {
+  background-color: $apex-red;
 }
 
 

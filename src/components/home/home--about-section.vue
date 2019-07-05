@@ -1,5 +1,6 @@
 <template lang="pug">
 .apex-about-section
+  //- Apex Split Component
   apex-split(:content='aboutContent')
 </template>
 

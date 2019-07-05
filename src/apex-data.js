@@ -113,6 +113,7 @@ let homePage = {
       route: '',
       btnClass: 'apex-base-btn apex-blue-btn',
       headingClass: 'd-heading-flair d-heading-flair-blue u-bold',
+      bgClass: ''
     },
     contentBlockTwo:{
       heading: 'About',
@@ -120,9 +121,9 @@ let homePage = {
       route: '/',
       btnClass: 'apex-base-btn apex-plain-btn',
       headingClass: 'd-heading-flair d-heading-flair-white u-bold',
+      bgClass: 'apex-split-block-red'
     },
-    class: 'apex-split-about-home',
-    bgClass: ''
+    class: 'apex-split-about-home'
   },
   supportServices: {
     contentBlockOne: {
@@ -157,13 +158,14 @@ let homePage = {
       route: '/',
       btnClass: 'apex-base-btn apex-red-btn',
       headingClass: 'd-heading-flair d-heading-flair-blue u-bold',
+      bgClass: 'apex-service-list-container'
     },
     contentBlockTwo: {
       heading: 'Support Services',
       headingClass: 'd-heading-flair d-heading-flair-white u-bold',
+      bgClass: 'apex-split-block-red'
     },
-    class: 'apex-split-services',
-    bgClass: 'apex-service-list-container'
+    class: 'apex-split-services'
   }
 }
 
