@@ -192,6 +192,14 @@ export default {
     },
     toggleContactModal() {
       this.contactModalOpen = !this.contactModalOpen;
+
+      var mainBody = document.querySelectorAll('body');
+
+      if (this.contactModalOpen) {
+        this.addClass(mainBody, 'u-freeze-scroll');
+      }else{
+        this.removeClass(mainBody, 'u-freeze-scroll');
+      }
     }
   }
 };

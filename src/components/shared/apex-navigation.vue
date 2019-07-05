@@ -67,6 +67,16 @@
        if ( this.navOpen ) {
          this.navOpen = false;
        }
+      },
+      navOpen () {
+
+        var mainBody = document.querySelectorAll('body');
+
+        if (this.navOpen) {
+          this.addClass(mainBody, 'u-freeze-scroll');
+        }else{
+          this.removeClass(mainBody, 'u-freeze-scroll');
+        }
       }
     },
     methods: {
