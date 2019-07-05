@@ -1,17 +1,18 @@
 <template lang="pug">
   .apex-split.u-text-left
     .apex-split-row.flex.flex-row.flex-wrap
-      .apex-split-content-block(:class="{'apex-service-list-container': (content.contentBlockOne.serviceList != null)}")
-          apex-split-block-one(:className='content.class')
+      .apex-split-content-block(:class="content.bgClass")
+          //- Content Block Component
+          apex-split-block(:className='content.class')
             template(slot="service-list" v-if = 'content.contentBlockOne.serviceList')
-              .apex-split-support-services.flex.flex-row.flex-wrap
+              .apex-split-support-services.flex.flex-row.flex-wrap.flex-hor-between
                 .apex-split-service-item( v-for="(service, index) in content.contentBlockOne.serviceList")
                   .apex-split-service-heading(v-html="service.heading")
                   .apex-split-service-copy
                     p
                       | {{service.copy}}
             template(v-else)
-              h2(slot="heading").--margin-space-large.d-heading-flair.d-heading-flair-blue.u-bold
+              h2(slot="heading").--margin-space-large(:class='content.contentBlockOne.headingClass')
                 | {{content.contentBlockOne.heading}}
               p(slot="copy")
                 | {{content.contentBlockOne.copy}}
@@ -21,8 +22,9 @@
              :to='content.contentBlockOne.route')
               |Learn more
       .apex-split-content-block(:class='content.class')
-        apex-split-block-one
-          h2(slot="heading").--margin-space-large.d-heading-flair.d-heading-flair-white.u-bold
+        //- Content Block Component
+        apex-split-block
+          h2(slot="heading").--margin-space-large(:class='content.contentBlockTwo.headingClass')
             | {{content.contentBlockTwo.heading}}
           p(slot="copy")
             | {{content.contentBlockTwo.copy}}
@@ -47,7 +49,7 @@
       };
      },
      components: {
-      'apex-split-block-one'         : ApexSplitBlock
+      'apex-split-block'         : ApexSplitBlock
     }
   };
 
@@ -158,23 +160,38 @@
     }
 
     &.apex-split-services {
-      background-position: 105% -13%, -1000% 90%;
+      background-position: 120% -30%, -1000% 90%;
       order: 0;
       transform: scaleY(-1);
       filter: FlipV;
-
-      @media #{$tablet-only} {
-        background-position: 96% -7%, -1000% 90%;
-      }
-
-      @media #{$laptop-up} {
-        background-position: 96% -3%, 5% 90%;
-      }
 
       .apex-split-content-block-inner {
         width: 43%;
         transform: translateX( 10% ) translateY( -17% ) scaleY(-1);
         filter: FlipV;
+      }
+
+      @media #{$tablet-only} {
+        background-position: 96% -15%, -1000% 90%;
+      }
+
+      @media #{$laptop-up} {
+        background-position: 96% -3%, 5% 90%;
+      }
+    }
+
+    &.apex-split-services .apex-split-content-block-inner {
+
+      @media #{$tablet-only} {
+        transform: translateX( -30% ) translateY( 0 ) scaleY(-1);
+        min-height: auto;
+        padding: 70px 0 10px;
+      }
+
+      @media #{$phone-only} {
+        transform: translateX( -40% ) translateY( 0 ) scaleY(-1);
+        min-height: auto;
+        padding: 70px 0 25px;
       }
     }
 
@@ -193,7 +210,6 @@
   }
 }
 
-
 .apex-split-content-block:first-child.apex-service-list-container {
 
   @media #{$laptop-up} {
@@ -201,16 +217,28 @@
   }
 
   .apex-split-content-block-inner {
-    background-color: #f2f2f2;
+    background-color: $white;
     padding: 40px;
     margin-top: 20px;
     width: 95%;
 
     @media #{$laptop-up} {
-      padding: 0;
+      padding: 30px 0 0;
       margin-top: 0;
-      width: 80%;
+      width: 90%;
+      background-color: $white;
     }
+
+    @media #{$tablet-only} {
+      padding: 40px 95px;
+    }
+  }
+}
+
+.apex-split-content-block:first-child.apex-service-list-container .apex-split-service-copy p {
+
+  @media #{$laptop-only} {
+    font-size: 16px;
   }
 }
 
@@ -218,7 +246,8 @@
   width: 100%;
 
   @media #{$laptop-up} {
-    width: calc(100% / 3);
+    width: calc(100% / 3 - 3%);
+    padding: 10px;
   }
 
   .apex-split-service-heading {
@@ -227,11 +256,16 @@
     font-size: 24px;
     line-height: 1.5;
     margin-bottom: 10px;
+
+    @media #{$laptop-only} {
+      font-size: 20px;
+    }
   }
 
   .apex-split-service-copy {
     font-size: 20px;
   }
 }
+
 
 </style>

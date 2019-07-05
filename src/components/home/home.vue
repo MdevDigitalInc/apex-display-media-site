@@ -4,7 +4,7 @@
     //- Hero section -----------
     main-hero
     //- About Section ----------
-    about-section(:aboutContent="homeData.supportServices")
+    about-section(:aboutContent="homeData.aboutContent")
     //- Featured Services Section [ Lucas ] ----
     featured-services(
       :featuredServices="homeData.featuredServices"
@@ -12,7 +12,7 @@
     //- Alternate Service Section [ Lucas ] ----
     alternate-services
     //- Support Services Section ----------
-    support-services
+    support-services(:supportContent="homeData.supportServices")
     //- Pre-footer Section ----------
     pre-footer
     //- Main Footer
@@ -27,9 +27,10 @@
 //Local Component registration
 import MainHero from '../shared/main-hero.vue';
 import AboutSection from './home--about-section.vue';
+import SupportServices from './home--support-services-section.vue';
 import FeaturedServices from './home--featured-service.vue';
 import AlternateServices from '../shared/alternate-services.vue';
-import SupportServices from '../shared/support-services.vue';
+//import SupportServices from '../shared/support-services.vue';
 
 // Import SEO From File
 import { stagingBuild, template, social, general }       from '../../seo-meta.js';

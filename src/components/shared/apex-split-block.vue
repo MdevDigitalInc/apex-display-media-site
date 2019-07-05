@@ -4,7 +4,6 @@
   slot(name='heading')
   slot(name='copy')
   slot(name='route')
-  
 </template>
 
 <script>
