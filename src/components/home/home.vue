@@ -5,16 +5,18 @@
     main-hero
     //- About Section ----------
     about-section
-    //- Featured Services Section [ Lucas ] ----
+    //- Featured Services Section ----
     featured-services(
       :featuredServices="homeData.featuredServices"
       class="--section-space-xl")
-    //- Alternate Service Section [ Lucas ] ----
+    //- Alternate Service Section [ Lucas ] ---- TODO
     alternate-services
-    //- Support Services Section ----------
-    support-services
-    //- Pre-footer Section ----------
-    pre-footer
+
+    //- ImageShowcase ----------
+    image-showcase(
+      :heading="homeData.imageShowcase.heading"
+      :action="homeData.imageShowcase.btnData"
+      :media="homeData.imageShowcase.media")
     //- Main Footer
     main-footer
 </template>
@@ -26,10 +28,10 @@
 
 //Local Component registration
 import MainHero from '../shared/main-hero.vue';
+import ImageShowcase from '../shared/image-showcase.vue';
+import AlternateServices from '../shared/alternate-services.vue';
 import AboutSection from './home--about-section.vue';
 import FeaturedServices from './home--featured-service.vue';
-import AlternateServices from '../shared/alternate-services.vue';
-import SupportServices from '../shared/support-services.vue';
 
 // Import SEO From File
 import { stagingBuild, template, social, general }       from '../../seo-meta.js';
@@ -65,10 +67,10 @@ export default{
 
   components: {
     'main-hero'         : MainHero,
+    'alternate-services': AlternateServices,
+    'image-showcase'    : ImageShowcase,
     'about-section'     : AboutSection,
     'featured-services' : FeaturedServices,
-    'alternate-services' : AlternateServices,
-    'support-services'   : SupportServices
   }
 };
 </script>
