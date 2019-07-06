@@ -74,7 +74,8 @@
 
         if (this.navOpen) {
           this.addClass(mainBody, 'u-freeze-scroll');
-        }else{
+        }
+        else{
           this.removeClass(mainBody, 'u-freeze-scroll');
         }
       }
