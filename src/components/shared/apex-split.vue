@@ -1,38 +1,39 @@
 <template lang="pug">
   .apex-split.u-text-left
     .apex-split-row.flex.flex-row.flex-wrap
-      .apex-split-content-block(:class="content.contentBlockOne.bgClass")
+      .apex-split-content-block(:class="content.additionalServiceContent.bgClass")
           //- Content Block Component
           apex-split-block(:className='content.class')
-            template(slot="service-list" v-if = 'content.contentBlockOne.serviceList')
+            template(slot="service-list" v-if = 'content.additionalServiceContent.serviceList')
               .apex-split-support-services.flex.flex-row.flex-wrap.flex-hor-between
-                .apex-split-service-item( v-for="(service, index) in content.contentBlockOne.serviceList")
+                .apex-split-service-item( v-for="(service, index) in content.additionalServiceContent.serviceList")
                   .apex-split-service-heading(v-html="service.heading")
                   .apex-split-service-copy
                     p
                       | {{service.copy}}
             template(v-else)
-              h2(slot="heading").--margin-space-large(:class='content.contentBlockOne.headingClass')
-                | {{content.contentBlockOne.heading}}
+              h2(slot="heading").--margin-space-large(:class='content.additionalServiceContent.headingClass')
+                | {{content.additionalServiceContent.heading}}
               p(slot="copy")
-                | {{content.contentBlockOne.copy}}
+                | {{content.additionalServiceContent.copy}}
             router-link(
-             v-if = 'content.contentBlockOne.route !=""'
-             slot='route' :class='content.contentBlockOne.btnClass'
-             :to='content.contentBlockOne.route')
-              |Learn more
-      .apex-split-content-block(:class='[content.class , content.contentBlockTwo.bgClass]')
+             v-if = 'content.additionalServiceContent.btnData.route'
+             slot='route' :class='content.additionalServiceContent.btnData.class'
+             :to='content.additionalServiceContent.btnData.route')
+              | {{content.additionalServiceContent.btnData.text}}
+      .apex-split-content-block(:class='[content.class , content.aboutContent.bgClass]')
         //- Content Block Component
         apex-split-block
-          h2(slot="heading").--margin-space-large(:class='content.contentBlockTwo.headingClass')
-            | {{content.contentBlockTwo.heading}}
+          h2(slot="heading").--margin-space-large(:class='content.aboutContent.headingClass')
+            | {{content.aboutContent.heading}}
           p(slot="copy")
-            | {{content.contentBlockTwo.copy}}
+            | {{content.aboutContent.copy}}
           router-link(
-           v-if = 'content.contentBlockTwo.route !=""'
-           slot='route' :class='content.contentBlockTwo.btnClass' 
-           :to='content.contentBlockTwo.route')
-            |Learn more
+           v-if = 'content.aboutContent.btnData.route'
+           slot='route' :class='content.aboutContent.btnData.class'
+           :to='content.aboutContent.btnData.route')
+            | {{content.aboutContent.btnData.text}}
+
 </template>
 
 <script>
@@ -43,11 +44,6 @@
   export default {
      name: 'ApexSplit',
      props: [ 'content' ],
-     data: function () {
-      return {
-
-      };
-     },
      components: {
       'apex-split-block'         : ApexSplitBlock
     }

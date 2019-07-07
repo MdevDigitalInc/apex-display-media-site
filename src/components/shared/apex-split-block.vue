@@ -9,12 +9,7 @@
 <script>
   export default {
      name: 'ApexSplitBlockOne',
-     props: [ 'className' ],
-     data: function () {
-      return {
-
-      };
-     }
+     props: [ 'className' ]
   };
 
 

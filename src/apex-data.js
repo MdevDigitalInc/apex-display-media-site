@@ -105,28 +105,35 @@ let homePage = {
       },
     }
   ],
-  aboutContent:
-  {
-    contentBlockOne: {
+  aboutContent: {
+    additionalServiceContent: {
       heading: 'We offer',
       copy: 'We offer the most technologically advanced digital signage available. Built for life in Canada, our energy efficient, weatherproof signage is manufactured to withstand the harshest environmental conditions, all year round. We can create a brand new installation or retrofit existing signage – depending on what your business needs. After your signage has been installed, our managed content services are here to keep your signage up-to-date with your latest sales, promotions and events.',
-      route: '',
-      btnClass: 'apex-base-btn apex-blue-btn',
       headingClass: 'd-heading-flair d-heading-flair-blue u-bold',
-      bgClass: ''
+      bgClass: '',
+      btnData: {
+        class: 'apex-base-btn apex-blue-btn',
+        route: null,
+        a11y: '',
+        text: 'Learn More'
+      }
     },
-    contentBlockTwo:{
+    aboutContent: {
       heading: 'About',
       copy: 'We are an end-to-end digital signage and content solution for your business. We provide custom design, manufacture, installation and content management – all backed by a full hardware warranty.',
-      route: '/',
-      btnClass: 'apex-base-btn apex-plain-btn',
       headingClass: 'd-heading-flair d-heading-flair-white u-bold',
-      bgClass: 'apex-split-block-red'
+      bgClass: 'apex-split-block-red',
+      btnData: {
+        class: 'apex-base-btn apex-plain-btn',
+        route: '/',
+        a11y: '',
+        text: 'Learn More'
+      }
     },
     class: 'apex-split-about-home'
   },
   supportServices: {
-    contentBlockOne: {
+    additionalServiceContent: {
       serviceList: [
         {
           heading: 'Conceptual Design',
@@ -155,15 +162,26 @@ let homePage = {
       ],
       heading: '',
       copy: '',
-      route: '/',
-      btnClass: 'apex-base-btn apex-red-btn',
       headingClass: 'd-heading-flair d-heading-flair-blue u-bold',
-      bgClass: 'apex-service-list-container'
+      bgClass: 'apex-service-list-container',
+      btnData: {
+        class: 'apex-base-btn apex-red-btn',
+        route: '/',
+        a11y: '',
+        text: 'Learn More'
+      }
+
     },
-    contentBlockTwo: {
+    aboutContent: {
       heading: 'Support Services',
       headingClass: 'd-heading-flair d-heading-flair-white u-bold',
-      bgClass: 'apex-split-block-red'
+      bgClass: 'apex-split-block-red',
+      btnData: {
+        class: '',
+        route: null,
+        a11y: '',
+        text: ''
+      }
     },
     class: 'apex-split-services'
   }

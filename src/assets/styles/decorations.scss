@@ -14,16 +14,12 @@
     }
   }
 
-  &-blue {
-    &:before {
-      border-color: $apex-blue;
-    }
+  &-blue:before {
+    border-color: $apex-blue;
   }
 
-  &-white {
-    &:before {
-      border-color: $white;
-    }
+  &-white:before {
+    border-color: $white;
   }
 }
 
