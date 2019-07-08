@@ -118,7 +118,7 @@ let homePage = {
         text: 'Learn More'
       }
     },
-    aboutContent: {
+    highlight: {
       heading: 'About',
       copy: 'We are an end-to-end digital signage and content solution for your business. We provide custom design, manufacture, installation and content management – all backed by a full hardware warranty.',
       headingClass: 'd-heading-flair d-heading-flair-white u-bold',
@@ -172,7 +172,7 @@ let homePage = {
       }
 
     },
-    aboutContent: {
+    highlight: {
       heading: 'Support Services',
       headingClass: 'd-heading-flair d-heading-flair-white u-bold',
       bgClass: 'apex-split-block-red',

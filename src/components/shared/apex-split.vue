@@ -1,52 +1,20 @@
 <template lang="pug">
-  .apex-split.u-text-left
-    .apex-split-row.flex.flex-row.flex-wrap
-      .apex-split-content-block(:class="content.additionalServiceContent.bgClass")
-          //- Content Block Component
-          apex-split-block(:className='content.class')
-            template(slot="service-list" v-if = 'content.additionalServiceContent.serviceList')
-              .apex-split-support-services.flex.flex-row.flex-wrap.flex-hor-between
-                .apex-split-service-item( v-for="(service, index) in content.additionalServiceContent.serviceList")
-                  .apex-split-service-heading(v-html="service.heading")
-                  .apex-split-service-copy
-                    p
-                      | {{service.copy}}
-            template(v-else)
-              h2(slot="heading").--margin-space-large(:class='content.additionalServiceContent.headingClass')
-                | {{content.additionalServiceContent.heading}}
-              p(slot="copy")
-                | {{content.additionalServiceContent.copy}}
-            router-link(
-             v-if = 'content.additionalServiceContent.btnData.route'
-             slot='route' :class='content.additionalServiceContent.btnData.class'
-             :to='content.additionalServiceContent.btnData.route')
-              | {{content.additionalServiceContent.btnData.text}}
-      .apex-split-content-block(:class='[content.class , content.aboutContent.bgClass]')
-        //- Content Block Component
-        apex-split-block
-          h2(slot="heading").--margin-space-large(:class='content.aboutContent.headingClass')
-            | {{content.aboutContent.heading}}
-          p(slot="copy")
-            | {{content.aboutContent.copy}}
-          router-link(
-           v-if = 'content.aboutContent.btnData.route'
-           slot='route' :class='content.aboutContent.btnData.class'
-           :to='content.aboutContent.btnData.route')
-            | {{content.aboutContent.btnData.text}}
-
+  .apex-split.u-text-left.flex.flex-row.flex-wrap
+    .apex-split-content-block(:class='content.class')
+      .apex-split-content-block-inner
+        slot(name='additional-service-content')
+    .apex-split-content-block(:class='[content.class , content.highlight.bgClass]')
+      .apex-split-content-block-inner
+        slot(name='highlight')
 </template>
 
 <script>
 
-  import ApexSplitBlock from './apex-split-block.vue';
 
 
   export default {
      name: 'ApexSplit',
-     props: [ 'content' ],
-     components: {
-      'apex-split-block'         : ApexSplitBlock
-    }
+     props: [ 'content' ]
   };
 
 
@@ -101,7 +69,7 @@
       width: 60%;
 
       .apex-split-content-block-inner {
-        width: 74%;
+        width: 80%;
       }
 
       .apex-split-about-home {
