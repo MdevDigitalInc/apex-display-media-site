@@ -9,8 +9,12 @@
     featured-services(
       :featuredServices="homeData.featuredServices"
       class="--section-space-xl")
-    //- Alternate Service Section [ Lucas ] ---- TODO
-    alternate-services
+    //- Alternate Service Section ----
+    featured-block-single(
+      :heading="homeData.featuredBlock.heading"
+      :copy="homeData.featuredBlock.copy"
+      :color="homeData.featuredBlock.color"
+      :media="homeData.featuredBlock.media")
 
     //- ImageShowcase ----------
     image-showcase(
@@ -22,14 +26,12 @@
 </template>
 
 
-
-
 <script>
 
 //Local Component registration
 import MainHero from '../shared/main-hero.vue';
 import ImageShowcase from '../shared/image-showcase.vue';
-import AlternateServices from '../shared/alternate-services.vue';
+import FeaturedBlockSingle from '../shared/featured-block-single.vue';
 import AboutSection from './home--about-section.vue';
 import FeaturedServices from './home--featured-service.vue';
 
@@ -66,11 +68,11 @@ export default{
   },
 
   components: {
-    'main-hero'         : MainHero,
-    'alternate-services': AlternateServices,
-    'image-showcase'    : ImageShowcase,
-    'about-section'     : AboutSection,
-    'featured-services' : FeaturedServices,
+    'main-hero'            : MainHero,
+    'featured-block-single': FeaturedBlockSingle,
+    'image-showcase'       : ImageShowcase,
+    'about-section'        : AboutSection,
+    'featured-services'    : FeaturedServices,
   }
 };
 </script>

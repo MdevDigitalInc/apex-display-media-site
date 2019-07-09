@@ -1,5 +1,5 @@
 <template lang="pug">
-  .apex-featured-services
+  section.apex-featured-services
     .apex-main-wrapper
       //- Featured Service Loop
       .apex-featured-service.flex.flex-vert-center.flex-hor-between(
@@ -14,7 +14,11 @@
           //- Base Button Component
           base-btn( v-if="service.btnData" :btn-data="service.btnData" )
         //- Media
-        .apex-service-media( :style="loadBackground(service.media.source, webpSupport)" )
+        .apex-service-media(
+          role="img"
+          :aria-label="service.media.a11y"
+          :style="loadBackground(service.media.source, webpSupport)" )
+          //- Service Fact floating box
           .apex-service-fact( v-html="service.factInfo" )
 
 </template>
