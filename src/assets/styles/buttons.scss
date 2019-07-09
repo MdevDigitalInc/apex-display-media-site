@@ -82,13 +82,18 @@
 
 .apex-plain-btn {
   background-color: transparent;
-  color: $black;
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 700;
+  padding: 0;
+  text-transform: none;
 
   &:hover,
   &:active {
     text-decoration: underline;
+  }
+
+  @media #{$tablet-up} {
+    font-size: 26px;
   }
 }
 
