@@ -57,7 +57,7 @@ export const routes = [
     children: [
       {
         path: "digital-media-management",
-        component: ServicesDigitalMediaManagement ,
+        component: ServicesDigitalMediaManagement
       },
       {
         path: "indoor-digital",
@@ -65,5 +65,4 @@ export const routes = [
       }
     ]
   }
-
 ];
