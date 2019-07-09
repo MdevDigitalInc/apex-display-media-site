@@ -34,18 +34,6 @@
     max-height: auto;
     padding-top: 90px;
 
-    p {
-      font-size: 20px;
-
-      @media #{$tablet-up} {
-        font-size: 26px;
-      }
-
-      @media #{$laptop-only} {
-        font-size: 20px;
-      }
-    }
-
     @media #{$laptop-up} {
       min-height: 600px;
       max-height: 650px;
@@ -57,13 +45,15 @@
     order: 1;
     padding-bottom: 60px;
 
+    p {
+      @media #{$tablet-only} {
+        font-size: 20px;
+      }
+    }
+
     .apex-split-content-block-inner {
       width: 80%;
       transform: translateX( 0 );
-
-      p {
-        font-size: 20px;
-      }
     }
 
     @media #{$laptop-up} {
@@ -92,6 +82,14 @@
     width: 100%;
     background-image: url('../../assets/images/dots-white.svg'), url('../../assets/images/arrows-white.svg');
     background-repeat: no-repeat, no-repeat;
+
+    p {
+      font-size: 20px;
+
+      @media #{$tablet-up} {
+        font-size: 26px;
+      }
+    }
 
     &.apex-split-about-home {
       order: 2;
@@ -173,6 +171,7 @@
 
     @media #{$laptop-up} {
       width: 40%;
+
       .apex-split-content-block-inner {
         width: 60%;
       }
@@ -205,13 +204,6 @@
   }
 }
 
-.apex-split-content-block:first-child.apex-service-list-container .apex-split-service-copy p {
-
-  @media #{$laptop-only} {
-    font-size: 16px;
-  }
-}
-
 .apex-split-service-item {
   width: 100%;
 
@@ -222,17 +214,33 @@
   .apex-split-service-heading {
     color: $apex-blue;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 1.5;
     margin-bottom: 10px;
 
+    @media #{$tablet-up} {
+      font-size: 24px;
+    }
+
     @media #{$laptop-only} {
-      font-size: 20px;
+      font-size: 16px;
     }
   }
 
-  .apex-split-service-copy {
-    font-size: 20px;
+  .apex-split-service-copy p {
+    font-size: 16px;
+
+    @media #{$tablet-only} {
+      font-size: 20px;
+    }
+
+    @media #{$laptop-up} {
+      font-size: 20px;
+    }
+
+    @media #{$laptop-only} {
+      font-size: 15px;
+    }
   }
 }
 
@@ -253,8 +261,4 @@
     }
   }
 }
-
-
-
-
 </style>
