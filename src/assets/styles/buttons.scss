@@ -22,6 +22,15 @@
   font-weight: 700;
   border: 0;
 
+  @media #{$phone-only} {
+    font-size: 15px;
+    padding: 20px 15px;
+  }
+
+  @media #{$xl-up} {
+    font-size: 22px;
+  }
+
   .apex-btn-text {
     transform: scale(1);
     transition: all .4s;
@@ -73,13 +82,18 @@
 
 .apex-plain-btn {
   background-color: transparent;
-  color: $black;
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 700;
+  padding: 0;
+  text-transform: none;
 
   &:hover,
   &:active {
     text-decoration: underline;
+  }
+
+  @media #{$tablet-up} {
+    font-size: 26px;
   }
 }
 

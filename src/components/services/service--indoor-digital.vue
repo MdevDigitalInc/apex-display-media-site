@@ -1,17 +1,14 @@
 <template lang="pug">
-  section.mdev-main-content
-    //- Use comments witn `-`
-    //- This omits them from output.
+  .apex-indoor-digital
     h1
-      |ABOUT SECTION
+      | Indoor Digital
 </template>
 
-
-
-
 <script>
+
+
 export default {
-  name: 'HomeAbout',
+  name: 'ServicesIndoorDigital',
 
   data: function(){
     return {

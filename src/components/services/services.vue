@@ -1,22 +1,20 @@
+
 <template lang="pug">
-  section.mdev-main-content
-    //- Use comments witn `-`
-    //- This omits them from output.
+  section.apex-main-content
     h1
-      |PRE FOOTER
+      | Services
+    router-view
 </template>
 
-
-
-
 <script>
+
 export default {
-  name: 'PreFooter',
+  name: 'ServicesPage',
 
   data: function(){
     return {
     };
-  },
+  }
 };
 </script>
 
