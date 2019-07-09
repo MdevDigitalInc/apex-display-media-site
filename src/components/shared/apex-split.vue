@@ -165,7 +165,6 @@
     }
 
     &.--flip-order { 
-
       order: 0;
     }
 
