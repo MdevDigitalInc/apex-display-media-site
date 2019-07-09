@@ -55,6 +55,7 @@
   &:first-child {
     width: 100%;
     order: 1;
+    padding-bottom: 60px;
 
     .apex-split-content-block-inner {
       width: 80%;
@@ -67,6 +68,7 @@
 
     @media #{$laptop-up} {
       width: 60%;
+      padding-bottom: 0;
 
       .apex-split-content-block-inner {
         width: 80%;
@@ -106,7 +108,7 @@
 
     &.apex-split-about-service {
       background-position: 40% 118%, -1000% 80%;
-      order: 0;
+      order: 2;
 
       @media #{$tablet-only} {
         background-position: 40% 119%, -1000% 80%;
@@ -124,7 +126,7 @@
 
     &.apex-split-services {
       background-position: 120% -30%, -1000% 90%;
-      order: 0;
+      order: 2;
       transform: scaleY(-1);
       filter: FlipV;
 
@@ -162,6 +164,11 @@
       color: $white;
       width: 80%;
       padding-bottom: 43px;
+    }
+
+    &.--flip-order { 
+
+      order: 0;
     }
 
     @media #{$laptop-up} {
@@ -210,7 +217,6 @@
 
   @media #{$laptop-up} {
     width: calc(100% / 3 - 3%);
-    padding: 10px;
   }
 
   .apex-split-service-heading {
@@ -237,6 +243,18 @@
 .apex-split-block-red {
   background-color: $apex-red;
 }
+
+.apex-split-content-block:first-child.apex-split-services {
+
+  @media #{$laptop-up} {  
+    .apex-split-content-block-inner {
+      padding-top: 45px;
+      width: 85%;
+    }
+  }
+}
+
+
 
 
 </style>

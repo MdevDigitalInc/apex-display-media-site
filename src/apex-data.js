@@ -183,7 +183,7 @@ let homePage = {
         text: ''
       }
     },
-    class: 'apex-split-services'
+    class: 'apex-split-services --flip-order'
   }
 }
 
