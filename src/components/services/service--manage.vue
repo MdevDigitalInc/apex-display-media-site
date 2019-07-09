@@ -1,5 +1,5 @@
 <template lang="pug">
-  .apex-indoor-digital
+  .apex-service-manage
     h1
       | Service Manage
 </template>
