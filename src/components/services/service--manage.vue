@@ -1,15 +1,14 @@
-
 <template lang="pug">
-  section.apex-main-content
+  .apex-indoor-digital
     h1
-      | Services
-    router-view
+      | Service Manage
 </template>
 
 <script>
 
+
 export default {
-  name: 'ServicesPage',
+  name: 'ServiceManage',
 
   data: function(){
     return {

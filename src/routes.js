@@ -12,6 +12,7 @@ import ResetComponent from './components/auth/Reset.vue';
 import Services from './components/services/services.vue';
 import ServicesDigitalMediaManagement from './components/services/service--digital-media-management.vue';
 import ServicesIndoorDigital from './components/services/service--indoor-digital.vue';
+import ServiceManage from './components/services/service--manage.vue';
 // Export routes as named constant array.
 // Routes consist of desired path + bound parent component
 export const routes = [
@@ -62,6 +63,10 @@ export const routes = [
       {
         path: "indoor-digital",
         component: ServicesIndoorDigital
+      },
+      {
+        path: "service-manage",
+        component: ServiceManage
       }
     ]
   }
