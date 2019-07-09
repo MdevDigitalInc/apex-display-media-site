@@ -49,7 +49,7 @@
 	export default {
     name: 'ApexFooter',
     data (){
-      return { 
+      return {
         year: null,
         footerBrand: 'apex-logo-footer.svg',
         links: [

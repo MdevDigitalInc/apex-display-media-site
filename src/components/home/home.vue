@@ -3,72 +3,71 @@
   section.mdev-main-content
     //- Hero section -----------
     main-hero
-    //- About Section ----------
-    //about-section(:homePage.aboutContent="homePage.homePage.aboutContent")
     .apex-about-section
       //- Apex Split Component
-      apex-split(:content='homePage.aboutContent')
-        template(slot='additional-service-content' v-if = 'homePage.aboutContent.additionalServiceContent.serviceList')
+      apex-split(:content='homeData.aboutContent')
+        template(slot='additional-service-content' v-if = 'homeData.aboutContent.additionalServiceContent.serviceList')
           //- Support Services Component
         template(slot='additional-service-content' v-else)
-          h2.--margin-space-large(:class='homePage.aboutContent.additionalServiceContent.headingClass')
-            | {{homePage.aboutContent.additionalServiceContent.heading}}
+          h2.--margin-space-large(:class='homeData.aboutContent.additionalServiceContent.headingClass')
+            | {{homeData.aboutContent.additionalServiceContent.heading}}
           p
-            | {{homePage.aboutContent.additionalServiceContent.copy}}
+            | {{homeData.aboutContent.additionalServiceContent.copy}}
           router-link(
-          v-if = 'homePage.aboutContent.additionalServiceContent.btnData.route'
-          :class='homePage.aboutContent.additionalServiceContent.btnData.class'
-          :to='homePage.aboutContent.additionalServiceContent.btnData.route')
-            | {{homePage.aboutContent.additionalServiceContent.btnData.text}}
+          v-if = 'homeData.aboutContent.additionalServiceContent.btnData.route'
+          :class='homeData.aboutContent.additionalServiceContent.btnData.class'
+          :to='homeData.aboutContent.additionalServiceContent.btnData.route')
+            | {{homeData.aboutContent.additionalServiceContent.btnData.text}}
         template(slot='highlight')
-          h2.--margin-space-large(:class='homePage.aboutContent.highlight.headingClass')
-            | {{homePage.aboutContent.highlight.heading}}
+          h2.--margin-space-large(:class='homeData.aboutContent.highlight.headingClass')
+            | {{homeData.aboutContent.highlight.heading}}
           p
-            | {{homePage.aboutContent.highlight.copy}}
+            | {{homeData.aboutContent.highlight.copy}}
           router-link(
-           v-if = 'homePage.aboutContent.highlight.btnData.route'
-           :class='homePage.aboutContent.highlight.btnData.class'
-           :to='homePage.aboutContent.highlight.btnData.route')
-            | {{homePage.aboutContent.highlight.btnData.text}}
-    //- Featured Services Section [ Lucas ] ----
+           v-if = 'homeData.aboutContent.highlight.btnData.route'
+           :class='homeData.aboutContent.highlight.btnData.class'
+           :to='homeData.aboutContent.highlight.btnData.route')
+            | {{homeData.aboutContent.highlight.btnData.text}}
     featured-services(
-      :featuredServices="homePage.featuredServices"
+      :featuredServices="homeData.featuredServices"
       class="--section-space-xl")
-    //- Alternate Service Section [ Lucas ] ----
-    alternate-services
+    //- Alternate Service Section [ Lucas ] ---- TODO
     //- Support Services Section ----------
     .apex-support-services-section
       //- Apex Split Component
-      apex-split(:content='homePage.supportServices')
-        template(slot='additional-service-content' v-if = 'homePage.supportServices.additionalServiceContent.serviceList')
-          support-services(:content='homePage.supportServices')
+      apex-split(:content='homeData.supportServices')
+        template(slot='additional-service-content' v-if = 'homeData.supportServices.additionalServiceContent.serviceList')
+          support-services(:content='homeData.supportServices')
           router-link(
-           v-if = 'homePage.supportServices.additionalServiceContent.btnData.route'
-           :class='homePage.supportServices.additionalServiceContent.btnData.class'
-           :to='homePage.supportServices.additionalServiceContent.btnData.route')
-            | {{homePage.supportServices.additionalServiceContent.btnData.text}}
+           v-if = 'homeData.supportServices.additionalServiceContent.btnData.route'
+           :class='homeData.supportServices.additionalServiceContent.btnData.class'
+           :to='homeData.supportServices.additionalServiceContent.btnData.route')
+            | {{homeData.supportServices.additionalServiceContent.btnData.text}}
         template(slot='additional-service-content' v-else)
-          h2.--margin-space-large(:class='homePage.supportServices.additionalServiceContent.headingClass')
-            | {{homePage.supportServices.additionalServiceContent.heading}}
+          h2.--margin-space-large(:class='homeData.supportServices.additionalServiceContent.headingClass')
+            | {{homeData.supportServices.additionalServiceContent.heading}}
           p
-            | {{homePage.supportServices.additionalServiceContent.copy}}
+            | {{homeData.supportServices.additionalServiceContent.copy}}
           router-link(
-           v-if = 'homePage.supportServices.additionalServiceContent.btnData.route'
-           :class='homePage.supportServices.additionalServiceContent.btnData.class'
-           :to='homePage.supportServices.additionalServiceContent.btnData.route')
-            | {{homePage.supportServices.additionalServiceContent.btnData.text}}
+           v-if = 'homeData.supportServices.additionalServiceContent.btnData.route'
+           :class='homeData.supportServices.additionalServiceContent.btnData.class'
+           :to='homeData.supportServices.additionalServiceContent.btnData.route')
+            | {{homeData.supportServices.additionalServiceContent.btnData.text}}
         template(slot='highlight')
-          h2.--margin-space-large(:class='homePage.supportServices.highlight.headingClass')
-            | {{homePage.supportServices.highlight.heading}}
+          h2.--margin-space-large(:class='homeData.supportServices.highlight.headingClass')
+            | {{homeData.supportServices.highlight.heading}}
             p
-              | {{homePage.supportServices.highlight.copy}}
+              | {{homeData.supportServices.highlight.copy}}
           router-link(
-            v-if = 'homePage.supportServices.highlight.btnData.route'
-           :class='homePage.supportServices.highlight.btnData.class'
-           :to='homePage.supportServices.highlight.btnData.route')
-            | {{homePage.supportServices.highlight.btnData.text}}
-    //- Pre-footer Section ----------
-    pre-footer
+            v-if = 'homeData.supportServices.highlight.btnData.route'
+           :class='homeData.supportServices.highlight.btnData.class'
+           :to='homeData.supportServices.highlight.btnData.route')
+            | {{homeData.supportServices.highlight.btnData.text}}
+    //- ImageShowcase ----------
+    image-showcase(
+      :heading="homeData.imageShowcase.heading"
+      :action="homeData.imageShowcase.btnData"
+      :media="homeData.imageShowcase.media")
     //- Main Footer
     main-footer
 </template>
@@ -80,12 +79,11 @@
 
 //Local Component registration
 import MainHero from '../shared/main-hero.vue';
-import FeaturedServices from './home--featured-service.vue';
-import AlternateServices from '../shared/alternate-services.vue';
 import ApexSplit from '../shared/apex-split.vue';
+import ImageShowcase from '../shared/image-showcase.vue';
+import AlternateServices from '../shared/alternate-services.vue';
 import SupportServices from '../shared/support-services.vue';
-
-//import SupportServices from '../shared/support-services.vue';
+import FeaturedServices from './home--featured-service.vue';
 
 // Import SEO From File
 import { stagingBuild, template, social, general }       from '../../seo-meta.js';
@@ -99,7 +97,7 @@ export default{
 
   data: function(){
     return {
-      homePage: homePage
+      homeData: homePage
     };
   },
   // Meta SEO Function
@@ -122,9 +120,9 @@ export default{
     'main-hero'         : MainHero,
     'featured-services' : FeaturedServices,
     'alternate-services' : AlternateServices,
-    'support-services'   : SupportServices,
     'apex-split' : ApexSplit,
-    'support-services' : SupportServices
+    'support-services' : SupportServices,
+    'image-showcase'    : ImageShowcase
   }
 };
 </script>
