@@ -82,7 +82,7 @@
     width: 100%;
     background-image: url('../../assets/images/dots-white.svg'), url('../../assets/images/arrows-white.svg');
     background-repeat: no-repeat, no-repeat;
-    background-size: 147px 203px , initial;
+    background-size: 147px 203px, initial;
 
     p {
       font-size: 20px;
@@ -165,7 +165,7 @@
       padding-bottom: 43px;
     }
 
-    &.--flip-order { 
+    &.--flip-order {
       order: 0;
     }
 
@@ -254,7 +254,7 @@
 
 .apex-split-content-block:first-child.apex-split-services {
 
-  @media #{$laptop-up} {  
+  @media #{$laptop-up} {
     .apex-split-content-block-inner {
       padding-top: 45px;
       width: 85%;

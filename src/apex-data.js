@@ -105,7 +105,22 @@ let homePage = {
       },
     }
   ],
-
+  // Featured Block Single
+  featuredBlock: {
+    heading: 'Alternate</br>Display</br>Media',
+    copy: [
+      'Looking for static signage with impact? We also provide quality backlit signage and lettering for indoor and outdoor usage. Ideal for locations that want to show off their brand identity.',
+      'Take generic acrylic panel signage to the next level with our custom LED backlit channel letter signage.'
+    ],
+    color: '--blue',
+    // Image Data
+    media: {
+      source: 'home/featured-block-single-placeholder.jpeg',
+      gif: false,
+      a11y: 'Placeholder - TODO Update'
+    }
+  },
+  // About Block Content
   aboutContent: {
     additionalServiceContent: {
       heading: 'We offer',

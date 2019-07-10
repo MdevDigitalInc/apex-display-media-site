@@ -1,6 +1,6 @@
 <template lang="pug">
   //- Section Container
-  .apex-image-showcase.flex.flex-vert-stretch.--section-space-top-xl
+  .apex-image-showcase.flex.flex-vert-stretch
     //- Left Side Container
     .apex-showcase-left
       .apex-showcase-top.flex.flex-vert-stretch.flex-wrap(data-media-height)
