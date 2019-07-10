@@ -120,6 +120,87 @@ let homePage = {
       a11y: 'Placeholder - TODO Update'
     }
   },
+  // About Block Content
+  aboutContent: {
+    additionalServiceContent: {
+      heading: 'We offer',
+      copy: 'We offer the most technologically advanced digital signage available. Built for life in Canada, our energy efficient, weatherproof signage is manufactured to withstand the harshest environmental conditions, all year round. We can create a brand new installation or retrofit existing signage – depending on what your business needs. After your signage has been installed, our managed content services are here to keep your signage up-to-date with your latest sales, promotions and events.',
+      headingClass: 'd-heading-flair d-heading-flair-blue u-bold',
+      bgClass: '',
+      btnData: {
+        class: 'apex-base-btn apex-blue-btn',
+        route: null,
+        a11y: '',
+        text: 'Learn More'
+      }
+    },
+    highlight: {
+      heading: 'About',
+      copy: 'We are an end-to-end digital signage and content solution for your business. We provide custom design, manufacture, installation and content management – all backed by a full hardware warranty.',
+      headingClass: 'd-heading-flair d-heading-flair-white u-bold',
+      bgClass: 'apex-split-block-red',
+      btnData: {
+        class: 'apex-base-btn apex-plain-btn',
+        route: '/',
+        a11y: '',
+        text: 'Learn More'
+      }
+    },
+    class: 'apex-split-about-home'
+  },
+  supportServices: {
+    additionalServiceContent: {
+      serviceList: [
+        {
+          heading: 'Conceptual Design',
+          copy: 'Our team helps right from the start – providing site plans, renderings and launch-ready content.',
+        },
+        {
+          heading: 'Custom Installation',
+          copy: 'We have the equipment and expertise needed to retrofit your existing sign, or install a new one.',
+        },
+        {
+          heading: 'City Permitting',
+          copy: 'Let our team negotiate permitting requirements while you worry about running your business.',
+        },
+        {
+          heading: 'Removal &amp; Disposal',
+          copy: 'Wondering what happens to your old sign? We’ll take it away and dispose of it safely, at no extra cost.',
+        },
+        {
+          heading: 'Financing Options',
+          copy: 'Need flexibility with your digital signage purchase?  No problem. Ask us about available options.',
+        },
+        {
+          heading: 'Warranty Coverage',
+          copy: 'Enjoy peace of mind knowing that your digital sign is locally serviced and warrantied.',
+        },
+      ],
+      heading: '',
+      copy: '',
+      headingClass: 'd-heading-flair d-heading-flair-blue u-bold',
+      bgClass: 'apex-service-list-container',
+      btnData: {
+        class: 'apex-base-btn apex-red-btn',
+        route: '/',
+        a11y: '',
+        text: 'Learn More'
+      }
+
+    },
+    highlight: {
+      heading: 'Support Services',
+      headingClass: 'd-heading-flair d-heading-flair-white u-bold',
+      bgClass: 'apex-split-block-red',
+      btnData: {
+        class: '',
+        route: null,
+        a11y: '',
+        text: ''
+      }
+    },
+    class: 'apex-split-services --flip-order',
+  },
   // Image Showcase (Prefooter)
   // OBJECT - Image Showcase configuration
   imageShowcase: {
