@@ -1,56 +1,63 @@
 <template lang="pug">
-  section.mdev-main-content
-    //- Use comments witn `-`
-    //- This omits them from output.
-    h1
-      |Service Sample
+  .apex-service-sample.--margin-space-extra-large.flex.flex-vert-stretch.flex-wrap
+    //- Media Slot
+    .apex-sample-media( :style="loadBackground(media.source)" :aria-label="media.a11y" role="img" )
+    //- Content Slot
+    .apex-sample-content
+      h3.u-bold.d-heading-flair.d-heading-flair-blue( v-html="heading" )
+      p
+        |{{ copy }}
+      ul.apex-sample-list
+        li( v-for="(item, index) in list")
+          | {{ item }}
 </template>
 
 
-
-
 <script>
-// Import SEO From File
-import { stagingBuild, template, social, general }       from '../../seo-meta.js';
-
 export default {
-  name: 'BaseTemplate',
+  name: 'ServiceSample',
 
-  data: function(){
-    return {
-    };
-  },
-  // Meta SEO Function
-  metaInfo() {
-    return {
-      title: general.title,
-      meta: [
-        // SEO
-        { vmid: 'desc', name: 'description', content: general.desc },
-        { vmid: 'ogtitle', property: 'og:title', content: general.title + template.slugAddon },
-        { vmid: 'ogimage', property: 'og:image', content: (stagingBuild ? template.stageUrl : template.liveUrl) + this.loadImage(social.ogimage) },
-        { vmid: 'ogdesc', property: 'og:description', content: general.desc },
-        { vmid: 'twtitle', name: 'twitter:title', content:  general.title + template.slugAddon },
-        { vmid: 'twimage', name: 'twitter:image', content: (stagingBuild ? template.stageUrl : template.liveUrl) + this.loadImage(social.twimage) },
-        { vmid: 'twdesc', name: 'twitter:description', content: general.desc }
-      ]
-    };
-  },
+  props: [ 'media', 'heading', 'copy', 'list' ]
 
-  mounted: function(){
-    console.log('COMPONENT NAME Mounted');
-  }
 };
 </script>
-
 
 
 <style lang="scss">
 
 /*-------------------------------------*/
-/* BASE TEMPLATE Component Styles
+/* Service Sample Component Styles
 /--------------------------------------*/
+.apex-service-sample {
+  position: relative;
+  padding-left: 12%;
 
+
+  .apex-sample-media {
+    width: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 30px rgba( 0, 0, 0, .1);
+  }
+
+  .apex-sample-content {
+    width: 50%;
+    padding: 8%;
+
+    p {
+      line-height: 1.2;
+    }
+  }
+
+  .apex-sample-list {
+    color: $color-brand-primary;
+    font-weight: 700;
+    list-style: disc;
+    list-style-position: inside;
+    line-height: 2.1;
+    font-size: 20px;
+  }
+}
 
 /*--------------------------------------*/
 
