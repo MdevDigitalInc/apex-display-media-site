@@ -55,6 +55,7 @@ h6,.h6, {
 // Responsive Font Size Maps
 $p-font-sizes: (
   null  : 15px,
+  $tablet-only: 18px,
   $landscape : $p-size
 );
 

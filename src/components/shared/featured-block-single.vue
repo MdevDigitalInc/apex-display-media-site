@@ -9,7 +9,7 @@
         :style="loadBackground(media.source)"  )
       //- Copy
       .apex-copy-block( :class="color" )
-        h3.u-bold.d-heading-flair.apex-featured-title( v-html="heading" )
+        .h1.u-bold.d-heading-flair.apex-featured-title( v-html="heading" )
         p( v-for="paragraph in copy" )
           |{{ paragraph }}
 
@@ -50,6 +50,7 @@ export default {
 
     @media #{$portrait} {
       width: 100%;
+      padding-top: 90%;
     }
   }
 
@@ -60,6 +61,11 @@ export default {
 
     @media #{$portrait} {
       width: 100%;
+      padding: 100px;
+    }
+
+    @media #{$phone-only} {
+      padding: 40px;
     }
 
     // Color Block Overrides

@@ -21,10 +21,7 @@
       :heading="homeData.imageShowcase.heading"
       :action="homeData.imageShowcase.btnData"
       :media="homeData.imageShowcase.media")
-    //- Main Footer
-    main-footer
 </template>
-
 
 <script>
 
