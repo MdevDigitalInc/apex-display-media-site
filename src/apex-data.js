@@ -207,9 +207,56 @@ let homePage = {
   }
 }
 
+let digitalMediaManagement = {
+
+  serviceInfo: [
+    {
+      icon: 'icons/icon-conversions-blue.svg',
+      heading: 'Maximize conversions',
+      copy: 'Informed consumers are able to make confident purchase decisions. Make sure your visitors are aware of the latest promotions, sales, amenities and events at your location.',
+      class: ''
+    },
+    {
+      icon: 'icons/icon-strategy-white.svg',
+      heading: 'Content strategies',
+      copy: 'We can help you create an ongoing content plan to keep your signage fresh. We’ll work with your team to align with your current marketing strategies and business goals.',
+      class: ''
+    },
+    {
+      icon: 'icons/icon-schedule-blue.svg',
+      heading: 'Schedule your content ahead of time',
+      copy: 'Work with our creative team to plan your content ahead of time so that your signage will always align with your current marketing strategy.',
+      class: ''
+    },
+    {
+      icon: 'icons/icon-brand-blue.svg',
+      heading: 'Brand management',
+      copy: 'Already have an established brand and asset library? Our expert creative team will use your assets with care to create well-branded, informative or conversion-centred content.',
+      class: ''
+    },
+    {
+      icon: 'icons/icon-photography-white.svg',
+      heading: 'Professional Photography',
+      copy: 'Put your best foot forward. Our professional photography team will capture your location, products and/or menu items to create professional content for your signs.',
+      class: ''
+    },
+    {
+      icon: 'icons/icon-creative-blue.svg',
+      heading: 'Graphic design and creative services',
+      copy: 'An investment in digital signage should be backed by an investment in design. From comprehensive menu systems, to digital posters, we’ll make sure your messaging is clear.',
+      class: ''
+    }
+  ]
+}
+
 // Export named variables
 export {
   appData,
   mainNavigation,
-  homePage
+  homePage,
+  digitalMediaManagement
 };
+
+
+
+
