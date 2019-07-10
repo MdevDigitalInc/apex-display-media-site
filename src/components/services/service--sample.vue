@@ -1,20 +1,20 @@
 <template lang="pug">
-  //- Hero Main
-  //- Apex Split
-  //- Featured Tiles
-  //- Service Block Single.
-  section.--section-space-xl
-    service-sample
-
-  //- Featured Images
-  //- Apex Split
+  section.mdev-main-content
+    //- Use comments witn `-`
+    //- This omits them from output.
+    h1
+      |Service Sample
 </template>
 
+
+
+
 <script>
-import ServiceSample from './service--sample.vue';
+// Import SEO From File
+import { stagingBuild, template, social, general }       from '../../seo-meta.js';
 
 export default {
-  name: 'ServicesIndoorDigital',
+  name: 'BaseTemplate',
 
   data: function(){
     return {
@@ -37,8 +37,8 @@ export default {
     };
   },
 
-  components: {
-    'service-sample' : ServiceSample
+  mounted: function(){
+    console.log('COMPONENT NAME Mounted');
   }
 };
 </script>
