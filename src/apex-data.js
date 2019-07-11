@@ -105,7 +105,22 @@ let homePage = {
       },
     }
   ],
-
+  // Featured Block Single
+  featuredBlock: {
+    heading: 'Alternate</br>Display</br>Media',
+    copy: [
+      'Looking for static signage with impact? We also provide quality backlit signage and lettering for indoor and outdoor usage. Ideal for locations that want to show off their brand identity.',
+      'Take generic acrylic panel signage to the next level with our custom LED backlit channel letter signage.'
+    ],
+    color: '--blue',
+    // Image Data
+    media: {
+      source: 'home/featured-block-single-placeholder.jpeg',
+      gif: false,
+      a11y: 'Placeholder - TODO Update'
+    }
+  },
+  // About Block Content
   aboutContent: {
     additionalServiceContent: {
       heading: 'We offer',
@@ -208,7 +223,7 @@ let homePage = {
 }
 
 
-let dataDigitalManagement = {
+let DigitalManagement = {
 
   membershipPackages: {
     heading: 'Membership </br> packages',
@@ -265,16 +280,117 @@ let dataDigitalManagement = {
         ]
       }
     ]
+  },
+
+  serviceInfo: {
+    heading: 'Why invest in managed media?',
+    copy: "Our design experts know how to make your signage work for your business. Updating your interior and exterior signage on a regular basis keeps customers engaged and informed, maximizing your return on investment in hardware.",
+    contentBlocks: [
+      {
+        icon: 'icons/icon-conversions-blue.svg',
+        heading: 'Maximize conversions',
+        copy: 'Informed consumers are able to make confident purchase decisions. Make sure your visitors are aware of the latest promotions, sales, amenities and events at your location.',
+        class: '',
+        route: null
+      },
+      {
+        icon: 'icons/icon-strategy-white.svg',
+        heading: 'Content strategies',
+        copy: 'We can help you create an ongoing content plan to keep your signage fresh. We’ll work with your team to align with your current marketing strategies and business goals.',
+        class: '',
+        route: null
+      },
+      {
+        icon: 'icons/icon-schedule-blue.svg',
+        heading: 'Schedule your content ahead of time',
+        copy: 'Work with our creative team to plan your content ahead of time so that your signage will always align with your current marketing strategy.',
+        class: '',
+        route: null
+      },
+      {
+        icon: 'icons/icon-brand-blue.svg',
+        heading: 'Brand management',
+        copy: 'Already have an established brand and asset library? Our expert creative team will use your assets with care to create well-branded, informative or conversion-centred content.',
+        class: '',
+        route: null
+      },
+      {
+        icon: 'icons/icon-photography-white.svg',
+        heading: 'Professional Photography',
+        copy: 'Put your best foot forward. Our professional photography team will capture your location, products and/or menu items to create professional content for your signs.',
+        class: '',
+        route: null
+      },
+      {
+        icon: 'icons/icon-creative-blue.svg',
+        heading: 'Graphic design and creative services',
+        copy: 'An investment in digital signage should be backed by an investment in design. From comprehensive menu systems, to digital posters, we’ll make sure your messaging is clear.',
+        class: '',
+        route: null
+      }
+    ]
   }
 };
+// Indoor Signage Data
+let indoorSignagePage = {
+  // Service Sample Array
+  serviceSamples: [
+    {
+      // Image Data
+      media: {
+        source: 'services/indoor/service-sample-placeholder.jpeg',
+        gif: false,
+        a11y: 'Placeholder - TODO Update'
+      },
+      heading: 'Digital Menu</br>Board Systems',
+      copy: 'Skip the printing fees! Digital media is the best way to keep your customers up-to-date on your latest menu items, promotions and sales. From one simple screen to multiple screens across many locations, we can help you create a menu system, content strategy and scheduled content that updates as often as you like.',
+      benefits: [
+        'Schedule sales and promo content',
+        'Update content across multiple locations',
+        'Customize content per location',
+        'Bullet highlighting special feature'
+      ]
+    },
+    {
+      // Image Data
+      media: {
+        source: 'services/indoor/service-sample-placeholder.jpeg',
+        gif: false,
+        a11y: 'Placeholder - TODO Update'
+      },
+      heading: 'Lobbies &</br>Waiting Rooms',
+      copy: 'Your waiting room is an ideal place for a digital sign. Visitors will appreciate the entertainment, and you can educate them on your products and services while they wait. Not limited to public venues, a digital screen in your break room or office can also be a great way to provide education and entertainment for your employees. Digital screens can also be useful in production environments to share real-time information and training.',
+      benefits: [
+        'Schedule content ahead of time',
+        'Include apps like news, social media, weather, cable and updatable ticker feeds.',
+        'Robust CMS allows easy content management',
+        'Attract customer attention with motion graphiics and eye-catching designs'
+      ]
+    },
+    {
+      // Image Data
+      media: {
+        source: 'services/indoor/service-sample-placeholder.jpeg',
+        gif: false,
+        a11y: 'Placeholder - TODO Update'
+      },
+      heading: 'Retail</br>Promotion',
+      copy: 'interactive messaging engages customers more effectively than static signage. Customers are comfortable getting information from screens and are now seeking them out at retail locations. Digital signage also comes in many different shapes and sizes – making the options for on-site promotion endless. Not sure what you need? Get in touch, we’ll help you develop custom signage for your retail location.',
+      benefits: [
+        'Schedule sale & promo content',
+        'Update content across multiple locations',
+        'Customize content per location',
+        'bullet highlighting special feature'
+      ]
+    }
+  ]
+}
 
 // Export named variables
 export {
   appData,
   mainNavigation,
   homePage,
-  dataDigitalManagement
+  DigitalManagement,
+  indoorSignagePage
 };
-
-
-

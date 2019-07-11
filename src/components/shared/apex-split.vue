@@ -165,7 +165,7 @@
       padding-bottom: 43px;
     }
 
-    &.--flip-order { 
+    &.--flip-order {
       order: 0;
     }
 
@@ -254,7 +254,7 @@
 
 .apex-split-content-block:first-child.apex-split-services {
 
-  @media #{$laptop-up} {  
+  @media #{$laptop-up} {
     .apex-split-content-block-inner {
       padding-top: 45px;
       width: 85%;

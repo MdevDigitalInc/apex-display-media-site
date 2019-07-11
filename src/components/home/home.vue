@@ -31,7 +31,12 @@
     featured-services(
       :featuredServices="homeData.featuredServices"
       class="--section-space-xl")
-    //- Alternate Service Section [ Lucas ] ---- TODO
+    //- Alternate Service Section ----
+    featured-block-single(
+      :heading="homeData.featuredBlock.heading"
+      :copy="homeData.featuredBlock.copy"
+      :color="homeData.featuredBlock.color"
+      :media="homeData.featuredBlock.media")
     //- Support Services Section ----------
     .apex-support-services-section
       //- Apex Split Component
@@ -68,12 +73,7 @@
       :heading="homeData.imageShowcase.heading"
       :action="homeData.imageShowcase.btnData"
       :media="homeData.imageShowcase.media")
-    //- Main Footer
-    main-footer
 </template>
-
-
-
 
 <script>
 
@@ -81,7 +81,7 @@
 import MainHero from '../shared/main-hero.vue';
 import ApexSplit from '../shared/apex-split.vue';
 import ImageShowcase from '../shared/image-showcase.vue';
-import AlternateServices from '../shared/alternate-services.vue';
+import FeaturedBlockSingle from '../shared/featured-block-single.vue';
 import SupportServices from '../shared/support-services.vue';
 import FeaturedServices from './home--featured-service.vue';
 
@@ -117,9 +117,10 @@ export default{
     };
   },
   components: {
+    'main-hero'            : MainHero,
+    'featured-block-single': FeaturedBlockSingle,
     'main-hero'         : MainHero,
     'featured-services' : FeaturedServices,
-    'alternate-services' : AlternateServices,
     'apex-split' : ApexSplit,
     'support-services' : SupportServices,
     'image-showcase'    : ImageShowcase

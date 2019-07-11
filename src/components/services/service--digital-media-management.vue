@@ -3,42 +3,36 @@
     h1
       | Digital Media Management
     apex-member-packages(
-    :heading="digitalMediaManagement.membershipPackages.heading"
-    :packages="digitalMediaManagement.membershipPackages.packageList"
+    :heading="dataDigitalManagement.membershipPackages.heading"
+    :packages="dataDigitalManagement.membershipPackages.packageList"
     )
+    //-Service Info Blocks Component
+    apex-service-info-blocks(
+    :heading='dataDigitalManagement.serviceInfo.heading'
+    :copy="dataDigitalManagement.serviceInfo.copy"
+    :contentBlocks='dataDigitalManagement.serviceInfo.contentBlocks')
 </template>
 
 
 
 
 <script>
-
 // Import SEO From File
 import { stagingBuild, template, social, general }  from '../../seo-meta.js';
-
 import MemberPackages from '../shared/apex-member-packages.vue';
-
-import { dataDigitalManagement } from '../../apex-data.js';
+import { DigitalManagement } from '../../apex-data.js';
+import ServiceInfoBlocks from '../shared/apex-service-info-blocks.vue';
 
 export default {
   name: 'ServicesDigitalMediaManagement',
 
   data: function(){
     return {
-      digitalMediaManagement: dataDigitalManagement,
-      meta: [
-        // SEO
-        { vmid: 'desc', name: 'description', content: general.desc },
-        { vmid: 'ogtitle', property: 'og:title', content: general.title + template.slugAddon },
-        { vmid: 'ogimage', property: 'og:image', content: (stagingBuild ? template.stageUrl : template.liveUrl) + this.loadImage(social.ogimage) },
-        { vmid: 'ogdesc', property: 'og:description', content: general.desc },
-        { vmid: 'twtitle', name: 'twitter:title', content:  general.title + template.slugAddon },
-        { vmid: 'twimage', name: 'twitter:image', content: (stagingBuild ? template.stageUrl : template.liveUrl) + this.loadImage(social.twimage) },
-        { vmid: 'twdesc', name: 'twitter:description', content: general.desc }
-      ]
+      DigitalManagement: dataDigitalManagement
     };
   },
   components: {
+    'apex-service-info-blocks'         : ServiceInfoBlocks,
     'apex-member-packages' : MemberPackages
   }
 };
