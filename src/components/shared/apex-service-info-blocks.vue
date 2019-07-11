@@ -1,15 +1,11 @@
 <template lang="pug">
   .apex-service-info-blocks
     .apex-service-info-blocks-intro
-      h2.d-heading-flair.d-heading-flair-blue.u-bold
-        | Why invest in managed media?
+      h2.d-heading-flair.d-heading-flair-blue.u-bold(v-html="heading")
       p
-        | Our design experts know how to make your signage work for your
-        | business. Updating your interior and exterior signage on a regular basis
-        | keeps customers engaged and informed, maximizing your return on
-        | investment in hardware.
+        | {{copy}}
     .apex-service-info-blocks-row.flex.flex-row.flex-wrap.flex-hor-between
-      .apex-service-info-block( v-for="(item, index) in content.serviceInfo")
+      .apex-service-info-block( v-for="(item, index) in contentBlocks")
         .apex-service-info-block-content
           .apex-service-block-icon
             img(title='icon' :src="loadImage(item.icon)")
@@ -27,7 +23,7 @@
 
 export default {
   name: 'ServiceInfoBlocks',
-  props: [ 'content' ],
+  props: [ 'contentBlocks' , 'heading' ,'copy' ],
   data: function(){
     return {
 
@@ -92,6 +88,12 @@ export default {
   @media #{$laptop-only} {
     width: 47%;
     height: 460px;
+  }
+
+  @media #{$tablet-only} {
+    p {
+      font-size: 20px;
+    }
   }
 }
 
