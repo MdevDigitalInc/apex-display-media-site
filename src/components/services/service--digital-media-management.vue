@@ -2,6 +2,7 @@
   .apex-digital-media-management
     h1
       | Digital Media Management
+    apex-member-packages
 </template>
 
 
@@ -9,6 +10,7 @@
 
 <script>
 
+import MemberPackages from '../shared/apex-member-packages.vue';
 
 export default {
   name: 'ServicesDigitalMediaManagement',
@@ -16,6 +18,9 @@ export default {
   data: function(){
     return {
     };
+  },
+  components: {
+    'apex-member-packages' : MemberPackages
   }
 };
 </script>
