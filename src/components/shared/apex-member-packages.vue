@@ -32,7 +32,7 @@ export default {
 .apex-member-packages-wrapper {
   margin: 0 auto;
   width: 95%;
-  padding-top: 0px;
+  padding-top: 0;
 
   h2 { 
     font-weight: 700;
