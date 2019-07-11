@@ -207,9 +207,74 @@ let homePage = {
   }
 }
 
+
+let digitalMediaManagement = {
+
+  membershipPackages: {
+    heading: 'Membership </br> packages',
+    packageList: [
+      {
+        heading: 'Starter </br> Membership',
+        copy: 'Ideal for clients with 1-3 screens at one locations or anyone who is just getting started with digital signage. Our team will provide intial static graphics for launch and then work with you to provide minor updates as needed.',
+        listItems: [
+          {
+            copy: 'Content created by design professionals'
+          },
+          {
+            copy: 'Monthly support for minor updates'
+          },
+          {
+            copy: 'Up to 5 static views'
+          }
+        ]
+      },
+      {
+        heading: 'Intermediate </br> Membership',
+        copy: '3+ screens, multiple locations....',
+        listItems: [
+          {
+            copy: 'Access to a team of creative professionals'
+          },
+          {
+            copy: 'Strategic content planning'
+          },
+          {
+            copy: 'Motion graphics, multiple screens'
+          }
+        ]
+      },
+      {
+        heading: 'Ultimate </br> Membership',
+        copy: 'Our largest and most robust package - an Ultimate Membership provides ongoing support. There’s no limit on the number of screens or locations; we’ll work with you to come up with a tailored content strategy that makes sense for your business. ',
+        listItems: [
+          {
+            copy: 'Partner with our team of creative design professionals'
+          },
+          {
+            copy: 'Collaborate with our marketing strategists'
+          },
+          {
+            copy: 'Ongoing photography and videography services'
+          },
+          {
+            copy: 'Motion graphics, video content and interactive messaging'
+          },
+          {
+            copy: 'Monetize your signage with ad content'
+          }
+        ]
+      }
+    ]
+  }
+};
+
 // Export named variables
 export {
   appData,
   mainNavigation,
-  homePage
+  homePage,
+  digitalMediaManagement
 };
+
+
+
