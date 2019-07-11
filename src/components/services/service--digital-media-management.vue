@@ -2,7 +2,10 @@
   .apex-digital-media-management
     h1
       | Digital Media Management
-    apex-member-packages(:content='digitalMediaManagement')
+    apex-member-packages(
+    :heading="digitalMediaManagement.membershipPackages.heading"
+    :packages="digitalMediaManagement.membershipPackages.packageList"
+    )
 </template>
 
 
@@ -15,14 +18,14 @@ import { stagingBuild, template, social, general }  from '../../seo-meta.js';
 
 import MemberPackages from '../shared/apex-member-packages.vue';
 
-import { digitalMediaManagement } from '../../apex-data.js';
+import { dataDigitalManagement } from '../../apex-data.js';
 
 export default {
   name: 'ServicesDigitalMediaManagement',
 
   data: function(){
     return {
-      digitalMediaManagement: digitalMediaManagement,
+      digitalMediaManagement: dataDigitalManagement,
       meta: [
         // SEO
         { vmid: 'desc', name: 'description', content: general.desc },

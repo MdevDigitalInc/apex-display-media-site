@@ -208,7 +208,7 @@ let homePage = {
 }
 
 
-let digitalMediaManagement = {
+let dataDigitalManagement = {
 
   membershipPackages: {
     heading: 'Membership </br> packages',
@@ -273,7 +273,7 @@ export {
   appData,
   mainNavigation,
   homePage,
-  digitalMediaManagement
+  dataDigitalManagement
 };
 
 

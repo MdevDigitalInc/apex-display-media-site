@@ -2,9 +2,9 @@
   .apex-member-packages-section
     .apex-member-packages
       .apex-member-packages-wrapper
-        h2.d-heading-flair.d-heading-flair-white.u-bold.u-capitalize(v-html="content.membershipPackages.heading")
+        h2.d-heading-flair.d-heading-flair-white.u-bold.u-capitalize(v-html="heading")
         .apex-member-package-blocks.flex.flex-row.flex-wrap.flex-hor-between
-          .apex-member-package-block( v-for="(item, index) in content.membershipPackages.packageList")
+          .apex-member-package-block( v-for="(item, index) in packages")
             .apex-member-package-block-inner.flex.flex-row.flex-wrap
               .apex-member-package-block-heading
                 h2.d-heading-flair.d-heading-flair-blue(v-html="item.heading")
@@ -19,7 +19,7 @@
 
 export default {
   name: 'MemberPackages',
-  props: [ 'content' ],
+  props: [ 'heading' , 'packages' ],
   data: function(){
     return {
     };
