@@ -1,5 +1,5 @@
 <template lang="pug">
-  .apex-service-sample.--margin-space-extra-large.flex.flex-vert-stretch.flex-wrap
+  .apex-service-sample.flex.flex-vert-stretch.flex-wrap
     //- Media Slot
     .apex-sample-media( :style="loadBackground(media.source)" :aria-label="media.a11y" role="img" )
     //- Content Slot
@@ -31,9 +31,14 @@ export default {
 .apex-service-sample {
   position: relative;
   padding-left: 12%;
+  margin-bottom: 100px;
 
   @media #{$portrait} {
     padding-left: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
   }
 
   .apex-sample-media {
@@ -43,6 +48,7 @@ export default {
     box-shadow: 0 0 30px rgba( 0, 0, 0, .1);
 
     @media #{ $portrait } {
+      order: 2;
       padding-top: 90%;
       width: 100%;
     }
@@ -54,11 +60,13 @@ export default {
 
     @media #{ $portrait } {
       width: 100%;
+      order: 1;
+      padding: 0 15% 100px;
     }
 
     p {
       line-height: 1.2;
-      margin-bottom: 15px;
+      margin-bottom: 25px;
     }
   }
 
@@ -66,7 +74,6 @@ export default {
     color: $color-brand-primary;
     font-weight: 700;
     list-style: disc;
-    list-style-position: inside;
     line-height: 2.1;
     font-size: 20px;
   }
