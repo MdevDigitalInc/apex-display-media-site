@@ -28,7 +28,7 @@ export default {
 
   data: function(){
     return {
-      DigitalManagement: dataDigitalManagement
+      dataDigitalManagement: DigitalManagement
     };
   },
   components: {
