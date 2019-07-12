@@ -152,7 +152,8 @@
   background-color: $apex-blue;
   background-image: url('../../assets/images/dots-white.svg');
   background-repeat: no-repeat;
-  background-position: -108px center; 
+  background-position: -100px center;
+  background-size: 147px 203px, initial;
   padding-top: 51px;
   min-height: 265px;
   width: 100%;
@@ -174,7 +175,7 @@
 
 
   @media #{$laptop-up} {
-    background-position: 0 center; 
+    background-position: 20px center; 
     padding-top: 73px;
     order: 1;
 
@@ -188,7 +189,7 @@
   @media #{$laptop-only} {
     min-height: 150px;
     padding-top: 24px;
-    background-position: -55px 15px; 
+    background-position: -44px 15px; 
     
     h2 {
       padding-left: 22%;
