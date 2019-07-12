@@ -49,6 +49,10 @@ export default {
     }
   }
 
+  @media #{$laptop-only} {
+    width: 80%;
+  }
+
   @media #{$tablet-only} {
     width: 80%;
   }
@@ -135,8 +139,12 @@ export default {
       font-size: 20px;
     }
   }
+
+  @media #{$laptop-only} {
+    li {
+      list-style-position: outside;
+      margin-left: 20px;
+    }
+  }
 }
-
-
-
 </style>
