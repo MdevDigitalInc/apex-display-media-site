@@ -13,11 +13,8 @@
 </template>
 
 <script>
-
-
 export default {
   name: 'ServiceManage',
-
   data: function(){
     return {
     };
@@ -28,12 +25,9 @@ export default {
 
 
 <style lang="scss">
-
 /*-------------------------------------*/
 /* BASE TEMPLATE Component Styles
 /--------------------------------------*/
-
-
 /*--------------------------------------*/
 
 </style>

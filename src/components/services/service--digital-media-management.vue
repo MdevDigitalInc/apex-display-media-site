@@ -4,30 +4,37 @@
       | Digital Media Management
     //-Service Info Blocks Component
     apex-service-info-blocks(
-    :heading='digitalMediaManagement.serviceInfo.heading'
-    :copy="digitalMediaManagement.serviceInfo.copy"
-    :contentBlocks='digitalMediaManagement.serviceInfo.contentBlocks')
+    :heading='dataDigitalManagement.serviceInfo.heading'
+    :copy="dataDigitalManagement.serviceInfo.copy"
+    :contentBlocks='dataDigitalManagement.serviceInfo.contentBlocks')
+    //-Service Member Packages
+    apex-member-packages(
+    :heading="dataDigitalManagement.membershipPackages.heading"
+    :packages="dataDigitalManagement.membershipPackages.packageList"
+    )
 </template>
 
 
 
 
 <script>
-
+// Import SEO From File
+import { stagingBuild, template, social, general }  from '../../seo-meta.js';
+import MemberPackages from '../shared/apex-member-packages.vue';
+import { DigitalManagement } from '../../apex-data.js';
 import ServiceInfoBlocks from '../shared/apex-service-info-blocks.vue';
-
-import { dataMediaManagement } from '../../apex-data.js';
 
 export default {
   name: 'ServicesDigitalMediaManagement',
 
   data: function(){
     return {
-      digitalMediaManagement: dataMediaManagement
+      dataDigitalManagement: DigitalManagement
     };
   },
   components: {
     'apex-service-info-blocks'         : ServiceInfoBlocks,
+    'apex-member-packages' : MemberPackages
   }
 };
 </script>
