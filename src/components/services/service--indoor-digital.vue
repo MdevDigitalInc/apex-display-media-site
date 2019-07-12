@@ -23,8 +23,6 @@
         :heading="sample.heading"
         :copy="sample.copy"
         :list="sample.benefits")
-
-    //- Featured Images
     //- Apex Split
     apex-split-simple( flip="true" :background="indoorData.footSplitContent.background" :decoration="indoorData.footSplitContent.decoration")
       template(slot='large-content')
@@ -36,6 +34,11 @@
       template(slot='highlight-content')
         h2.--margin-space-large(:class='indoorData.footSplitContent.highlight.headingClass')
           | {{indoorData.footSplitContent.highlight.heading}}
+    //- ImageShowcase ----------
+    image-showcase(
+      :heading="homeData.imageShowcase.heading"
+      :action="homeData.imageShowcase.btnData"
+      :media="homeData.imageShowcase.media")
 </template>
 
 <script>
@@ -46,14 +49,15 @@ import ApexSplit from '../shared/apex-split.vue';
 import ApexSplitSimple from '../shared/apex-split-simple.vue';
 import ImageShowcase from '../shared/image-showcase.vue';
 
-import { indoorSignagePage } from '../../apex-data.js';
+import { indoorSignagePage, homePage } from '../../apex-data.js';
 
 export default {
   name: 'ServicesIndoorDigital',
 
   data: function(){
     return {
-      indoorData: indoorSignagePage
+      indoorData: indoorSignagePage,
+      homeData: homePage
     };
   },
   // Meta SEO Function
