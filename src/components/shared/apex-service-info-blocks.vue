@@ -4,7 +4,7 @@
       h2.d-heading-flair.d-heading-flair-blue.u-bold(v-html="heading")
       p
         | {{copy}}
-    .apex-service-info-blocks-row.flex.flex-row.flex-wrap.flex-hor-between
+    .apex-service-info-blocks-row.flex.flex-row.flex-wrap.flex-hor-between.flex-vert-stretch
       .apex-service-info-block( v-for="(item, index) in contentBlocks")
         .apex-service-info-block-content
           .apex-service-block-icon
@@ -60,8 +60,6 @@ export default {
 .apex-service-info-block {
   width: 100%;
   height: auto;
-
-  
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .19);
   padding: 50px;
@@ -81,13 +79,12 @@ export default {
   }
 
   @media #{$laptop-up} {
-    width: 460px;
-    height: 460px;
+    width: 30%;
+    max-height: 460px;
   }
 
   @media #{$laptop-only} {
     width: 47%;
-    height: 460px;
   }
 
   @media #{$tablet-only} {
