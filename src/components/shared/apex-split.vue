@@ -80,9 +80,6 @@
 
   &:nth-child( 2 ) {
     width: 100%;
-    background-image: url('../../assets/images/dots-white.svg'), url('../../assets/images/arrows-white.svg');
-    background-repeat: no-repeat, no-repeat;
-    background-size: 147px 203px, initial;
 
     p {
       font-size: 20px;
@@ -93,6 +90,9 @@
     }
 
     &.apex-split-about-home {
+      background-image: url('../../assets/images/dots-white.svg'), url('../../assets/images/arrows-white.svg');
+      background-repeat: no-repeat, no-repeat;
+      background-size: 147px 203px, initial;
       order: 2;
       background-position: 105% -20%, -1000% 80%;
 

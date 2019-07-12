@@ -383,7 +383,46 @@ let indoorSignagePage = {
         'bullet highlighting special feature'
       ]
     }
-  ]
+  ],
+  // About Block Content
+  splitContent: {
+    background: '--red',
+    decoration: '--bot-dots',
+    largeSplit: {
+      heading: 'How We Help',
+      copy: [
+        'From initial concepts, to final digital content ready at launch, we take a tailored approached to indoor digital displays. Big or small, we can help you find the right signage for your business needs. Looking for something unique? Our installation specialists are always available for a free on-site consultation to help you determine how to maximize your signage opportunities.',
+        'The true advantage of working with us is that we provide it all, in-house. No need for you to coordinate several companies to facilitate your digital signage requirements. We’ll take care of all your needs from start to finish including with ongoing content management and warranty coverage.',
+      ],
+      headingClass: 'd-heading-flair d-heading-flair-blue u-bold',
+    },
+    highlight: {
+      heading: 'We Provide',
+      copy: [
+        'Conceptual Design',
+        'Custom Installation',
+        'Digital Media Management',
+        'Full Warranty Coverage '
+      ],
+      headingClass: 'd-heading-flair d-heading-flair-white u-bold',
+    }
+  },
+  footSplitContent: {
+    background: '--red',
+    decoration: '--bot-dots-right',
+    largeSplit: {
+      heading: 'How We Help',
+      copy: [
+        'From initial concepts, to final digital content ready at launch, we take a tailored approached to indoor digital displays. Big or small, we can help you find the right signage for your business needs. Looking for something unique? Our installation specialists are always available for a free on-site consultation to help you determine how to maximize your signage opportunities.',
+        'The true advantage of working with us is that we provide it all, in-house. No need for you to coordinate several companies to facilitate your digital signage requirements. We’ll take care of all your needs from start to finish including with ongoing content management and warranty coverage.',
+      ],
+      headingClass: 'd-heading-flair d-heading-flair-blue u-bold',
+    },
+    highlight: {
+      heading: 'Digital Media Management',
+      headingClass: 'd-heading-flair d-heading-flair-white u-bold --center-both',
+    }
+  },
 }
 
 // Export named variables

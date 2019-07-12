@@ -1,24 +1,50 @@
 <template lang="pug">
-  //- Hero Main
-  //- Apex Split
-  //- Featured Tiles
-  //- Service Block Single.
-  section.--section-space-xl
-    service-sample(
-      v-for="(sample, index) in indoorData.serviceSamples"
-      :media="sample.media"
-      :heading="sample.heading"
-      :copy="sample.copy"
-      :list="sample.benefits")
+  section.mdev-main-content
+    //- Hero Main
+    //- Apex Split
+    apex-split-simple( flip="false" :background="indoorData.splitContent.background" :decoration="indoorData.splitContent.decoration")
+      template(slot='large-content')
+        h2.--margin-space-large(:class='indoorData.splitContent.largeSplit.headingClass')
+          | {{indoorData.splitContent.largeSplit.heading}}
+        p(v-for="paragraph in indoorData.splitContent.largeSplit.copy")
+          |{{ paragraph }}
 
-  //- Featured Images
-  //- Apex Split
+      template(slot='highlight-content')
+        h2.--margin-space-large(:class='indoorData.splitContent.highlight.headingClass')
+          | {{indoorData.splitContent.highlight.heading}}
+        p.u-bold(v-for="paragraph in indoorData.splitContent.highlight.copy")
+          | {{ paragraph }}
+    //- Featured Tiles
+    //- Service Block Single.
+    section.--section-space-xl
+      service-sample(
+        v-for="(sample, index) in indoorData.serviceSamples"
+        :media="sample.media"
+        :heading="sample.heading"
+        :copy="sample.copy"
+        :list="sample.benefits")
+
+    //- Featured Images
+    //- Apex Split
+    apex-split-simple( flip="true" :background="indoorData.footSplitContent.background" :decoration="indoorData.footSplitContent.decoration")
+      template(slot='large-content')
+        h2.--margin-space-large(:class='indoorData.footSplitContent.largeSplit.headingClass')
+          | {{indoorData.footSplitContent.largeSplit.heading}}
+        p(v-for="paragraph in indoorData.footSplitContent.largeSplit.copy")
+          |{{ paragraph }}
+
+      template(slot='highlight-content')
+        h2.--margin-space-large(:class='indoorData.footSplitContent.highlight.headingClass')
+          | {{indoorData.footSplitContent.highlight.heading}}
 </template>
 
 <script>
 // Import SEO From File
 import { stagingBuild, template, social, general }       from '../../seo-meta.js';
 import ServiceSample from './service--sample.vue';
+import ApexSplit from '../shared/apex-split.vue';
+import ApexSplitSimple from '../shared/apex-split-simple.vue';
+import ImageShowcase from '../shared/image-showcase.vue';
 
 import { indoorSignagePage } from '../../apex-data.js';
 
@@ -48,7 +74,10 @@ export default {
   },
 
   components: {
-    'service-sample' : ServiceSample
+    'service-sample' : ServiceSample,
+    'image-showcase'    : ImageShowcase,
+    'apex-split' : ApexSplit,
+    'apex-split-simple' : ApexSplitSimple
   }
 };
 </script>
@@ -60,7 +89,6 @@ export default {
 /*-------------------------------------*/
 /* BASE TEMPLATE Component Styles
 /--------------------------------------*/
-
 
 /*--------------------------------------*/
 
