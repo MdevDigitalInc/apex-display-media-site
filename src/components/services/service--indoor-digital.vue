@@ -12,8 +12,9 @@
       template(slot='highlight-content')
         h2.--margin-space-large(:class='indoorData.splitContent.highlight.headingClass')
           | {{indoorData.splitContent.highlight.heading}}
-        p.u-bold(v-for="paragraph in indoorData.splitContent.highlight.copy")
-          | {{ paragraph }}
+        ul
+          li(v-for="paragraph in indoorData.splitContent.highlight.copy")
+            | {{ paragraph }}
     //- Featured Tiles
     section.apex-main-wrapper
       apex-service-info-blocks.--section-space-xl(
@@ -36,8 +37,7 @@
             | {{indoorData.footSplitContent.largeSplit.heading}}
           base-btn( :btnData="indoorData.footSplitContent.largeSplit.btnData")
       template(slot='highlight-content')
-        h2.--margin-space-large(:class='indoorData.footSplitContent.highlight.headingClass')
-          | {{indoorData.footSplitContent.highlight.heading}}
+        h2.--margin-space-large(v-html="indoorData.footSplitContent.highlight.heading" :class='indoorData.footSplitContent.highlight.headingClass')
     //- ImageShowcase ----------
     image-showcase(
       :heading="homeData.imageShowcase.heading"

@@ -12,8 +12,9 @@
       template(slot='highlight-content')
         h2.--margin-space-large(:class='outdoorData.splitContent.highlight.headingClass')
           | {{outdoorData.splitContent.highlight.heading}}
-        p.u-bold(v-for="paragraph in outdoorData.splitContent.highlight.copy")
-          | {{ paragraph }}
+        ul
+          li(v-for="paragraph in outdoorData.splitContent.highlight.copy")
+            | {{ paragraph }}
     //- Featured Tiles
     section.apex-main-wrapper
       apex-service-info-blocks.--section-space-xl(
@@ -36,8 +37,7 @@
             | {{outdoorData.footSplitContent.largeSplit.heading}}
           base-btn( :btnData="outdoorData.footSplitContent.largeSplit.btnData")
       template(slot='highlight-content')
-        h2.--margin-space-large(:class='outdoorData.footSplitContent.highlight.headingClass')
-          | {{outdoorData.footSplitContent.highlight.heading}}
+        h2.--margin-space-large(v-html="outdoorData.footSplitContent.highlight.heading" :class='outdoorData.footSplitContent.highlight.headingClass')
     //- ImageShowcase ----------
     image-showcase(
       :heading="homeData.imageShowcase.heading"
@@ -51,7 +51,6 @@
 // Import SEO From File
 import { stagingBuild, template, social, general }       from '../../seo-meta.js';
 import ServiceSample from './service--sample.vue';
-import ApexSplit from '../shared/apex-split.vue';
 import ApexSplitSimple from '../shared/apex-split-simple.vue';
 import ServiceInfoBlocks from '../shared/apex-service-info-blocks.vue';
 import ImageShowcase from '../shared/image-showcase.vue';
@@ -87,7 +86,6 @@ export default {
     'service-sample' : ServiceSample,
     'image-showcase'    : ImageShowcase,
     'apex-service-info-blocks' : ServiceInfoBlocks,
-    'apex-split' : ApexSplit,
     'apex-split-simple' : ApexSplitSimple
   }
 

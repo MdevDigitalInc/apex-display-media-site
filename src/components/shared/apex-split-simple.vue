@@ -3,7 +3,8 @@
     .apex-split-large
       slot(name='large-content')
     .apex-split-highlight(:class="[ background, decoration ]")
-      slot(name='highlight-content')
+      .apex-split-center
+        slot(name='highlight-content')
 </template>
 
 <script>
@@ -28,14 +29,13 @@ export default {
 
   .apex-split-large {
     width: 60%;
-    padding: 50px 7%;
+    padding: 5% 7% 50px 10.4%;
     order: 1;
   }
 
   .apex-split-highlight {
     width: 40%;
     position: relative;
-    padding: 50px 7% 9%;
     order: 2;
     color: $white;
 
@@ -47,6 +47,7 @@ export default {
     // Arrows
     &:after {
       background-image: url('../../assets/images/arrows-white.svg');
+      background-repeat: no-repeat;
     }
 
     &.--red {
@@ -55,6 +56,12 @@ export default {
 
     &.--blue {
       background-color: $color-brand-primary;
+    }
+
+    li {
+      font-size: 30px;
+      font-weight: 500;
+      line-height: 1.5;
     }
   }
 
@@ -76,6 +83,13 @@ export default {
     padding: 15% 0;
   }
 }
+
+.apex-split-center {
+  @include center(both);
+  padding-bottom: 90px;
+  white-space: nowrap;
+  width: 60%;
+}
 // Decorations
 .apex-split-highlight.--bot-dots:before {
   @include pseudo();
@@ -86,7 +100,7 @@ export default {
   background-size: 100%;
   top: auto;
   bottom: -30px;
-  left: 22%;
+  left: 23%;
 }
 .apex-split-highlight.--bot-dots-right:before {
   @include pseudo();
@@ -98,6 +112,16 @@ export default {
   top: auto;
   bottom: -30px;
   right: 5px;
+}
+
+.apex-split-highlight.--arrow-top-left:after {
+  @include pseudo();
+  width: 50px;
+  height: 210px;
+  transform: scaleY(-1);
+  background-repeat: no-repeat;
+  top: 30px;
+  left: 30px;
 }
 /*--------------------------------------*/
 </style>

@@ -30,7 +30,7 @@ export default {
 /--------------------------------------*/
 .apex-service-sample {
   position: relative;
-  padding-left: 12%;
+  padding-left: 10.1%;
   margin-bottom: 100px;
 
   @media #{$portrait} {

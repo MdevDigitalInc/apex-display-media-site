@@ -63,9 +63,9 @@ let homePage = {
       },
       // Image DATA
       media: {
-        source: 'home/featured-service-placeholder.jpeg',
+        source: 'home/home-outdoorled.png',
         gif: false,
-        a11y: 'Placeholder - TODO update'
+        a11y: 'High quality Outdoor LED Sign panels'
       },
     },
     {
@@ -81,9 +81,9 @@ let homePage = {
       },
       // Image DATA
       media: {
-        source: 'home/featured-service-placeholder.jpeg',
+        source: 'home/home-indoordigital.png',
         gif: false,
-        a11y: 'Placeholder - TODO update'
+        a11y: 'High Definition Indoor Digital Displays'
       },
     },
     {
@@ -99,9 +99,9 @@ let homePage = {
       },
       // Image DATA
       media: {
-        source: 'home/featured-service-placeholder.jpeg',
+        source: 'home/home-digitalmedia.png',
         gif: false,
-        a11y: 'Placeholder - TODO update'
+        a11y: 'Content Creation and Management'
       },
     }
   ],
@@ -115,9 +115,9 @@ let homePage = {
     color: '--blue',
     // Image Data
     media: {
-      source: 'home/featured-block-single-placeholder.jpeg',
+      source: 'home/channel-lettering.png',
       gif: false,
-      a11y: 'Placeholder - TODO Update'
+      a11y: 'Custom Channel Lettering'
     }
   },
   // About Block Content
@@ -224,6 +224,46 @@ let homePage = {
 
 
 let DigitalManagement = {
+  // Featured Block Single
+  featuredBlock: {
+    heading: 'Fully</br>Custom',
+    copy: [
+      'Let us know what type of experience you envision your vistors having and we’ll make your vision a reality!',
+      'If you need something truly unique, such as an interactive kiosk or internal screen with real-time information for your production floor, we can help!',
+      'Our custom design and development services can bring any idea or application to life.'
+    ],
+    color: '--blue',
+    // Image Data
+    media: {
+      source: 'services/managed/custom-kiosk.png',
+      gif: false,
+      a11y: 'Placeholder - TODO Update'
+    }
+  },
+
+  // About Block Content
+  splitContent: {
+    background: '--red',
+    decoration: '--bot-dots',
+    largeSplit: {
+      heading: 'How We Help',
+      copy: [
+        'Once you’ve made an investment in digital signage, it’s important to maximize your return by using eye-catching graphics and strong messaging. That’s where our Digital Media Management services come in – our marketing strategists can help you with a content planning while our expert designers keep your sign up-to-date with quality designs and motion graphics.',
+        'We offer different membership packages to suit different budgets – whether you have one screen, or many screens across multiple locations, we’re here to help. We also offer one-time setup options and can train your team to take over after we’ve create the initial deployment. Get in touch to find out what’s possible!'
+      ],
+      headingClass: 'd-heading-flair d-heading-flair-blue u-bold',
+    },
+    highlight: {
+      heading: 'We Provide',
+      copy: [
+        'Membership Packages',
+        'Design Expertise',
+        'Content Scheduling',
+        'Update Remotely'
+      ],
+      headingClass: 'd-heading-flair d-heading-flair-white u-bold',
+    }
+  },
 
   membershipPackages: {
     heading: 'Membership </br> packages',
@@ -329,7 +369,28 @@ let DigitalManagement = {
         route: null
       }
     ]
-  }
+  },
+
+  footSplitContent: {
+    background: '--red',
+    decoration: '--bot-dots-right --arrow-top-left',
+    largeSplit: {
+      heading: 'PLACEHOLDER NEXT SECTION',
+      headingClass: 'd-heading-flair d-heading-flair-blue u-bold',
+      // Button Data
+      btnData: {
+        class: 'apex-base-btn apex-blue-btn',
+        route: '/services/outdoor-digital-signs',
+        a11y: 'Learn more about our Outdoor Digital LED Signs!',
+        text: 'Outdoor LEDS'
+      },
+    },
+    highlight: {
+      heading: 'Outdoor</br>Displays',
+      headingClass: 'd-heading-flair d-heading-flair-white u-bold --center-both',
+    }
+  },
+
 };
 // Indoor Signage Data
 let indoorSignagePage = {
@@ -409,7 +470,7 @@ let indoorSignagePage = {
   },
   footSplitContent: {
     background: '--red',
-    decoration: '--bot-dots-right',
+    decoration: '--bot-dots-right --arrow-top-left',
     largeSplit: {
       heading: 'PLACEHOLDER NEXT SECTION',
       headingClass: 'd-heading-flair d-heading-flair-blue u-bold',
@@ -422,7 +483,7 @@ let indoorSignagePage = {
       },
     },
     highlight: {
-      heading: 'Digital Media Management',
+      heading: 'Digital Media</br>Management',
       headingClass: 'd-heading-flair d-heading-flair-white u-bold --center-both',
     }
   },
@@ -480,57 +541,7 @@ let indoorSignagePage = {
 
 // Indoor Signage Data
 let outdoorSignagePage = {
-  // Service Sample Array
-  serviceSamples: [
-    {
-      // Image Data
-      media: {
-        source: 'services/indoor/digital-menu-system.png',
-        gif: false,
-        a11y: 'Placeholder - TODO Update'
-      },
-      heading: 'Digital Menu</br>Board Systems',
-      copy: 'Skip the printing fees! Digital media is the best way to keep your customers up-to-date on your latest menu items, promotions and sales. From one simple screen to multiple screens across many locations, we can help you create a menu system, content strategy and scheduled content that updates as often as you like.',
-      benefits: [
-        'Schedule sales and promo content',
-        'Update content across multiple locations',
-        'Customize content per location',
-        'Bullet highlighting special feature'
-      ]
-    },
-    {
-      // Image Data
-      media: {
-        source: 'services/indoor/lobby-digital-sign.png',
-        gif: false,
-        a11y: 'Placeholder - TODO Update'
-      },
-      heading: 'Lobbies &</br>Waiting Rooms',
-      copy: 'Your waiting room is an ideal place for a digital sign. Visitors will appreciate the entertainment, and you can educate them on your products and services while they wait. Not limited to public venues, a digital screen in your break room or office can also be a great way to provide education and entertainment for your employees. Digital screens can also be useful in production environments to share real-time information and training.',
-      benefits: [
-        'Schedule content ahead of time',
-        'Include apps like news, social media, weather, cable and updatable ticker feeds.',
-        'Robust CMS allows easy content management',
-        'Attract customer attention with motion graphiics and eye-catching designs'
-      ]
-    },
-    {
-      // Image Data
-      media: {
-        source: 'services/indoor/retail-signage-indoors.png',
-        gif: false,
-        a11y: 'Placeholder - TODO Update'
-      },
-      heading: 'Retail</br>Promotion',
-      copy: 'interactive messaging engages customers more effectively than static signage. Customers are comfortable getting information from screens and are now seeking them out at retail locations. Digital signage also comes in many different shapes and sizes – making the options for on-site promotion endless. Not sure what you need? Get in touch, we’ll help you develop custom signage for your retail location.',
-      benefits: [
-        'Schedule sale & promo content',
-        'Update content across multiple locations',
-        'Customize content per location',
-        'bullet highlighting special feature'
-      ]
-    }
-  ],
+
   // About Block Content
   splitContent: {
     background: '--red',
@@ -555,40 +566,91 @@ let outdoorSignagePage = {
       headingClass: 'd-heading-flair d-heading-flair-white u-bold',
     }
   },
+  // Service Sample Array
+  serviceSamples: [
+    {
+      // Image Data
+      media: {
+        source: 'services/indoor/digital-menu-system.png',
+        gif: false,
+        a11y: 'Placeholder - TODO Update'
+      },
+      heading: 'New Signage</br>Installation',
+      copy: 'PLACEHOLDER! Digital media is the best way to keep your customers up-to-date on your latest menu items, promotions and sales. From one simple screen to multiple screens across many locations, we can help you create a menu system, content strategy and scheduled content that updates as often as you like.',
+      benefits: [
+        'Schedule sales and promo content',
+        'Update content across multiple locations',
+        'Customize content per location',
+        'Bullet highlighting special feature'
+      ]
+    },
+    {
+      // Image Data
+      media: {
+        source: 'services/indoor/lobby-digital-sign.png',
+        gif: false,
+        a11y: 'Placeholder - TODO Update'
+      },
+      heading: 'Retrofitting</br>Existing Signage',
+      copy: 'PLACEHOLDER!our waiting room is an ideal place for a digital sign. Visitors will appreciate the entertainment, and you can educate them on your products and services while they wait. Not limited to public venues, a digital screen in your break room or office can also be a great way to provide education and entertainment for your employees. Digital screens can also be useful in production environments to share real-time information and training.',
+      benefits: [
+        'Schedule content ahead of time',
+        'Include apps like news, social media, weather, cable and updatable ticker feeds.',
+        'Robust CMS allows easy content management',
+        'Attract customer attention with motion graphiics and eye-catching designs'
+      ]
+    },
+    {
+      // Image Data
+      media: {
+        source: 'services/outdoor/curved-sign.png',
+        gif: false,
+        a11y: 'Placeholder - TODO Update'
+      },
+      heading: 'Custom</br>Installation',
+      copy: 'PLACEHOLDERinteractive messaging engages customers more effectively than static signage. Customers are comfortable getting information from screens and are now seeking them out at retail locations. Digital signage also comes in many different shapes and sizes – making the options for on-site promotion endless. Not sure what you need? Get in touch, we’ll help you develop custom signage for your retail location.',
+      benefits: [
+        'Schedule sale & promo content',
+        'Update content across multiple locations',
+        'Customize content per location',
+        'bullet highlighting special feature'
+      ]
+    }
+  ],
   footSplitContent: {
     background: '--red',
-    decoration: '--bot-dots-right',
+    decoration: '--bot-dots-right --arrow-top-left',
     largeSplit: {
       heading: 'PLACEHOLDER NEXT SECTION',
       headingClass: 'd-heading-flair d-heading-flair-blue u-bold',
       // Button Data
       btnData: {
         class: 'apex-base-btn apex-blue-btn',
-        route: '/services/outdoor-digital-signs',
-        a11y: 'Learn more about our Outdoor Digital LED Signs!',
-        text: 'Outdoor LEDS'
+        route: '/services/digital-media-management',
+        a11y: 'Learn more about our Digital Media Services',
+        text: 'Stay up-to-date with managed media'
       },
     },
     highlight: {
-      heading: 'Digital Media Management',
+      heading: 'Indoor</br>Displays',
       headingClass: 'd-heading-flair d-heading-flair-white u-bold --center-both',
     }
   },
   // Service Info Blocks
   serviceInfo: {
-    heading: 'Why invest in digital signage?',
-    copy: "Digital signage creates opportunities to engage with your audience at meaningful moments. Help your customers understand your business better by educating them on in-store offerings, promotions and sales.",
+    heading: 'Why invest in outdoor LEDs?',
+    copy: "Outdoor LEDs are a highly effective advertising medium, allowing you to broadcast your message to a huge audience. Build brand awareness and deliver comprehensive information by implementing an outdoor display.",
     contentBlocks: [
       {
-        icon: 'icons/icon-influence-blue.svg',
-        heading: 'Influence consumer behavior',
-        copy: 'High quality, eye-catching content has been proven to increase profits by making purchase decisions easy during retail transactions.',
+        icon: 'icons/icon-conceptual-blue.svg',
+        heading: 'Setup a new installation',
+        copy: 'If you’ve don’t have signage at your location yet, we can help. We’ll navigate permitting and permissions and our installation specialists are well-equipped to handle construction and setup requirements.',
         link: false
       },
       {
-        icon: 'icons/icon-targets-white.svg',
-        heading: 'Drive in-store traffic',
-        copy: 'Attract attention to your location and increase conversions by making visitors aware of your latest promotions and events.',
+        icon: 'icons/icon-awareness-white.svg',
+        heading: 'Raise brand awareness',
+        copy: 'Attract attentiion to your location with a brightly coloured digital display proudly showcasing your brand, services, sales, news and events.',
         link: {
           route: '#TODO',
           a11y: 'How digital signs drive in store traffic',
@@ -596,21 +658,21 @@ let outdoorSignagePage = {
         }
       },
       {
-        icon: 'icons/icon-waittimes-blue.svg',
-        heading: 'Decrease percieved waiting times',
-        copy: 'Digital displays are a great distraction for visitors. Inform them about your services and provide content like news and weather while they wait inside your location.',
+        icon: 'icons/icon-updates-blue.svg',
+        heading: 'Hassle-free updates',
+        copy: 'Sick of battling cold, heat and rain to update your outdoor signage? A digital display makes updates fast and easy so you can make updates more often – without any of the fuss. ',
         link: false
       },
       {
-        icon: 'icons/icon-internal-blue.svg',
-        heading: 'Decrease percieved waiting times',
-        copy: 'Digital displays are a great distraction for visitors. Inform them about your services and provide content like news and weather while they wait inside your location.',
+        icon: 'icons/icon-built-blue.svg',
+        heading: 'Built for tough climates',
+        copy: 'Our LED Panels are 100% weatherproof, with no moving parts to break down. Energy efficient and build to operate 24 hours a day, your sign ill not dim or lose quality over time. ',
         link: false
       },
       {
-        icon: 'icons/icon-scheduling-white.svg',
-        heading: 'Content scheduling',
-        copy: 'Plan ahead with digital signage; rotate your messaging daily, weekly or monthly to keep things fresh and up-to-date. Find out how we can help! ',
+        icon: 'icons/icon-promote-white.svg',
+        heading: 'Promote sales and news',
+        copy: 'Keep passersby up-to-date on  your latest offerings with digital signage. Our manged services let you easily update graphics and schedule content.',
         link: {
           route: '#TODO',
           a11y: 'Learn More about our managed digital services',
@@ -618,9 +680,10 @@ let outdoorSignagePage = {
         }
       },
       {
-        icon: 'icons/icon-inform-blue.svg',
-        heading: 'Inform and educate visitors',
-        copy: 'Provide on-site information with custom educational kiosks. Help your visitors to navigate with confidence with well-placed directional signage.',
+        icon: 'icons/icon-custom-blue.svg',
+        heading: 'Upgrade existing signage',
+        copy: 'If you’ve already invested in static outdoor signage, chances are we can help you convert all or part of it to an LED display. We’ll even remove your old signage and dispose of it at no additional cost.',
+        ling: false
       }
     ]
   }
