@@ -2,7 +2,7 @@
   section.mdev-main-content
     //- Hero Main
     //- Apex Split
-    apex-split-simple( flip="false" :background="indoorData.splitContent.background" :decoration="indoorData.splitContent.decoration")
+    apex-split-simple( :flip="false" :background="indoorData.splitContent.background" :decoration="indoorData.splitContent.decoration")
       template(slot='large-content')
         h2.--margin-space-large(:class='indoorData.splitContent.largeSplit.headingClass')
           | {{indoorData.splitContent.largeSplit.heading}}
@@ -15,6 +15,11 @@
         p.u-bold(v-for="paragraph in indoorData.splitContent.highlight.copy")
           | {{ paragraph }}
     //- Featured Tiles
+    section.apex-main-wrapper
+      apex-service-info-blocks.--section-space-xl(
+        :heading='indoorData.serviceInfo.heading'
+        :copy="indoorData.serviceInfo.copy"
+        :contentBlocks='indoorData.serviceInfo.contentBlocks')
     //- Service Block Single.
     section.--section-space-xl
       service-sample(
@@ -24,13 +29,12 @@
         :copy="sample.copy"
         :list="sample.benefits")
     //- Apex Split
-    apex-split-simple( flip="true" :background="indoorData.footSplitContent.background" :decoration="indoorData.footSplitContent.decoration")
+    apex-split-simple( :flip="true" :background="indoorData.footSplitContent.background" :decoration="indoorData.footSplitContent.decoration")
       template(slot='large-content')
-        h2.--margin-space-large(:class='indoorData.footSplitContent.largeSplit.headingClass')
-          | {{indoorData.footSplitContent.largeSplit.heading}}
-        p(v-for="paragraph in indoorData.footSplitContent.largeSplit.copy")
-          |{{ paragraph }}
-
+        .--spacing
+          h2.--margin-space-large(:class='indoorData.footSplitContent.largeSplit.headingClass')
+            | {{indoorData.footSplitContent.largeSplit.heading}}
+          base-btn( :btnData="indoorData.footSplitContent.largeSplit.btnData")
       template(slot='highlight-content')
         h2.--margin-space-large(:class='indoorData.footSplitContent.highlight.headingClass')
           | {{indoorData.footSplitContent.highlight.heading}}
@@ -47,6 +51,7 @@ import { stagingBuild, template, social, general }       from '../../seo-meta.js
 import ServiceSample from './service--sample.vue';
 import ApexSplit from '../shared/apex-split.vue';
 import ApexSplitSimple from '../shared/apex-split-simple.vue';
+import ServiceInfoBlocks from '../shared/apex-service-info-blocks.vue';
 import ImageShowcase from '../shared/image-showcase.vue';
 
 import { indoorSignagePage, homePage } from '../../apex-data.js';
@@ -80,6 +85,7 @@ export default {
   components: {
     'service-sample' : ServiceSample,
     'image-showcase'    : ImageShowcase,
+    'apex-service-info-blocks' : ServiceInfoBlocks,
     'apex-split' : ApexSplit,
     'apex-split-simple' : ApexSplitSimple
   }

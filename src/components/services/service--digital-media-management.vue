@@ -4,13 +4,13 @@
       | Digital Media Management
     //-Service Info Blocks Component
     apex-service-info-blocks(
-    :heading='dataDigitalManagement.serviceInfo.heading'
-    :copy="dataDigitalManagement.serviceInfo.copy"
-    :contentBlocks='dataDigitalManagement.serviceInfo.contentBlocks')
+      :heading='dataDigitalManagement.serviceInfo.heading'
+      :copy="dataDigitalManagement.serviceInfo.copy"
+      :contentBlocks='dataDigitalManagement.serviceInfo.contentBlocks')
     //-Service Member Packages
     apex-member-packages(
-    :heading="dataDigitalManagement.membershipPackages.heading"
-    :packages="dataDigitalManagement.membershipPackages.packageList"
+      :heading="dataDigitalManagement.membershipPackages.heading"
+      :packages="dataDigitalManagement.membershipPackages.packageList"
     )
 </template>
 

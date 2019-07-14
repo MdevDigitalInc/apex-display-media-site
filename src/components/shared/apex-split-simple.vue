@@ -6,11 +6,7 @@
       slot(name='highlight-content')
 </template>
 
-
-
-
 <script>
-
 export default {
   name: 'ApexSplitSimple',
 
@@ -75,29 +71,33 @@ export default {
   .--center-both {
     @include center('both');
   }
+
+  .--spacing {
+    padding: 15% 0;
+  }
 }
 // Decorations
 .apex-split-highlight.--bot-dots:before {
-    @include pseudo();
-    width: 25%;
-    padding-top: 30%;
-    transform: rotate(90deg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    top: auto;
-    bottom: -30px;
-    left: 22%;
+  @include pseudo();
+  width: 25%;
+  padding-top: 30%;
+  transform: rotate(90deg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  top: auto;
+  bottom: -30px;
+  left: 22%;
 }
 .apex-split-highlight.--bot-dots-right:before {
-    @include pseudo();
-    width: 25%;
-    padding-top: 30%;
-    transform: rotate(90deg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    top: auto;
-    bottom: -30px;
-    right: 5px;
+  @include pseudo();
+  width: 25%;
+  padding-top: 30%;
+  transform: rotate(90deg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  top: auto;
+  bottom: -30px;
+  right: 5px;
 }
 /*--------------------------------------*/
 </style>
