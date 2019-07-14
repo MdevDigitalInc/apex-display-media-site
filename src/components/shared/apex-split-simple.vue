@@ -1,6 +1,6 @@
 <template lang="pug">
   section.apex-split-section.flex.flex-vert-stretch.flex-wrap(:class="{ '--flip' : flip }")
-    .apex-split-large
+    .apex-split-large( :class="[ modifier ]")
       slot(name='large-content')
     .apex-split-highlight(:class="[ background, decoration ]")
       .apex-split-center
@@ -11,7 +11,7 @@
 export default {
   name: 'ApexSplitSimple',
 
-  props: ['flip', 'background', 'decoration']
+  props: ['flip', 'background', 'decoration', 'modifier']
 };
 </script>
 
@@ -74,6 +74,11 @@ export default {
     }
   }
 
+  // Image Modifier
+  .--image {
+    padding: 60px;
+  }
+
   // Flip Override
   &.--flip {
     .apex-split-large {
@@ -89,7 +94,7 @@ export default {
   }
 
   .--spacing {
-    padding: 15% 0;
+    padding: 0;
   }
 }
 

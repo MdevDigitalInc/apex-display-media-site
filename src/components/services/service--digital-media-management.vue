@@ -33,11 +33,12 @@
         :color="dataDigitalManagement.featuredBlock.color"
         :media="dataDigitalManagement.featuredBlock.media")
     //- Apex Split
-    apex-split-simple( :flip="true" :background="dataDigitalManagement.footSplitContent.background" :decoration="dataDigitalManagement.footSplitContent.decoration")
+    apex-split-simple( modifier="--image" :flip="true" :background="dataDigitalManagement.footSplitContent.background" :decoration="dataDigitalManagement.footSplitContent.decoration")
       template(slot='large-content')
         .--spacing
           h2.--margin-space-large(:class='dataDigitalManagement.footSplitContent.largeSplit.headingClass')
             | {{dataDigitalManagement.footSplitContent.largeSplit.heading}}
+          universal-image( :source="dataDigitalManagement.footSplitContent.highlight.media.source" :gif="false" :a11y="dataDigitalManagement.footSplitContent.highlight.media.a11y" )
           base-btn( :btnData="dataDigitalManagement.footSplitContent.largeSplit.btnData")
       template(slot='highlight-content')
         h2.--margin-space-large(v-html="dataDigitalManagement.footSplitContent.highlight.heading" :class='dataDigitalManagement.footSplitContent.highlight.headingClass')

@@ -375,19 +375,24 @@ let DigitalManagement = {
     background: '--red',
     decoration: '--bot-dots-right --arrow-top-left',
     largeSplit: {
-      heading: 'PLACEHOLDER NEXT SECTION',
+      heading: 'Find out how we can help you with indoor signage',
       headingClass: 'd-heading-flair d-heading-flair-blue u-bold',
       // Button Data
       btnData: {
-        class: 'apex-base-btn apex-blue-btn',
+        class: 'apex-base-btn apex-blue-btn --button-space ',
         route: '/services/outdoor-digital-signs',
         a11y: 'Learn more about our Outdoor Digital LED Signs!',
-        text: 'Outdoor LEDS'
+        text: 'Learn More'
       },
     },
     highlight: {
       heading: 'Outdoor</br>Displays',
       headingClass: 'd-heading-flair d-heading-flair-white u-bold --center-both',
+      media: {
+        source: 'services/managed/nextpage-outdoorled.png',
+        gif: false,
+        a11y: 'Outdoor LED Display Samples'
+      }
     }
   },
 
@@ -472,19 +477,24 @@ let indoorSignagePage = {
     background: '--red',
     decoration: '--bot-dots-right --arrow-top-left',
     largeSplit: {
-      heading: 'PLACEHOLDER NEXT SECTION',
+      heading: 'Find out how we can help keep your signage up-to-date.',
       headingClass: 'd-heading-flair d-heading-flair-blue u-bold',
       // Button Data
       btnData: {
-        class: 'apex-base-btn apex-blue-btn',
+        class: 'apex-base-btn apex-blue-btn --button-space',
         route: '/services/outdoor-digital-signs',
         a11y: 'Learn more about our Outdoor Digital LED Signs!',
-        text: 'Outdoor LEDS'
+        text: 'Learn More'
       },
     },
     highlight: {
       heading: 'Digital Media</br>Management',
       headingClass: 'd-heading-flair d-heading-flair-white u-bold --center-both',
+      media: {
+        source: 'services/indoor/nextpage-digitalmedia.png',
+        gif: false,
+        a11y: 'Outdoor LED Display Samples'
+      }
     }
   },
   // Service Info Blocks
@@ -621,19 +631,24 @@ let outdoorSignagePage = {
     background: '--red',
     decoration: '--bot-dots-right --arrow-top-left',
     largeSplit: {
-      heading: 'PLACEHOLDER NEXT SECTION',
+      heading: 'Find out how we can help with indoor signage',
       headingClass: 'd-heading-flair d-heading-flair-blue u-bold',
       // Button Data
       btnData: {
-        class: 'apex-base-btn apex-blue-btn',
+        class: 'apex-base-btn apex-blue-btn --button-space',
         route: '/services/digital-media-management',
         a11y: 'Learn more about our Digital Media Services',
-        text: 'Stay up-to-date with managed media'
+        text: 'Learn More'
       },
     },
     highlight: {
       heading: 'Indoor</br>Displays',
       headingClass: 'd-heading-flair d-heading-flair-white u-bold --center-both',
+      media: {
+        source: 'services/outdoor/nextpage-indoordigital.png',
+        gif: false,
+        a11y: 'Outdoor LED Display Samples'
+      }
     }
   },
   // Service Info Blocks

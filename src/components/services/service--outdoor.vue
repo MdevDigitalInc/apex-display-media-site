@@ -30,11 +30,12 @@
         :copy="sample.copy"
         :list="sample.benefits")
     //- Apex Split
-    apex-split-simple( :flip="true" :background="outdoorData.footSplitContent.background" :decoration="outdoorData.footSplitContent.decoration")
+    apex-split-simple( modifier="--image" :flip="true" :background="outdoorData.footSplitContent.background" :decoration="outdoorData.footSplitContent.decoration")
       template(slot='large-content')
         .--spacing
           h2.--margin-space-large(:class='outdoorData.footSplitContent.largeSplit.headingClass')
             | {{outdoorData.footSplitContent.largeSplit.heading}}
+          universal-image( :source="outdoorData.footSplitContent.highlight.media.source" :gif="false" :a11y="outdoorData.footSplitContent.highlight.media.a11y" )
           base-btn( :btnData="outdoorData.footSplitContent.largeSplit.btnData")
       template(slot='highlight-content')
         h2.--margin-space-large(v-html="outdoorData.footSplitContent.highlight.heading" :class='outdoorData.footSplitContent.highlight.headingClass')
