@@ -31,6 +31,11 @@ export default {
     width: 60%;
     padding: 5% 7% 50px 10.4%;
     order: 1;
+
+    @media #{$portrait} {
+      width: 100%;
+      order: 2;
+    }
   }
 
   .apex-split-highlight {
@@ -38,6 +43,10 @@ export default {
     position: relative;
     order: 2;
     color: $white;
+
+    @media #{$portrait} {
+      width: 100%;
+    }
 
     // Dots
     &:before {
@@ -85,10 +94,17 @@ export default {
 }
 
 .apex-split-center {
-  @include center(both);
-  padding-bottom: 90px;
-  white-space: nowrap;
-  width: 60%;
+  width: 80%;
+  margin: 50px auto;
+  padding-bottom: 190px;
+
+  @media #{$landscape} {
+    @include center(both);
+    padding-bottom: 90px;
+    margin: 0;
+    white-space: nowrap;
+    width: 60%;
+  }
 }
 // Decorations
 .apex-split-highlight.--bot-dots:before {
@@ -101,6 +117,10 @@ export default {
   top: auto;
   bottom: -30px;
   left: 23%;
+
+  @media #{$portrait} {
+    left: 12.5%;
+  }
 }
 .apex-split-highlight.--bot-dots-right:before {
   @include pseudo();
