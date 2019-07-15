@@ -22,12 +22,7 @@
 
 <style lang="scss">
 
-.apex-split {
-  margin-top: 100px;
-}
-
 .apex-split-content-block {
-
   .apex-split-content-block-inner {
     margin: 0 auto;
     min-height: 430px;
@@ -258,6 +253,16 @@
     .apex-split-content-block-inner {
       padding-top: 45px;
       width: 85%;
+    }
+  }
+}
+
+.--home-hero {
+  .apex-split-content-block {
+    padding-top: 80px;
+
+    @media #{$portrait} {
+      padding-top: 40px;
     }
   }
 }

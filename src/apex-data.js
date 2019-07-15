@@ -47,6 +47,22 @@ let mainNavigation = {
 
 // Home Page Template DATA
 let homePage = {
+  // Main Hero
+  mainHero : {
+    heading: 'Enhance your business with custom signage',
+    subheading: 'We provide quality signage for any industry or market.',
+    btnData: {
+      class: 'apex-base-btn apex-red-btn',
+      route: '#TODO',
+      a11y: 'Enhance your business with digital signs!',
+      text: 'Get Started'
+    },
+    media: {
+      source: 'home/hero-home.png',
+      gif: false,
+      a11y: 'Custom pylon indoor sign'
+    }
+  },
   // Featured Services Component Data
   // ARRAY - For looping through featured services.
   featuredServices: [

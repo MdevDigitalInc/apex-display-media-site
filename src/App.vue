@@ -1,5 +1,5 @@
 <template lang="pug">
-  main(id="app")
+  main(id="app" ref="mainWindow")
     //-Skip Navigatio Accessbility
     button(href="#mainContent"
       title="Skip to main content"
