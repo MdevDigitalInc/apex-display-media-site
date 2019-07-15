@@ -298,12 +298,14 @@ Vue.mixin({
 // Centralizes components to ease on loading
 import UniversalImage     from '../src/components/modules/universal-img.vue';
 import MainFooter         from '../src/components/shared/main-footer.vue';
+import MainHero         from '../src/components/shared/main-hero.vue';
 import BaseBtn         from '../src/components/shared/base-btn.vue';
 
 // Global Component Assign
 Vue.component('universal-image', UniversalImage);
 Vue.component('main-footer', MainFooter);
 Vue.component('base-btn', BaseBtn);
+Vue.component('main-hero', MainHero);
 
 // [ Main Vue Instance ] ----------------------------
 const _vue = new Vue({

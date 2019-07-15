@@ -1,6 +1,7 @@
 <template lang="pug">
   section.mdev-main-content
     //- Hero Main
+    main-hero
     //- Apex Split
     apex-split-simple( :flip="false" :background="outdoorData.splitContent.background" :decoration="outdoorData.splitContent.decoration")
       template(slot='large-content')

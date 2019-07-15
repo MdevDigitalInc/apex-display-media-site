@@ -567,7 +567,24 @@ let indoorSignagePage = {
 
 // Indoor Signage Data
 let outdoorSignagePage = {
-
+  // Main Hero
+  mainHero: {
+    heading: 'Outdoor LED Signage',
+    subheading: 'Give your business an edge over the competition',
+    btnData: {
+      class: 'apex-base-btn apex-blue-btn --button-space',
+      route: '/services/digital-media-management',
+      a11y: 'Learn more about our Digital Media Services',
+      text: 'Learn More'
+    },
+    background: 'services/outdoor/hero-outdoorled.png',
+    media: {
+      source: 'services/outdoor/hero-outdoorled-soccer.png',
+      sourceMob: 'services/outdoor/hero-outdoorled-mobile.png',
+      gif: false,
+      a11y: 'Large format outdoor LED screen'
+    },
+  },
   // About Block Content
   splitContent: {
     background: '--red',
