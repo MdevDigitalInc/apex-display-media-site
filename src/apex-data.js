@@ -240,6 +240,24 @@ let homePage = {
 
 
 let DigitalManagement = {
+  // Main Hero
+  mainHero: {
+    heading: 'Digital Media</br>Management',
+    subheading: 'Let our expert creative team produce and maintain the content that appears on your signs.',
+    btnData: {
+      class: 'apex-base-btn apex-black-btn --button-space',
+      route: '/services/digital-media-management',
+      a11y: 'Learn more about our Digital Media Services',
+      text: 'Get Started'
+    },
+    background: 'services/managed/hero-digitalmedia.png',
+    media: {
+      source: false,
+      sourceMob: 'services/managed/hero-digitalmedia-mobile.png',
+      gif: false,
+      a11y: 'Managed Digital Services'
+    },
+  },
   // Featured Block Single
   featuredBlock: {
     heading: 'Fully</br>Custom',
@@ -256,7 +274,6 @@ let DigitalManagement = {
       a11y: 'Placeholder - TODO Update'
     }
   },
-
   // About Block Content
   splitContent: {
     background: '--red',
@@ -415,16 +432,35 @@ let DigitalManagement = {
 };
 // Indoor Signage Data
 let indoorSignagePage = {
+  // Main Hero
+  mainHero: {
+    heading: 'Indoor Digital</br>Signage',
+    subheading: 'Have a unique idea or application? Let our team execute on your vision.',
+    btnData: {
+      class: 'apex-base-btn apex-black-btn --button-space',
+      route: '/services/digital-media-management',
+      a11y: 'Learn more about our Digital Media Services',
+      text: 'Get Started'
+    },
+    background: 'services/indoor/hero-indoordigital.png',
+    media: {
+      source: false,
+      sourceMob: 'services/indoor/hero-indoordigital-mobile.png',
+      gif: false,
+      a11y: 'Large format indoor LED Screen'
+    },
+  },
+
   // Service Sample Array
   serviceSamples: [
     {
       // Image Data
       media: {
-        source: 'services/indoor/digital-menu-system.png',
+        source: 'services/indoor/retail-signage-indoors.png',
         gif: false,
-        a11y: 'Placeholder - TODO Update'
+        a11y: 'Retail Digital Signage Sample'
       },
-      heading: 'Digital Menu</br>Board Systems',
+      heading: 'Digital Menu</br>In-Store Promos',
       copy: 'Skip the printing fees! Digital media is the best way to keep your customers up-to-date on your latest menu items, promotions and sales. From one simple screen to multiple screens across many locations, we can help you create a menu system, content strategy and scheduled content that updates as often as you like.',
       benefits: [
         'Schedule sales and promo content',
@@ -436,11 +472,11 @@ let indoorSignagePage = {
     {
       // Image Data
       media: {
-        source: 'services/indoor/lobby-digital-sign.png',
+        source: 'services/indoor/boardroom-signage.png',
         gif: false,
-        a11y: 'Placeholder - TODO Update'
+        a11y: 'Reception & Corporate Digital Signage Sample'
       },
-      heading: 'Lobbies &</br>Waiting Rooms',
+      heading: 'Reception Areas</br>& Corporate Use',
       copy: 'Your waiting room is an ideal place for a digital sign. Visitors will appreciate the entertainment, and you can educate them on your products and services while they wait. Not limited to public venues, a digital screen in your break room or office can also be a great way to provide education and entertainment for your employees. Digital screens can also be useful in production environments to share real-time information and training.',
       benefits: [
         'Schedule content ahead of time',
@@ -452,11 +488,11 @@ let indoorSignagePage = {
     {
       // Image Data
       media: {
-        source: 'services/indoor/retail-signage-indoors.png',
+        source: 'services/indoor/arena-signage.png',
         gif: false,
         a11y: 'Placeholder - TODO Update'
       },
-      heading: 'Retail</br>Promotion',
+      heading: 'Custom</br>Digital Signs',
       copy: 'interactive messaging engages customers more effectively than static signage. Customers are comfortable getting information from screens and are now seeking them out at retail locations. Digital signage also comes in many different shapes and sizes – making the options for on-site promotion endless. Not sure what you need? Get in touch, we’ll help you develop custom signage for your retail location.',
       benefits: [
         'Schedule sale & promo content',
@@ -567,7 +603,24 @@ let indoorSignagePage = {
 
 // Indoor Signage Data
 let outdoorSignagePage = {
-
+  // Main Hero
+  mainHero: {
+    heading: 'Outdoor LED</br>Signage',
+    subheading: 'Give your business an edge over the competition',
+    btnData: {
+      class: 'apex-base-btn apex-black-btn --button-space',
+      route: '/services/digital-media-management',
+      a11y: 'Learn more about our Digital Media Services',
+      text: 'Get Started'
+    },
+    background: 'services/outdoor/hero-outdoorled.png',
+    media: {
+      source: 'services/outdoor/hero-outdoorled-soccer.png',
+      sourceMob: 'services/outdoor/hero-outdoorled-mobile.png',
+      gif: false,
+      a11y: 'Large format outdoor LED screen'
+    },
+  },
   // About Block Content
   splitContent: {
     background: '--red',
@@ -597,44 +650,45 @@ let outdoorSignagePage = {
     {
       // Image Data
       media: {
-        source: 'services/indoor/digital-menu-system.png',
+        source: 'services/outdoor/exterior-retail-sign.png',
         gif: false,
-        a11y: 'Placeholder - TODO Update'
+        a11y: 'Wall Mounted LED Displays'
       },
-      heading: 'New Signage</br>Installation',
-      copy: 'PLACEHOLDER! Digital media is the best way to keep your customers up-to-date on your latest menu items, promotions and sales. From one simple screen to multiple screens across many locations, we can help you create a menu system, content strategy and scheduled content that updates as often as you like.',
+      heading: 'One-Sided</br>Wall Mount',
+      copy: 'Attract attention to your location with bright, high contrast exterior digital signage. Built for harsh environments, our digital sign technology provides reliable performance year round with exceptional image quality.',
       benefits: [
-        'Schedule sales and promo content',
-        'Update content across multiple locations',
-        'Customize content per location',
-        'Bullet highlighting special feature'
+        'Comes in a variety of shapes and sizes',
+        'Retrofit an existing sign or install a completely new one',
+        'Monetize your content by providing ad space',
+        'Split panels to show different multimedia content',
+        'Schedule content and promos in advance'
       ]
     },
     {
       // Image Data
       media: {
-        source: 'services/indoor/lobby-digital-sign.png',
+        source: 'services/outdoor/pylon-sign.png',
         gif: false,
-        a11y: 'Placeholder - TODO Update'
+        a11y: 'Outdoor Pylon LED Signs'
       },
-      heading: 'Retrofitting</br>Existing Signage',
-      copy: 'PLACEHOLDER!our waiting room is an ideal place for a digital sign. Visitors will appreciate the entertainment, and you can educate them on your products and services while they wait. Not limited to public venues, a digital screen in your break room or office can also be a great way to provide education and entertainment for your employees. Digital screens can also be useful in production environments to share real-time information and training.',
+      heading: 'Pylon</br>Signs',
+      copy: 'Build a custom pylon sign for your storefront or retail complex. We’ll work with you to build a sign that suits the look of your neighborhood or building facade. Advertise one business, or many, these tall, eye-catching signs can be shared between several businesses.',
       benefits: [
-        'Schedule content ahead of time',
-        'Include apps like news, social media, weather, cable and updatable ticker feeds.',
-        'Robust CMS allows easy content management',
-        'Attract customer attention with motion graphiics and eye-catching designs'
+        'Retrofit an existing sign or install a completely new one',
+        'Create a new source of revenue with advertising',
+        'Highly visible from the road',
+        'Built to suit any location or neighborhood'
       ]
     },
     {
       // Image Data
       media: {
-        source: 'services/outdoor/curved-sign.png',
+        source: 'services/outdoor/highway-billboard.png',
         gif: false,
-        a11y: 'Placeholder - TODO Update'
+        a11y: 'Custom LED Signs Installation'
       },
       heading: 'Custom</br>Installation',
-      copy: 'PLACEHOLDERinteractive messaging engages customers more effectively than static signage. Customers are comfortable getting information from screens and are now seeking them out at retail locations. Digital signage also comes in many different shapes and sizes – making the options for on-site promotion endless. Not sure what you need? Get in touch, we’ll help you develop custom signage for your retail location.',
+      copy: 'Create your own billboard! Building large-format signage on your property can be a great way to make passive revenue. If you have a location with high visibility from a busy roadway, you have a great opportunity to create a new source of income by broadcasting advertsiting messages.',
       benefits: [
         'Schedule sale & promo content',
         'Update content across multiple locations',
