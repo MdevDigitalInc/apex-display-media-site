@@ -13,14 +13,11 @@
             | {{item.heading}}
           p.apex-service-info-block-copy
             | {{item.copy}}
+          router-link.apex-base-btn.apex-plain-btn(:to="item.link.route" :title="item.link.a11y" v-if="item.link")
+            | {{ item.link.text }}
 </template>
 
-
-
-
 <script>
-
-
 export default {
   name: 'ServiceInfoBlocks',
   props: [ 'contentBlocks' , 'heading' ,'copy' ],
@@ -37,8 +34,7 @@ export default {
 <style lang="scss">
 
 .apex-service-info-blocks {
-  width: 80%;
-  margin: 0 auto 65px;
+  width: 100%;
 }
 
 .apex-service-info-blocks-intro {
@@ -61,7 +57,7 @@ export default {
   width: 100%;
   height: auto;
 
-  
+
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .19);
   padding: 50px;
@@ -99,6 +95,14 @@ export default {
 
 .apex-service-info-block-content {
   width: 95%;
+
+  p {
+    margin-bottom: 20px;
+  }
+
+  .apex-plain-btn {
+    color: $white;
+  }
 }
 
 .apex-service-info-block-heading {
@@ -106,11 +110,11 @@ export default {
   font-weight: 700;
   margin-bottom: 10px;
   color: $apex-blue;
-  line-height: 1.5;
+  line-height: 1.3;
 }
 
 .apex-service-info-block-copy {
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 .apex-service-block-icon {
