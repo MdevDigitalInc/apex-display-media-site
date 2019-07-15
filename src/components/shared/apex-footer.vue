@@ -309,19 +309,12 @@
       margin-bottom: 31px;
       text-align: right;
       direction: rtl;
-      //transform: translateX( 15% );
-    }
-
-    @media #{$laptop-only} {
-      //transform: translateX( 20% );
     }
   }
 
   a.--active {
     color: $white;
     text-indent: 0;
-    //transform: translateX( 98% );
-    //transform: translateX( 72% );
 
     span:before {
       content: '';
