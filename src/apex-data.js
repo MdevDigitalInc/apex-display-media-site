@@ -569,13 +569,13 @@ let indoorSignagePage = {
 let outdoorSignagePage = {
   // Main Hero
   mainHero: {
-    heading: 'Outdoor LED Signage',
+    heading: 'Outdoor LED</br>Signage',
     subheading: 'Give your business an edge over the competition',
     btnData: {
-      class: 'apex-base-btn apex-blue-btn --button-space',
+      class: 'apex-base-btn apex-black-btn --button-space',
       route: '/services/digital-media-management',
       a11y: 'Learn more about our Digital Media Services',
-      text: 'Learn More'
+      text: 'Get Started'
     },
     background: 'services/outdoor/hero-outdoorled.png',
     media: {

@@ -114,31 +114,33 @@ export default {
       }
     }
   }
+}
 
-  .apex-hero-scroll {
-    width: 11%;
-    text-align: center;
-    margin-top: 60px;
+// Apex Scroll Global
+.apex-hero-scroll {
+  width: 11%;
+  text-align: center;
+  margin-top: 60px;
 
-    @media #{$portrait} {
-      display: none;
-    }
+  @media #{$portrait} {
+    display: none;
+  }
+
+  @media #{$laptop-only} {
+    width: 16%;
+  }
+
+  .apex-scroll-icon {
+    width: 35px;
+    margin: 25px auto 0;
 
     @media #{$laptop-only} {
-      width: 16%;
-    }
-
-    .apex-scroll-icon {
-      width: 35px;
-      margin: 25px auto 0;
-
-      @media #{$laptop-only} {
-        width: 25px;
-        margin: 15px auto 0;
-      }
+      width: 25px;
+      margin: 15px auto 0;
     }
   }
 }
+
 
 /*--------------------------------------*/
 
