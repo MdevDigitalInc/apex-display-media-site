@@ -2,8 +2,12 @@
   //- Wrapper Container
   section.mdev-main-content
     //- Hero section -----------
-    main-hero
-    .apex-about-section
+    home-hero( :heading="homeData.mainHero.heading"
+      :subheading="homeData.mainHero.subheading"
+      :action="homeData.mainHero.btnData"
+      :media="homeData.mainHero.media")
+    //- About Section
+    .apex-about-section.--home-hero
       //- Apex Split Component
       apex-split(:content='homeData.aboutContent')
         template(slot='additional-service-content' v-if = 'homeData.aboutContent.additionalServiceContent.serviceList')
@@ -84,6 +88,7 @@ import ImageShowcase from '../shared/image-showcase.vue';
 import FeaturedBlockSingle from '../shared/featured-block-single.vue';
 import SupportServices from '../shared/support-services.vue';
 import FeaturedServices from './home--featured-service.vue';
+import HomeHero from './home--hero.vue';
 
 // Import SEO From File
 import { stagingBuild, template, social, general }       from '../../seo-meta.js';
@@ -119,11 +124,12 @@ export default{
   components: {
     'main-hero'            : MainHero,
     'featured-block-single': FeaturedBlockSingle,
-    'main-hero'         : MainHero,
-    'featured-services' : FeaturedServices,
-    'apex-split' : ApexSplit,
-    'support-services' : SupportServices,
-    'image-showcase'    : ImageShowcase
+    'main-hero'            : MainHero,
+    'featured-services'    : FeaturedServices,
+    'apex-split'           : ApexSplit,
+    'support-services'     : SupportServices,
+    'home-hero'            : HomeHero,
+    'image-showcase'       : ImageShowcase
   }
 };
 </script>
@@ -135,7 +141,9 @@ export default{
 /*-------------------------------------*/
 /* HOME Component Styles
 /--------------------------------------*/
-
+.apex-support-services-section {
+  margin-top: 100px;
+}
 
 /*--------------------------------------*/
 

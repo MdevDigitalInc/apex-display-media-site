@@ -7,7 +7,7 @@
         span
       // - Sidebar Navigation Overlay
       .apex-nav-overlay(:class="{open: navOpen }" @click="navOpen = !navOpen")
-      .apex-header-bar.flex.flex-row.flex-wrap
+      .apex-header-bar.flex.flex-row.flex-wrap( ref="dataMainNav" )
         .brand
           router-link(class='apex-header-bar-branding' title='Home' to='/')
             img(:src="loadImage(headerBrand)" alt="Apex logo")
@@ -49,7 +49,6 @@
     name: 'ApexNavigation',
 
     data (){
-
       return {
         navOpen: false,
         headerBrand: appData.blackBrand,
@@ -88,6 +87,12 @@
         this.$emit('toggle', true);
         this.navOpen = false;
       }
+    },
+
+    mounted() {
+      // Set padding on body according to size of nav
+      let height = this.$refs.dataMainNav.getBoundingClientRect().height;
+      document.querySelector('body').style.paddingTop = height + 'px';
     }
   };
 </script>

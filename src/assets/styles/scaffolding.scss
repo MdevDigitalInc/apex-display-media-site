@@ -62,7 +62,6 @@
 }
 // Wrapper Classes
 
-
 .apex-main-wrapper {
   width: 95%;
   margin: 0 auto;
@@ -88,7 +87,7 @@
   }
 
   @media #{$xl-up} {
-    max-width: 1700px;
+    width: 80%;
   }
 
   @media #{$phone-only} {
