@@ -85,7 +85,7 @@ export default{
   }
 
   &.footer-style {
-    padding: 30px 50px;
+    padding: 30px 0;
     font-size: 18px;
     min-height: 75px;
     max-height: 75px;

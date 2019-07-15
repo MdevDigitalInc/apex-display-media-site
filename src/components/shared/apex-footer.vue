@@ -16,15 +16,15 @@
             br
             | London, ON, N6J 2s8
         .apex-footer-nav-links.u-capitalize
-              router-link(
-              v-for="link in links"
-              :to="link.route"
-              active-class="--active"
-              :title="link.linkTitle"
-              aria-role="menuitem"
-              exact)
-                span
-                  |{{ link.linkName }}
+          router-link(
+          v-for="link in links"
+          :to="link.route"
+          active-class="--active"
+          :title="link.linkTitle"
+          aria-role="menuitem"
+          exact)
+            span
+              |{{ link.linkName }}
     .apex-footer-bottom-bar
       .apex-main-wrapper
         .flex.flex-row.flex-wrap.apex-row
@@ -61,7 +61,7 @@
           {
             linkName: 'Outdoor LEDs',
             linkTitle: 'Outdoor LEDs',
-            route: '/outdoor-leds'
+            route: '/outdoor-digital-signs'
           },
           {
             linkName: 'Indoor Digital Signage',
@@ -71,7 +71,7 @@
           {
             linkName: 'Media Management',
             linkTitle: 'Media Management',
-            route: '/media-management'
+            route: '/digital-media-management'
           },
           {
             linkName: 'Support',
@@ -209,7 +209,7 @@
   }
 
   @media #{$laptop-up} {
-    width: 40%;
+    width: 48%;
     justify-content: flex-start;
   }
 }
@@ -220,7 +220,7 @@
   background: $black;
 
   @media #{$laptop-up} {
-    width: 25%;
+    width: 17%;
     order: 3;
   }
 }
@@ -295,7 +295,9 @@
 .apex-footer-nav-links {
   position: relative;
   top: 63px;
+  right: 0;
   display: none;
+  width: 35%;
 
   a {
     display: block;
@@ -307,18 +309,12 @@
       margin-bottom: 31px;
       text-align: right;
       direction: rtl;
-      transform: translateX( 15% );
-    }
-
-    @media #{$laptop-only} {
-      transform: translateX( 20% );
     }
   }
 
   a.--active {
     color: $white;
     text-indent: 0;
-    transform: translateX( 98% );
 
     span:before {
       content: '';
@@ -326,7 +322,8 @@
       background-color: $white;
       height: 4px;
       width: 300px;
-      transform: translateY( 50% );
+      position: absolute;
+      transform: translateX( 109% ) translateY( 50% );
 
       @media #{$laptop-up} {
         margin: 6px 0 6px 28px;

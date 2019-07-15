@@ -95,7 +95,7 @@
 <style lang="scss">
 
 .apex-header-bar {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -140,7 +140,7 @@
   background-color: $black;
   border: 0;
   display: block;
-  position: absolute;
+  position: fixed;
   cursor: pointer;
   right: 0;
   top: 0;
