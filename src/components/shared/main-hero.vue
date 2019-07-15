@@ -63,6 +63,9 @@ export default {
 
   @media #{$portrait} {
     height: auto;
+    /* stylelint-disable */
+    background: $color-brand-primary!important;
+    /* stylelint-enable */
   }
 
   .apex-hero-content {
@@ -140,6 +143,11 @@ export default {
     width: 16%;
     min-width: 96.7px;
     margin-top: 25px;
+  }
+
+  //Overrides
+  &.--img-pullup .apex-hero-image-mob {
+    margin-top: -160px;
   }
 }
 

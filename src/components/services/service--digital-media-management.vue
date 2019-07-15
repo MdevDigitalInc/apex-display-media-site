@@ -1,5 +1,13 @@
 <template lang="pug">
   section.mdev-main-content
+    //- Hero Main
+    main-hero(
+      :heading="dataDigitalManagement.mainHero.heading"
+      :subheading="dataDigitalManagement.mainHero.subheading"
+      :action="dataDigitalManagement.mainHero.btnData"
+      modifier="--img-pullup"
+      :media="dataDigitalManagement.mainHero.media"
+      :background="dataDigitalManagement.mainHero.background")
     //- Apex Split
     apex-split-simple( :flip="false" :background="dataDigitalManagement.splitContent.background" :decoration="dataDigitalManagement.splitContent.decoration")
       template(slot='large-content')

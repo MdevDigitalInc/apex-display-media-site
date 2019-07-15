@@ -1,6 +1,13 @@
 <template lang="pug">
   section.mdev-main-content
     //- Hero Main
+    main-hero(
+      :heading="indoorData.mainHero.heading"
+      :subheading="indoorData.mainHero.subheading"
+      :action="indoorData.mainHero.btnData"
+      modifier="--img-pullup"
+      :media="indoorData.mainHero.media"
+      :background="indoorData.mainHero.background")
     //- Apex Split
     apex-split-simple( :flip="false" :background="indoorData.splitContent.background" :decoration="indoorData.splitContent.decoration")
       template(slot='large-content')
