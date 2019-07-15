@@ -61,17 +61,17 @@
           {
             linkName: 'Outdoor LEDs',
             linkTitle: 'Outdoor LEDs',
-            route: '/outdoor-digital-signs'
+            route: '/services/outdoor-digital-signs'
           },
           {
             linkName: 'Indoor Digital Signage',
             linkTitle: 'Indoor Digital Signage',
-            route: '/indoor-digital-signage'
+            route: '/services/indoor-digital-signs'
           },
           {
             linkName: 'Media Management',
             linkTitle: 'Media Management',
-            route: '/digital-media-management'
+            route: '/services/digital-media-management'
           },
           {
             linkName: 'Support',
@@ -256,7 +256,7 @@
     }
 
     @media #{$laptop-up} {
-      width: 95%;
+      width: 80%;
     }
   }
 }

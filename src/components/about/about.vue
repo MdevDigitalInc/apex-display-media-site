@@ -2,6 +2,28 @@
   .mdev-main-content
     h1
       |ABOUT
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    support-services-blocks(:supportServices='aboutData.supportServices.serviceList' :heading='aboutData.supportServices.heading' :headingClass='aboutData.supportServices.headingClass')
+    //- Apex Split
+    apex-split-simple( :flip="false" :background="aboutData.splitContent.background" :decoration="aboutData.splitContent.decoration" modifier="apex-led-panel-bg")
+      template(slot='large-content')
+        h2.--margin-space-large(:class='aboutData.splitContent.largeSplit.headingClass')
+          | {{aboutData.splitContent.largeSplit.heading}}
+        p(v-for="paragraph in aboutData.splitContent.largeSplit.copy")
+          |{{ paragraph }}
+
+      template(slot='highlight-content')
+        h2.--margin-space-large(v-html='aboutData.splitContent.highlight.heading' :class='aboutData.splitContent.highlight.headingClass')
+        ul
+          li(v-for="paragraph in aboutData.splitContent.highlight.copy")
+            | {{ paragraph }}
 </template>
 
 
@@ -11,13 +33,19 @@
 // Import SEO From File
 import { stagingBuild, template, social, general }       from '../../seo-meta.js';
 
+import { aboutPage } from '../../apex-data.js';
+
+import SupportServicesBlocks from '../shared/support-services-blocks.vue';
+import ApexSplitSimple from '../shared/apex-split-simple.vue';
+
 export default {
   name: 'About',
   // TODO - Edit meta Title
 
   data: function(){
     return {
-      seo: SEOData.siteSeo
+      aboutData: aboutPage,
+      //seo: SEOData.siteSeo
     };
   },
   // Meta SEO Function
@@ -36,7 +64,10 @@ export default {
       ]
     };
   },
-
+  components: {
+    'support-services-blocks' : SupportServicesBlocks,
+    'apex-split-simple' : ApexSplitSimple
+  }
 };
 </script>
 
@@ -50,5 +81,16 @@ export default {
 
 
 /*--------------------------------------*/
+
+.apex-led-panel-bg {
+  background-image: url('../../assets/images/led-panel.png');
+  background-repeat: no-repeat;
+  
+  h2,
+  p {
+    color: $white;
+  }
+
+}
 
 </style>

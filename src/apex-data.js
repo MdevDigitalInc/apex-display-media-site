@@ -222,6 +222,68 @@ let homePage = {
   }
 }
 
+let aboutPage = {
+  supportServices: {
+    heading: 'Support Services',
+    headingClass: 'd-heading-flair d-heading-flair-blue u-bold',
+    serviceList: [
+      {
+        icon:'icons/icon-conceptual-blue.svg',
+        heading: 'Conceptual Design',
+        copy: 'Our design experts will work with your business from concept to reality. We’ll begin with site measurements, provide engineered drawings for unique hardware configurations, and have digital content ready to deploy with the sign at launch.',
+      },
+      {
+        icon:'icons/icon-custom-blue.svg',
+        heading: 'Custom Installation',
+        copy: 'Don’t have an in-house team of seasoned installers or engineers? No problem. We have the people, equipment and the expertise to retrofit your existing sign or install your new construction sign.', 
+      },
+      {
+        icon:'icons/icon-permitting-blue.svg',
+        heading: 'City Permitting',
+        copy: 'Over the past couple of years, many municipalities have updated their outdoor signage policies allowing more options for businesses. Let our team take care of navigating the permitting process while you focus on running your business.', 
+      },
+      {
+        icon:'icons/icon-leasing-blue.svg',
+        heading: 'Leasing Options',
+        copy: 'Need flexibility with your signage purchase? Talk to our team about our financing and leasing options: make signage part of your operational budget by spreading the cost over a few years. Whatever your needs, we have an option that will work for you.', 
+      },
+      {
+        icon:'icons/icon-warranty-blue.svg',
+        heading: 'Warranty Coverage',
+        copy: 'Enjoy peace of mind knowing that the warranty coverage on your sign hardware comes from local service providers. We are always here for you, year round, rain or shine.',
+      },
+      {
+        icon:'icons/icon-warranty-blue.svg',
+        heading: 'Removal &amp; Disposal',
+        copy: 'Wondering what happens to your old sign hardware? As part of our installation services, we’ll remove your old hardware and dispose of it safely. The best part: there is no fee.',
+      }
+    ]
+  },
+  // About Block Content
+  splitContent: {
+    background: '--blue',
+    decoration: '--bot-dots',
+    largeSplit: {
+      heading: 'What makes us different?',
+      copy: [
+        'We’re an end-to-end signage and content solution for your business, and we mean it! Digital signage can enhance your business in many different ways – our job is to make it easy by helping you find the best strategy to acheive your goals.',
+        'Thanks to our exclusive partnership with our manufacturer, we are also pleased to offer extremely competitive pricing on all of our hardware.',
+        'Get in touch to find out how you can engage your visitors in meaningful ways using digital technology and powerful visual design.'
+      ],
+      headingClass: 'd-heading-flair d-heading-flair-blue u-bold',
+    },
+    highlight: {
+      heading: 'Digital Media <br> Management',
+      copy: [
+        '',
+        '',
+        '',
+        ''
+      ],
+      headingClass: 'd-heading-flair d-heading-flair-white u-bold',
+    }
+  }
+}
 
 let DigitalManagement = {
   // Featured Block Single
@@ -708,6 +770,7 @@ export {
   appData,
   mainNavigation,
   homePage,
+  aboutPage,
   DigitalManagement,
   indoorSignagePage,
   outdoorSignagePage
