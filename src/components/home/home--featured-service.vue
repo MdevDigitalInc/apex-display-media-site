@@ -56,6 +56,7 @@ export default {
   position: relative;
   overflow: visible;
   margin-top: 100px;
+  margin-bottom: 100px;
 
   @media #{$portrait} {
     margin-top: 0;

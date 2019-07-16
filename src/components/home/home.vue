@@ -136,14 +136,15 @@ export default{
 
 
 <style lang="scss">
-
 /*-------------------------------------*/
 /* HOME Component Styles
 /--------------------------------------*/
 .apex-support-services-section {
   margin-top: 100px;
+
+  @media #{$portrait} {
+    margin-top: 0;
+  }
 }
-
 /*--------------------------------------*/
-
 </style>

@@ -126,7 +126,7 @@ let homePage = {
     heading: 'Alternate</br>Display</br>Media',
     copy: [
       'Looking for static signage with impact? We also provide quality backlit signage and lettering for indoor and outdoor usage. Ideal for locations that want to show off their brand identity.',
-      'Take generic acrylic panel signage to the next level with our custom LED backlit channel letter signage.'
+      'Take generic acrylic panel signage to the next level with custom LED backlit channel letter signage.'
     ],
     color: '--blue',
     // Image Data
