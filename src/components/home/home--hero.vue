@@ -41,7 +41,7 @@ export default {
   }
   @media #{$desktop-only} {
     height: 88vh;
-    margin-bottom: -166px;
+    margin-bottom: -176px;
   }
   @media #{$laptop-only} {
     height: 88vh;
