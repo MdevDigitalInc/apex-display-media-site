@@ -33,8 +33,7 @@
            :to='homeData.aboutContent.highlight.btnData.route')
             | {{homeData.aboutContent.highlight.btnData.text}}
     featured-services(
-      :featuredServices="homeData.featuredServices"
-      class="--section-space-xl")
+      :featuredServices="homeData.featuredServices")
     //- Alternate Service Section ----
     featured-block-single(
       :heading="homeData.featuredBlock.heading"

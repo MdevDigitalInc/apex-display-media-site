@@ -55,6 +55,12 @@ export default {
   width: 100%;
   position: relative;
   overflow: visible;
+  margin-top: 100px;
+
+  @media #{$portrait} {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
 
   .apex-main-wrapper {
     @media #{ $portrait } {
@@ -87,10 +93,22 @@ export default {
     @media #{ $portrait } {
       width: 100%;
       padding: 100px;
+
+      p {
+        margin-bottom: 30px;
+      }
+
+      h2 {
+        margin-bottom: 30px;
+      }
     }
 
     @media #{ $phone-only } {
       padding: 60px 40px;
+    }
+
+    @media #{$laptop-only} {
+      padding-right: 55px;
     }
   }
 
@@ -99,12 +117,13 @@ export default {
     order: 2;
     position: relative;
     background: pink;
+    background-repeat: no-repeat;
     padding-top: 55%;
     background-size: cover;
     background-position: center;
 
     @media #{$laptop-only} {
-      padding-top: 75%;
+      padding-top: 65%;
     }
 
     @media #{$tablet-lnd-only} {
@@ -113,7 +132,7 @@ export default {
 
     @media #{ $portrait } {
       width: 100%;
-      padding-top: 110%;
+      padding-top: 90%;
     }
   }
 
@@ -127,6 +146,8 @@ export default {
     position: absolute;
     right: -20px;
     top: 20%;
+    font-size: 20px;
+    line-height: 1.22;
 
     @media #{ $portrait } {
       display: none;
@@ -143,10 +164,15 @@ export default {
 
       @media #{ $portrait } {
         order: 1;
+        padding: 100px;
       }
 
       @media #{ $phone-only } {
         padding: 60px 40px;
+      }
+
+      @media #{$laptop-only} {
+        padding-left: 55px;
       }
     }
 
