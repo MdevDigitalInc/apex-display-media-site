@@ -27,18 +27,22 @@
     margin: 0 auto;
     min-height: 430px;
     max-height: auto;
-    padding-top: 90px;
+    padding-top: 40px;
 
     @media #{$laptop-up} {
       min-height: 600px;
       max-height: 650px;
+    }
+
+    @media #{$laptop-only} {
+      min-height: 500px;
     }
   }
 
   &:first-child {
     width: 100%;
     order: 1;
-    padding-bottom: 60px;
+    padding-bottom: 40px;
 
     p {
       @media #{$tablet-only} {
@@ -52,7 +56,7 @@
     }
 
     @media #{$laptop-up} {
-      width: 60%;
+      width: 66%;
       padding-bottom: 0;
 
       .apex-split-content-block-inner {
@@ -74,6 +78,9 @@
   }
 
   &:nth-child( 2 ) {
+    background-image: url('../../assets/images/dots-white.svg'), url('../../assets/images/arrows-white.svg');
+    background-repeat: no-repeat, no-repeat;
+    background-size: 147px 203px, initial;
     width: 100%;
 
     p {
@@ -85,9 +92,6 @@
     }
 
     &.apex-split-about-home {
-      background-image: url('../../assets/images/dots-white.svg'), url('../../assets/images/arrows-white.svg');
-      background-repeat: no-repeat, no-repeat;
-      background-size: 147px 203px, initial;
       order: 2;
       background-position: 105% -20%, -1000% 80%;
 
@@ -137,6 +141,10 @@
       @media #{$laptop-up} {
         background-position: 96% -3%, 5% 90%;
       }
+
+      @media #{$laptop-only} {
+        background-position: 96% -25%, 5% 110%;
+      }
     }
 
     &.apex-split-services .apex-split-content-block-inner {
@@ -152,6 +160,10 @@
         min-height: auto;
         padding: 70px 0 25px;
       }
+
+      @media #{$laptop-only} {
+        transform: translateX( -5% ) translateY( -17% ) scaleY(-1);
+      }
     }
 
     .apex-split-content-block-inner {
@@ -165,7 +177,7 @@
     }
 
     @media #{$laptop-up} {
-      width: 40%;
+      width: 34%;
 
       .apex-split-content-block-inner {
         width: 60%;
@@ -211,10 +223,14 @@
     font-weight: 700;
     font-size: 20px;
     line-height: 1.5;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
 
     @media #{$tablet-up} {
       font-size: 24px;
+    }
+
+    @media #{$tablet-only} {
+      margin-bottom: 3px;
     }
 
     @media #{$laptop-only} {
@@ -225,12 +241,20 @@
   .apex-split-service-copy p {
     font-size: 16px;
 
+    &:last-of-type {
+      margin-bottom: 30px;
+    }
+
     @media #{$tablet-only} {
       font-size: 20px;
     }
 
     @media #{$laptop-up} {
       font-size: 20px;
+
+      &:last-of-type {
+        margin-bottom: 40px;
+      }
     }
 
     @media #{$laptop-only} {

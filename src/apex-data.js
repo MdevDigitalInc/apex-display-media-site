@@ -184,7 +184,7 @@ let homePage = {
           copy: 'Wondering what happens to your old sign? We’ll take it away and dispose of it safely, at no extra cost.',
         },
         {
-          heading: 'Financing Options',
+          heading: 'Leasing Options',
           copy: 'Need flexibility with your digital signage purchase?  No problem. Ask us about available options.',
         },
         {
@@ -197,7 +197,7 @@ let homePage = {
       headingClass: 'd-heading-flair d-heading-flair-blue u-bold',
       bgClass: 'apex-service-list-container',
       btnData: {
-        class: 'apex-base-btn apex-red-btn',
+        class: 'apex-base-btn apex-black-btn',
         route: '/',
         a11y: '',
         text: 'Learn More'
