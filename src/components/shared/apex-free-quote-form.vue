@@ -3,7 +3,7 @@
     .apex-close-form
       apex-close-btn(styleType='red' v-on:toggle='closeForm')
     .apex-free-quote-heading.flex.flex-row.flex-wrap
-      .apex-column-form.heading
+      .apex-column-form.heading(v-if='!formSent')
         h2.u-bold
           |Free Quote
         p
@@ -34,8 +34,10 @@
             .apex-form-group.flex.flex-row-rev.flex-wrap
               input(type='submit' class='apex-base-btn apex-black-btn' value='Contact Me' @click='onSubmit')
         template(v-else)
-          p
-            |Thank you
+          h2.u-bold
+            |Thank You
+          p.thankyou-p( v-html="thankyou")
+          img.thank-you( :src="loadImage('icons/icon-post-submit-white.svg')" alt="Thank you for submitting" )
 
 </template>
 
@@ -54,7 +56,8 @@
         email: null,
         message: null,
         honeypot: null,
-        formSent: false
+        formSent: true,
+        thankyou: 'Your form has been submitted, you will receive your free quote shortly regarding your free quote. In the meantime check out our latest projects on <a href="TODO"title="Instagram">Instagram</a> and <a href="TODO" title="Facebook">Facebook</a>'
       };
     },
      components: {
@@ -242,6 +245,22 @@ p:last-of-type {
     p:last-of-type {
       margin-bottom: 30px;
     }
+  }
+}
+
+.thank-you {
+  width: 30%;
+  margin-top: 35px;
+}
+
+.thankyou-p {
+  width: 80%;
+
+  @media #{$portrait} {
+    width: 100%;
+  }
+  a {
+    text-decoration: underline;
   }
 }
 </style>
