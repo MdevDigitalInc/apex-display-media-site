@@ -73,7 +73,7 @@ export default {
   }
 
   .apex-hero-content {
-    width: 50%;
+    width: 47%;
     position: absolute;
     left: 10%;
     top: 50%;
@@ -86,6 +86,10 @@ export default {
       left: auto;
       transform: none;
       padding: 140px 90px 20px;
+    }
+
+    @media #{$laptop-only} {
+      width: 44%;
     }
 
     @media #{$phone-only} {
