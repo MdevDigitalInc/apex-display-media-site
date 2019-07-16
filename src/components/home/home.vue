@@ -142,8 +142,14 @@ export default{
 /* HOME Component Styles
 /--------------------------------------*/
 .apex-support-services-section {
-  margin-top: 100px;
+  margin-top: 0;
+
+  @media #{$laptop-up} {
+    margin-top: 80px;
+  }
 }
+
+
 
 /*--------------------------------------*/
 
