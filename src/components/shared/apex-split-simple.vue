@@ -112,6 +112,12 @@ export default {
     width: 60%;
   }
 }
+
+.--super-center {
+  .apex-split-center {
+    @include center(both);
+  }
+}
 // Decorations
 .apex-split-highlight.--bot-dots:before {
   @include pseudo();
