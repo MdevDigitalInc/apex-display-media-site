@@ -4,7 +4,7 @@
       apex-close-btn(styleType='red' v-on:toggle='closeForm')
     .apex-free-quote-heading.flex.flex-row.flex-wrap
       .apex-column-form.heading
-        h2.u-bold 
+        h2.u-bold
           |Free Quote
         p
           |Tell us what you are looking to accomplish. Not sure where to start?
@@ -124,6 +124,16 @@
     width: 85%;
     margin: 0 auto;
   }
+
+  @media #{$portrait} {
+    width: 100%;
+  }
+
+  @media #{$portrait} {
+    .apex-base-btn {
+      width: 100%;
+    }
+  }
 }
 
 .apex-free-quote-form {
@@ -165,6 +175,12 @@
   @media #{$laptop-up} {
     height: 100vh;
   }
+
+  @media #{$portrait} {
+    .apex-close-btn {
+      transform: scale(1.2);
+    }
+  }
 }
 
 .apex-free-quote-form-container,
@@ -172,7 +188,7 @@
   width: 90%;
   margin: 0 auto;
 
-  .apex-column { 
+  .apex-column {
     padding-left: 10%;
   }
 }
@@ -185,7 +201,7 @@
   }
 
   @media #{$laptop-up} {
-    background-position: 0 center; 
+    background-position: 0 center;
     padding-top: 73px;
     width: 85%;
     order: 1;
@@ -215,4 +231,17 @@ p:last-of-type {
   }
 }
 
+.apex-column .heading {
+  @media #{$portrait} {
+    /* stylelint-disable */
+    width: 100%!important;
+    /* stylelint-enable */
+  }
+
+  @media #{$phone-only} {
+    p:last-of-type {
+      margin-bottom: 30px;
+    }
+  }
+}
 </style>

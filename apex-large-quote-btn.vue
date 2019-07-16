@@ -40,10 +40,6 @@ export default{
   text-transform: uppercase;
   cursor: pointer;
 
-  @media #{$tablet-prt-only} {
-    font-size: 40px;
-  }
-
   &:hover,
   &:active {
     color: $white;

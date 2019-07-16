@@ -155,6 +155,12 @@
       width: 80%;
     }
   }
+
+  @media #{$phone-only} {
+    h1 {
+      font-size: 41px;
+    }
+  }
 }
 
 .apex-contact-info-heading {

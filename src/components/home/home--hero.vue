@@ -73,7 +73,7 @@ export default {
   }
 
   .apex-hero-content {
-    width: 47%;
+    width: 44%;
     position: absolute;
     left: 10%;
     top: 50%;
