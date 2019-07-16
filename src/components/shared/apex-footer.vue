@@ -120,8 +120,12 @@
   overflow: hidden;
 }
 
-.apex-footer-container {
+.apex-main-wrapper.apex-footer-container {
   overflow: visible;
+
+  @media #{$phone-only} {
+    width: 75%;
+  }
 }
 
 .apex-brand {
@@ -138,14 +142,14 @@
   margin-bottom: 50px;
 
   @media #{$laptop-up} {
-    margin-top: 142px;
+    margin-top: 130px;
     margin-bottom: 0;
     width: 30%;
   }
 
   p,
   p:last-of-type {
-    margin-bottom: 10px;
+    margin-bottom: 4px;
     font-size: 18px;
   }
 
@@ -154,7 +158,7 @@
     color: $apex-blue;
     font-weight: 700;
     font-size: 18px;
-    margin-bottom: 10px;
+    margin-bottom: 4px;
     line-height: 1.5;
 
     &:hover {
@@ -209,7 +213,7 @@
   }
 
   @media #{$laptop-up} {
-    width: 48%;
+    width: 50%;
     justify-content: flex-start;
   }
 }
@@ -220,7 +224,7 @@
   background: $black;
 
   @media #{$laptop-up} {
-    width: 17%;
+    width: 15%;
     order: 3;
   }
 }
@@ -256,7 +260,7 @@
     }
 
     @media #{$laptop-up} {
-      width: 95%;
+      width: 80%;
     }
   }
 }
@@ -306,7 +310,7 @@
 
     @media #{$laptop-up} {
       font-size: 18px;
-      margin-bottom: 31px;
+      margin-bottom: 25px;
       text-align: right;
       direction: rtl;
     }
