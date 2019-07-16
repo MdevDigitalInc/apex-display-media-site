@@ -23,7 +23,7 @@
             | {{ paragraph }}
     //- Featured Tiles
     section.apex-main-wrapper
-      apex-service-info-blocks.--section-space-xl(
+      apex-service-info-blocks.--section-space-digi(
         :heading='outdoorData.serviceInfo.heading'
         :copy="outdoorData.serviceInfo.copy"
         :contentBlocks='outdoorData.serviceInfo.contentBlocks')

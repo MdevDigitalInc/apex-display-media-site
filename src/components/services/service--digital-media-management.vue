@@ -24,7 +24,7 @@
             | {{ paragraph }}
     //-Service Info Blocks Component
     section.apex-main-wrapper
-      apex-service-info-blocks.--section-space-xl(
+      apex-service-info-blocks.--section-space-digi(
         :heading='dataDigitalManagement.serviceInfo.heading'
         :copy="dataDigitalManagement.serviceInfo.copy"
         :contentBlocks='dataDigitalManagement.serviceInfo.contentBlocks')

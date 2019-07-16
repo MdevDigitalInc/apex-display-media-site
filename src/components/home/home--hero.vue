@@ -132,7 +132,7 @@ export default {
 
   .apex-scroll-icon {
     width: 35px;
-    margin: 25px auto 0;
+    margin: 20px auto 0;
 
     @media #{$laptop-only} {
       width: 25px;

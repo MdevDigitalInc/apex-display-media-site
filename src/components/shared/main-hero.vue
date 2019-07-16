@@ -75,9 +75,11 @@ export default {
     top: 0;
     color: $white;
     z-index: 1;
+    transform-origin: top left;
 
     @media #{$laptop-only} {
-      width: 45%;
+      width: 48%;
+      transform: scale(.7);
     }
 
     @media #{$portrait} {
@@ -89,6 +91,19 @@ export default {
       height: auto;
       background: $color-brand-primary;
     }
+
+    @media #{$tablet-lnd-only} {
+      width: 60%;
+      transform: scale(.7);
+    }
+
+    h1 {
+      line-height: 1.2;
+    }
+
+    h4 {
+      line-height: 1.2;
+    }
   }
 
   .apex-dots {
@@ -97,6 +112,10 @@ export default {
     position: relative;
     left: 40px;
     margin-top: -64px;
+
+    @media #{$portrait} {
+      margin-top: -15%;
+    }
 
     @media #{$phone-only} {
       width: 50%;
@@ -142,15 +161,18 @@ export default {
   .apex-hero-scroll {
     width: 16%;
     min-width: 96.7px;
-    margin-top: 25px;
+    margin-top: 45px;
+    margin-left: 55px;
   }
 
   //Overrides
   &.--img-pullup .apex-hero-image-mob {
     margin-top: -160px;
+
+    @media #{$phone-only} {
+      margin-top: -120px;
+    }
   }
 }
-
 /*--------------------------------------*/
-
 </style>
