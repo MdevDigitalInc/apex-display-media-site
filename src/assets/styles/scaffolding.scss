@@ -1,8 +1,6 @@
 /*-------------------------------------
  *	SCAFFOLDING & LAYOUT UTILITIES
 /-------------------------------------*/
-
-
 //Space Classes
 
 .--margin-space-extra-large {
@@ -83,7 +81,7 @@
   }
 
   @media #{$desktop-only} {
-    width: 80%;
+    width: 78%;
   }
 
   @media #{$xl-up} {

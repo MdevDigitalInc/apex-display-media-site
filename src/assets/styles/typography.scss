@@ -120,9 +120,9 @@ $link-font-sizes: (
 /* Generate Responsive Sizing */
 
 p {
-  line-height: 1.5;
+  line-height: 1.22;
   font-weight: 400;
-  margin-bottom: $p-space;
+  margin-bottom: 60px;
 
   &:last-of-type {
     margin-bottom: $p-space-last;
@@ -139,6 +139,7 @@ h1,
 h2,
 .h2 {
   @include font-size($h2-font-sizes);
+  line-height: 1.1;
 }
 
 h3,
