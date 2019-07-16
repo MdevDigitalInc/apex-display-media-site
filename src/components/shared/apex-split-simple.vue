@@ -29,7 +29,7 @@ export default {
 
   .apex-split-large {
     width: 60%;
-    padding: 5% 7% 50px 10.4%;
+    padding: 86px 7% 50px 10.4%;
     order: 1;
 
     @media #{$portrait} {
@@ -104,9 +104,10 @@ export default {
   padding-bottom: 190px;
 
   @media #{$landscape} {
-    @include center(both);
+    @include center(horizontal);
     padding-bottom: 90px;
     margin: 0;
+    padding-top: 86px;
     white-space: nowrap;
     width: 60%;
   }

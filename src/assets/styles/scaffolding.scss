@@ -57,6 +57,10 @@
 
 .--button-space {
   margin-top: 25px;
+
+  @media #{$portrait} {
+    margin-top: 10px;
+  }
 }
 // Wrapper Classes
 

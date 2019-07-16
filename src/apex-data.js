@@ -281,7 +281,7 @@ let DigitalManagement = {
     largeSplit: {
       heading: 'How We Help',
       copy: [
-        'Once you’ve made an investment in digital signage, it’s important to maximize your return by using eye-catching graphics and strong messaging. That’s where our Digital Media Management services come in – our marketing strategists can help you with a content planning while our expert designers keep your sign up-to-date with quality designs and motion graphics.',
+        'Once you’ve made an investment in digital signage, it’s important to maximize your return by using eye-catching graphics and strong messaging. That’s where our Digital Media Management services come in – our marketing strategists can help with content planning while our expert designers keep your sign up-to-date with quality designs and motion graphics.',
         'We offer different membership packages to suit different budgets – whether you have one screen, or many screens across multiple locations, we’re here to help. We also offer one-time setup options and can train your team to take over after we’ve create the initial deployment. Get in touch to find out what’s possible!'
       ],
       headingClass: 'd-heading-flair d-heading-flair-blue u-bold',
@@ -364,42 +364,50 @@ let DigitalManagement = {
         heading: 'Maximize conversions',
         copy: 'Informed consumers are able to make confident purchase decisions. Make sure your visitors are aware of the latest promotions, sales, amenities and events at your location.',
         class: '',
-        route: null
+        link: false
       },
       {
         icon: 'icons/icon-strategy-white.svg',
         heading: 'Content strategies',
         copy: 'We can help you create an ongoing content plan to keep your signage fresh. We’ll work with your team to align with your current marketing strategies and business goals.',
         class: '',
-        route: null
+        link: {
+          route: '#TODO',
+          a11y: 'Learn More about our managed digital services',
+          text: 'Learn More'
+        }
       },
       {
         icon: 'icons/icon-schedule-blue.svg',
         heading: 'Schedule your content ahead of time',
         copy: 'Work with our creative team to plan your content ahead of time so that your signage will always align with your current marketing strategy.',
         class: '',
-        route: null
+        link: false
       },
       {
         icon: 'icons/icon-brand-blue.svg',
         heading: 'Brand management',
         copy: 'Already have an established brand and asset library? Our expert creative team will use your assets with care to create well-branded, informative or conversion-centred content.',
         class: '',
-        route: null
+        link: false
       },
       {
         icon: 'icons/icon-photography-white.svg',
         heading: 'Professional Photography',
         copy: 'Put your best foot forward. Our professional photography team will capture your location, products and/or menu items to create professional content for your signs.',
         class: '',
-        route: null
+        link: {
+          route: '#TODO',
+          a11y: 'Learn More about our managed digital services',
+          text: 'Learn More'
+        }
       },
       {
         icon: 'icons/icon-creative-blue.svg',
         heading: 'Graphic design and creative services',
         copy: 'An investment in digital signage should be backed by an investment in design. From comprehensive menu systems, to digital posters, we’ll make sure your messaging is clear.',
         class: '',
-        route: null
+        link: false
       }
     ]
   },
