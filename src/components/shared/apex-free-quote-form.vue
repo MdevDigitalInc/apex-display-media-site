@@ -56,7 +56,7 @@
         email: null,
         message: null,
         honeypot: null,
-        formSent: true,
+        formSent: false,
         thankyou: 'Your form has been submitted, you will receive your free quote shortly regarding your free quote. In the meantime check out our latest projects on <a href="TODO"title="Instagram">Instagram</a> and <a href="TODO" title="Facebook">Facebook</a>'
       };
     },
