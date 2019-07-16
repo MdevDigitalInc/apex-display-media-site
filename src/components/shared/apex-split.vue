@@ -56,7 +56,7 @@
     }
 
     @media #{$laptop-up} {
-      width: 66%;
+      width: 60%;
       padding-bottom: 0;
 
       .apex-split-content-block-inner {
@@ -177,7 +177,7 @@
     }
 
     @media #{$laptop-up} {
-      width: 34%;
+      width: 40%;
 
       .apex-split-content-block-inner {
         width: 60%;

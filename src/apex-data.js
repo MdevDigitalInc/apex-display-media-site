@@ -73,7 +73,7 @@ let homePage = {
       // Button DATA
       btnData: {
         class: 'apex-base-btn apex-red-btn',
-        route: '#TODO',
+        route: '/services/outdoor-digital-signs',
         a11y: 'LED Signage Benefits.',
         text: 'Learn More'
       },
@@ -91,7 +91,7 @@ let homePage = {
       // Button DATA
       btnData: {
         class: 'apex-base-btn apex-red-btn',
-        route: '#TODO',
+        route: '/services/indoor-digital-signs',
         a11y: 'Indoor Digital Signage Benefits.',
         text: 'Learn More'
       },
@@ -109,7 +109,7 @@ let homePage = {
       // Button DATA
       btnData: {
         class: 'apex-base-btn apex-red-btn',
-        route: '#TODO',
+        route: '/services/digital-media-management',
         a11y: 'How we keep your sign shining.',
         text: 'Learn More'
       },
@@ -271,7 +271,7 @@ let DigitalManagement = {
     media: {
       source: 'services/managed/custom-kiosk.png',
       gif: false,
-      a11y: 'Placeholder - TODO Update'
+      a11y: 'Custom kiosks and point of sale displays'
     }
   },
   // About Block Content
@@ -372,7 +372,7 @@ let DigitalManagement = {
         copy: 'We can help you create an ongoing content plan to keep your signage fresh. We’ll work with your team to align with your current marketing strategies and business goals.',
         class: '',
         link: {
-          route: '#TODO',
+          route: '/services/digital-media-management',
           a11y: 'Learn More about our managed digital services',
           text: 'Learn More'
         }
@@ -397,7 +397,7 @@ let DigitalManagement = {
         copy: 'Put your best foot forward. Our professional photography team will capture your location, products and/or menu items to create professional content for your signs.',
         class: '',
         link: {
-          route: '#TODO',
+          route: '/services/digital-media-management',
           a11y: 'Learn More about our managed digital services',
           text: 'Learn More'
         }
@@ -498,7 +498,7 @@ let indoorSignagePage = {
       media: {
         source: 'services/indoor/arena-signage.png',
         gif: false,
-        a11y: 'Placeholder - TODO Update'
+        a11y: 'Custom arena digital signs'
       },
       heading: 'Custom</br>Digital Signs',
       copy: 'interactive messaging engages customers more effectively than static signage. Customers are comfortable getting information from screens and are now seeking them out at retail locations. Digital signage also comes in many different shapes and sizes – making the options for on-site promotion endless. Not sure what you need? Get in touch, we’ll help you develop custom signage for your retail location.',
