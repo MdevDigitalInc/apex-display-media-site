@@ -262,7 +262,7 @@ let aboutPage = {
   // About Block Content
   splitContent: {
     background: '--blue',
-    decoration: '--bot-dots',
+    decoration: '--bot-dots-right --arrow-top-right',
     largeSplit: {
       heading: 'What makes us different?',
       copy: [
@@ -281,8 +281,51 @@ let aboutPage = {
         ''
       ],
       headingClass: 'd-heading-flair d-heading-flair-white u-bold',
+      btnData: {
+        class: 'apex-base-btn apex-plain-btn --button-space ',
+        route: '/services/digital-media-management',
+        a11y: 'Learn more about digital media management',
+        text: 'Learn More'
+      }
     }
-  }
+  },
+   // Service Sample Array
+  serviceSamples: [
+    {
+      // Image Data
+      media: {
+        source: 'services/outdoor/curved-sign.png',
+        gif: false,
+        a11y: 'Placeholder - TODO Update'
+      },
+      heading: 'Retrofitting</br>Existing Signage',
+      copy: 'PLACEHOLDER!our waiting room is an ideal place for a digital sign. Visitors will appreciate the entertainment, and you can educate them on your products and services while they wait. Not limited to public venues, a digital screen in your break room or office can also be a great way to provide education and entertainment for your employees. Digital screens can also be useful in production environments to share real-time information and training.',
+      benefits: [
+        'Schedule content ahead of time',
+        'Include apps like news, social media, weather, cable and updatable ticker feeds.',
+        'Robust CMS allows easy content management',
+        'Attract customer attention with motion graphiics and eye-catching designs'
+      ],
+      flip: false
+    },
+    {
+      // Image Data
+      media: {
+        source: 'services/indoor/lobby-digital-sign.png',
+        gif: false,
+        a11y: 'Placeholder - TODO Update'
+      },
+      heading: 'Custom</br>Installation',
+      copy: 'PLACEHOLDERinteractive messaging engages customers more effectively than static signage. Customers are comfortable getting information from screens and are now seeking them out at retail locations. Digital signage also comes in many different shapes and sizes – making the options for on-site promotion endless. Not sure what you need? Get in touch, we’ll help you develop custom signage for your retail location.',
+      benefits: [
+        'Schedule sale & promo content',
+        'Update content across multiple locations',
+        'Customize content per location',
+        'bullet highlighting special feature'
+      ],
+      flip: true
+    }
+  ]
 }
 
 let DigitalManagement = {

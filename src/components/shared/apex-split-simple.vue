@@ -148,5 +148,15 @@ export default {
   top: 30px;
   left: 30px;
 }
+
+.apex-split-highlight.--arrow-top-right:after {
+  @include pseudo();
+  width: 50px;
+  height: 210px;
+  transform: scaleY(-1);
+  background-repeat: no-repeat;
+  top: 30px;
+  right: -4px;
+}
 /*--------------------------------------*/
 </style>
