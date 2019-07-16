@@ -5,7 +5,7 @@
     .apex-showcase-left
       .apex-showcase-top.flex.flex-vert-stretch.flex-wrap(data-media-height)
         //- Top Left Media Box
-        .apex-media-horz(:style="loadBackground(media.TopLeft, webpSupport)")
+        .apex-media-horz.--wider(:style="loadBackground(media.TopLeft, webpSupport)")
         //- Showcase Text
         .apex-showcase-content.flex.flex-vert-center.flex-hor-between
           //- Heading
@@ -94,7 +94,7 @@ export default {
 
   // Showcase text content
   .apex-showcase-content {
-    width: 60%;
+    width: 52.98%;
     padding: 80px;
     background: $color-brand-primary;
     color: $white;
@@ -126,7 +126,7 @@ export default {
   // Heading size to keep it from touching button
   .apex-showcase-heading {
     width: 66%;
-    font-size: 2.5vw;
+    font-size: 2.2vw;
     line-height: 1.2;
     font-weight: 800;
 
@@ -136,7 +136,7 @@ export default {
 
     @media #{$phone-only} {
       width: 100%;
-      font-size: 7vw;
+      font-size: 8vw;
       padding-bottom: 40px;
     }
 
@@ -151,7 +151,7 @@ export default {
 
   // Media
   .apex-media-horz {
-    width: 40%;
+    width: 47.01%;
     padding-top: 20%;
     background-size: cover;
     background-position: center;
@@ -200,7 +200,7 @@ export default {
     width: 70%;
     background-repeat: no-repeat;
     background-size: 100%;
-    padding-top: 40%;
+    padding-top: 39.7%;
     left: 50%;
 
     @media #{$phone-only} {
