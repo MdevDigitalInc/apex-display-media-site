@@ -30,7 +30,7 @@ export default {
 /--------------------------------------*/
 .apex-featured-block {
   position: relative;
-  margin: 100px 0;
+  margin: 100px auto;
 
   // Overrides main-wrapper on portrait
   @media #{$portrait} {
