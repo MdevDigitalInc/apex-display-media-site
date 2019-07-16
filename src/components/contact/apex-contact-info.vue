@@ -6,7 +6,7 @@
           h2.u-bold
             |Enhance your business
             br
-            |with digital signage
+            |with digital signage.
       .apex-contact-info-body.flex.flex-row-rev.flex-wrap
         .apex-column.apex-info
           //- Social Media Component
@@ -85,6 +85,10 @@
   height: 100vh;
   position: relative;
 
+  @media #{$portrait} {
+    height: auto;
+  }
+
   h1 {
     @media #{$phone-only} {
       font-size: 45px;
@@ -93,7 +97,7 @@
 
   h2 {
     color: $white;
-    line-height: 1.5;
+    line-height: 1.2;
   }
 
   p {
@@ -106,6 +110,11 @@
     @media #{$laptop-only} {
       font-size: 16px;
       position: relative;
+      margin-bottom: 25px;
+    }
+
+    @media #{$portrait} {
+      margin-bottom: 25px;
     }
   }
 
@@ -175,13 +184,13 @@
 
 
   @media #{$laptop-up} {
-    background-position: 20px center; 
+    background-position: 20px center;
     padding-top: 73px;
     order: 1;
 
     h2 {
       padding-left: 185px;
-      line-height: 1.5;
+      line-height: 1.2;
       font-size: 50px;
     }
   }
@@ -189,8 +198,8 @@
   @media #{$laptop-only} {
     min-height: 150px;
     padding-top: 24px;
-    background-position: -44px 15px; 
-    
+    background-position: -44px 15px;
+
     h2 {
       padding-left: 22%;
       font-size: 30px;
@@ -215,16 +224,24 @@
 
 .apex-address {
   margin-top: 34px;
+
+  @media #{$portrait} {
+    margin-top: 20px;
+  }
 }
 
 .apex-social {
   height: 50px;
   margin-top: 63px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 
-  @media #{$laptop-only} { 
+  @media #{$portrait} {
     margin-top: 30px;
-    margin-bottom: 30px;
+  }
+
+  @media #{$laptop-only} {
+    margin-top: 20px;
+    margin-bottom: 10px;
   }
 }
 
@@ -234,6 +251,7 @@
   padding: 0 10px;
   width: 50px;
   cursor: pointer;
+
 
   &:first-child {
     margin-left: -10px;
@@ -246,29 +264,39 @@
   a {
     font-size: 30px;
     font-weight: 400;
+
+    @media #{$portrait} {
+      font-size: 35px;
+    }
   }
 
   i {
-    @include center('both');
-  }
+    @include center(both);
+    transform-origin: center;
+    transition: all .4s;
 
-  @media #{$laptop-only} { 
-    a {
-      font-size: 20px;
+    &:hover,
+    &:focus,
+    &:active {
+      color: $black;
+      transform: translate3d(-50%, -50%, 0) scale(1.09);
     }
   }
 }
 
 .apex-contact-info-map {
   width: 100%;
-  min-height: 265px;
   order: 3;
 
-  @media #{$laptop-only} { 
-    min-height: 300px;
+  @media #{$laptop-only} {
+    height: 150px;
     position: absolute;
     bottom: 0;
     left: 0;
+  }
+
+  @media #{$tablet-prt-only} {
+    max-height: 200px;
   }
 }
 </style>

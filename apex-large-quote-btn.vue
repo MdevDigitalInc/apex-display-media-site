@@ -26,7 +26,7 @@ export default{
 <style lang="scss">
 
 .apex-large-quote-btn {
-  width: 100%; 
+  width: 100%;
   border-radius: 0;
   font-size: 24px;
   padding: 20px 0;
@@ -39,6 +39,10 @@ export default{
   transition: all .4s;
   text-transform: uppercase;
   cursor: pointer;
+
+  @media #{$tablet-prt-only} {
+    font-size: 40px;
+  }
 
   &:hover,
   &:active {
@@ -63,7 +67,7 @@ export default{
       }
     }
 
-    @media #{$tablet-up} { 
+    @media #{$tablet-up} {
       font-size: 30px;
     }
   }
