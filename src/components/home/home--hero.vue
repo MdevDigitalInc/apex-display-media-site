@@ -41,7 +41,7 @@ export default {
   }
   @media #{$desktop-only} {
     height: 88vh;
-    margin-bottom: -166px;
+    margin-bottom: -176px;
   }
   @media #{$laptop-only} {
     height: 88vh;
@@ -73,7 +73,7 @@ export default {
   }
 
   .apex-hero-content {
-    width: 50%;
+    width: 44%;
     position: absolute;
     left: 10%;
     top: 50%;
@@ -86,6 +86,10 @@ export default {
       left: auto;
       transform: none;
       padding: 140px 90px 20px;
+    }
+
+    @media #{$laptop-only} {
+      width: 44%;
     }
 
     @media #{$phone-only} {
@@ -132,7 +136,7 @@ export default {
 
   .apex-scroll-icon {
     width: 35px;
-    margin: 25px auto 0;
+    margin: 20px auto 0;
 
     @media #{$laptop-only} {
       width: 25px;

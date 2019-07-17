@@ -33,8 +33,7 @@
            :to='homeData.aboutContent.highlight.btnData.route')
             | {{homeData.aboutContent.highlight.btnData.text}}
     featured-services(
-      :featuredServices="homeData.featuredServices"
-      class="--section-space-xl")
+      :featuredServices="homeData.featuredServices")
     //- Alternate Service Section ----
     featured-block-single(
       :heading="homeData.featuredBlock.heading"
@@ -137,14 +136,15 @@ export default{
 
 
 <style lang="scss">
-
 /*-------------------------------------*/
 /* HOME Component Styles
 /--------------------------------------*/
 .apex-support-services-section {
   margin-top: 100px;
+
+  @media #{$portrait} {
+    margin-top: 0;
+  }
 }
-
 /*--------------------------------------*/
-
 </style>

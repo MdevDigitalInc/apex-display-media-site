@@ -1,8 +1,6 @@
 /*-------------------------------------
  *	SCAFFOLDING & LAYOUT UTILITIES
 /-------------------------------------*/
-
-
 //Space Classes
 
 .--margin-space-extra-large {
@@ -59,6 +57,10 @@
 
 .--button-space {
   margin-top: 25px;
+
+  @media #{$portrait} {
+    margin-top: 10px;
+  }
 }
 // Wrapper Classes
 
@@ -83,7 +85,7 @@
   }
 
   @media #{$desktop-only} {
-    width: 80%;
+    width: 78%;
   }
 
   @media #{$xl-up} {

@@ -89,6 +89,17 @@ export default{
     font-size: 18px;
     min-height: 75px;
     max-height: 75px;
+
+    @media #{$tablet-only} {
+      padding: 25px 0 30px;
+      font-size: 30px;
+      min-height: 80px;
+      max-height: 90px;
+    }
+
+    @media #{$phone-only} {
+      font-size: 24px;
+    }
   }
 }
 

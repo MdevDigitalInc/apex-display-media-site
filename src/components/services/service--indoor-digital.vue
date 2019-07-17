@@ -24,7 +24,7 @@
             | {{ paragraph }}
     //- Featured Tiles
     section.apex-main-wrapper
-      apex-service-info-blocks.--section-space-xl(
+      apex-service-info-blocks.--section-space-digi(
         :heading='indoorData.serviceInfo.heading'
         :copy="indoorData.serviceInfo.copy"
         :contentBlocks='indoorData.serviceInfo.contentBlocks')
@@ -107,7 +107,9 @@ export default {
 /*-------------------------------------*/
 /* BASE TEMPLATE Component Styles
 /--------------------------------------*/
-
+.--section-space-digi {
+  margin: 150px 0;
+}
 /*--------------------------------------*/
 
 </style>

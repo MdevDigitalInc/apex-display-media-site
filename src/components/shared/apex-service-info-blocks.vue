@@ -45,7 +45,7 @@ export default {
   }
 
   @media #{$laptop-up} {
-    width: 65%;
+    width: 78%;
 
     p {
       font-size: 26px;
@@ -59,7 +59,7 @@ export default {
 
 
   border-radius: 5px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .1), 0 6px 20px 0 rgba(0, 0, 0, .1);
   padding: 50px;
   margin-bottom: 60px;
 
