@@ -333,6 +333,7 @@
     a,
     .apex-contact {
       display: block;
+      cursor: pointer;
       color: $apex-blue;
       list-style-type: none;
       font-weight: 700;
