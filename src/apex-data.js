@@ -193,8 +193,8 @@ let homePage = {
       bgClass: 'apex-service-list-container',
       btnData: {
         class: 'apex-base-btn apex-black-btn',
-        route: '/',
-        a11y: '',
+        route: '/services/digital-media-management',
+        a11y: 'Learn more about our managed media services',
         text: 'Learn More'
       }
 
