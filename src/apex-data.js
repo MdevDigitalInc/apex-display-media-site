@@ -25,12 +25,17 @@ let mainNavigation = {
     {
       linkName: 'Indoor Digital Signage',
       linkTitle: 'Indoor Digital Signage',
-      route: '/indoor-digital-signage'
+      route: 'services/indoor-digital-signage'
     },
     {
       linkName: 'Outdoor LEDs',
       linkTitle: 'Outdoor LEDs',
-      route: '/outdoor-leds'
+      route: 'services/outdoor-leds'
+    },
+    {
+      linkName: 'Digital Media Management',
+      linkTitle: 'Media Management',
+      route: '/services/digital-media-management'
     },
     {
       linkName: 'About',

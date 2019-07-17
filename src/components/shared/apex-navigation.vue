@@ -31,7 +31,7 @@
               |{{ link.linkName  }}
           .apex-contact-nav-links.u-capitalize
             p.u-none Get in touch:
-            a(href="tel:1-800-000-0000" title="phone number") 1-800-000-0000
+            a(href="tel:1-800-000-0000" title="phone number").u-under-line 1-800-000-0000
             a(href="mailto:contact@apexdisplaymedia.com" title="email address" class="u-lowercase") contact@apexdisplaymedia.com
           .apex-large-quote
             apex-large-quote-btn(styleType='nav-style' v-on:toggle='toggleForm')
@@ -134,6 +134,12 @@
     .apex-header-bar-branding img {
       min-width: 296px;
       margin-top: 24px;
+      margin-left: 197px;
+    }
+  }
+
+  @media #{$tablet-only} {
+    .apex-header-bar-branding img {
       margin-left: 43px;
     }
   }
@@ -299,7 +305,7 @@
     margin-top: 50px;
 
     @media #{$tablet-up} {
-      margin-top: 140px;
+      margin-top: 70px;
     }
 
     @media #{$tablet-lnd-only} {
@@ -324,7 +330,7 @@
       color: $apex-blue;
       list-style-type: none;
       font-weight: 700;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
       font-size: 15px;
       text-indent: 50px;
 
@@ -339,9 +345,11 @@
     a,
     p {
       margin-bottom: 15px;
+      font-size: 18px;
+      line-height: 1.5;
 
       @media #{$tablet-up} {
-        margin-bottom: 30px;
+        margin-bottom: 4px;
       }
     }
   }
@@ -386,7 +394,7 @@
     }
 
     a.--active {
-      font-size: 24px;
+      font-size: 22px;
     }
   }
 }
@@ -400,7 +408,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,.5);
+  background-color: rgba(0,0,0,.85);
   z-index: 20;
   cursor: pointer;
 

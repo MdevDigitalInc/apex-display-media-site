@@ -53,7 +53,7 @@ export default{
     font-size: 22px;
 
     @media #{$tablet-up} {
-      min-height: 118px;
+      max-height: 93px;
 
       &:hover,
       &:active {
