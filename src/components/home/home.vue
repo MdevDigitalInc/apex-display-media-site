@@ -15,8 +15,8 @@
         template(slot='additional-service-content' v-else)
           h2.--margin-space-large(:class='homeData.aboutContent.additionalServiceContent.headingClass')
             | {{homeData.aboutContent.additionalServiceContent.heading}}
-          p
-            | {{homeData.aboutContent.additionalServiceContent.copy}}
+          p( v-for="paragraph in homeData.aboutContent.additionalServiceContent.copy" )
+            |{{ paragraph }}
           router-link(
           v-if = 'homeData.aboutContent.additionalServiceContent.btnData.route'
           :class='homeData.aboutContent.additionalServiceContent.btnData.class'

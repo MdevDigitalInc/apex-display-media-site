@@ -86,10 +86,11 @@
   font-weight: 700;
   padding: 0;
   text-transform: none;
+  text-decoration: underline;
 
   &:hover,
   &:active {
-    text-decoration: underline;
+    text-decoration: none;
   }
 
   @media #{$tablet-up} {
