@@ -40,30 +40,30 @@
           {
             linkName: 'Instagram',
             linkTitle: 'Follow us on Instagram',
-            target: '_blank',
+            target: '_self',
             iconClass: 'fa-instagram',
-            url: '#'
+            url: ''
           },
           {
             linkName: 'LinkedIn',
             linkTitle: 'Follow us on LinkedIn',
-            target: '_blank',
+            target: '_self',
             iconClass: 'fa-linkedin-in',
-            url: '#'
+            url: ''
           },
           {
             linkName: 'Facebook',
             linkTitle: 'Follow us on Facebook',
-            target: '_blank',
+            target: '_self',
             iconClass: 'fa-facebook-f',
-            url: '#'
+            url: ''
           },
           {
             linkName: 'Twitter',
             linkTitle: 'Follow us on Twitter',
-            target: '_blank',
+            target: '_self',
             iconClass: 'fa-twitter',
-            url: '#'
+            url: ''
           }
         ]
 
