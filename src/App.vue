@@ -8,7 +8,7 @@
       class="mdev-skipnav" tabindex="0")
         |Skip To Main Content
     //- Sidebar Navigation
-    apex-navigation(v-on:toggle='toggleContactModal')
+    apex-navigation
     //main-navigation
     apex-contact(v-if='contactModalOpen' v-on:close='toggleContactModal')
     //- Transition Wrapper
@@ -30,6 +30,8 @@ import ApexNavigation from './components/shared/apex-navigation.vue';
 import ApexFooter from './components/shared/apex-footer.vue';
 import ApexContact from './components/contact/apex-contact.vue';
 import CookiePopup    from './components/shared/cookies.vue';
+// Import the EventBus
+import { EventBus } from './eventbus.js';
 // Import SEO From File
 import { stagingBuild, template, social, general }       from './seo-meta.js';
 
@@ -92,6 +94,7 @@ export default {
       // Load Facebook Pixel
       this.asyncScript( '/js/fbpixel.js', false, false);
     }
+    EventBus.$on('toggleme', this.toggleContactModal);
   },
 
   mounted: function(){

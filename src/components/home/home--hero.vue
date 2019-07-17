@@ -6,7 +6,9 @@
       //- Subehead
       h3( v-html="subheading" )
       //- Action
-      base-btn( :btnData="action" )
+      .apex-base-btn.apex-red-btn(@click.stop="openForm"  )
+        .apex-btn-text
+          |Get Started
       //- Scrol Prompt
       .apex-hero-scroll
         span.u-italic
@@ -18,10 +20,19 @@
 </template>
 
 <script>
+// Import the EventBus
+import { EventBus } from '../../eventbus.js';
 export default {
   name: 'HomeHero',
 
-  props: [ 'heading', 'subheading', 'action', 'media' ]
+  props: [ 'heading', 'subheading', 'action', 'media' ],
+
+  methods: {
+    openForm() {
+      this.navOpen = false;
+      EventBus.$emit('toggleme', true);
+    }
+  }
 };
 </script>
 

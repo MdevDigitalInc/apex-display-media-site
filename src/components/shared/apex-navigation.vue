@@ -29,6 +29,8 @@
             exact)
               span
               |{{ link.linkName  }}
+            .apex-contact(@click.stop="toggleForm")
+              |Contact Us
           .apex-contact-nav-links.u-capitalize
             p.u-none Get in touch:
             a(href="tel:1-800-000-0000" title="phone number").u-under-line 1-800-000-0000
@@ -41,6 +43,8 @@
 <script>
   import { appData, mainNavigation } from '../../apex-data.js';
 
+  // Import the EventBus
+  import { EventBus } from '../../eventbus.js';
   import ApexLargeQuoteBtn from './apex-large-quote-btn.vue';
   import ApexCloseBtn from './apex-close-btn.vue';
 
@@ -86,6 +90,7 @@
       toggleForm() {
         this.$emit('toggle', true);
         this.navOpen = false;
+        EventBus.$emit('toggleme', true);
       }
     },
 
@@ -325,7 +330,8 @@
       }
     }
 
-    a {
+    a,
+    .apex-contact {
       display: block;
       color: $apex-blue;
       list-style-type: none;

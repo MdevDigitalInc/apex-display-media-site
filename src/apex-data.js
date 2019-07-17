@@ -25,27 +25,17 @@ let mainNavigation = {
     {
       linkName: 'Indoor Digital Signage',
       linkTitle: 'Indoor Digital Signage',
-      route: 'services/indoor-digital-signage'
+      route: '/services/indoor-digital-signs'
     },
     {
       linkName: 'Outdoor LEDs',
       linkTitle: 'Outdoor LEDs',
-      route: 'services/outdoor-leds'
+      route: '/services/outdoor-digital-signs'
     },
     {
       linkName: 'Digital Media Management',
       linkTitle: 'Media Management',
       route: '/services/digital-media-management'
-    },
-    {
-      linkName: 'About',
-      linkTitle: 'About',
-      route: '/about'
-    },
-    {
-      linkName: 'Contact Us',
-      linkTitle: 'Contact Us',
-      route: '/contact'
     }
   ]
 };
@@ -376,11 +366,7 @@ let DigitalManagement = {
         heading: 'Content strategies',
         copy: 'We can help you create an ongoing content plan to keep your signage fresh. We’ll work with your team to align with your current marketing strategies and business goals.',
         class: '',
-        link: {
-          route: '/services/digital-media-management',
-          a11y: 'Learn More about our managed digital services',
-          text: 'Learn More'
-        }
+        link: false
       },
       {
         icon: 'icons/icon-schedule-blue.svg',
@@ -401,11 +387,7 @@ let DigitalManagement = {
         heading: 'Professional Photography',
         copy: 'Put your best foot forward. Our professional photography team will capture your location, products and/or menu items to create professional content for your signs.',
         class: '',
-        link: {
-          route: '/services/digital-media-management',
-          a11y: 'Learn More about our managed digital services',
-          text: 'Learn More'
-        }
+        link: false
       },
       {
         icon: 'icons/icon-creative-blue.svg',
@@ -577,7 +559,7 @@ let indoorSignagePage = {
         heading: 'Drive in-store traffic',
         copy: 'Attract attention to your location and increase conversions by making visitors aware of your latest promotions and events.',
         link: {
-          route: '#TODO',
+          route: '/services/digital-media-management',
           a11y: 'How digital signs drive in store traffic',
           text: 'Learn More'
         }
@@ -599,7 +581,7 @@ let indoorSignagePage = {
         heading: 'Content scheduling',
         copy: 'Plan ahead with digital signage; rotate your messaging daily, weekly or monthly to keep things fresh and up-to-date. Find out how we can help! ',
         link: {
-          route: '#TODO',
+          route: '/services/digital-media-management',
           a11y: 'Learn More about our managed digital services',
           text: 'Learn More'
         }
@@ -748,8 +730,8 @@ let outdoorSignagePage = {
         heading: 'Raise brand awareness',
         copy: 'Attract attention to your location with a brightly coloured digital display proudly showcasing your brand, services, sales, news and events.',
         link: {
-          route: '#TODO',
-          a11y: 'How digital signs drive in store traffic',
+          route: '/services/digital-media-management',
+          a11y: 'How digital signs increase brand awareness',
           text: 'Learn More'
         }
       },
@@ -770,7 +752,7 @@ let outdoorSignagePage = {
         heading: 'Promote sales and news',
         copy: 'Keep passersby up-to-date on  your latest offerings with digital signage. Our managed services let you easily update graphics and schedule content.',
         link: {
-          route: '#TODO',
+          route: '/services/digital-media-management',
           a11y: 'Learn More about our managed digital services',
           text: 'Learn More'
         }

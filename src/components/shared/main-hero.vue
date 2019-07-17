@@ -7,7 +7,9 @@
         h1.u-bold( v-html="heading")
         h4( v-html="subheading" )
         //- Action
-        base-btn( :btnData="action" )
+      .apex-base-btn.apex-black-btn.--button-space(@click.stop="openForm"  )
+        .apex-btn-text
+          |Get Started
       //- Scrol Prompt
       .apex-hero-scroll
         span.u-italic
@@ -31,7 +33,8 @@
 
 
 <script>
-
+// Import the EventBus
+import { EventBus } from '../../eventbus.js';
 export default {
   name: 'MainHero',
 
@@ -42,7 +45,15 @@ export default {
     'media',
     'modifier',
     'background'
-  ]
+  ],
+
+  methods: {
+    openForm() {
+      this.navOpen = false;
+      EventBus.$emit('toggleme', true);
+    }
+  }
+
 };
 </script>
 

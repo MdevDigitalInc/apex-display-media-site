@@ -12,7 +12,9 @@
           .u-bold.apex-showcase-heading
             |{{ heading }}
           //- Base Button
-          base-btn( :btn-data="action" )
+          .apex-base-btn.apex-black-btn(@click.stop="openForm")
+            .apex-btn-text
+              |Get Started
       .apex-showcase-bot.flex.flex-vert-stretch
         .apex-media-sq(:style="loadBackground(media.BotSquare, webpSupport)")
         .apex-media-horz(:style="loadBackground(media.BotLeft, webpSupport)")
@@ -25,6 +27,8 @@
 
 
 <script>
+// Import the EventBus
+import { EventBus } from '../../eventbus.js';
 // Import SEO From File
 import { stagingBuild, template, social, general }       from '../../seo-meta.js';
 
@@ -42,6 +46,13 @@ export default {
       // Webp support flag
       webpSupport: false
     };
+  },
+
+  methods: {
+    openForm() {
+      this.navOpen = false;
+      EventBus.$emit('toggleme', true);
+    }
   },
 
   // Check for browser support on creation
