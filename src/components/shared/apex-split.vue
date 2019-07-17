@@ -1,7 +1,7 @@
 <template lang="pug">
   .apex-split.u-text-left.flex.flex-row.flex-wrap
     .apex-split-content-block(:class='content.class')
-      .apex-split-content-block-inner
+      .apex-split-content-block-inner(:class='content.class')
         slot(name='additional-service-content')
     .apex-split-content-block(:class='[content.class , content.highlight.bgClass]')
       .apex-split-content-block-inner
@@ -33,6 +33,10 @@
       min-height: 600px;
       max-height: 650px;
     }
+
+    @media #{$phone-only} {
+      padding-top: 30px;
+    }
   }
 
   &:first-child {
@@ -44,6 +48,8 @@
       @media #{$tablet-only} {
         font-size: 20px;
       }
+
+      max-width: 90%;
     }
 
     .apex-split-content-block-inner {
@@ -59,8 +65,8 @@
         width: 80%;
       }
 
-      .apex-split-about-home {
-        transform: translateX( 7% );
+      .apex-split-about-home { 
+        transform: translateX( 8%);
       }
 
       .apex-split-about-service {
@@ -79,8 +85,22 @@
     p {
       font-size: 20px;
 
+      &:last-of-type {
+        margin-bottom: 40px;
+      }
+
       @media #{$tablet-up} {
         font-size: 26px;
+      }
+
+      @media #{$laptop-only} { 
+        font-size: 20px;
+      }
+    }
+
+    @media #{$laptop-only} { 
+      .apex-plain-btn {
+        font-size: 20px;
       }
     }
 
@@ -89,7 +109,7 @@
       background-repeat: no-repeat, no-repeat;
       background-size: 147px 203px, initial;
       order: 2;
-      background-position: 105% -20%, -1000% 80%;
+      background-position: 105% -23%, -1000% 80%;
 
       @media #{$tablet-only} {
         background-position: 97% -11%, -1000% 80%;
@@ -157,7 +177,7 @@
     .apex-split-content-block-inner {
       color: $white;
       width: 80%;
-      padding-bottom: 43px;
+      padding-bottom: 70px;
     }
 
     &.--flip-order {
@@ -257,6 +277,25 @@
   }
 }
 
+.apex-split-content-block:nth-child( 2 ) {
+
+  p {
+    @media #{$laptop-up} {
+
+      &:last-of-type {
+        margin-bottom: 40px;
+      }
+    }
+
+    @media #{$tablet-only} {
+
+      &:last-of-type {
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+
 .--home-hero {
   .apex-split-content-block {
     padding-top: 80px;
@@ -266,4 +305,5 @@
     }
   }
 }
+
 </style>
