@@ -32,7 +32,7 @@ export default {
 .apex-home-hero {
   width: 100%;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   height: 80vh;
   margin-bottom: -90px;
 
@@ -49,7 +49,7 @@ export default {
   }
   @media #{$xl-up} {
     height: 85vh;
-    margin-bottom: -162px;
+    margin-bottom: -182px;
   }
 
   .apex-hero-image {

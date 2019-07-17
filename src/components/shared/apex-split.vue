@@ -65,7 +65,7 @@
         width: 80%;
       }
 
-      .apex-split-about-home { 
+      .apex-split-about-home {
         transform: translateX( 8%);
       }
 
@@ -96,12 +96,12 @@
         font-size: 26px;
       }
 
-      @media #{$laptop-only} { 
+      @media #{$laptop-only} {
         font-size: 20px;
       }
     }
 
-    @media #{$laptop-only} { 
+    @media #{$laptop-only} {
       .apex-plain-btn {
         font-size: 20px;
       }
@@ -319,6 +319,14 @@
 .--home-hero {
   .apex-split-content-block {
     padding-top: 80px;
+
+    @media #{$desktop-up} {
+      padding-top: 10%;
+    }
+
+    @media #{$xl-up} {
+      padding-top: 8%;
+    }
 
     @media #{$portrait} {
       padding-top: 40px;

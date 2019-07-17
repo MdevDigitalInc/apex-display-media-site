@@ -81,7 +81,7 @@
     },
     methods: {
       loadImage(path){
-      return require('../../assets/images/' + path);
+        return require('../../assets/images/' + path);
       },
       toggleForm() {
         this.$emit('toggle', true);
