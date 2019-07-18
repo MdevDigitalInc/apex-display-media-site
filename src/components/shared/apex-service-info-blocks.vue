@@ -63,6 +63,10 @@ export default {
   padding: 50px;
   margin-bottom: 60px;
 
+  @media #{$portrait} {
+    padding: 25px;
+  }
+
   &:nth-child( 3n +2 ) {
     background-color: $apex-blue;
 

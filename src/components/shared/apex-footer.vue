@@ -8,7 +8,7 @@
         .apex-contact-info
           p.u-none
             |Get in touch:
-          a(href="tel:1-800-000-0000" title="phone number").u-under-line 1-800-000-0000
+          a(href="tel:5198520021" title="phone number").u-under-line 519-852-0021
           a(href="mailto:contact@apexdisplaymedia.com" title="email address" class="u-lowercase") contact@apexdisplaymedia.com
           p.u-none.apex-location Our Location:
           a(href="#" title="address")
@@ -25,6 +25,9 @@
           exact)
             span
               |{{ link.linkName }}
+          .apex-contact(@click.stop="toggleForm")
+            |Contact Us
+
     .apex-footer-bottom-bar
       .apex-main-wrapper
         .flex.flex-row.flex-wrap.apex-row
@@ -61,32 +64,17 @@
           {
             linkName: 'Outdoor LEDs',
             linkTitle: 'Outdoor LEDs',
-            route: '/outdoor-digital-signs'
+            route: '/services/outdoor-digital-signs'
           },
           {
             linkName: 'Indoor Digital Signage',
             linkTitle: 'Indoor Digital Signage',
-            route: '/indoor-digital-signage'
+            route: '/services/indoor-digital-signs'
           },
           {
-            linkName: 'Media Management',
+            linkName: 'Digital Media Management',
             linkTitle: 'Media Management',
-            route: '/digital-media-management'
-          },
-          {
-            linkName: 'Support',
-            linkTitle: 'Support',
-            route: '/support'
-          },
-          {
-            linkName: 'About',
-            linkTitle: 'About',
-            route: '/about'
-          },
-          {
-            linkName: 'Contact Us',
-            linkTitle: 'Contact Us',
-            route: '/contact'
+            route: '/services/digital-media-management'
           }
         ]
       };
@@ -153,7 +141,8 @@
     font-size: 18px;
   }
 
-  a {
+  a,
+  .apex-contact {
     display: block;
     color: $apex-blue;
     font-weight: 700;
@@ -303,10 +292,12 @@
   display: none;
   width: 35%;
 
-  a {
+  a,
+  .apex-contact {
     display: block;
     color: $apex-blue;
     font-weight: 700;
+    cursor: pointer;
 
     @media #{$laptop-up} {
       font-size: 18px;

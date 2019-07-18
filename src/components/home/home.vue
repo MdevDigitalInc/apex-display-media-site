@@ -27,7 +27,7 @@
             | {{homeData.aboutContent.highlight.heading}}
           p
             | {{homeData.aboutContent.highlight.copy}}
-          router-link(
+          //router-link(
            v-if = 'homeData.aboutContent.highlight.btnData.route'
            :class='homeData.aboutContent.highlight.btnData.class'
            :to='homeData.aboutContent.highlight.btnData.route')

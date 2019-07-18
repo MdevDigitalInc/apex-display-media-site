@@ -16,7 +16,7 @@
             |Get in touch to find out how you can boost your business
             |with advanced sign technology and eye-catching graphics.
             .apex-contact-links
-              a(href='tel:1-800-000-0000' title='phone number').u-under-line 1-800-000-0000
+              a(href='tel:5198520021' title='phone number').u-under-line 519-852-0021
               a(href='mailto:contact@apexdisplaymedia.com' title='phone number') contact@apexdisplaymedia.com
             .apex-address
               a(href='#' title='location')
