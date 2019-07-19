@@ -12,8 +12,7 @@
 // This will allow for the staging branch to be tested on
 // Facbeook / Twitter debugger panels.
 //
-// TODO -- Change stagingBuild to FALSE before live deploy.
-let stagingBuild = true;
+let stagingBuild = false;
 
 let template = {
   slug: '%s | Digital Signage | London, Canada',
