@@ -49,7 +49,7 @@ export default {
   metaInfo() {
     return {
       title: general.title,
-      titleTemplate: template.template,
+      titleTemplate: template.slug,
       link: [
         // Alertiry
         { rel: 'stylesheet', href: 'https://mdevcdn.digital/alerts/alertify.css' },

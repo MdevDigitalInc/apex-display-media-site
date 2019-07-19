@@ -84,6 +84,7 @@ export default {
   metaInfo() {
     return {
       title: managed.title,
+      titleTemplate: templateInner.slug,
       meta: [
         // SEO
         { vmid: 'desc', name: 'description', content: managed.desc },

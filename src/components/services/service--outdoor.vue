@@ -76,6 +76,7 @@ export default {
   metaInfo() {
     return {
       title: outdoor.title,
+      titleTemplate: templateInner.slug,
       meta: [
         // SEO
         { vmid: 'desc', name: 'description', content: outdoor.desc },

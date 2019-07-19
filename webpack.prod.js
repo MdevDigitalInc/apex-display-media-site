@@ -117,7 +117,7 @@ module.exports = merge(common, {
       // CHANGE COLOR OF THEME - TODO
       background: '#000000',
       // CHANGE PROJECT TITLE - TODO
-      title: 'Apex Display Media | TODO-Add Tail to title',
+      title: 'Apex Display Media | LED Digital Signs | London, Ontario',
       // Icons to export
       icons: {
         android: true,
