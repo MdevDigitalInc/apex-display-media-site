@@ -451,7 +451,7 @@ let indoorSignagePage = {
     {
       // Image Data
       media: {
-        source: 'services/indoor/retail-signage-indoors.png',
+        source: 'services/indoor/digital-menu-system.png',
         gif: false,
         a11y: 'Retail Digital Signage Sample'
       },
@@ -467,7 +467,7 @@ let indoorSignagePage = {
     {
       // Image Data
       media: {
-        source: 'services/indoor/boardroom-signage.png',
+        source: 'services/indoor/indoor-digital-reception-corporate.gif',
         gif: false,
         a11y: 'Reception & Corporate Digital Signage Sample'
       },
@@ -483,7 +483,7 @@ let indoorSignagePage = {
     {
       // Image Data
       media: {
-        source: 'services/indoor/arena-signage.png',
+        source: 'services/indoor/indoor-digital-custom.gif',
         gif: false,
         a11y: 'Custom arena digital signs'
       },
