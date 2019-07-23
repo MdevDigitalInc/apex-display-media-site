@@ -12,9 +12,9 @@
           a(href="mailto:contact@apexdisplaymedia.com" title="email address" class="u-lowercase") contact@apexdisplaymedia.com
           p.u-none.apex-location Our Location:
           a(href="#" title="address")
-            | 499 McGregor Avenue
+            | 4015 Dowell Drive
             br
-            | London, ON, N6J 2s8
+            | London, ON, N6E 3A1
         .apex-footer-nav-links.u-capitalize
           router-link(
           v-for="link in links"

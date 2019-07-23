@@ -33,7 +33,7 @@
               |Contact Us
           .apex-contact-nav-links.u-capitalize
             p.u-none Get in touch:
-            a(href="tel:1-800-000-0000" title="phone number").u-under-line 1-800-000-0000
+            a(href="tel:5198520021" title="phone number").u-under-line 519-852-0021
             a(href="mailto:contact@apexdisplaymedia.com" title="email address" class="u-lowercase") contact@apexdisplaymedia.com
           .apex-large-quote
             apex-large-quote-btn(styleType='nav-style' v-on:toggle='toggleForm')

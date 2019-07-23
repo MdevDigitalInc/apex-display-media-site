@@ -20,9 +20,9 @@
               a(href='mailto:contact@apexdisplaymedia.com' title='phone number') contact@apexdisplaymedia.com
             .apex-address
               a(href='#' title='location')
-                |499 McGregor Avenue
+                | 4015 Dowell Drive
                 br
-                |London, ON, N6J 2S8
+                | London, ON, N6E 3A1
       .apex-contact-info-map
         apex-contact-map
 </template>
