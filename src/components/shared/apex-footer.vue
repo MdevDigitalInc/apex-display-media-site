@@ -34,13 +34,17 @@
           .apex-copy &copy; {{ year }} - Copyright Apex Display Media
           .flex.flex-row.flex-wrap.apex-footer-social
             .apex-footer-social-icon
-              i.fab.fa-instagram
+              a(href="https://www.instagram.com/apexdisplaymedia/" target="_blank" title="Instagram")
+                i.fab.fa-instagram
             .apex-footer-social-icon
-              i.fab.fa-linkedin-in
+              a(href="https://www.linkedin.com/company/apexdisplaymedia" target="_blank" title="Linked In")
+                i.fab.fa-linkedin-in
             .apex-footer-social-icon
-              i.fab.fa-facebook-f
+              a(href="https://www.facebook.com/apexdisplaymedia/" target="_blank" title="Facebook")
+                i.fab.fa-facebook-f
             .apex-footer-social-icon
-              i.fab.fa-twitter
+              a(href="https://twitter.com/ApexDisplay" target="_blank" title="Instagram")
+                i.fab.fa-twitter
           .apex-quote
             //- Apex quote button component
             apex-large-quote-btn(styleType='footer-style' v-on:toggle='toggleForm')
