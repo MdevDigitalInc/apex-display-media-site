@@ -1,5 +1,5 @@
 <template lang="pug">
-  section.apex-main-wrapper.apex-featured-block.--section-space-xl
+  section.apex-main-wrapper.apex-featured-block
     // Flex container
     .flex.flex-vert-stretch.flex-wrap
       //- Image
@@ -9,14 +9,11 @@
         :style="loadBackground(media.source)"  )
       //- Copy
       .apex-copy-block( :class="color" )
-        .h1.u-bold.d-heading-flair.apex-featured-title( v-html="heading" )
+        .h2.u-bold.d-heading-flair.apex-featured-title( v-html="heading" )
         p( v-for="paragraph in copy" )
           |{{ paragraph }}
 
 </template>
-
-
-
 
 <script>
 
@@ -27,20 +24,19 @@ export default {
 };
 </script>
 
-
-
 <style lang="scss">
-
 /*-------------------------------------*/
 /* Featured Block Component Styles
 /--------------------------------------*/
 .apex-featured-block {
   position: relative;
+  margin: 100px auto;
 
   // Overrides main-wrapper on portrait
   @media #{$portrait} {
     width: 100%;
     max-width: auto;
+    margin: 100px 0 0;
   }
 
   .apex-media-block {
@@ -61,11 +57,11 @@ export default {
 
     @media #{$portrait} {
       width: 100%;
-      padding: 100px;
+      padding: 80px 100px;
     }
 
     @media #{$phone-only} {
-      padding: 40px;
+      padding: 100px 40px;
     }
 
     // Color Block Overrides
@@ -84,9 +80,16 @@ export default {
     p:last-child {
       margin-bottom: 0;
     }
+
+    p {
+      width: 80%;
+
+      @media #{$portrait} {
+        width: 100%;
+      }
+    }
   }
 }
 
 /*--------------------------------------*/
-
 </style>

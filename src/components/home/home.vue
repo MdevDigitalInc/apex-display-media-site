@@ -2,8 +2,12 @@
   //- Wrapper Container
   section.mdev-main-content
     //- Hero section -----------
-    main-hero
-    .apex-about-section
+    home-hero( :heading="homeData.mainHero.heading"
+      :subheading="homeData.mainHero.subheading"
+      :action="homeData.mainHero.btnData"
+      :media="homeData.mainHero.media")
+    //- About Section
+    .apex-about-section.--home-hero
       //- Apex Split Component
       apex-split(:content='homeData.aboutContent')
         template(slot='additional-service-content' v-if = 'homeData.aboutContent.additionalServiceContent.serviceList')
@@ -11,8 +15,8 @@
         template(slot='additional-service-content' v-else)
           h2.--margin-space-large(:class='homeData.aboutContent.additionalServiceContent.headingClass')
             | {{homeData.aboutContent.additionalServiceContent.heading}}
-          p
-            | {{homeData.aboutContent.additionalServiceContent.copy}}
+          p( v-for="paragraph in homeData.aboutContent.additionalServiceContent.copy" )
+            |{{ paragraph }}
           router-link(
           v-if = 'homeData.aboutContent.additionalServiceContent.btnData.route'
           :class='homeData.aboutContent.additionalServiceContent.btnData.class'
@@ -23,14 +27,13 @@
             | {{homeData.aboutContent.highlight.heading}}
           p
             | {{homeData.aboutContent.highlight.copy}}
-          router-link(
+          //router-link(
            v-if = 'homeData.aboutContent.highlight.btnData.route'
            :class='homeData.aboutContent.highlight.btnData.class'
            :to='homeData.aboutContent.highlight.btnData.route')
             | {{homeData.aboutContent.highlight.btnData.text}}
     featured-services(
-      :featuredServices="homeData.featuredServices"
-      class="--section-space-xl")
+      :featuredServices="homeData.featuredServices")
     //- Alternate Service Section ----
     featured-block-single(
       :heading="homeData.featuredBlock.heading"
@@ -84,6 +87,7 @@ import ImageShowcase from '../shared/image-showcase.vue';
 import FeaturedBlockSingle from '../shared/featured-block-single.vue';
 import SupportServices from '../shared/support-services.vue';
 import FeaturedServices from './home--featured-service.vue';
+import HomeHero from './home--hero.vue';
 
 // Import SEO From File
 import { stagingBuild, template, social, general }       from '../../seo-meta.js';
@@ -119,11 +123,12 @@ export default{
   components: {
     'main-hero'            : MainHero,
     'featured-block-single': FeaturedBlockSingle,
-    'main-hero'         : MainHero,
-    'featured-services' : FeaturedServices,
-    'apex-split' : ApexSplit,
-    'support-services' : SupportServices,
-    'image-showcase'    : ImageShowcase
+    'main-hero'            : MainHero,
+    'featured-services'    : FeaturedServices,
+    'apex-split'           : ApexSplit,
+    'support-services'     : SupportServices,
+    'home-hero'            : HomeHero,
+    'image-showcase'       : ImageShowcase
   }
 };
 </script>
@@ -131,12 +136,15 @@ export default{
 
 
 <style lang="scss">
-
 /*-------------------------------------*/
 /* HOME Component Styles
 /--------------------------------------*/
+.apex-support-services-section {
+  margin-top: 100px;
 
-
+  @media #{$portrait} {
+    margin-top: 0;
+  }
+}
 /*--------------------------------------*/
-
 </style>

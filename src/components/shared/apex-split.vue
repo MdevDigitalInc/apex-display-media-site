@@ -1,7 +1,7 @@
 <template lang="pug">
   .apex-split.u-text-left.flex.flex-row.flex-wrap
     .apex-split-content-block(:class='content.class')
-      .apex-split-content-block-inner
+      .apex-split-content-block-inner(:class='content.class')
         slot(name='additional-service-content')
     .apex-split-content-block(:class='[content.class , content.highlight.bgClass]')
       .apex-split-content-block-inner
@@ -22,33 +22,34 @@
 
 <style lang="scss">
 
-.apex-split {
-  margin-top: 100px;
-}
-
 .apex-split-content-block {
-
   .apex-split-content-block-inner {
     margin: 0 auto;
     min-height: 430px;
     max-height: auto;
-    padding-top: 90px;
+    padding-top: 40px;
 
     @media #{$laptop-up} {
       min-height: 600px;
       max-height: 650px;
+    }
+
+    @media #{$phone-only} {
+      padding-top: 30px;
     }
   }
 
   &:first-child {
     width: 100%;
     order: 1;
-    padding-bottom: 60px;
+    padding-bottom: 40px;
 
     p {
       @media #{$tablet-only} {
         font-size: 20px;
       }
+
+      max-width: 90%;
     }
 
     .apex-split-content-block-inner {
@@ -65,7 +66,7 @@
       }
 
       .apex-split-about-home {
-        transform: translateX( 7% );
+        transform: translateX( 8%);
       }
 
       .apex-split-about-service {
@@ -79,22 +80,36 @@
   }
 
   &:nth-child( 2 ) {
+    background-image: url('../../assets/images/dots-white.svg'), url('../../assets/images/arrows-white.svg');
+    background-repeat: no-repeat, no-repeat;
+    background-size: 147px 203px, initial;
     width: 100%;
 
     p {
       font-size: 20px;
 
+      &:last-of-type {
+        margin-bottom: 40px;
+      }
+
       @media #{$tablet-up} {
         font-size: 26px;
+      }
+
+      @media #{$laptop-only} {
+        font-size: 20px;
+      }
+    }
+
+    @media #{$laptop-only} {
+      .apex-plain-btn {
+        font-size: 20px;
       }
     }
 
     &.apex-split-about-home {
-      background-image: url('../../assets/images/dots-white.svg'), url('../../assets/images/arrows-white.svg');
-      background-repeat: no-repeat, no-repeat;
-      background-size: 147px 203px, initial;
       order: 2;
-      background-position: 105% -20%, -1000% 80%;
+      background-position: 105% -23%, -1000% 80%;
 
       @media #{$tablet-only} {
         background-position: 97% -11%, -1000% 80%;
@@ -142,6 +157,10 @@
       @media #{$laptop-up} {
         background-position: 96% -3%, 5% 90%;
       }
+
+      @media #{$laptop-only} {
+        background-position: 96% -25%, 5% 110%;
+      }
     }
 
     &.apex-split-services .apex-split-content-block-inner {
@@ -157,12 +176,16 @@
         min-height: auto;
         padding: 70px 0 25px;
       }
+
+      @media #{$laptop-only} {
+        transform: translateX( -5% ) translateY( -17% ) scaleY(-1);
+      }
     }
 
     .apex-split-content-block-inner {
       color: $white;
       width: 80%;
-      padding-bottom: 43px;
+      padding-bottom: 70px;
     }
 
     &.--flip-order {
@@ -216,10 +239,14 @@
     font-weight: 700;
     font-size: 20px;
     line-height: 1.5;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
 
     @media #{$tablet-up} {
       font-size: 24px;
+    }
+
+    @media #{$tablet-only} {
+      margin-bottom: 3px;
     }
 
     @media #{$laptop-only} {
@@ -230,12 +257,20 @@
   .apex-split-service-copy p {
     font-size: 16px;
 
+    &:last-of-type {
+      margin-bottom: 30px;
+    }
+
     @media #{$tablet-only} {
       font-size: 20px;
     }
 
     @media #{$laptop-up} {
       font-size: 20px;
+
+      &:last-of-type {
+        margin-bottom: 40px;
+      }
     }
 
     @media #{$laptop-only} {
@@ -261,4 +296,42 @@
     }
   }
 }
+
+.apex-split-content-block:nth-child( 2 ) {
+
+  p {
+    @media #{$laptop-up} {
+
+      &:last-of-type {
+        margin-bottom: 40px;
+      }
+    }
+
+    @media #{$tablet-only} {
+
+      &:last-of-type {
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+
+.--home-hero {
+  .apex-split-content-block {
+    padding-top: 80px;
+
+    @media #{$desktop-up} {
+      padding-top: 10%;
+    }
+
+    @media #{$xl-up} {
+      padding-top: 8%;
+    }
+
+    @media #{$portrait} {
+      padding-top: 40px;
+    }
+  }
+}
+
 </style>

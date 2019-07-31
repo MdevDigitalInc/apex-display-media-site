@@ -8,13 +8,13 @@
         .apex-contact-info
           p.u-none
             |Get in touch:
-          a(href="tel:1-800-000-0000" title="phone number").u-under-line 1-800-000-0000
+          a(href="tel:5198520021" title="phone number").u-under-line 519-852-0021
           a(href="mailto:contact@apexdisplaymedia.com" title="email address" class="u-lowercase") contact@apexdisplaymedia.com
           p.u-none.apex-location Our Location:
           a(href="#" title="address")
-            | 499 McGregor Avenue
+            | 4015 Dowell Drive
             br
-            | London, ON, N6J 2s8
+            | London, ON, N6E 3A1
         .apex-footer-nav-links.u-capitalize
           router-link(
           v-for="link in links"
@@ -25,6 +25,9 @@
           exact)
             span
               |{{ link.linkName }}
+          .apex-contact(@click.stop="toggleForm")
+            |Contact Us
+
     .apex-footer-bottom-bar
       .apex-main-wrapper
         .flex.flex-row.flex-wrap.apex-row
@@ -59,6 +62,11 @@
             route: '/'
           },
           {
+            linkName: 'About',
+            linkTitle: 'About Apex Display Media',
+            route: '/about'
+          },
+          {
             linkName: 'Outdoor LEDs',
             linkTitle: 'Outdoor LEDs',
             route: '/services/outdoor-digital-signs'
@@ -69,25 +77,10 @@
             route: '/services/indoor-digital-signs'
           },
           {
-            linkName: 'Media Management',
+            linkName: 'Digital Media Management',
             linkTitle: 'Media Management',
             route: '/services/digital-media-management'
           },
-          {
-            linkName: 'Support',
-            linkTitle: 'Support',
-            route: '/support'
-          },
-          {
-            linkName: 'About',
-            linkTitle: 'About',
-            route: '/about'
-          },
-          {
-            linkName: 'Contact Us',
-            linkTitle: 'Contact Us',
-            route: '/contact'
-          }
         ]
       };
     },
@@ -120,8 +113,12 @@
   overflow: hidden;
 }
 
-.apex-footer-container {
+.apex-main-wrapper.apex-footer-container {
   overflow: visible;
+
+  @media #{$phone-only} {
+    width: 75%;
+  }
 }
 
 .apex-brand {
@@ -138,23 +135,24 @@
   margin-bottom: 50px;
 
   @media #{$laptop-up} {
-    margin-top: 142px;
+    margin-top: 130px;
     margin-bottom: 0;
     width: 30%;
   }
 
   p,
   p:last-of-type {
-    margin-bottom: 10px;
+    margin-bottom: 4px;
     font-size: 18px;
   }
 
-  a {
+  a,
+  .apex-contact {
     display: block;
     color: $apex-blue;
     font-weight: 700;
     font-size: 18px;
-    margin-bottom: 10px;
+    margin-bottom: 4px;
     line-height: 1.5;
 
     &:hover {
@@ -209,7 +207,7 @@
   }
 
   @media #{$laptop-up} {
-    width: 48%;
+    width: 50%;
     justify-content: flex-start;
   }
 }
@@ -220,7 +218,7 @@
   background: $black;
 
   @media #{$laptop-up} {
-    width: 17%;
+    width: 15%;
     order: 3;
   }
 }
@@ -299,14 +297,16 @@
   display: none;
   width: 35%;
 
-  a {
+  a,
+  .apex-contact {
     display: block;
     color: $apex-blue;
     font-weight: 700;
+    cursor: pointer;
 
     @media #{$laptop-up} {
       font-size: 18px;
-      margin-bottom: 31px;
+      margin-bottom: 25px;
       text-align: right;
       direction: rtl;
     }

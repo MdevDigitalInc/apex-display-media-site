@@ -6,7 +6,7 @@
           h2.u-bold
             |Enhance your business
             br
-            |with digital signage
+            |with digital signage.
       .apex-contact-info-body.flex.flex-row-rev.flex-wrap
         .apex-column.apex-info
           //- Social Media Component
@@ -16,13 +16,13 @@
             |Get in touch to find out how you can boost your business
             |with advanced sign technology and eye-catching graphics.
             .apex-contact-links
-              a(href='tel:1-800-000-0000' title='phone number').u-under-line 1-800-000-0000
+              a(href='tel:5198520021' title='phone number').u-under-line 519-852-0021
               a(href='mailto:contact@apexdisplaymedia.com' title='phone number') contact@apexdisplaymedia.com
             .apex-address
               a(href='#' title='location')
-                |499 McGregor Avenue
+                | 4015 Dowell Drive
                 br
-                |London, ON, N6J 2S8
+                | London, ON, N6E 3A1
       .apex-contact-info-map
         apex-contact-map
 </template>
@@ -40,30 +40,30 @@
           {
             linkName: 'Instagram',
             linkTitle: 'Follow us on Instagram',
-            target: '_blank',
+            target: '_self',
             iconClass: 'fa-instagram',
-            url: '#'
+            url: ''
           },
           {
             linkName: 'LinkedIn',
             linkTitle: 'Follow us on LinkedIn',
-            target: '_blank',
+            target: '_self',
             iconClass: 'fa-linkedin-in',
-            url: '#'
+            url: ''
           },
           {
             linkName: 'Facebook',
             linkTitle: 'Follow us on Facebook',
-            target: '_blank',
+            target: '_self',
             iconClass: 'fa-facebook-f',
-            url: '#'
+            url: ''
           },
           {
             linkName: 'Twitter',
             linkTitle: 'Follow us on Twitter',
-            target: '_blank',
+            target: '_self',
             iconClass: 'fa-twitter',
-            url: '#'
+            url: ''
           }
         ]
 
@@ -85,6 +85,10 @@
   height: 100vh;
   position: relative;
 
+  @media #{$portrait} {
+    height: auto;
+  }
+
   h1 {
     @media #{$phone-only} {
       font-size: 45px;
@@ -93,7 +97,7 @@
 
   h2 {
     color: $white;
-    line-height: 1.5;
+    line-height: 1.2;
   }
 
   p {
@@ -106,6 +110,11 @@
     @media #{$laptop-only} {
       font-size: 16px;
       position: relative;
+      margin-bottom: 25px;
+    }
+
+    @media #{$portrait} {
+      margin-bottom: 25px;
     }
   }
 
@@ -146,6 +155,12 @@
       width: 80%;
     }
   }
+
+  @media #{$phone-only} {
+    h1 {
+      font-size: 41px;
+    }
+  }
 }
 
 .apex-contact-info-heading {
@@ -175,13 +190,13 @@
 
 
   @media #{$laptop-up} {
-    background-position: 20px center; 
+    background-position: 20px center;
     padding-top: 73px;
     order: 1;
 
     h2 {
       padding-left: 185px;
-      line-height: 1.5;
+      line-height: 1.2;
       font-size: 50px;
     }
   }
@@ -189,8 +204,8 @@
   @media #{$laptop-only} {
     min-height: 150px;
     padding-top: 24px;
-    background-position: -44px 15px; 
-    
+    background-position: -44px 15px;
+
     h2 {
       padding-left: 22%;
       font-size: 30px;
@@ -215,16 +230,24 @@
 
 .apex-address {
   margin-top: 34px;
+
+  @media #{$portrait} {
+    margin-top: 20px;
+  }
 }
 
 .apex-social {
   height: 50px;
   margin-top: 63px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 
-  @media #{$laptop-only} { 
+  @media #{$portrait} {
     margin-top: 30px;
-    margin-bottom: 30px;
+  }
+
+  @media #{$laptop-only} {
+    margin-top: 20px;
+    margin-bottom: 10px;
   }
 }
 
@@ -234,6 +257,7 @@
   padding: 0 10px;
   width: 50px;
   cursor: pointer;
+
 
   &:first-child {
     margin-left: -10px;
@@ -246,29 +270,39 @@
   a {
     font-size: 30px;
     font-weight: 400;
+
+    @media #{$portrait} {
+      font-size: 35px;
+    }
   }
 
   i {
-    @include center('both');
-  }
+    @include center(both);
+    transform-origin: center;
+    transition: all .4s;
 
-  @media #{$laptop-only} { 
-    a {
-      font-size: 20px;
+    &:hover,
+    &:focus,
+    &:active {
+      color: $black;
+      transform: translate3d(-50%, -50%, 0) scale(1.09);
     }
   }
 }
 
 .apex-contact-info-map {
   width: 100%;
-  min-height: 265px;
   order: 3;
 
-  @media #{$laptop-only} { 
-    min-height: 300px;
+  @media #{$laptop-only} {
+    height: 150px;
     position: absolute;
     bottom: 0;
     left: 0;
+  }
+
+  @media #{$tablet-prt-only} {
+    max-height: 200px;
   }
 }
 </style>

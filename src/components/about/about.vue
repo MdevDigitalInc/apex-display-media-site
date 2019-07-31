@@ -1,16 +1,16 @@
 <template lang="pug">
   .mdev-main-content
-    h1
-      |ABOUT
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    support-services-blocks(:supportServices='aboutData.supportServices.serviceList' :heading='aboutData.supportServices.heading' :headingClass='aboutData.supportServices.headingClass')
+    //- Hero Main
+    main-hero(
+      :heading="aboutData.mainHero.heading"
+      :subheading="aboutData.mainHero.subheading"
+      :action="aboutData.mainHero.btnData"
+      modifier="--img-pullup"
+      :media="aboutData.mainHero.media"
+      :scrollblack="true"
+      :background="aboutData.mainHero.background")
+
+    support-services-blocks.--section-space-xl(:supportServices='aboutData.supportServices.serviceList' :heading='aboutData.supportServices.heading' :headingClass='aboutData.supportServices.headingClass')
     //- Apex Split
     apex-split-simple( :flip="false" :background="aboutData.splitContent.background" :decoration="aboutData.splitContent.decoration" modifier="apex-led-panel-bg")
       template(slot='large-content')

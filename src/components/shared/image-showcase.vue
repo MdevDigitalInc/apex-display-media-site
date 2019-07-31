@@ -5,14 +5,16 @@
     .apex-showcase-left
       .apex-showcase-top.flex.flex-vert-stretch.flex-wrap(data-media-height)
         //- Top Left Media Box
-        .apex-media-horz(:style="loadBackground(media.TopLeft, webpSupport)")
+        .apex-media-horz.--wider(:style="loadBackground(media.TopLeft, webpSupport)")
         //- Showcase Text
         .apex-showcase-content.flex.flex-vert-center.flex-hor-between
           //- Heading
           .u-bold.apex-showcase-heading
             |{{ heading }}
           //- Base Button
-          base-btn( :btn-data="action" )
+          .apex-base-btn.apex-black-btn(@click.stop="openForm")
+            .apex-btn-text
+              |Get Started
       .apex-showcase-bot.flex.flex-vert-stretch
         .apex-media-sq(:style="loadBackground(media.BotSquare, webpSupport)")
         .apex-media-horz(:style="loadBackground(media.BotLeft, webpSupport)")
@@ -25,6 +27,8 @@
 
 
 <script>
+// Import the EventBus
+import { EventBus } from '../../eventbus.js';
 // Import SEO From File
 import { stagingBuild, template, social, general }       from '../../seo-meta.js';
 
@@ -42,6 +46,13 @@ export default {
       // Webp support flag
       webpSupport: false
     };
+  },
+
+  methods: {
+    openForm() {
+      this.navOpen = false;
+      EventBus.$emit('toggleme', true);
+    }
   },
 
   // Check for browser support on creation
@@ -94,7 +105,7 @@ export default {
 
   // Showcase text content
   .apex-showcase-content {
-    width: 60%;
+    width: 52.98%;
     padding: 80px;
     background: $color-brand-primary;
     color: $white;
@@ -126,7 +137,7 @@ export default {
   // Heading size to keep it from touching button
   .apex-showcase-heading {
     width: 66%;
-    font-size: 2.5vw;
+    font-size: 2.2vw;
     line-height: 1.2;
     font-weight: 800;
 
@@ -136,7 +147,7 @@ export default {
 
     @media #{$phone-only} {
       width: 100%;
-      font-size: 7vw;
+      font-size: 8vw;
       padding-bottom: 40px;
     }
 
@@ -151,7 +162,7 @@ export default {
 
   // Media
   .apex-media-horz {
-    width: 40%;
+    width: 47.01%;
     padding-top: 20%;
     background-size: cover;
     background-position: center;
@@ -200,7 +211,7 @@ export default {
     width: 70%;
     background-repeat: no-repeat;
     background-size: 100%;
-    padding-top: 40%;
+    padding-top: 39.7%;
     left: 50%;
 
     @media #{$phone-only} {

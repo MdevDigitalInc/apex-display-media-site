@@ -7,7 +7,7 @@
         span
       // - Sidebar Navigation Overlay
       .apex-nav-overlay(:class="{open: navOpen }" @click="navOpen = !navOpen")
-      .apex-header-bar.flex.flex-row.flex-wrap
+      .apex-header-bar.flex.flex-row.flex-wrap( ref="dataMainNav" )
         .brand
           router-link(class='apex-header-bar-branding' title='Home' to='/')
             img(:src="loadImage(headerBrand)" alt="Apex logo")
@@ -29,9 +29,11 @@
             exact)
               span
               |{{ link.linkName  }}
+            .apex-contact(@click.stop="toggleForm")
+              |Contact Us
           .apex-contact-nav-links.u-capitalize
             p.u-none Get in touch:
-            a(href="tel:1-800-000-0000" title="phone number") 1-800-000-0000
+            a(href="tel:5198520021" title="phone number").u-under-line 519-852-0021
             a(href="mailto:contact@apexdisplaymedia.com" title="email address" class="u-lowercase") contact@apexdisplaymedia.com
           .apex-large-quote
             apex-large-quote-btn(styleType='nav-style' v-on:toggle='toggleForm')
@@ -41,6 +43,8 @@
 <script>
   import { appData, mainNavigation } from '../../apex-data.js';
 
+  // Import the EventBus
+  import { EventBus } from '../../eventbus.js';
   import ApexLargeQuoteBtn from './apex-large-quote-btn.vue';
   import ApexCloseBtn from './apex-close-btn.vue';
 
@@ -49,7 +53,6 @@
     name: 'ApexNavigation',
 
     data (){
-
       return {
         navOpen: false,
         headerBrand: appData.blackBrand,
@@ -82,12 +85,19 @@
     },
     methods: {
       loadImage(path){
-      return require('../../assets/images/' + path);
+        return require('../../assets/images/' + path);
       },
       toggleForm() {
         this.$emit('toggle', true);
         this.navOpen = false;
+        EventBus.$emit('toggleme', true);
       }
+    },
+
+    mounted() {
+      // Set padding on body according to size of nav
+      let height = this.$refs.dataMainNav.getBoundingClientRect().height;
+      document.querySelector('body').style.paddingTop = height + 'px';
     }
   };
 </script>
@@ -129,6 +139,12 @@
     .apex-header-bar-branding img {
       min-width: 296px;
       margin-top: 24px;
+      margin-left: 197px;
+    }
+  }
+
+  @media #{$tablet-only} {
+    .apex-header-bar-branding img {
       margin-left: 43px;
     }
   }
@@ -294,7 +310,7 @@
     margin-top: 50px;
 
     @media #{$tablet-up} {
-      margin-top: 140px;
+      margin-top: 70px;
     }
 
     @media #{$tablet-lnd-only} {
@@ -314,12 +330,14 @@
       }
     }
 
-    a {
+    a,
+    .apex-contact {
       display: block;
+      cursor: pointer;
       color: $apex-blue;
       list-style-type: none;
       font-weight: 700;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
       font-size: 15px;
       text-indent: 50px;
 
@@ -334,9 +352,11 @@
     a,
     p {
       margin-bottom: 15px;
+      font-size: 18px;
+      line-height: 1.5;
 
       @media #{$tablet-up} {
-        margin-bottom: 30px;
+        margin-bottom: 4px;
       }
     }
   }
@@ -381,7 +401,7 @@
     }
 
     a.--active {
-      font-size: 24px;
+      font-size: 22px;
     }
   }
 }
@@ -395,7 +415,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,.5);
+  background-color: rgba(0,0,0,.85);
   z-index: 20;
   cursor: pointer;
 

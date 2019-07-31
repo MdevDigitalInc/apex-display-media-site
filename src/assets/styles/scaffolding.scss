@@ -1,8 +1,6 @@
 /*-------------------------------------
  *	SCAFFOLDING & LAYOUT UTILITIES
 /-------------------------------------*/
-
-
 //Space Classes
 
 .--margin-space-extra-large {
@@ -59,9 +57,12 @@
 
 .--button-space {
   margin-top: 25px;
+
+  @media #{$portrait} {
+    margin-top: 10px;
+  }
 }
 // Wrapper Classes
-
 
 .apex-main-wrapper {
   width: 95%;
@@ -84,11 +85,11 @@
   }
 
   @media #{$desktop-only} {
-    width: 80%;
+    width: 78%;
   }
 
   @media #{$xl-up} {
-    max-width: 1700px;
+    width: 80%;
   }
 
   @media #{$phone-only} {

@@ -47,7 +47,11 @@
   height: 300px;
 
   @media #{$laptop-only} {
-    height: 300px;
+    height: 150px;
+  }
+
+  @media #{$tablet-prt-only} {
+    max-height: 220px;
   }
 }
 

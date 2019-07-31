@@ -53,7 +53,7 @@ export default{
     font-size: 22px;
 
     @media #{$tablet-up} {
-      min-height: 118px;
+      max-height: 93px;
 
       &:hover,
       &:active {
@@ -89,6 +89,17 @@ export default{
     font-size: 18px;
     min-height: 75px;
     max-height: 75px;
+
+    @media #{$tablet-only} {
+      padding: 25px 0 30px;
+      font-size: 30px;
+      min-height: 80px;
+      max-height: 90px;
+    }
+
+    @media #{$phone-only} {
+      font-size: 24px;
+    }
   }
 }
 

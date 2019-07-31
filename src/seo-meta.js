@@ -12,12 +12,18 @@
 // This will allow for the staging branch to be tested on
 // Facbeook / Twitter debugger panels.
 //
-// TODO -- Change stagingBuild to FALSE before live deploy.
-let stagingBuild = true;
+let stagingBuild = false;
 
 let template = {
-  slug: '%s | Custom Signage',
-  slugAddon: ' | Custom Signage',
+  slug: '%s | Digital Signage | London, Canada',
+  slugAddon: ' | Digital Signage | London, Canada',
+  stageUrl: 'http://apexdisplay-staging.s3-website-us-east-1.amazonaws.com/',
+  liveUrl: 'https://apexdisplaymedia.com',
+}
+
+let templateInner = {
+  slug: '%s | Apex Display Media | London, Canada',
+  slugAddon: ' | Apex Display Media | London, Canada',
   stageUrl: 'http://apexdisplay-staging.s3-website-us-east-1.amazonaws.com/',
   liveUrl: 'https://apexdisplaymedia.com',
 }
@@ -27,18 +33,37 @@ let social = {
   ogtype: 'website',
   cardtype: 'summary_large_image',
   twsite: '@ApexDisplay',
-  ogimage: 'social/MDEV-FB-OG-Home_v01.jpg',
-  twimage: 'social/MDEV-TW-Card-Home_v01.png'
+  ogimage: 'social/facebook.png',
+  twimage: 'social/twitter.png'
 }
 
 let general = {
   title: 'Apex Display Media',
-  desc: 'We are a London-based hybrid digital agency offering process-driven branding, website development, software architecture, and business technology solutions'
+  desc: 'We are a digital signage and content solution for your business. We provide custom design, installation and content management – with a full hardware warranty.'
+}
+
+let outdoor = {
+  title: 'Outdoor LED Signage',
+  desc: 'We provide weather-proof, professionally installed, custom outdoor LED signage with ongoing personalized content management - including full hardware warranty.'
+}
+
+let indoor = {
+  title: 'Indoor Digital Signage',
+  desc: 'From initial concepts, to final digital content ready at launch, we\'ll provide a tailored solution to your indoor digital signage and business needs.'
+}
+
+let managed = {
+  title: 'Digital Media Management',
+  desc: 'Our expert team will provide on-brand content strategies, professional phtography and eye-catching graphic designs - with focus on maximizing value & conversions.'
 }
 
 export {
   stagingBuild,
   template,
   social,
-  general
+  general,
+  indoor,
+  templateInner,
+  outdoor,
+  managed
 };

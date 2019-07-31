@@ -1,6 +1,12 @@
 <template lang="pug">
   section.mdev-main-content
     //- Hero Main
+    main-hero(
+      :heading="outdoorData.mainHero.heading"
+      :subheading="outdoorData.mainHero.subheading"
+      :action="outdoorData.mainHero.btnData"
+      :media="outdoorData.mainHero.media"
+      :background="outdoorData.mainHero.background")
     //- Apex Split
     apex-split-simple( :flip="false" :background="outdoorData.splitContent.background" :decoration="outdoorData.splitContent.decoration")
       template(slot='large-content')
@@ -17,7 +23,7 @@
             | {{ paragraph }}
     //- Featured Tiles
     section.apex-main-wrapper
-      apex-service-info-blocks.--section-space-xl(
+      apex-service-info-blocks.--section-space-digi(
         :heading='outdoorData.serviceInfo.heading'
         :copy="outdoorData.serviceInfo.copy"
         :contentBlocks='outdoorData.serviceInfo.contentBlocks')
@@ -50,7 +56,7 @@
 
 <script>
 // Import SEO From File
-import { stagingBuild, template, social, general }       from '../../seo-meta.js';
+import { outdoor, templateInner, stagingBuild, template, social, general }       from '../../seo-meta.js';
 import ServiceSample from './service--sample.vue';
 import ApexSplitSimple from '../shared/apex-split-simple.vue';
 import ServiceInfoBlocks from '../shared/apex-service-info-blocks.vue';
@@ -69,16 +75,17 @@ export default {
   // Meta SEO Function
   metaInfo() {
     return {
-      title: general.title,
+      title: outdoor.title,
+      titleTemplate: templateInner.slug,
       meta: [
         // SEO
-        { vmid: 'desc', name: 'description', content: general.desc },
-        { vmid: 'ogtitle', property: 'og:title', content: general.title + template.slugAddon },
-        { vmid: 'ogimage', property: 'og:image', content: (stagingBuild ? template.stageUrl : template.liveUrl) + this.loadImage(social.ogimage) },
-        { vmid: 'ogdesc', property: 'og:description', content: general.desc },
-        { vmid: 'twtitle', name: 'twitter:title', content:  general.title + template.slugAddon },
-        { vmid: 'twimage', name: 'twitter:image', content: (stagingBuild ? template.stageUrl : template.liveUrl) + this.loadImage(social.twimage) },
-        { vmid: 'twdesc', name: 'twitter:description', content: general.desc }
+        { vmid: 'desc', name: 'description', content: outdoor.desc },
+        { vmid: 'ogtitle', property: 'og:title', content: outdoor.title + templateInner.slugAddon },
+        { vmid: 'ogimage', property: 'og:image', content: (stagingBuild ? templateInner.stageUrl : templateInner.liveUrl) + this.loadImage(social.ogimage) },
+        { vmid: 'ogdesc', property: 'og:description', content: outdoor.desc },
+        { vmid: 'twtitle', name: 'twitter:title', content:  outdoor.title + templateInner.slugAddon },
+        { vmid: 'twimage', name: 'twitter:image', content: (stagingBuild ? templateInner.stageUrl : templateInner.liveUrl) + this.loadImage(social.twimage) },
+        { vmid: 'twdesc', name: 'twitter:description', content: outdoor.desc }
       ]
     };
   },
