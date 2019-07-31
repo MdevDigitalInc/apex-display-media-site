@@ -33,8 +33,8 @@ let social = {
   ogtype: 'website',
   cardtype: 'summary_large_image',
   twsite: '@ApexDisplay',
-  ogimage: 'social/MDEV-FB-OG-Home_v01.jpg',
-  twimage: 'social/MDEV-TW-Card-Home_v01.png'
+  ogimage: 'social/facebook.png',
+  twimage: 'social/twitter.png'
 }
 
 let general = {
