@@ -1,7 +1,37 @@
 <template lang="pug">
   .mdev-main-content
-    h1
-      |ABOUT
+    //- Hero Main
+    main-hero(
+      :heading="aboutData.mainHero.heading"
+      :subheading="aboutData.mainHero.subheading"
+      :action="aboutData.mainHero.btnData"
+      modifier="--img-pullup"
+      :media="aboutData.mainHero.media"
+      :scrollblack="true"
+      :background="aboutData.mainHero.background")
+
+    support-services-blocks.--section-space-xl(:supportServices='aboutData.supportServices.serviceList' :heading='aboutData.supportServices.heading' :headingClass='aboutData.supportServices.headingClass')
+    //- Apex Split
+    apex-split-simple( :flip="false" :background="aboutData.splitContent.background" :decoration="aboutData.splitContent.decoration" modifier="apex-led-panel-bg")
+      template(slot='large-content')
+        h2.--margin-space-large(:class='aboutData.splitContent.largeSplit.headingClass')
+          | {{aboutData.splitContent.largeSplit.heading}}
+        p(v-for="paragraph in aboutData.splitContent.largeSplit.copy")
+          |{{ paragraph }}
+
+      template(slot='highlight-content')
+        h2.--margin-space-large(v-html='aboutData.splitContent.highlight.heading' :class='aboutData.splitContent.highlight.headingClass')
+        router-link(:to="aboutData.splitContent.highlight.btnData.route" :class='aboutData.splitContent.highlight.btnData.class' :title="aboutData.splitContent.highlight.btnData.text")
+          |{{ aboutData.splitContent.highlight.btnData.text }}
+    //- Service Block Single.
+    section.--section-space-xl
+      service-sample-about(
+        v-for="(sample, index) in aboutData.serviceSamples"
+        :media="sample.media"
+        :heading="sample.heading"
+        :copy="sample.copy"
+        :list="sample.benefits"
+        :flip = "sample.flip")
 </template>
 
 
@@ -11,13 +41,20 @@
 // Import SEO From File
 import { stagingBuild, template, social, general }       from '../../seo-meta.js';
 
+import { aboutPage } from '../../apex-data.js';
+
+import SupportServicesBlocks from '../shared/support-services-blocks.vue';
+import ApexSplitSimple from '../shared/apex-split-simple.vue';
+import ServiceSampleAbout from './service--sample-about.vue';
+
 export default {
   name: 'About',
   // TODO - Edit meta Title
 
   data: function(){
     return {
-      seo: SEOData.siteSeo
+      aboutData: aboutPage,
+      //seo: SEOData.siteSeo
     };
   },
   // Meta SEO Function
@@ -36,7 +73,11 @@ export default {
       ]
     };
   },
-
+  components: {
+    'support-services-blocks' : SupportServicesBlocks,
+    'apex-split-simple' : ApexSplitSimple,
+    'service-sample-about' : ServiceSampleAbout
+  }
 };
 </script>
 
@@ -50,5 +91,16 @@ export default {
 
 
 /*--------------------------------------*/
+
+.apex-led-panel-bg {
+  background-image: url('../../assets/images/led-panel.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  h2,
+  p {
+    color: $white;
+  }
+}
 
 </style>

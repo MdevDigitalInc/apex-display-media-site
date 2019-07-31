@@ -11,10 +11,11 @@
         .apex-btn-text
           |Get Started
       //- Scrol Prompt
-      .apex-hero-scroll
+      .apex-hero-scroll( :class="{ '--blackscroll' : scrollblack }")
         span.u-italic
           |scroll down
-        img.apex-scroll-icon( :src="loadImage('icons/icon-scroll-white.svg')" alt="Scroll for more!")
+        img.apex-scroll-icon(v-if="scrollblack" :src="loadImage('icons/icon-scroll-black.svg')" alt="Scroll for more!")
+        img.apex-scroll-icon(v-else :src="loadImage('icons/icon-scroll-white.svg')" alt="Scroll for more!")
 
     //- Main Image
     universal-image.u-hidden-portrait.apex-hero-image(
@@ -44,7 +45,8 @@ export default {
     'action',
     'media',
     'modifier',
-    'background'
+    'background',
+    'scrollblack'
   ],
 
   methods: {
@@ -175,6 +177,11 @@ export default {
     margin-top: 45px;
     margin-left: 55px;
   }
+
+  .--blackscroll {
+    color: black;
+  }
+
 
   //Overrides
   &.--img-pullup .apex-hero-image-mob {

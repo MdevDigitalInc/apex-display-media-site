@@ -62,6 +62,11 @@
             route: '/'
           },
           {
+            linkName: 'About',
+            linkTitle: 'About Apex Display Media',
+            route: '/about'
+          },
+          {
             linkName: 'Outdoor LEDs',
             linkTitle: 'Outdoor LEDs',
             route: '/services/outdoor-digital-signs'
@@ -75,7 +80,7 @@
             linkName: 'Digital Media Management',
             linkTitle: 'Media Management',
             route: '/services/digital-media-management'
-          }
+          },
         ]
       };
     },
