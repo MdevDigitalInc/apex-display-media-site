@@ -11,7 +11,8 @@
           a(href="tel:5198520021" title="phone number").u-under-line 519-852-0021
           a(href="mailto:contact@apexdisplaymedia.com" title="email address" class="u-lowercase") contact@apexdisplaymedia.com
           p.u-none.apex-location Our Location:
-          a(href="#" title="address")
+          a(href="https://www.google.com/maps/place/4015+Dowell+Dr,+London,+ON+N6E+3A1/@42.9270994,-81.2519209,17z/data=!3m1!4b1!4m5!3m4!1s0x882ef3fd2cb4e81f:0x8da95cdc7b200d0a!8m2!3d42.9270955!4d-81.2497322"
+          target="blank" title="address")
             | 4015 Dowell Drive
             br
             | London, ON, N6E 3A1
@@ -71,8 +72,8 @@
             route: '/about'
           },
           {
-            linkName: 'Outdoor LEDs',
-            linkTitle: 'Outdoor LEDs',
+            linkName: 'Outdoor Digital Signage',
+            linkTitle: 'Outdoor Digital Signage',
             route: '/services/outdoor-digital-signs'
           },
           {

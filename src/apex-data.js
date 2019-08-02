@@ -28,8 +28,8 @@ let mainNavigation = {
       route: '/about'
     },
     {
-      linkName: 'Outdoor LEDs',
-      linkTitle: 'Outdoor LEDs',
+      linkName: 'Outdoor Digital Signage',
+      linkTitle: 'Outdoor Digital Sigage',
       route: '/services/outdoor-digital-signs'
     },
     {
@@ -49,7 +49,7 @@ let mainNavigation = {
 let homePage = {
   // Main Hero
   mainHero : {
-    heading: 'Enhance your business with custom signage',
+    heading: 'Enhance your business with custom digital signage',
     subheading: 'We provide quality signage for any industry or market.',
     btnData: {
       class: 'apex-base-btn apex-red-btn',
@@ -427,7 +427,7 @@ let DigitalManagement = {
     packageList: [
       {
         heading: 'Starter </br> Membership',
-        copy: 'Ideal for clients with 1-3 screens at one locations or anyone who is just getting started with digital signage. Our team will provide intial static graphics for launch and then work with you to provide minor updates as needed.',
+        copy: 'Ideal for clients with 1-3 screens at one locations or anyone who is just getting started with digital signage. Our team will provide initial static graphics for launch and then work with you to provide minor updates as needed.',
         listItems: [
           {
             copy: 'Content created by design professionals'
@@ -442,7 +442,7 @@ let DigitalManagement = {
       },
       {
         heading: 'Intermediate </br> Membership',
-        copy: '3+ screens, multiple locations....',
+        copy: 'Created for clients with 3 or more screens at 1 to 3 locations. Our team will assist with ongoing updates and help with your content strategy. Schedule content in advance and offer real-time coupons and promotions.',
         listItems: [
           {
             copy: 'Access to a team of creative professionals'
@@ -701,8 +701,8 @@ let indoorSignagePage = {
       },
       {
         icon: 'icons/icon-internal-blue.svg',
-        heading: 'Decrease percieved waiting times',
-        copy: 'Digital displays are a great distraction for visitors. Inform them about your services and provide content like news and weather while they wait inside your location.',
+        heading: 'Empower internal communication',
+        copy: 'Use digital signage to keep your employees up-to-date. Deliver training, corporate messages, and real-time information - applicable to many different industries!',
         link: false
       },
       {

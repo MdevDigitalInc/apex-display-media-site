@@ -89,10 +89,10 @@ export default {
       // Load Google Maps
       this.asyncScript( 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDt6FiuHFsdn-bsR0lgsZx_QgauCyrPN24', true, true);
       // Load Google Tag Manager
-      this.asyncScript( 'https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXX-1', true, true);
-      this.asyncScript( '/js/googletag.js', false, false);
+      this.asyncScript( 'https://www.googletagmanager.com/gtag/js?id=UA-144963994-1', true, true);
+      //this.asyncScript( '/js/googletag.js', false, false);
       // Load Facebook Pixel
-      this.asyncScript( '/js/fbpixel.js', false, false);
+      //this.asyncScript( '/js/fbpixel.js', false, false);
     }
     EventBus.$on('toggleme', this.toggleContactModal);
   },

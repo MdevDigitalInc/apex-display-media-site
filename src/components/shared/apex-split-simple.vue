@@ -46,6 +46,7 @@ export default {
 
     @media #{$portrait} {
       width: 100%;
+      display: none;
     }
 
     // Dots
